@@ -1,0 +1,259 @@
+{
+  "id": "wwn.historical_events",
+  "title": "Historical Events (d100)",
+  "source": "wwn-worldbuilder (WWN History Construction)",
+  "type": "list_d100",
+  "dice": "1d100",
+  "entries": [
+    {
+      "min": 1,
+      "max": 2,
+      "value": "Battleground"
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "value": "Betrayal"
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "value": "Brutal Oppression"
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "value": "Class Struggle"
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "value": "Consequences"
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "value": "Decadence"
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "value": "Depravity"
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "value": "Desolation"
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "value": "Diplomatic Coup"
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "value": "Economic Boom"
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "value": "Enemies Within"
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "value": "Evil Wizard"
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "value": "Exodus"
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "value": "Exquisite Art"
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "value": "External War"
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "value": "Freakish Magic"
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "value": "Golden Age"
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "value": "Good Wizard"
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "value": "Great Awakening"
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "value": "Great Builders"
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "value": "Great Infrastructure"
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "value": "Hero King"
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "value": "Immigrants"
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "value": "Inefficient Rule"
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "value": "Internal War"
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "value": "Loss of Confidence"
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "value": "Magical Disaster"
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "value": "Magical Tech"
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "value": "Natural Calamity"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "value": "New Horizons"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "value": "New Rulers"
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "value": "Noble Function"
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "value": "Noble Strife"
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "value": "Plague"
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "value": "Poverty"
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "value": "Power Brokers"
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "value": "Praetorian Coups"
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "value": "Priest King"
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "value": "Rare Resource"
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "value": "Religious Fall"
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "value": "Religious Rise"
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "value": "Resource Collapse"
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "value": "Secession"
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "value": "Terrain Change"
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "value": "Total Collapse"
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "value": "Twist of Fate"
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "value": "Urbanization"
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "value": "Weak Throne"
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "value": "Xenophilia"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "value": "Xenophobia"
+    }
+  ]
+}

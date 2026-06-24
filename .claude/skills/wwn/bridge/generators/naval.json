@@ -1,0 +1,161 @@
+{
+  "id": "wwn.naval",
+  "title": "Naval Adventuring",
+  "source": "Atlas of the Latter Earth, Naval Adventuring",
+  "kind": "bundle",
+  "tables": {
+    "Seafaring Event": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 3,
+          "value": "Ship Ahoy: A vessel comes into Sighted range. Roll on the Ship Encounter table."
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Stormy Weather: Make a Dex or Int/Sail skill check at difficulty 10; on a failure, suffer the difference in your roll in ship HP lost."
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Off Course: You discover you're actually 1d4 x 50 miles away from where you thought you were in a random direction."
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Sea Beast: Fearsome monsters or a terrible sea creature threatens your ship."
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Fouled Provisions: Make an Int/Sail skill check at difficulty 10; on a failure, lose 10% of your provisions for each point you failed by."
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Damaged Cargo: Make an Int/Sail skill check at difficulty 10; on a failure, lose 5% of your non-provisions cargo for each point you failed by."
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Sickness Aboard: Make an Int/Heal skill check at difficulty 10. On a failure, 1d4 x 10% of the crew are incapacitated for 3d6 days."
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Damaged Fitting: A random ship-mounted weapon or fitting has been damaged. Until it's repaired, it's useless. Ships without either weapons or fittings are immune to this."
+        }
+      ]
+    },
+    "Ship Encounter": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 3,
+          "value": "Local Trader: It's a trading ship out of the nearest port."
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Local Pirate: It's a small pirate craft looking for small, ill-defended prey."
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Local Warship: It's a small or medium warship out hunting pirates or looking for smugglers; it may want a closer look at your ship."
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Oceanic Pirate: This is a big raider, likely sailing out of a pirate haven and more than able to deal with most merchantmen."
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Far Trader: A fat oceangoing merchant on a long journey from some far-off land."
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Privateer: A medium or larger ship kitted out to plunder the enemies of its owners. Most are generous in their definition of enemies."
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Unnatural Craft: It's a wizard's galleon, priest's barge, skyship, living vessel, Hosthulk, or other uncanny ship."
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Crippled Ship: Roll again; it's that kind of ship, but it's suffered severe damage from storms or combat, and usually has no more than half its usual HP and crew."
+        }
+      ]
+    },
+    "Ship Crisis": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Cargo Damage (Acute)"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Crew Lost (Acute)"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Crew Panicked (Continuing)"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Evil Omen (Continuing)"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Fire Aboard (Continuing)"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Hull Sprung (Acute)"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Rigging Snaps (Continuing)"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Trapped Crew (Continuing)"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "VIP Imperiled (Acute)"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Weapon Misfire (Continuing)"
+        },
+        {
+          "min": 11,
+          "max": 12,
+          "value": "No Crisis"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Note: campaign/ play state (campaign-state.md, *.json, character-sheet.md, seeds.md)
+# is intentionally TRACKED — it is the game, and must persist across sessions/containers.

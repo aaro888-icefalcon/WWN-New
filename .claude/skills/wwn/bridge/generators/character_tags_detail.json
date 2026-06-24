@@ -1,0 +1,1214 @@
+{
+  "id": "wwn.character_tags_detail",
+  "title": "Character Tags",
+  "source": "wwn-worldbuilder",
+  "kind": "tag_detail",
+  "subtable_dice": "1d3",
+  "labels": [
+    "Ambitions",
+    "Powers",
+    "Dreads"
+  ],
+  "tags": {
+    "Baneful Success": {
+      "d100": [
+        1,
+        2
+      ],
+      "summary": "They have succeeded at something too well. Some part of their plans or intentions have been so successful that the consequences have become extremely threatening to them. A powerful ally may be so enthused by their plans that they now are overreaching, a beckoned devil may prove to be far mightier than expected, or a bribed official may be so cooperative that their obvious corruption is drawing official notice. Conversely their success may be some great personal achievement that has somehow bought them attention or duties that they now want to escape.",
+      "subtables": {
+        "Ambitions": [
+          "Curb a vitally important but too-enthusiastic ally",
+          "Escape the new duties their success has pressed upon them",
+          "Exploit the unexpected new opportunity their success has thrust upon them"
+        ],
+        "Powers": [
+          "Their newfound and unexpectedly powerful ally",
+          "Their success has earned the cooperation of an unexpected patron",
+          "They suddenly have more of a particular resource than they expected to have"
+        ],
+        "Dreads": [
+          "They are swept along by their success to an ultimate nemesis",
+          "They are critically unequipped to exploit their success",
+          "Someone else is stepping in to profit by their success"
+        ]
+      }
+    },
+    "Betting It All": {
+      "d100": [
+        3,
+        4
+      ],
+      "summary": "They are making an enormous gamble in this plot, expending every resource they have and burning every bridge behind them in an attempt to win through. Something about the situation makes them think that nothing has a chance except total commitment. Conversely, this tag might just indicate that they are extremely prone to reckless all-in behavior, willing to dare everything and trust to their prior luck.",
+      "subtables": {
+        "Ambitions": [
+          "Overcome a seemingly invincible foe or obstacle",
+          "Achieve an impossible feat by daring to spend what others would shrink from",
+          "Crush a problem utterly through raw force before it can grow into a real danger"
+        ],
+        "Powers": [
+          "Through loans and promises they can mobilize far more resources than others would suspect",
+          "They have a well-honed sense of the possible that lets them strike at weak points intuitively",
+          "They are remarkably coordinated and can control and direct their resources with exquisite precision"
+        ],
+        "Dreads": [
+          "An old debt comes due at the worst possible time",
+          "A resource they thought they had available turns out to be depleted or useless",
+          "A small piece of bad luck causes a cascade of events that threatens to undo them"
+        ]
+      }
+    },
+    "Bitter Grudge": {
+      "d100": [
+        5,
+        6
+      ],
+      "summary": "They hate some person or institution with aching intensity. Their hatred is an animating force for their personality and daily activities, and even when circumstances require them to conceal it, it will never be far from their mind. They are willing to suffer terribly so long as they can inflict equal misery on their enemy. Conversely, they might be the target of such a grudge. It may be that some past action or former crime left a survivor who is willing to take reckless steps to ruin them, even if innocents are caught in the blast.",
+      "subtables": {
+        "Ambitions": [
+          "Worm their way into a position of trust where they can betray their enemy",
+          "Inflict their vengeance on the things and people their enemy loves",
+          "Personally murder their enemy or destroy the institution after inflicting terrible pain"
+        ],
+        "Powers": [
+          "They have incredible focus and self-discipline driven by their hate",
+          "They have many friends who also hate their enemy",
+          "The wrong their enemy did them left them with a talent or an association that they can use to get their revenge"
+        ],
+        "Dreads": [
+          "Their enemy is destroyed by some completely unrelated person or event",
+          "People they trust or rely on are somehow drawn into their enemy's circle",
+          "Destroying their enemy would somehow ruin something or someone they love"
+        ]
+      }
+    },
+    "Black Sheep": {
+      "d100": [
+        7,
+        8
+      ],
+      "summary": "They are an outcast from some family, organization, or religion of importance in the area. Something they did or are is intolerable to their former allies, and they've been cut off from their help and association, even though outsiders might still recognize them as a member. Conversely, rather than being outcast by others, they themselves might be naturally incapable of feeling belonging or trust towards others. They might unconsciously or intentionally sabotage their relationships so as to remain unencumbered by ties.",
+      "subtables": {
+        "Ambitions": [
+          "Punish their former associates for cutting them off",
+          "Prove that the judgment of their peers was mistaken and they are truly worthy",
+          "Do things that they could never have done as a member in good standing of their former peers"
+        ],
+        "Powers": [
+          "They still have secrets and private ties from their former association",
+          "They stole valuable resources or arts from their past peers before leaving",
+          "They have associates who are also outcasts from the group or who are traditional enemies of them"
+        ],
+        "Dreads": [
+          "Their old peers feel the need to \"take care\" of them and their loose ends",
+          "They're targeted by enemies of their old peers who don't recognize their outcast status",
+          "Old resources they formerly relied upon are now unavailable to them"
+        ]
+      }
+    },
+    "Blithe Idealist": {
+      "d100": [
+        9,
+        10
+      ],
+      "summary": "They have a dream or a grand ambition, seeing a great possibility before them or a wonderful vision of how life could be. They are totally committed to this ideal; any failure of it is just evidence of a lack of determination or the sabotage of enemies. No price is too great and no obstacle to vast for their ideal to overcome. Conversely, they could be waking up to the impossibility of their dream, yet find themselves utterly entangled in plots to achieve it and terrible prices they've already paid. They may not believe in it any more, but they have no way to back out now.",
+      "subtables": {
+        "Ambitions": [
+          "Destroy a person or power they identify as an enemy of their vision",
+          "Put a supporter of their vision into a position of power",
+          "Ruin a wicked saboteur whose actions caused the ideal to fail in some instance"
+        ],
+        "Powers": [
+          "They have a vanguard of equally dedicated allies",
+          "Their ideal is intensely attractive to otherwise uncommitted people",
+          "They have the backing of secret powers or otherworldly entities that find them useful"
+        ],
+        "Dreads": [
+          "The vision demands something precious from them",
+          "A trusted lieutenant is failing badly",
+          "They've been accused of sabotage by an ambitious rival"
+        ]
+      }
+    },
+    "Burnt Out": {
+      "d100": [
+        11,
+        12
+      ],
+      "summary": "Nothing is worth it to them any more. They're physically, mentally, or emotionally exhausted. They've achieved great things and undertaken vast labors, but none of their fruits seem worth the effort any longer. They want to ignore the world, but the current situation won't let them stand aside if they want to avoid disaster. Conversely, their exhaustion may not be a matter of unwillingness, but of newfound incapacity. They just don't have the strength they used to, and the deeds they could formerly achieve are now too difficult or too exhausting for them to manage any more.",
+      "subtables": {
+        "Ambitions": [
+          "Escape some burdensome duty or task without getting in deeper trouble",
+          "Complete some last task they think will let them finally rest",
+          "Get rid of some person who is forcing them keep working"
+        ],
+        "Powers": [
+          "They were extremely good at the task or role that they're burnt out on",
+          "They have numerous minions or allies they've earned by past labor",
+          "They have considerable resources their talents acquired"
+        ],
+        "Dreads": [
+          "Something threatens to hang an interminable new duty on them",
+          "The event or person who caused their burnout comes back or recurs",
+          "None of their intended recreations or rests are helping them feel any better"
+        ]
+      }
+    },
+    "Chance at Glory": {
+      "d100": [
+        13,
+        14
+      ],
+      "summary": "They have a shot at fame, fortune, happiness, or some other situation they've longed to obtain. Some plot they're pursuing or situation they've found themselves in offers them a chance at this success, usually in exchange for a terrible risk or a grim sacrifice. Refusing seems to risk the permanent loss of the desired end. Conversely, they might still be seeking that chance. Their plans and schemes might revolve around making an opening for their own reckless ambitions, or creating situations where they might gamble everything on obtaining their heart's desire.",
+      "subtables": {
+        "Ambitions": [
+          "Destroy the person or institution that stands between them and glory",
+          "Sacrifice an ally or an innocent bystander in order to obtain their end",
+          "Load the dice by setting up alliances or betrayals that will make the eventual effort sure to succeed"
+        ],
+        "Powers": [
+          "They have inside information on the situation that gives them a golden opportunity",
+          "They've been training for this situation and have exactly the skill set and resources needed",
+          "Dumb luck has set them up perfectly for their chance"
+        ],
+        "Dreads": [
+          "They're being used as a patsy by another glory seeker",
+          "Success actually spells something very different for them",
+          "The glory they're seeking isn't worth their sacrifice"
+        ]
+      }
+    },
+    "Chronic Illness": {
+      "d100": [
+        15,
+        16
+      ],
+      "summary": "They're plagued with a chronic illness, mutilation, or deformity that has hindered them for some time. Something about it isn't amenable to magical cures or easy remedies, and it interferes with their ambitions and saps the pleasure from their successes. Conversely, they might have overcome the illness at some point but are now dealing with the lingering consequences of it and the way it's troubling their life even when it's absent.",
+      "subtables": {
+        "Ambitions": [
+          "Find the cure or prosthesis that will give them the health they crave",
+          "Get revenge on the person they somehow blame for their current condition",
+          "Perform some great deed before it's too late"
+        ],
+        "Powers": [
+          "They've acquired drugs or magics that temporarily empower them far beyond their usual weakness",
+          "They've made useful sorcerous contacts in their search for a cure",
+          "The illness somehow has a useful upside as well as its blighting effects"
+        ],
+        "Dreads": [
+          "They feel the approach of their inevitable mortality",
+          "The illness is crippling them at the worst possible moment in their plans",
+          "The medicines or methods they're using to control the illness are no longer working"
+        ]
+      }
+    },
+    "Concealed Sin": {
+      "d100": [
+        17,
+        18
+      ],
+      "summary": "They've done something gravely reprehensible by the standards of their society, and they've had to go to great lengths in order to hide it from others. Their current activities may be related to their need to keep the past safely buried, or they may still be committing the crime. Conversely, they may be the concealed sin of someone else. Something they are or have been made to be could be shameful or wicked to others, and their author may go to great lengths to keep the truth hidden.",
+      "subtables": {
+        "Ambitions": [
+          "Justify the sin to themselves or others through some scheme or investigation",
+          "Plot to get more opportunities to sin",
+          "Make amends for the sin through some particular deed"
+        ],
+        "Powers": [
+          "Their sin was very profitable or helpful in gaining resources",
+          "Others compromised by the sin will help them",
+          "The sin has led them to acquire useful skills"
+        ],
+        "Dreads": [
+          "Unexpected consequences of the sin threaten to come to light",
+          "They're driven to rash acts by a need to atone for the sin",
+          "Hiding or feeding the sin is costing them vital resources"
+        ]
+      }
+    },
+    "Cultural Outsider": {
+      "d100": [
+        19,
+        20
+      ],
+      "summary": "They don't belong here and everyone knows it. They don't know how the society works, and they make significant mistakes or erroneous assumptions that a native never would. The locals don't trust them, and may view them as a menace, useful catspaw, or burden to be endured. Conversely, they may be a native but despise their home culture for some reason. They have great difficulty cooperating with it in ways necessary for a peaceful life, and act to undermine its customs and institutions whenever possible.",
+      "subtables": {
+        "Ambitions": [
+          "Find acceptance among the locals by some grand deed",
+          "Get revenge on the natives for their isolation",
+          "Compel the natives to accommodate their ways"
+        ],
+        "Powers": [
+          "They have friends among the other outsiders in the community",
+          "They have resources drawn from their homeland",
+          "They are willing to imagine and do things the locals never would consider"
+        ],
+        "Dreads": [
+          "They've committed a terrible local sin by accident",
+          "Their plans rely on the cooperation of a native who doesn't trust them",
+          "They're being dragged into problems created by others of their kind"
+        ]
+      }
+    },
+    "Cursed Misfortune": {
+      "d100": [
+        21,
+        22
+      ],
+      "summary": "Everyone has a certain degree of bad luck in their life, but this person has experienced at least one instance of crushing, deeply improbable misfortune. Their current situation has been profoundly influenced by this calamity, and they may be trying to reverse it or get out from under its consequences. Conversely, the bad luck might be in their future instead of the past. Some extremely unlikely but intensely unfortunate event might be waiting to crash into their current plans.",
+      "subtables": {
+        "Ambitions": [
+          "Get revenge on the person or institution they blame for their bad luck",
+          "Somehow reverse the consequences of the calamity that befell them",
+          "Earn the favor of a god or power that they are convinced can improve their luck"
+        ],
+        "Powers": [
+          "The desperate situation drove them to obtain resources or allies who are now useful",
+          "Some power or resource left in the former wreckage can still be used",
+          "The calamity was double- edged in that it left them with some useful gift"
+        ],
+        "Dreads": [
+          "The misfortune isn't really over and is still playing out",
+          "The \"bad luck\" was actually entirely due to their own personal flaws or desires",
+          "Their paranoia over another twist of fate is distracting them and forcing them into bad choices"
+        ]
+      }
+    },
+    "Delusional Self-Image": {
+      "d100": [
+        23,
+        24
+      ],
+      "summary": "They have a self-image that is only vaguely rooted in reality, one which they absolutely refuse to abandon. They might see themselves as magnificently courageous, cunning, well-loved, or respected by others, and will often rely on these traits with unfortunate results. Even when they fail, they will rationalize an explanation. Conversely, this might be a negative self-image that they can't let go of. They might have been persuaded of it by someone else, or convinced themselves of their own inadequacy in some important aspect.",
+      "subtables": {
+        "Ambitions": [
+          "Unconsciously seek to eliminate all elements in their life that threaten their self-image",
+          "Destroy someone who actively scorns their self-image",
+          "Do a great deed that will illustrate their nature"
+        ],
+        "Powers": [
+          "They have extensive resources dedicated to cleaning up their failures",
+          "They're supported by a manipulator who uses their delusion",
+          "They may be delusional about one aspect of their nature but they're actually extremely good at something else they don't really value"
+        ],
+        "Dreads": [
+          "They're in a situation where they have to choose between maintaining their self-image and saving something precious to them",
+          "Their buried failures are coming back to haunt them",
+          "Their delusion has finally gotten them in too deep to handle"
+        ]
+      }
+    },
+    "Doomed Love": {
+      "d100": [
+        25,
+        26
+      ],
+      "summary": "They are passionately in love with a person who is either utterly unobtainable, wholly disinterested in their devotion, or profoundly unhealthy in their affections. Their motivations revolve around winning or keeping this person's heart, yet they have no plausible chance of getting their desire. Conversely, they may be the unwilling object of another's mad devotion, forced to manage the ardor of someone they cannot imagine loving.",
+      "subtables": {
+        "Ambitions": [
+          "Destroy some enemy or rival of the loved one",
+          "Perform a grand deed to win the loved one's admiration",
+          "Engineer a situation to blackmail or compel the loved one to recognize their devotion"
+        ],
+        "Powers": [
+          "Some power finds it profitable to encourage and support this vain romance",
+          "Their burning devotion has inspired their greatest efforts",
+          "They've made terrible pacts or bargains to win help in their cause"
+        ],
+        "Dreads": [
+          "Their beloved finds personal benefit in leading them on interminably",
+          "Some rival in love moves to quash their competitor",
+          "Some third party threatens to harm or steal away the object of their love"
+        ]
+      }
+    },
+    "Doomsday Weapon": {
+      "d100": [
+        27,
+        28
+      ],
+      "summary": "They have access to an ally, tool, or information that could utterly destroy any reasonable opposition to their plans, yet using it would almost certainly destroy them as well. It might be a corrupt noble ally, a mad wizard, a savage barbarian chieftain, or some other power that cannot be controlled once unleashed. Conversely, they might have it but not realize the consequences, holding it back for now out of mere ordinary caution. Only after they pull the trigger will they realize that they're in the blast zone as well.",
+      "subtables": {
+        "Ambitions": [
+          "Become insulated from the consequences of using their weapon",
+          "Trick someone else into triggering it and taking the backblast",
+          "Trigger it just a little bit so as to avoid disaster"
+        ],
+        "Powers": [
+          "The weapon has peripheral elements or tools than can be deployed safely",
+          "They have allies who serve out of dread of the weapon's use",
+          "The process of obtaining the weapon left them with useful resources"
+        ],
+        "Dreads": [
+          "The weapon is about to go off whether they want it or not",
+          "An enemy of theirs is trying to activate the weapon prematurely",
+          "Their enemies also have a doomsday weapon of their own"
+        ]
+      }
+    },
+    "Double Life": {
+      "d100": [
+        29,
+        30
+      ],
+      "summary": "They lead a double life in some way, presenting one face to one set of associates and another to a different group. One side may be their \"real\" nature with the other adopted purely for profit, or it may be that the whole of their personality or pastimes would never be accepted by a single social circle. Conversely, this double life may be expressed as a hidden set of \"real\" motivations and desires, one never shown in their visible actions but secretly pursued all the same.",
+      "subtables": {
+        "Ambitions": [
+          "Arrange events so they can throw off their \"false\" face for good",
+          "Accomplish their double life's goals without the truth ever being suspected",
+          "Deal with someone who threatens to expose their contradictions"
+        ],
+        "Powers": [
+          "They have allies from their other life that none would suspect",
+          "They've learned skills that no one realizes they have",
+          "They have a trusted ally in someone else who leads a similar double life"
+        ],
+        "Dreads": [
+          "An enemy from one life is about to crash into them in their other role",
+          "A sudden desperate need in one life is distracting them from this role's duties",
+          "An enemy has learned the truth and is using it to blackmail them"
+        ]
+      }
+    },
+    "Double Loyalties": {
+      "d100": [
+        31,
+        32
+      ],
+      "summary": "They have somehow ended up being sincerely devoted to two different and not-necessarily- compatible causes. They may have religious, ethnic, or marriage ties to groups that are not necessarily friendly to their conventional loyalties, or they may have been attracted by some new cause while being reluctant to give up old faiths. Conversely, they may not actually have any such dual loyalties, but their enemies and rivals are convinced they do and use that conviction to denounce them as disloyal.",
+      "subtables": {
+        "Ambitions": [
+          "Resolve a conflict so that neither loyalty loses",
+          "Persuade one cause that the other is actually in line with their desires",
+          "Somehow come to a decision as to which loyalty to hold highest"
+        ],
+        "Powers": [
+          "They have friends from both loyalties to call on for their plans",
+          "They have a keen understanding of the situation possible only due to their perspective",
+          "They have certain resources from both loyalties they can command"
+        ],
+        "Dreads": [
+          "The situation is evolving so as to put both causes at violent odds",
+          "One cause has suddenly become absolutely intolerable to the other",
+          "Someone in one cause wants them to act against someone in the other"
+        ]
+      }
+    },
+    "Down In the World": {
+      "d100": [
+        33,
+        34
+      ],
+      "summary": "They have recently come down in the world. Their former wealth, fame, good reputation, or other prosperity has been lost, and now they are left to try to pull together a life out of the remnants of their former contentment. The repercussions of their loss may still be going on. Conversely, this downfall may have happened so long ago that they have long since come to terms with their new life, even though elements and pieces of their former high station still turn up occasionally around them.",
+      "subtables": {
+        "Ambitions": [
+          "Regain their lost station through any means necessary",
+          "Avenge themselves on the agent of their ruin",
+          "Preserve or protect their newfound comrades in misery from some impending woe"
+        ],
+        "Powers": [
+          "They still have access to certain resources or associates from their old life",
+          "Their past still commands awe or respect from the rabble around them",
+          "They honed skills in their former life that are still useful now"
+        ],
+        "Dreads": [
+          "The agent of their ruin will not be satisfied until they are dead",
+          "They simply don't know how to survive in their new condition",
+          "Their fall is causing misery to someone they care about but can no longer help"
+        ]
+      }
+    },
+    "Earnest Idiot": {
+      "d100": [
+        35,
+        36
+      ],
+      "summary": "They are a fool, unfortunately, and have one or more character traits that lead them into making terrible decisions. This idiocy is not so constant or profound as to make it impossible for them to attain their goals, but sooner or later they're going to make the worst possible decision at the worst possible time. Conversely, this idiocy may be restricted to a particular topic or motivation. Whenever the topic is involved or their motivation is sparked, they will immediately make a bad decision in service of their prejudices or desires.",
+      "subtables": {
+        "Ambitions": [
+          "Prove that they are not a fool to their sniggering associates",
+          "Earnestly ram a terrible decision through until it becomes a success",
+          "Rescue a cause or person they care about from the consequences of their recent bad decision"
+        ],
+        "Powers": [
+          "Their folly leads them to dare actions that no one else would imagine possible",
+          "They are so good at something that it rescues them from their own bad choices",
+          "They are so charismatic or appealing that nobody blames them for their choices"
+        ],
+        "Dreads": [
+          "They've caused a disaster but don't even realize it yet",
+          "They have the exact wrong idea about a situation",
+          "They're actually trying to be helpful but in a totally unproductive way"
+        ]
+      }
+    },
+    "Family Alienation": {
+      "d100": [
+        37,
+        38
+      ],
+      "summary": "There is a gnawing gulf between them and an important family member, be it spouse, child, or parent. Something they've done or are is impossible to accept, and the loving relationship they want to have is constantly held out of reach. Conversely, the alienation may be forced by the situation rather than mutual feelings. They may be unable to associate or be with their family due to the circumstance, and until it's solved they can't expect things to get better.",
+      "subtables": {
+        "Ambitions": [
+          "Prove the justice of their position to their loved one",
+          "Destroy the cause or person that they blame for the alienation",
+          "Find a way to atone for their act or satisfy the loved one"
+        ],
+        "Powers": [
+          "Their obsessive drive has made them very capable in their purpose",
+          "The act that alienated their loved one left them with considerable resources",
+          "The friends they've made since their alienation are very useful"
+        ],
+        "Dreads": [
+          "Their alienated loved one is on an actively antagonistic course",
+          "The situation threatens to sever yet another precious tie",
+          "Something is threatening the loved one yet they cannot readily act to help them"
+        ]
+      }
+    },
+    "Family Chains": {
+      "d100": [
+        39,
+        40
+      ],
+      "summary": "They are tightly tied to a duty, cause, or service associated with their family, one that they do not enjoy. Their love for their kindred or the practical necessity of keeping them happy forces them to go along with the situation, but not without considerable pain. Conversely, this might not be an abstract cause they must serve but a specific family member they feel responsible for, even though that family member is constantly causing trouble or putting themselves in danger.",
+      "subtables": {
+        "Ambitions": [
+          "Shift the family duty elsewhere so they can be free",
+          "Secretly render the duty pointless or finished so they can end it",
+          "Convince their family to leave the task aside or stop causing problems"
+        ],
+        "Powers": [
+          "Their duty requires skills that they have honed to a fine edge",
+          "They have useful ties with others who pursue the same cause",
+          "They can call on extensive family resources to support their acts"
+        ],
+        "Dreads": [
+          "The family ties are putting them in direct conflict with a personally-cherished cause",
+          "Their best-loved family member is somehow being destroyed by the duty or falling into peril",
+          "A sudden compulsion of duty threatens to ruin the entire family with its exactions"
+        ]
+      }
+    },
+    "Friend Turned Foe": {
+      "d100": [
+        41,
+        42
+      ],
+      "summary": "They once had a very dear friend, but that tie has now become a poisonous enmity. Something they or their friend did was so unforgivable that prior affection has turned to hate, or it may be that the situation has left them on opposite sides despite their reluctance. Conversely, they might be the friend who has turned foe against old allies. Those allies may or may not realize yet their change of heart, particularly if whatever catalyzed it was something subtle.",
+      "subtables": {
+        "Ambitions": [
+          "Prove the justification for their acts to their former friend",
+          "Destroy their former friend before they are destroyed",
+          "Subdue or neutralize their former friend without killing them"
+        ],
+        "Powers": [
+          "Their friend gave them a powerful item or valuable resources",
+          "Their occasion of betrayal rewarded them richly",
+          "Their old friend's enemies are now helping them"
+        ],
+        "Dreads": [
+          "A sudden need requires help that only the old friend can give",
+          "Their betrayal or act is proven to be futile or useless",
+          "A close friend betrays them as they once betrayed another"
+        ]
+      }
+    },
+    "Grand Plan": {
+      "d100": [
+        43,
+        44
+      ],
+      "summary": "They have a magnificent plan, a grand scheme for some goal that would otherwise be far beyond their power. Though it might prove to be eventually beyond their grasp, this plan is actually plausible, and might work successfully if they can bring it all together. Few would suspect them of such a vast ambition. Conversely, they might be part of someone greater's plan, a knowing cog in a larger scheme they may not fully comprehend. For whatever reason, they are utterly committed to this plan and will do whatever they must to help carry it out.",
+      "subtables": {
+        "Ambitions": [
+          "Destroy a rival person or cause with the magnificent success of their plan",
+          "Redeem some past failing by succeeding in this",
+          "Escape some awful situation or threat by succeeding in the plan"
+        ],
+        "Powers": [
+          "They have secret knowledge about the situation that they leverage with their plan",
+          "They have an incredible stroke of luck that makes the plan possible",
+          "They've inherited the knowledge and resources of someone else who set up the plan"
+        ],
+        "Dreads": [
+          "A vital resource or person threatens to be unavailable at a critical moment",
+          "An underling plots to usurp the fruits of success",
+          "Someone is letting the plan progress in order to undermine a rival before quashing it"
+        ]
+      }
+    },
+    "Great Disappointment": {
+      "d100": [
+        45,
+        46
+      ],
+      "summary": "They are an enormous disappointment to their family, cause, or organization. Something about them inspired a great deal of hope and expectation but their personality, actions, or choice of allies has left that prospect in ruins. They may be tolerated by their peers still, but they are constantly reminded of how they've failed to live up to their expectations. Conversely, they may have been the one disappointed by another, that failure having inflicted some great loss or trial on them.",
+      "subtables": {
+        "Ambitions": [
+          "Redeem their good name among their associates by some great deed",
+          "Join a new group that will appreciate them for who they are",
+          "Take advantage of their existing ties as far as possible before abandoning them"
+        ],
+        "Powers": [
+          "They still have the gift that inspired hope even if they haven't used it as expected",
+          "They've made new friends their old allies would not approve of",
+          "They have resources or items that they were given before they became a disappointment"
+        ],
+        "Dreads": [
+          "Their former associates have decided that they are a liability that needs ending",
+          "Their failure has brought forth dire present consequences",
+          "Their gift has turned out to have a brutal personal cost for use"
+        ]
+      }
+    },
+    "Great Expectations": {
+      "d100": [
+        47,
+        48
+      ],
+      "summary": "They are generally expected to be a great credit to their family or cause, and everyone is eager to help them in order to share in their eventual anticipated glory. They have a gift or talent that seems certain to rocket them to great fame and success, though they may not have employed it much yet. Conversely, they might have these great expectations about an underling, child, or client of theirs, and are eager to employ their yet-unrealized special gifts in order to advance their own plans.",
+      "subtables": {
+        "Ambitions": [
+          "Prove that their talents really do justify the esteem in which they are held",
+          "Overcome an obstacle or person who is preventing them from exercising their talents fully",
+          "Outdo a rival who threatens to eclipse their own achievements"
+        ],
+        "Powers": [
+          "Their gift for a particular role really is amazing",
+          "A powerful patron is backing them in order to benefit from their rise",
+          "They secretly have an item or ally who is the source of their apparent power"
+        ],
+        "Dreads": [
+          "Everyone's expectations for them are much too unrealistic",
+          "It's not that they have a truly great talent- it's that the situation is so awful that they're the only hope left",
+          "They honestly don't feel that competent and lack the confidence to use their abilities to the full"
+        ]
+      }
+    },
+    "Hidden Origins": {
+      "d100": [
+        49,
+        50
+      ],
+      "summary": "They have a past that has been intentionally concealed. Something about the circumstances of their birth or upbringing would be disastrous, perhaps winning them new enemies or alienating present allies. They might belong to the wrong ethnic group, have the wrong true parent, or be an impostor of some person of import. They must be constantly vigilant against any shred of their origins coming to light, and may act violently to ensure their past stays buried. Conversely, they might not even realize the truth of their origins, but something about the situation is going to bring it to light at the worst possible time for them and their plans. The proof of it is likely undeniable, but they may refuse to believe it even when all evidence shows it to be the truth.",
+      "subtables": {
+        "Ambitions": [
+          "Either aid or avenge themselves on their true parent",
+          "Permanently silence someone who knows the truth of matters",
+          "Force their original parent or origin group to secretly aid them now"
+        ],
+        "Powers": [
+          "They've inherited resources or gifts from their true origin",
+          "They have a faithful and capable ally equally determined to hide the truth",
+          "Some figure from their origins is secretly working to aid them"
+        ],
+        "Dreads": [
+          "They're forced into a situation where they must choose between their present life or real nature",
+          "Someone they love or find necessary is about to stumble over the truth",
+          "Evidence arises that somehow privately casts doubts on what they understand of their past"
+        ]
+      }
+    },
+    "Impending Treachery": {
+      "d100": [
+        51,
+        52
+      ],
+      "summary": "They are about to be betrayed in an impressively spectacular fashion. Some person or cause that they trust and rely on is about to ruin their plans with well- timed treachery, plundering them of some valuable resource or killing some vital ally. Hints may already be afoot, but they refuse to admit the possibility. Conversely, they might be the ones doing the betraying. They may be a vital lieutenant to a greater power, or a well-loved companion to a trusting superior. They've performed services enough to justify the great trust they hold, even if their true intentions may not be so faithful. Something inherent in their other character tag may well be driving them to do this, whether or not they want to turn traitor.",
+      "subtables": {
+        "Ambitions": [
+          "Exploit a desperate opportunity opened up by the circumstances of the betrayal",
+          "Get revenge on not only the traitor but also their friends and loved ones",
+          "Recover a vital item the traitor took"
+        ],
+        "Powers": [
+          "The traitor is enormously effective while concealing their malice",
+          "The traitor has channeled extensive resources to them to earn their trust",
+          "Enemies of the traitor are now eager to lend aid"
+        ],
+        "Dreads": [
+          "The treachery reveals that a cherished relationship was all a lie",
+          "They still cannot bring themselves to believe that it was really an intended betrayal",
+          "The traitor destroyed something else that was loved as collateral damage to their actions"
+        ]
+      }
+    },
+    "In Over Their Head": {
+      "d100": [
+        53,
+        54
+      ],
+      "summary": "They are profoundly unequal to the situation they find themselves in, whether it is their job, their current scheme, or the problem they face. They have gotten themselves in so deep that they can see no clear way out of their circumstances, and may be ready to resort to desperate measures. Conversely, they may be blithely unaware of the impending disaster, having a profoundly mistaken assessment of the situation or their own capabilities.",
+      "subtables": {
+        "Ambitions": [
+          "Get the assistance of someone who can save them from their situation",
+          "Shift the disaster onto the shoulders of someone else",
+          "Enjoy themselves as much as possible before the inevitable crash"
+        ],
+        "Powers": [
+          "They have one grand talent that has gotten them in far beyond their abilities",
+          "They have a patron who mistakenly thinks them more capable",
+          "They have the desperate audacity to do things that no one else would contemplate doing"
+        ],
+        "Dreads": [
+          "They realize they're about to face an enemy or immediate situation they cannot handle",
+          "A critical underling is developing severe doubts",
+          "Some small additional problem is causing a snowball of delayed catastrophes"
+        ]
+      }
+    },
+    "Inherited Duty": {
+      "d100": [
+        55,
+        56
+      ],
+      "summary": "They have a task or social role that they received from their ancestors, either as a personal grudge or obligation or as part of some broader societal expectation. They have never had any say in this duty, and carrying it out has cost them dearly in the past. Conversely, they may have this duty but have absolutely no intention of carrying it out, or they may be utilizing it purely as an excuse to satisfy their own goals with no concern for dutiful service.",
+      "subtables": {
+        "Ambitions": [
+          "Finally complete the job and be free to do as they wish",
+          "Foist the duty off on someone else",
+          "Get revenge on the people or society that forced the duty on them"
+        ],
+        "Powers": [
+          "They are aided by others in the same social role or who have the same duty",
+          "They were trained to be extremely good at their job",
+          "They've inherited some item or resource to help them do their task"
+        ],
+        "Dreads": [
+          "Carrying out the duty properly means doing something they find wicked or emotionally intolerable",
+          "If they carry out the duty a great dream of theirs will be impossible",
+          "The duty is pointless or actively harmful to everyone but they see no way to avoid it"
+        ]
+      }
+    },
+    "Irrational Hatred": {
+      "d100": [
+        57,
+        58
+      ],
+      "summary": "They have a burning hatred for a particular group, ethnicity, religion, government, or other selection of people they have reason to encounter semi-regularly. It may be that someone from this group wronged them terribly in the past, or something about them offends their most basic sense of right and wrong. In either case, their hate is beyond all reasonable measure. Conversely, they may have suffered bitterly from someone else's irrational hatred of them, and such hardships may have inculcated an equal grudge in turn.",
+      "subtables": {
+        "Ambitions": [
+          "Drive out or destroy the hated group",
+          "Show their fellows the truth of the group's evil",
+          "Destroy a community or precious institution maintained by the hated group"
+        ],
+        "Powers": [
+          "Their hatred has driven them to pursue dark and terrible sources of power",
+          "They have many allies who also despise the same group",
+          "They have ties with another power that has a completely different reason to be antagonistic to the group"
+        ],
+        "Dreads": [
+          "The just vengeance they are unleashing will catch someone they love in the eruption",
+          "They have their own well-hidden ties to the group",
+          "They're being used as a catspaw by an \"ally\" with very different end goals"
+        ]
+      }
+    },
+    "Last Survivor": {
+      "d100": [
+        59,
+        60
+      ],
+      "summary": "They are the last of their kind, be it the final scion of a reputed family, the last of a particular breed of demihuman, the final heir to a decayed noble title, or the last apprentice to some great master. The weight of their inherited past hangs heavy on them. Conversely, they may be completely unaware of their great ancestors while others seek to suborn them in order to use their ties for another's advantage.",
+      "subtables": {
+        "Ambitions": [
+          "Restore or revitalize their fading antecedents",
+          "Get revenge on whatever destroyed the others",
+          "Escape the weight of the past and the expectations it brings"
+        ],
+        "Powers": [
+          "They've inherited some great wealth or magic",
+          "They have ancestral allies they can still call on",
+          "They know powerful secrets entrusted only to their kind"
+        ],
+        "Dreads": [
+          "The thing that finished the rest of their kind is coming to finish them",
+          "The failure of their line will create some social or magical chaos",
+          "Others are expecting great things from them that they feel unable to grant"
+        ]
+      }
+    },
+    "Lives For Today": {
+      "d100": [
+        61,
+        62
+      ],
+      "summary": "They care little for the future or the consequences of their choices and are determined to seek their own immediate ends with a reckless zeal. This tactic has worked for them at least once in the past, bringing them some great success or satisfaction. Conversely, they may live for the moment because they are convinced their time is short. Some sickness, doom, or threat draws so near that they must dare all if they are to have any chance to gain their desire.",
+      "subtables": {
+        "Ambitions": [
+          "Obtain an experience or status hardly known to others",
+          "Make up for a prior life of stern discipline or cruel privation",
+          "Achieve a goal with absolutely no concern for cost or consequences"
+        ],
+        "Powers": [
+          "They have a great talent for making the most of any situation",
+          "Their reckless munificence has won many helpers",
+          "They've a great talent or wealth that they are convinced will see them through"
+        ],
+        "Dreads": [
+          "A prior advantageous act now has its dire consequences coming due",
+          "They've made promises and assurances they are now called upon to keep",
+          "They're growing desperately bored or ennui-ridden with their indulgences"
+        ]
+      }
+    },
+    "Load-Bearing Relationship": {
+      "d100": [
+        63,
+        64
+      ],
+      "summary": "They have a spouse, child, friend, lord, trusted retainer, or other person in their life who is absolutely necessary to them. They rely utterly on this person for some sort of emotional support or practical assistance, and would be crippled or lost without them. Conversely, they may have lost or impaired this relationship, and are now trying to restore it even as they crumble into confusion, distraction, and reckless desperation.",
+      "subtables": {
+        "Ambitions": [
+          "Achieve a great dream of their supporter",
+          "Prove their own worthiness to their supporter through some grand success",
+          "Avenge a slight inflicted on the supporter by someone else"
+        ],
+        "Powers": [
+          "The support they receive makes them far more confident and capable",
+          "Their supporter has resources or allies of their own to give",
+          "Their supporter is even more competent than they are"
+        ],
+        "Dreads": [
+          "Their supporter is loyal only to their own ends",
+          "Their supporter is encouraging them to some grave mistake or misstep",
+          "Their supporter is in some great trouble that they can't solve on their own"
+        ]
+      }
+    },
+    "Lost Cause": {
+      "d100": [
+        65,
+        66
+      ],
+      "summary": "They are dedicated to a cause that has long since been defunct. A rebel uprising, a quashed faith, a broken noble family, a failed political faction, a brief regional independence, or some other cause has their loyalty, even though most people think it vain and useless in the present day. Conversely, they may be affiliated with other partisans of this lost cause even though they have no personal confidence in it at all. The remnants are merely useful tools to obtain their own end.",
+      "subtables": {
+        "Ambitions": [
+          "Get revenge on the power that crushed their cause",
+          "Ignite the cause once more",
+          "Subvert an existing power structure to serve the cause anew"
+        ],
+        "Powers": [
+          "Treasures once held by the cause have come into their hands",
+          "A hard core of zealots still exists and is cooperating with them",
+          "They still bear tokens of authority from the cause that some in the present still respect and obey"
+        ],
+        "Dreads": [
+          "The same thing that ruined the cause the last time appears likely to ruin it again",
+          "Their cause is merely being exploited by some outside power",
+          "An even more zealous underling threatens to subvert control of the entire enterprise"
+        ]
+      }
+    },
+    "Lovesick Fool": {
+      "d100": [
+        67,
+        68
+      ],
+      "summary": "They are absolutely and utterly smitten with someone, and their lovesickness is leading them to make terrible decisions in order to pursue their suit. The object of their affections may or may not be a socially-acceptable target, but for whatever reason this beloved is in no position to calm their pursuer. Conversely, they may already be in a relationship with their beloved, yet are so besotted by them that they are neglecting or ignoring critical situations that threaten to explode into outright disaster.",
+      "subtables": {
+        "Ambitions": [
+          "Perform a grand deed to further the interests of their beloved",
+          "Destroy a rival suitor",
+          "Acquire their beloved with no particular concern for their object's wishes in the matter"
+        ],
+        "Powers": [
+          "Their utter commitment leaves them willing to spend every possible resource or labor",
+          "Some third party has an interest in supporting them in their suit",
+          "They are extremely good at something their beloved finds attractive or useful"
+        ],
+        "Dreads": [
+          "Their beloved is playing them for a fool",
+          "An underling is preparing to make a change in leadership",
+          "A rival suitor is crashing into the situation"
+        ]
+      }
+    },
+    "Magical Gift": {
+      "d100": [
+        69,
+        70
+      ],
+      "summary": "They have an intrinsic magical gift that is useful in pursuing their present plan. This gift may be the legacy of their bloodline, the product of esoteric training, or a whim of blind chance, but it lets them bypass some problem that would otherwise stymie their plans. Conversely, they might be the custodian or master of someone else who has a useful gift. They rely on this connection to pursue their own ends, perhaps to the disadvantage of their servant.",
+      "subtables": {
+        "Ambitions": [
+          "Perform some great and splendid deed that would be impossible for someone without such a convenient gift",
+          "Enhance the gift through some difficult ritual or opportunity",
+          "Escape the obligation that the gift's possession has laid on them due to the expectations of others"
+        ],
+        "Powers": [
+          "Their gift solves some class of challenges or difficulties very easily",
+          "Their gift is considered a sure sign of nobility and legitimate rule",
+          "No one knows about their gift"
+        ],
+        "Dreads": [
+          "Their gift requires a terrible price be paid",
+          "They're faced with a threat or problem their gift can't solve",
+          "Someone else is expecting them to use their gift to serve another's ends"
+        ]
+      }
+    },
+    "Marked for Success": {
+      "d100": [
+        71,
+        72
+      ],
+      "summary": "They have been designated for glory by a powerful patron, a tremendous natural gift, or an extremely influential bloodline. Whatever their personal capacities, everyone knows that they can be expected to go far in their chosen career. Conversely, they may still be struggling for the special blessing of powerful patronage or influential associations. Their ambitions may be impossible to achieve without this support, and their present plans revolve around winning the alliances they need.",
+      "subtables": {
+        "Ambitions": [
+          "Prove that they genuinely deserve the success that they will inevitably obtain",
+          "Carry out a critical task for their patron",
+          "Quash a rival who threatens to outdo them through their own special advantages"
+        ],
+        "Powers": [
+          "They are remarkably good at some skill relevant to their role",
+          "Their patron is very generous in aiding their purposes",
+          "Numerous others are quick to aid them in order to have the advantage of their friendship in the future"
+        ],
+        "Dreads": [
+          "Their patron is reconsidering their support",
+          "They have no personal skill or aptitude to justify their rise",
+          "A rival is vying for their patron's support and may just get it in their place"
+        ]
+      }
+    },
+    "Misplaced Trust": {
+      "d100": [
+        73,
+        74
+      ],
+      "summary": "They trust some person or institution implicitly, relying on them as part of their plans or duties. This trust is misplaced, however, and the other party will fail them at the worst possible moment, either through incompetence, self-interest, or secret malice. Conversely, they themselves might be the trusted person, relied on by a superior or ally for some important aid. That aid will not be forthcoming, however, as their interests are very different than what their ally supposes.",
+      "subtables": {
+        "Ambitions": [
+          "Share some glory or reward with their trusted ally through their current plans",
+          "Promote the interests of their trusted ally",
+          "Put the trusted ally in a position to give them a great reward or help"
+        ],
+        "Powers": [
+          "The ally is very useful to them up until their inevitable betrayal",
+          "Their association with their ally impresses others and leads them to be cooperative",
+          "Their ally has given them valuable resources as a token of their good faith"
+        ],
+        "Dreads": [
+          "A crucial part of their plan relies on the ally but will inevitably go awry",
+          "The ally is privately in league with their enemies or rivals",
+          "The ally expects them to nobly sacrifice their interests for the ally's benefit"
+        ]
+      }
+    },
+    "Natural Leader": {
+      "d100": [
+        75,
+        76
+      ],
+      "summary": "They are a natural-born leader, possessed of a charisma and insight that helps them perfectly judge the abilities and loyalty of those around them. They naturally draw powerful allies and can manage their interests without disruptive conflict. Conversely, they might be born into or placed into a position where everyone looks to them for leadership, whether or not they have the talent for it. They may be unable to escape these duties, despite an unwillingness or inability to carry them out.",
+      "subtables": {
+        "Ambitions": [
+          "Bring together two hostile parties to achieve their own purposes",
+          "Overcome a materially stronger opponent through coordinated alliances",
+          "Accomplish a great leadership coup despite their own doubts about their abilities"
+        ],
+        "Powers": [
+          "They have one particularly powerful follower",
+          "They're in a good relationship with a potent faction",
+          "They're stealing followers of the force or individual they're contesting"
+        ],
+        "Dreads": [
+          "A physical calamity happens that cannot be mitigated by diplomacy or leadership",
+          "One of their followers only feigns loyalty",
+          "Their followers have unrealistic expectations for them"
+        ]
+      }
+    },
+    "Persecuting Foe": {
+      "d100": [
+        77,
+        78
+      ],
+      "summary": "They have a powerful nemesis that has an intense desire to ruin, kill, or disgrace them. This enmity may be the fruit of past actions or be a result of ethnic, religious, or national animosity. This nemesis will not listen to ordinary reason. Conversely, they may be forced to work with this nemesis for some reason, one who is an unreasonable and tormenting superior or associate. For whatever reason, they're unable to cut off this association and need their nemesis' nominal cooperation.",
+      "subtables": {
+        "Ambitions": [
+          "Destroy their nemesis before their nemesis destroys them",
+          "Pull their enemy's fangs by destroying their power base",
+          "Redirect the enemy's wrath towards a profitable target"
+        ],
+        "Powers": [
+          "They have some important resource stolen from the nemesis",
+          "They've developed skills or allies to blunt the foe's usual means of attack",
+          "They are allied to powerful enemies of the nemesis"
+        ],
+        "Dreads": [
+          "The nemesis is striking at the base of their power or influence",
+          "The persecutor has made an opening for their other enemies to exploit",
+          "The foe is someone they simply can't destroy or move directly against"
+        ]
+      }
+    },
+    "Ruined Plan": {
+      "d100": [
+        79,
+        80
+      ],
+      "summary": "Their life has been marred by the consequences of a ruined plan, some grand ambition or scheme that collapsed disastrously. The aftermath still burdens them, and the possibilities that were foreclosed yet haunt them. Conversely, the plan may merely be about to be ruined, with its impending implosion obvious to them if they don't solve an immediate problem or overcome the meddling foe who is causing them such trouble.",
+      "subtables": {
+        "Ambitions": [
+          "Prove that the ruined plan would have worked or wasn't their fault",
+          "Avenge themselves on the one who ruined their scheme",
+          "Reclaim something precious they lost during the collapse"
+        ],
+        "Powers": [
+          "They still have the item or resource that made the ruined scheme possible",
+          "They have allies they made during the scheme",
+          "They've come up with some new resource as a direct consequence of their failure"
+        ],
+        "Dreads": [
+          "A consequence of the disaster has yet to play out fully for them",
+          "Someone they disappointed or harmed with the plan hunts them",
+          "They try to re-attempt the plan with even less chance of success now"
+        ]
+      }
+    },
+    "Ruinous Vice": {
+      "d100": [
+        81,
+        82
+      ],
+      "summary": "They have some particular vice that drives them to terrible choices: drugs, drink, debauchery, lies, or some similar sin. While it has not yet eaten them whole, many of their decisions are predicated around getting more or their vice or experiencing it in new ways. Conversely, they may be reliant on providing the vice to someone else in order to maintain their current status or schemes. Failure to come up with a consistent supply of it could result in disaster for them.",
+      "subtables": {
+        "Ambitions": [
+          "Obtain an endless supply of their vice through some scheme",
+          "Destroy someone who threatens to impede their enjoyment of the vice",
+          "Establish an organization or business revolving around the provision of the vice"
+        ],
+        "Powers": [
+          "They are owed many favors or have much blackmail material from their vice",
+          "They have exceptional funds of wealth or power to help supply their sin",
+          "They have the patronage of a fellow enjoyer of their vice"
+        ],
+        "Dreads": [
+          "Their vice is killing them at a perceptible rate of speed",
+          "A reckless indulgence is now coming back to haunt them with its consequences",
+          "Their vice is causing a calamity for someone they love or need"
+        ]
+      }
+    },
+    "Secret Cravings": {
+      "d100": [
+        83,
+        84
+      ],
+      "summary": "They possess a yearning for some substance or activity that is utterly reprehensible to their fellows. They've indulged secretly in it before, but constantly seek new opportunities to enjoy it without having their urges exposed to their brethren. This craving may be morally innocent or utterly vile, but it's something they could not bear to have commonly known. Conversely, they may have substantial power or influence through providing this craving to others in their society, with a wealth of blackmail material such provision provides.",
+      "subtables": {
+        "Ambitions": [
+          "Kill someone who threatens to uncover their appetites",
+          "Use the blackmail they've gained through their associations to control someone",
+          "Find a way to rid themselves of this hunger"
+        ],
+        "Powers": [
+          "The craving has given them the opportunity to obtain much wealth",
+          "The craving is for a substance that grants them magical power",
+          "Fellow enjoyers are allied with them to ensure their safety"
+        ],
+        "Dreads": [
+          "A victim or supplier of the craving has gotten loose from their influence and threatens to reveal all",
+          "The old indulgences aren't strong enough and bigger doses are required",
+          "Their new post or role is cutting them off from obtaining their cravings"
+        ]
+      }
+    },
+    "Secret Sectarian": {
+      "d100": [
+        85,
+        86
+      ],
+      "summary": "They are a devotee of some faith, cause, or faction that must remain hidden from the world, either because their exposure would make them less useful to it, or because the group itself is unacceptable to society. Their ostensible schemes and duties actually are meant to support their secret allies. Conversely, they may be supported by this secret faction without ever realizing that it is the case. Powerful allies or useful underlings may act to aid them, as their purpose is somehow advantageous to the sect.",
+      "subtables": {
+        "Ambitions": [
+          "Make the sect an open power in the region",
+          "Discharge some great debt or obligation they have to the sect",
+          "Destroy an enemy of the sect without making their affiliation obvious"
+        ],
+        "Powers": [
+          "The sect gives them valuable resources or items",
+          "Their devotion has allowed them to obtain magical gifts",
+          "Hidden devotees of the sect act to aid their open purposes"
+        ],
+        "Dreads": [
+          "The sect considers them a disposable weapon for the cause",
+          "A rival threatens to reveal their affiliation to the public",
+          "Their current duty would be disastrous for the sect if they carried it out correctly"
+        ]
+      }
+    },
+    "Stolen Reputation": {
+      "d100": [
+        87,
+        88
+      ],
+      "summary": "They have a splendid reputation that they in no way rightfully deserve. The great deeds or grand skills they are reputed to have actually belong to another, and they stole the rightful glory due to this person. Their own capabilities may be considerable, but they are not what they are claimed to be. Conversely, they may be the one whose glory was stolen, forced to remain silent by circumstances or threats. They may not even be allowed to demonstrate their true competence lest it tarnish the luster of the thief.",
+      "subtables": {
+        "Ambitions": [
+          "Destroy the real hero before their secret comes out",
+          "Assuage their self-doubt by proving they deserve the glory",
+          "Take full advantage of the opportunities their new renown offers them"
+        ],
+        "Powers": [
+          "They really are superb at their role even if they aren't the best",
+          "Co-conspirators in the theft still support them",
+          "An important patron finds them a more useful hero than the one they eclipsed"
+        ],
+        "Dreads": [
+          "Their glory has gotten them into a situation far beyond their capabilities",
+          "They have actually convinced themselves they're as good as people say they are",
+          "Their renown has put them into a role or function they now find hateful"
+        ]
+      }
+    },
+    "Ticking Bomb": {
+      "d100": [
+        89,
+        90
+      ],
+      "summary": "They have some person, institution, or situation in their life that is going to explode. Self-destructive choices, internal strife, impending doom, or some other trigger is going to send shrapnel through all their plans, and it's only a matter of time before it detonates. Conversely, they may be the bomb. They may be under unendurable pressure, prey to some madness, afflicted with a curse, or otherwise facing a situation that can only end with catastrophically bad results at some unknown but rapidly-approaching time.",
+      "subtables": {
+        "Ambitions": [
+          "Defuse the bomb by resolving the situation that is causing it",
+          "Eliminate or distance the person or institution before it can blow up on them",
+          "Arrange the situation so an enemy or rival suffers the consequences of the blast"
+        ],
+        "Powers": [
+          "The rising chaos is very profitable to them in wealth or granted influence",
+          "They have great influence over the bomb until it explodes",
+          "The bomb's explosion would cause enormous damage to a rival or enemy"
+        ],
+        "Dreads": [
+          "The crisis suddenly comes to a peak much too soon",
+          "A twist leaves them even more vulnerable to the consequences of an explosion",
+          "One of their enemies or rivals is actively provoking the situation"
+        ]
+      }
+    },
+    "Troublesome Friend": {
+      "d100": [
+        91,
+        92
+      ],
+      "summary": "They have a dear friend or vital ally who is a constant source of problems for them. Poor decisions, reckless indulgences, persistent threats by an enemy, or other distractions force them to clean up their friend's messes or protect them when they should be tending to their own plans. Conversely, they may be that friend to their patron or allies. Their associates refuse to cut them off out of affection or mutual necessity, but they're constantly the locus of problems that have to be solved.",
+      "subtables": {
+        "Ambitions": [
+          "Somehow get out of the relationship with their self-image or prosperity intact",
+          "Solve the friend's troubles once and for all",
+          "Finally leverage the friend into a profitable situation despite their troublemaking"
+        ],
+        "Powers": [
+          "Their friend is actually extremely useful at something",
+          "Their friend brings valuable resources with them",
+          "Their friend has associates or allies that are very handy"
+        ],
+        "Dreads": [
+          "Their friend causes a catastrophic problem to arise",
+          "Their friend resents them and is refusing to cooperate in the necessary cleanup",
+          "Their friend's troublemaking is actually intentional and meant to sabotage them out of spite or envy"
+        ]
+      }
+    },
+    "Unexpected Talent": {
+      "d100": [
+        93,
+        94
+      ],
+      "summary": "They have an unusual skill or capability, one uncommon to someone in their position. It may be a magical gift, unexpected combat prowess, abnormal social skills, or some other knack. This talent is useful in pursuing their plans and unlikely to be anticipated by their enemies. Conversely, this talent might actually belong to a loyal minion in their service, and they can deploy them to further their own purposes.",
+      "subtables": {
+        "Ambitions": [
+          "Engineer the situation so their success relies upon their unexpected superiority at this skill",
+          "Ruin their enemies through the use of the skill",
+          "Prove the value of the skill to someone who scorned it"
+        ],
+        "Powers": [
+          "The skill has given them access to an unexpected source of wealth or influence",
+          "They have allies who are interested in the skill and its uses",
+          "They have loyal students seeking to learn the skill from them"
+        ],
+        "Dreads": [
+          "They've relied too heavily on the skill and it's gotten them into a situation the skill can't solve",
+          "The skill has failed them at a critical moment",
+          "They've drawn the enmity of a rival adept in the skill"
+        ]
+      }
+    },
+    "Unreasonably Lucky": {
+      "d100": [
+        95,
+        96
+      ],
+      "summary": "They are lucky beyond all ordinary limits, to the point that they can predictably rely on good fortune to carry them through difficulties. This luck may not sweep aside all obstacles, but their enemies and rivals never seem to get the benefits of blind chance. Conversely, they may be unreasonably unlucky, yet their sheer determination and dogged persistence has made them far more competent and capable than would normally be expected.",
+      "subtables": {
+        "Ambitions": [
+          "Seize an opportunity that their great luck has allowed them to obtain",
+          "Prove that they're actually skilled rather than merely lucky",
+          "Expand the influence of the god or patron they credit for their luck"
+        ],
+        "Powers": [
+          "Their luck has brought them a great store of resources",
+          "Others seek to be close to them to share in their good fortune",
+          "A perfect line of coincidences has granted them an ideal opening for their current plan"
+        ],
+        "Dreads": [
+          "Their luck runs out at the worst possible time",
+          "They've grown indolent and careless due to trusting in their luck",
+          "Someone burns with envy and resentment at their unearned success"
+        ]
+      }
+    },
+    "Up From the Gutter": {
+      "d100": [
+        97,
+        98
+      ],
+      "summary": "They came from a wretched background to their current success. Whether from grinding poverty, a shunned ethnic or professional group, a despised religion, or a miserable birth, they have ascended to their present circumstances. Their past may yet be a secret they conceal carefully. Conversely, they may still be in the gutter, yet ferociously determined to climb out of it into the heights of success they feel are rightfully theirs.",
+      "subtables": {
+        "Ambitions": [
+          "Get revenge on those who once scorned and despised them",
+          "Erase all those who know the truth of their past",
+          "Raise the local status or circumstances of their despised origins"
+        ],
+        "Powers": [
+          "Their past forced them to gain useful skills uncommon to their current position",
+          "They made allies in the past that still serve well",
+          "Their past associations helped them get a large amount of blackmail material on local figures of import"
+        ],
+        "Dreads": [
+          "Old ties and demands now seem likely to drag them back down",
+          "A rival works tireless to discredit them for their ignoble origins",
+          "The next level of success is hopelessly barred to them by their past circumstances"
+        ]
+      }
+    },
+    "Veiled Backers": {
+      "d100": [
+        99,
+        100
+      ],
+      "summary": "They have one or more powerful patrons supporting them, but this aid must be kept secret at all costs. Their backers may be enemies of their current society, socially-unacceptable figures, or foes of their current employer. These patrons have their own goals that they expect to be pursued. Conversely, they may be the veiled backer of some otherwise-unacceptable group or embedded mole, feeding their minions support and resources in exchange for their hidden services.",
+      "subtables": {
+        "Ambitions": [
+          "Carry out a secret command that would conflict with their apparent duties",
+          "Take out an enemy of their backers in a deniable way",
+          "Deal with another client of their patrons who has gone rogue in some fashion"
+        ],
+        "Powers": [
+          "Their backers grant considerable resources to their minions",
+          "They have secret allies embedded in many local institutions",
+          "Their backers give them access to secrets and hidden intel useful to their plans"
+        ],
+        "Dreads": [
+          "Their backers have decided that it is time to burn them",
+          "Enemies of their backers are sniffing too close to their association",
+          "Their backers are demanding a service that is mortally perilous or emotionally intolerable"
+        ]
+      }
+    }
+  }
+}

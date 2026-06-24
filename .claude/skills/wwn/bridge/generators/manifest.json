@@ -1,0 +1,153 @@
+{
+  "built": "2026-06-23T23:24:41+00:00",
+  "source_wwn_worldbuilder": "/sessions/quirky-keen-clarke/mnt/.claude/skills/wwn-worldbuilder/references",
+  "source_book": "/sessions/quirky-keen-clarke/mnt/World Without Numbers/wwn",
+  "generators": [
+    {
+      "id": "wwn.character_tags_detail",
+      "file": "generators/character_tags_detail.json",
+      "type": "tag_detail",
+      "entries": 50
+    },
+    {
+      "id": "wwn.character_tags",
+      "file": "generators/character_tags.json",
+      "type": "list_d100",
+      "entries": 50
+    },
+    {
+      "id": "wwn.community_tags_detail",
+      "file": "generators/community_tags_detail.json",
+      "type": "tag_detail",
+      "entries": 50
+    },
+    {
+      "id": "wwn.community_tags",
+      "file": "generators/community_tags.json",
+      "type": "list_d100",
+      "entries": 50
+    },
+    {
+      "id": "wwn.court_tags_detail",
+      "file": "generators/court_tags_detail.json",
+      "type": "tag_detail",
+      "entries": 50
+    },
+    {
+      "id": "wwn.court_tags",
+      "file": "generators/court_tags.json",
+      "type": "list_d100",
+      "entries": 50
+    },
+    {
+      "id": "wwn.ruin_tags_detail",
+      "file": "generators/ruin_tags_detail.json",
+      "type": "tag_detail",
+      "entries": 50
+    },
+    {
+      "id": "wwn.ruin_tags",
+      "file": "generators/ruin_tags.json",
+      "type": "list_d100",
+      "entries": 50
+    },
+    {
+      "id": "wwn.wilderness_tags_detail",
+      "file": "generators/wilderness_tags_detail.json",
+      "type": "tag_detail",
+      "entries": 50
+    },
+    {
+      "id": "wwn.wilderness_tags",
+      "file": "generators/wilderness_tags.json",
+      "type": "list_d100",
+      "entries": 50
+    },
+    {
+      "id": "wwn.npc_quickgen",
+      "file": "generators/npc_quickgen.json",
+      "type": "bundle",
+      "entries": 209
+    },
+    {
+      "id": "wwn.adventure_seeds",
+      "file": "generators/adventure_seeds.json",
+      "type": "bundle",
+      "entries": 30
+    },
+    {
+      "id": "wwn.fractal_seeds",
+      "file": "generators/fractal_seeds.json",
+      "type": "list_d100",
+      "entries": 100
+    },
+    {
+      "id": "wwn.religion_construction",
+      "file": "generators/religion_construction.json",
+      "type": "bundle",
+      "entries": 114
+    },
+    {
+      "id": "wwn.nation_construction",
+      "file": "generators/nation_construction.json",
+      "type": "bundle",
+      "entries": 100
+    },
+    {
+      "id": "wwn.history_construction",
+      "file": "generators/history_construction.json",
+      "type": "bundle",
+      "entries": 64
+    },
+    {
+      "id": "wwn.historical_crises",
+      "file": "generators/historical_crises.json",
+      "type": "list_d100",
+      "entries": 25
+    },
+    {
+      "id": "wwn.historical_events",
+      "file": "generators/historical_events.json",
+      "type": "list_d100",
+      "entries": 50
+    },
+    {
+      "id": "wwn.treasure",
+      "file": "generators/treasure.json",
+      "type": "bundle",
+      "entries": 56
+    },
+    {
+      "id": "wwn.monster_gen",
+      "file": "generators/monster_gen.json",
+      "type": "bundle",
+      "entries": 104
+    },
+    {
+      "id": "wwn.naval",
+      "file": "generators/naval.json",
+      "type": "bundle",
+      "entries": 27
+    },
+    {
+      "id": "wwn.wounds",
+      "file": "generators/wounds.json",
+      "type": "bundle",
+      "entries": 18
+    },
+    {
+      "id": "wwn.npc_depth",
+      "file": "generators/npc_depth.json",
+      "type": "bundle",
+      "entries": 216
+    },
+    {
+      "id": "wwn.architecture",
+      "file": "generators/architecture.json",
+      "type": "bundle",
+      "entries": 56
+    }
+  ],
+  "verification": "PASSED",
+  "issues": []
+}

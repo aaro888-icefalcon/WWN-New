@@ -1,0 +1,110 @@
+{
+  "id": "wwn.wounds",
+  "title": "Wounds and Mishaps",
+  "source": "Atlas of the Latter Earth, Optional Rules",
+  "kind": "bundle",
+  "tables": {
+    "Maiming Wound": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Deathblow: No one could survive that"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Eye damage: -4 to ranged hit rolls"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Lose a hand: can still strap a shield to the arm"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Lamed: Move is reduced to 2/3rds speed"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Ugly scar: -1 penalty on all friendly social skill checks"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Arm loss: the whole arm is gone"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Leg loss: Move reduced to 1/3rd with prosthesis"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Mostly deaf: Can manage conversations, but no listening checks"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Infected wound: Lose two points of Constitution"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Mental trauma: Lose two points of Wisdom"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Lung injury: Gain two permanent points of System Strain"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Flesh wound: No lasting penalties"
+        }
+      ]
+    },
+    "Alchemical Accident": {
+      "type": "list_d6",
+      "dice": "1d6",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Explosion: suffer 1d6+difficulty damage, double for a greater work. Lab destroyed."
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Fire: Suffer 1d6 damage, double for a greater work. Lab useless for a week."
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Poison: Physical save or be bedridden for a week. Even on a save or immunity, gain 3 System Strain. Die if your System Strain exceeds the maximum."
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Stench: Horrific odors render the lab unusable for a week."
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Broken Tool: That specific work can't be attempted again for a week."
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Ordinary failure: only materials and time are lost."
+        }
+      ]
+    }
+  }
+}
