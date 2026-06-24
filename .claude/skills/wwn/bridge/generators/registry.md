@@ -2,10 +2,10 @@
 
 ## Operative
 When a generation need below is triggered, ROLL its registered WWN table
-(`python3 mythic-gm/scripts/dice.py table <abs path>/bridge/generators/<x>.json`, or the `scripts/gen.py`
+(`python3 <mythic-gm>/scripts/dice.py table <abs path>/bridge/generators/<x>.json`, or the `scripts/gen.py`
 / `scripts/lookup.py` wrappers) — don't free-form what a table exists for. NEW CHARACTERS auto-fire the
 character generator (the AC Character Crafter **in conjunction** with `npc_role.json` / `npc_quickgen`);
-keep `--bridge wwn/bridge` on the roller calls so this index's overrides apply. Flesh every NPC as a
+keep `--bridge <this-skill>/bridge` on the roller calls so this index's overrides apply. Flesh every NPC as a
 Latter Earth native, tied to a setting-canon faction and the current region. Anything not listed below
 falls through to the Mythic/AC engine default.
 
@@ -51,7 +51,7 @@ and `lookup.py tag <name>` for any tag family.
 
 **Flat tables** are `list_d100` JSON in this folder, rolled directly by the engine:
 
-    python3 mythic-gm/scripts/dice.py table <abs path>/bridge/generators/community_tags.json
+    python3 <mythic-gm>/scripts/dice.py table <abs path>/bridge/generators/community_tags.json
 
 Flat companions exist for every tag family (`character_tags`, `community_tags`,
 `court_tags`, `ruin_tags`, `wilderness_tags` → d100 tag name), plus

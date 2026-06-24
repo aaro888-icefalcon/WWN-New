@@ -12,7 +12,7 @@ mythic-gm owns the scene loop, the Mythic oracle, honest scripted dice, and the 
 - `bridge/` — the engine hooks: `system-profile` (resolution), `interpretation`, `chaos-tendency`, `theme-weights`, `subsystems` (world-tick), `seeds`, `setting-canon`, `generators/*.json` + `registry.md`, `adventures/`.
 - `references/rules/` & `references/gm/` — lean, page-cited play-cards (read on demand).
 - `book/` — the complete WWN rulebook + Atlas of the Latter Earth, verbatim (preservation + deep lookup).
-- `scripts/` — thin honest helpers (chargen, worldgen, faction turn, monster, lookup, gen); every die wraps `mythic-gm/scripts/dice.py`.
+- `scripts/` — thin honest helpers (chargen, worldgen, faction turn, monster, lookup, gen); every die wraps `<mythic-gm>/scripts/dice.py`.
 - `assets/templates/` — live-state files that extend the engine's `campaign-state.md`.
 
 ## Quick start

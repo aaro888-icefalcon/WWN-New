@@ -37,6 +37,6 @@ This companion supplies the **Worlds Without Number** ruleset (2d6 skills, d20 t
 
 **Notes for the engine/agent**
 - Resolution precedence (the oracle ladder): WWN rule → WWN generator → engine Fate Question. See `system-profile.md`.
-- All WWN randomness routes through `mythic-gm/scripts/dice.py` (directly, or via the WWN `scripts/*` that wrap it).
-- `world-tick` fires WWN subsystems (Faction Turn, project / Effort / strain / supply clocks) via `mythic-gm/scripts/tick.py <bridge> <scene#>`; see `subsystems.md`.
+- All WWN randomness routes through `<mythic-gm>/scripts/dice.py` (directly, or via the WWN `scripts/*` that wrap it).
+- `world-tick` fires WWN subsystems (Faction Turn, project / Effort / strain / supply clocks) via `<mythic-gm>/scripts/tick.py <bridge> <scene#>`; see `subsystems.md`.
 - `setting-canon.md` is the **live** committed world; it starts from Latter Earth and is grown at the frontier by `scripts/worldgen.py`.

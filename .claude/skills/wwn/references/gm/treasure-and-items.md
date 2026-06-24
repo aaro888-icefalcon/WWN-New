@@ -2,7 +2,7 @@
 
 > Use this when: stocking a site, a foe, or a cache with loot, and deciding whether (and which) magic items it holds. Decide the *total* first, then split and flavor it. WWN rewards are leaner than most old-school games — that's by design; their rarity is the point.
 
-**Dice via `mythic-gm/scripts/dice.py roll <NdM>`; or run the generator: `python3 scripts/gen.py treasure/"<Table>"`** (bundle `bridge/generators/treasure.json`).
+**Dice via `<mythic-gm>/scripts/dice.py roll <NdM>`; or run the generator: `python3 scripts/gen.py treasure/"<Table>"`** (bundle `bridge/generators/treasure.json`).
 
 ## 1 — Total silver value of the site
 Pick the site line, roll **`dice.py roll 2d6`**, read the column it falls in (2–3 · 4–5 · 6–8 · 9–10 · 11–12); each cell is a silver formula. (Full matrix in `treasure.json` → "Silver Piece Value"; e.g. *minor Deep* at column 6–8 = `3d6 × 1,000`, *bandit cache* at 2–3 = `1d6`.) Adjust for how picked-over the place is — PCs rarely find all of it, and missing one major trove can cost them half. **Then divide:** put **half** the total in one or two major troves (strongest foe / behind an enigma); scatter the rest across smaller finds.

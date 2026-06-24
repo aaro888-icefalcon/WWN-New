@@ -2,7 +2,7 @@
 
 > Use this when: every session, to know what WWN resolves vs. what defers to the engine's Fate Question, and how to express any WWN roll. This is the seam.
 
-**Precedence:** this profile + the WWN cards + `book/` **>** model memory. **All dice route through `mythic-gm/scripts/dice.py`** (shown, never invented).
+**Precedence:** this profile + the WWN cards + `book/` **>** model memory. **All dice route through `<mythic-gm>/scripts/dice.py`** (shown, never invented).
 
 ## Operative
 WWN RESOLVES PC ACTIONS — a Fate Question NEVER does. Rung 1 of the oracle ladder: if a PC *does*

@@ -2,7 +2,7 @@
 
 > Use this when: any fight, or to adjudicate a combat action, Shock, a mob, or a downed character. WWN combat is lethal and positional — heroes have **no plot armor**. Run it straight.
 
-**All rolls via `mythic-gm/scripts/dice.py roll …` and shown.** Pre-commit the stakes, roll, then narrate.
+**All rolls via `<mythic-gm>/scripts/dice.py roll …` and shown.** Pre-commit the stakes, roll, then narrate.
 
 ## The round
 - **Initiative:** each side `1d8 + best Dex mod`; highest side acts first (own order), PCs win ties. Re-cycle each round. (Optional: individual init.)

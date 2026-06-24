@@ -41,4 +41,4 @@ Everyone is **self-interested and competent within their means**. Latter Earth h
 - **Sorcery / the Deep →** corruption, a Working gone wrong, an Outsider pact's true cost, an Iterum you cannot leave.
 All permanent and earned (engine Creed: no softening).
 
-Source: `book/Worlds-Without-Number-Deluxe/06-The-World-of-the-Latter-Earth.md`; `book/The-Atlas-of-the-Latter-Earth/01-A-Past-Without-Beginning.md`; genre pack `mythic-gm/references/genres/grimdark-survival.md`.
+Source: `book/Worlds-Without-Number-Deluxe/06-The-World-of-the-Latter-Earth.md`; `book/The-Atlas-of-the-Latter-Earth/01-A-Past-Without-Beginning.md`; genre pack `<mythic-gm>/references/genres/grimdark-survival.md`.

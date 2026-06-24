@@ -59,4 +59,4 @@ _Hit = attack bonus + combat-skill (Stab/Shoot/Punch) + attr mod; untrained = �
 - **Conditions / injuries:** none   _(Mortally Wounded? Frail? track here)_
 - **Notes:** <henchmen, mounts, contacts, focus reminders, # TODO verify items>
 
-_Rules: Character Creation (book pp.8–35) and Equipment (pp.36–41). Resolve every roll with `mythic-gm/scripts/dice.py` and show it._
+_Rules: Character Creation (book pp.8–35) and Equipment (pp.36–41). Resolve every roll with `<mythic-gm>/scripts/dice.py` and show it._

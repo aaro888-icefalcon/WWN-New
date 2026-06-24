@@ -2,7 +2,7 @@
 
 > Use this when: you're stuck for a name, a face, a building, a twist, or a premise, and want the WWN table that fills the gap. This is the index; the full routing table (with replace/conjunction modes) lives in `bridge/generators/registry.md`.
 
-**How to roll:** named tables inside a bundle → `python3 scripts/gen.py <bundle>/"<Table>"`; one record without loading a file → `python3 scripts/lookup.py <kind> "<name>"`; flat `d100` files → `python3 mythic-gm/scripts/dice.py table bridge/generators/<file>.json`. All `gen.py` dice are honest, shown, and `--seed`-reproducible. Plain dice via `mythic-gm/scripts/dice.py roll <NdM>`.
+**How to roll:** named tables inside a bundle → `python3 scripts/gen.py <bundle>/"<Table>"`; one record without loading a file → `python3 scripts/lookup.py <kind> "<name>"`; flat `d100` files → `python3 <mythic-gm>/scripts/dice.py table bridge/generators/<file>.json`. All `gen.py` dice are honest, shown, and `--seed`-reproducible. Plain dice via `<mythic-gm>/scripts/dice.py roll <NdM>`.
 
 ## Oracular adventure adjustments — un-stick your own ideas
 When a concept feels *almost* right, roll one of these (book L45–116; not yet in a bundle — roll by hand) and bend, don't railroad:

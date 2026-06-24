@@ -2,7 +2,7 @@
 
 > Use this when: the party crosses wilderness, explores a hex, delves a site, or runs low on food/water/fire. This is the clock that grinds heroes down — run the privation and encounter checks straight; the wilds answer to logic, not the party's level.
 
-**Dice via `mythic-gm/scripts/dice.py roll <NdM>` and shown.** Wandering-encounter & privation cadence fire at the world-tick (`bridge/subsystems.md`).
+**Dice via `<mythic-gm>/scripts/dice.py roll <NdM>` and shown.** Wandering-encounter & privation cadence fire at the world-tick (`bridge/subsystems.md`).
 
 ## Overland travel
 Travel ~10 hours/day. **Miles per hour by terrain** (cross-multiply the modifiers):
