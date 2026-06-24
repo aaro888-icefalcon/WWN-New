@@ -1,0 +1,330 @@
+{
+  "id": "wwn.architecture",
+  "title": "Architectural Style Generators",
+  "source": "WWN Deluxe, Additional GM Tools (Architectural Style Generators)",
+  "kind": "bundle",
+  "tables": {
+    "Architectural Adjectives": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Narrow, pointed, spired"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Squat, broad, blocky"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Curved, organic, rounded"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Slim, tall, looming"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Arched, vaulted, peaked"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Massive, cyclopean, bulky"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Open, airy, encircling"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Mazey, segmented, piled"
+        }
+      ]
+    },
+    "Favorite Materials": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Local wood"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Mud or clay brick"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Quarried stone blocks"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Stacked fieldstone"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Rammed earth"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Woven reeds or saplings"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Wattle and daub"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Metal or exotic substances"
+        }
+      ]
+    },
+    "Favorite Color Schemes": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Dull, natural, earthen colors"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Intensely bright, clashing colors"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Reds, oranges, and warm hues"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Bright but complementary colors"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Intricate weaves of colors"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Blues, greens, and cool hues"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Monochrome shades"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Subdued pastels and soft shades"
+        }
+      ]
+    },
+    "Common Visual Motifs": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Culturally important animals"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Rulers' faces or heraldry"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Symbols of the dominant faith"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Family heraldry or clan sigils"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Important plants or local flora"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Magically-meaningful runes"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Decorative script or writing"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Geometric shapes or patterns"
+        }
+      ]
+    },
+    "Structure Adornment": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Figurative carvings"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Frescoes and painted plasters"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Bas-reliefs"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Geometric markings"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Religious symbolism"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Solid blocks of color"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Statues and figures"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Plain and unadorned surfaces"
+        }
+      ]
+    },
+    "Favorite Structural Features": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Towers or spires"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Canals, fountains, or aqueducts"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Broad or raised roads"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Tunnels and underground rooms"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Walls or fortifications"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Gardens or parks"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Courtyards or inner open spaces"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Monuments or statues"
+        }
+      ]
+    },
+    "Settlement Design Patterns": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Organic, sprawling, and mazey"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Even square blocks with broad streets"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Concentric circles and ring roads"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Strict segregation of districts"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Neighborhoods with different patterns"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Symbolic or ritually-significant plans"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Ruling-class hub district with spokes"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Stacked vertically or underground"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1143 @@
+{
+  "id": "wwn.npc_quickgen",
+  "title": "NPC Quickgen",
+  "source": "wwn-worldbuilder (WWN NPC Quickgen)",
+  "kind": "bundle",
+  "tables": {
+    "Characteristic Twists": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "They're abnormally rich or poor for their class"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They are extremely averse to using violence"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They tend to break their deals, wisely or not"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "They have a reason to hate people like the PC"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They have a useful but unusual friend"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "The PC or an ally owes them a debt"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "A disaster is looming rapidly for them"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They have a reason to like people like the PC"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "They've got few reliable local social ties"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They conceal a socially-lethal secret"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "They're an ex-convict or former underclass"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "They have a secret identity"
+        }
+      ]
+    },
+    "Random NPC (Underclass)": {
+      "type": "list_d100",
+      "dice": "1d100",
+      "entries": [
+        {
+          "min": 1,
+          "max": 4,
+          "value": "Black sheep of a gentry family"
+        },
+        {
+          "min": 5,
+          "max": 8,
+          "value": "Cast-off former gentry mistress"
+        },
+        {
+          "min": 9,
+          "max": 12,
+          "value": "Coldly professional criminal"
+        },
+        {
+          "min": 13,
+          "max": 16,
+          "value": "Corrupt petty clerk or guard"
+        },
+        {
+          "min": 17,
+          "max": 20,
+          "value": "Cynical dancing girl or boy"
+        },
+        {
+          "min": 21,
+          "max": 24,
+          "value": "Downfallen former gentry"
+        },
+        {
+          "min": 25,
+          "max": 28,
+          "value": "Foreigner struggling to survive"
+        },
+        {
+          "min": 29,
+          "max": 32,
+          "value": "Gap-toothed local thug"
+        },
+        {
+          "min": 33,
+          "max": 36,
+          "value": "Hardscrabble orphaned urchin"
+        },
+        {
+          "min": 37,
+          "max": 40,
+          "value": "Missionary of an unpopular god"
+        },
+        {
+          "min": 41,
+          "max": 44,
+          "value": "Penniless country boy or girl"
+        },
+        {
+          "min": 45,
+          "max": 48,
+          "value": "Popular actor or actress"
+        },
+        {
+          "min": 49,
+          "max": 52,
+          "value": "Prostitute with a heart of gold"
+        },
+        {
+          "min": 53,
+          "max": 56,
+          "value": "Salt-worn common sailor"
+        },
+        {
+          "min": 57,
+          "max": 60,
+          "value": "Scabby beggar"
+        },
+        {
+          "min": 61,
+          "max": 64,
+          "value": "Shabby boarding-house owner"
+        },
+        {
+          "min": 65,
+          "max": 68,
+          "value": "Shaky-handed slum physician"
+        },
+        {
+          "min": 69,
+          "max": 72,
+          "value": "Slanderous poet or playwright"
+        },
+        {
+          "min": 73,
+          "max": 76,
+          "value": "Thieving drunkard or junkie"
+        },
+        {
+          "min": 77,
+          "max": 80,
+          "value": "Tippling bargeman or boatman"
+        },
+        {
+          "min": 81,
+          "max": 84,
+          "value": "Unpopular but zealous artist"
+        },
+        {
+          "min": 85,
+          "max": 88,
+          "value": "Unpopular demihuman"
+        },
+        {
+          "min": 89,
+          "max": 92,
+          "value": "Weary ragpicker or scavenger"
+        },
+        {
+          "min": 93,
+          "max": 96,
+          "value": "Widely-despised moneylender"
+        },
+        {
+          "min": 97,
+          "max": 100,
+          "value": "Worn-down day laborer"
+        }
+      ]
+    },
+    "Random NPC (Commoners)": {
+      "type": "list_d100",
+      "dice": "1d100",
+      "entries": [
+        {
+          "min": 1,
+          "max": 4,
+          "value": "Ambitious young entrepreneur"
+        },
+        {
+          "min": 5,
+          "max": 8,
+          "value": "Artisan of some local fame"
+        },
+        {
+          "min": 9,
+          "max": 12,
+          "value": "Butler or servant to a major figure"
+        },
+        {
+          "min": 13,
+          "max": 16,
+          "value": "Fearfully respected local gossip"
+        },
+        {
+          "min": 17,
+          "max": 20,
+          "value": "Foreigner with enough money"
+        },
+        {
+          "min": 21,
+          "max": 24,
+          "value": "Harried landlord"
+        },
+        {
+          "min": 25,
+          "max": 28,
+          "value": "Herbalist or local healer"
+        },
+        {
+          "min": 29,
+          "max": 32,
+          "value": "Local innkeeper or taverner"
+        },
+        {
+          "min": 33,
+          "max": 36,
+          "value": "Merchant in grain or bulk goods"
+        },
+        {
+          "min": 37,
+          "max": 40,
+          "value": "Merchant on his way down"
+        },
+        {
+          "min": 41,
+          "max": 44,
+          "value": "Military officer or guard official"
+        },
+        {
+          "min": 45,
+          "max": 48,
+          "value": "Minor government functionary"
+        },
+        {
+          "min": 49,
+          "max": 52,
+          "value": "Modestly prosperous farmer"
+        },
+        {
+          "min": 53,
+          "max": 56,
+          "value": "Neighborhood shopkeeper"
+        },
+        {
+          "min": 57,
+          "max": 60,
+          "value": "Obsessed local scholar"
+        },
+        {
+          "min": 61,
+          "max": 64,
+          "value": "Peasant like all their neighbors are"
+        },
+        {
+          "min": 65,
+          "max": 68,
+          "value": "Priest of a local faith"
+        },
+        {
+          "min": 69,
+          "max": 72,
+          "value": "Respected local ascetic or hermit"
+        },
+        {
+          "min": 73,
+          "max": 76,
+          "value": "Retired adventurer"
+        },
+        {
+          "min": 77,
+          "max": 80,
+          "value": "Scuffed but respectable laborer"
+        },
+        {
+          "min": 81,
+          "max": 84,
+          "value": "Ship's captain or officer"
+        },
+        {
+          "min": 85,
+          "max": 88,
+          "value": "Someone important's mistress"
+        },
+        {
+          "min": 89,
+          "max": 92,
+          "value": "Venerable family elder"
+        },
+        {
+          "min": 93,
+          "max": 96,
+          "value": "Veteran soldier or guardsman"
+        },
+        {
+          "min": 97,
+          "max": 100,
+          "value": "Wandering peddler or trader"
+        }
+      ]
+    },
+    "Random NPC (Gentry)": {
+      "type": "list_d100",
+      "dice": "1d100",
+      "entries": [
+        {
+          "min": 1,
+          "max": 4,
+          "value": "Abbot or head of a monastery"
+        },
+        {
+          "min": 5,
+          "max": 8,
+          "value": "Court wizard or gentry mage"
+        },
+        {
+          "min": 9,
+          "max": 12,
+          "value": "Demihuman leader or high priest"
+        },
+        {
+          "min": 13,
+          "max": 16,
+          "value": "Diplomat from a foreign land"
+        },
+        {
+          "min": 17,
+          "max": 20,
+          "value": "Discreet kingmaker or spymaster"
+        },
+        {
+          "min": 21,
+          "max": 24,
+          "value": "Ethnarch of a local minority"
+        },
+        {
+          "min": 25,
+          "max": 28,
+          "value": "Feared semi-legit criminal boss"
+        },
+        {
+          "min": 29,
+          "max": 32,
+          "value": "Genteelly-kept noble hostage"
+        },
+        {
+          "min": 33,
+          "max": 36,
+          "value": "Kept pretender to a foreign title"
+        },
+        {
+          "min": 37,
+          "max": 40,
+          "value": "Local temple's high priest"
+        },
+        {
+          "min": 41,
+          "max": 44,
+          "value": "Magistrate or judge"
+        },
+        {
+          "min": 45,
+          "max": 48,
+          "value": "Major local official or minister"
+        },
+        {
+          "min": 49,
+          "max": 52,
+          "value": "Mayor or chief city official"
+        },
+        {
+          "min": 53,
+          "max": 56,
+          "value": "Merchant-prince of wide affairs"
+        },
+        {
+          "min": 57,
+          "max": 60,
+          "value": "Military general or high officer"
+        },
+        {
+          "min": 61,
+          "max": 64,
+          "value": "Most popular courtesan in town"
+        },
+        {
+          "min": 65,
+          "max": 68,
+          "value": "Paid-off noble family disgrace"
+        },
+        {
+          "min": 69,
+          "max": 72,
+          "value": "Revered artistic genius"
+        },
+        {
+          "min": 73,
+          "max": 76,
+          "value": "Rusticating loser of a court feud"
+        },
+        {
+          "min": 77,
+          "max": 80,
+          "value": "Ruthless noble clan patriarch"
+        },
+        {
+          "min": 81,
+          "max": 84,
+          "value": "Sorcerer of fearsome name"
+        },
+        {
+          "min": 85,
+          "max": 88,
+          "value": "Spare prince or major noble scion"
+        },
+        {
+          "min": 89,
+          "max": 92,
+          "value": "Traditional cultural office-holder"
+        },
+        {
+          "min": 93,
+          "max": 96,
+          "value": "Wealthy but hated usurer"
+        },
+        {
+          "min": 97,
+          "max": 100,
+          "value": "Wealthy scholar-noble"
+        }
+      ]
+    },
+    "Specific Criminals": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Decadent noble turned crime boss for fun"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Obsessively driven underclass-turned-capo"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Psychopathically indifferent assassin"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Notorious cat burglar"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Infamously slippery con man"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Wealthy madame with vast blackmail files"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Terrifyingly brutal gang boss"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Local protector of the poor for a profit"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Smuggler dealing in very illegal wares"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Renegade mage meddling with dark powers"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Noble official robbing under color of law"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Master spy for hire by the wealthy"
+        }
+      ]
+    },
+    "Specific Merchants": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Grasping usurer with a long list of debts"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Trader in exotic and potentially illegal wares"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Ambitious young merchant on their way up"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Major landlord in the area"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Monopolist with a royal patent for it"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Brutally competitive merchant-thug"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Cartel boss with plenty of enforcers"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Supplier of arms or goods to the government"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Wandering peddler or roaming merchant"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Ship-owner or trader with far lands"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Plantation owner or sharecropper master"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Desperate oligarch with crumbling assets"
+        }
+      ]
+    },
+    "Specific Nobility": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Royal scion judged unfit for responsibility"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Merchant-noble who bought their title"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Head of a minor but very respected house"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Heir to a major local noble title"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Fallen foreign noble in safe exile here"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Scheming lesser noble with grand ideas"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Noble on their way down from bad choices"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Court favorite with greater ambitions"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Treacherous but trusted noble plotter"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Idealistic and well-meaning young ruler"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Grizzled noble who earned their title in war"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "House leader who's getting too old for this"
+        }
+      ]
+    },
+    "Specific Tribals": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Zealous shaman of an obscure god"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "The most fearsome warrior of the tribe"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "The tribe's most eligible maiden or bachelor"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Outsider who's gone native with them"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Missionary trying to convert the tribe"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Ambitious tribal war leader"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Merchant trying to cut a deal with the tribe"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Xenophobic tribal elder of great influence"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Keeper of occult tribal secrets"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Fabulously talented tribal artisan"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Tribal who spent some years out in the world"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Sage tribal lorekeeper or historian"
+        }
+      ]
+    },
+    "Specific Villagers": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Biggest and cleverest bully in the village"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Maiden or boy of known easy virtue"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Restless youth who years to roam afar"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Best farmer in all the hundred"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Half-feral shepherd or swineherd"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Village priest of phlegmatic temperament"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Local artisan of considerable talent"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Urban gentry resenting forced rustication"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Local wise woman or cunning man"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Canny local headman or mayor"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Reeve serving the village's lord"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Traveler stuck here for some reason"
+        }
+      ]
+    },
+    "Specific Warriors": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Bronze-thewed barbarian giant"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Coldly pragmatic bandit chief"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Hard-bitten and cynical mercenary sword"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Skulking archer-sniper favoring stealth"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Determinedly foppish duelist"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Philosophical-minded village militiaman"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Proudly skilled longbowman"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Consecrated temple defender or crusader"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Cunning thug or hired enforcer"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Foreigner bearing a strange weapon"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Nondescript hired killer"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Serial killer under thin societal justification"
+        }
+      ]
+    },
+    "Physical Build": {
+      "type": "list_d4",
+      "dice": "1d4",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Unusually short or slender"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Unremarkably average"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Plump, voluptuous, or soft"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Bulky, built, or more massive than usual"
+        }
+      ]
+    },
+    "Way They Move": {
+      "type": "list_d6",
+      "dice": "1d6",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Hesitant, fluttery, or delicately precise"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Clumsy, with broad, careless motions"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Slow and measured actions"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Sharp, brisk, vigorous movements"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Laborious or weary motions"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Smooth, relaxed, efficient movement"
+        }
+      ]
+    },
+    "Clothing": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "A fondness for very bright or dull colors"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Emblem of a faith or social group"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Ill-kept, whether worn, dirty, or rumpled"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Wears another group's style of clothing"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Abnormally risqué or modest for the society"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Shows regular dirt and marks of their trade"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Fastidiously neat or tastefully adorned"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Wears a very noticeable piece of jewelry"
+        }
+      ]
+    },
+    "How They Differ": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Unusual skin coloration or texture"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "From a group not normally found here"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Much older or younger than expected"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Abnormal temperament for their trade"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Overt devotee of an uncommon faith here"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "A pet animal not normally found here"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They eat a cuisine that is not liked here"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Abnormal hair texture or hue"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "They wear unusual tattoos or body jewelry"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They're uncommonly socially awkward"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "A physical build abnormal for the area"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "A distinct mutation or body alternation"
+        }
+      ]
+    },
+    "Visible Mannerisms": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "An often-used catchphrase or verbal tic"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Always drinking or near a drink"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Hands never stop moving"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Talks very slowly and deliberately"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Tends to shift their weight constantly"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Has an unusual hairstyle or beard"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Appears often to be slightly drugged or drunk"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Prefers to always be in shade if possible"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Asks far too many questions"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Never looks you in the eye when lying"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Visibly avaricious for gold, food, or such else"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Always circuitous about answering questions"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "Never directly denies or refuses anything"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "Paces constantly; always prefers to stand"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "Has work-stained or scarred hands"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "Old pox marks or disease scars are present"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Prefers elaborate hats, belts, or adornments"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "Always toying with worry beads or such"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "Knocks things over carelessly"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "Checks written notes regularly"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,538 @@
+{
+  "id": "wwn.nation_construction",
+  "title": "Nation Construction",
+  "source": "wwn-worldbuilder (WWN Nation Construction)",
+  "kind": "bundle",
+  "tables": {
+    "Current National Problems": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Farmland is becoming worn-out and depleted"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Verminous monsters are swarming"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "A rebel front is stirring up trouble"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "An outside power is backing internal strife"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "The leadership is inept and distracted"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "A religious reformer is breaking old compacts"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "An evil is provoking outraged rioting"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Dark cults are attracting the ambitious"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "A Blighted horde is threatening the borders"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "An ancient ruin has disgorged some peril"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Malcontents have obtained a potent artifact"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Luxuriance has left the nation's coffers bare"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "Local aristocrats are pushing for independence"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "An important mine has run out or been harmed"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "A sinister favorite has infatuated the leader"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "A recurring plant plague is causing hunger"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Fearsome monsters are migrating into the land"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "A rival is preparing for war or raiding"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "A grand national plan is exhausting the people"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "A savage grudge has erupted between lords"
+        }
+      ]
+    },
+    "Good Things Happening Now": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "A splendid mine or resource has been found"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "A pious saint is strengthening a major faith"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "A noble heir shows signs of heroic greatness"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "A major rival has recently suffered a calamity"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "New farmland has been opened up recently"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "A new trade route has been forged"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "A horrible monster was slain or driven off"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Good harvests have enriched the people"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "A wicked minister has been deposed"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "A new academy has recently opened"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "A bandit or rebel uprising has been crushed"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Two rival lords have started to make peace"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "An old enemy has agreed to a peace pact"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "The military won a recent smashing victory"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "A helpful Working has been activated"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "A powerful artifact is helping the ruler"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "An old source of unrest has been calmed"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "A dark cult has been revealed and purged"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "New diplomatic ties have been made"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "A new lord has risen, loved by his people"
+        }
+      ]
+    },
+    "Disputes With a Neighbor": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Raiders are taking refuge in their lands"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Ownership of a resource site is disputed"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "A usurper or criminal is being sheltered there"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "A troublemaking religion is based there"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Their rulers have a political claim on the throne"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "A diplomatic marriage is going sour"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "A past war's savagery has left deep scars"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Their culture is supplanting local beliefs"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Their immigrants are gaining great influence"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They broke off an alliance or important pact"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "They lured away an academy or great temple"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Border tariffs and taxes are blocking trade"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "They drove a terrible beast into this land"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "A Working of theirs caused problems here"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "They woke up a great peril from the past"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "They're cooperating with an enemy group"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "They're suspected of backing assassinations"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "A spy ring is suspected or has been found"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "They refused to give aid for some current need"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "They've been hostile to an allied group"
+        }
+      ]
+    },
+    "Positive Ties With a Neighbor": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "The ruling classes are related in some way"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "An important faith crosses the border"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They fought by our side sometime in the past"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Their culture is widely admired here"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They helped to overcome an eldritch peril"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "They held back an enemy from our border"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They are co-ethnics of the same origins"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They provide critical trade relations"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Sages and scholars came from there"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They gave critical aid during a disaster"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "A hero of this land came originally from there"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "A past hero-king once ruled both lands"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "They produce some vital commodity"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "They have a shared enemy"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "A Working they have is helpful here, too"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "A long-standing alliance or trade pact exists"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "They recently conceded some disputed land"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "They greatly admire elements of this culture"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "They're considered unusually attractive here"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "They took in refugees from here at one point"
+        }
+      ]
+    },
+    "Nation Themes": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Barbarism, with brutal savagery"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Decadence, of sins and fadings"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Despair, with good things unlooked-for"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Exhaustion, with strength spent and lost"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Ignorance, of terrors and the unknown"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Oppression, with rule a crushing weight"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Poverty, where even the rich are poor"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Precarity, with all goods made fleeting"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Stratification, where classes do not touch"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Violence, where life is something cheap"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Enlightenment, where knowledge is loved"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Expansion, where things swell greater"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "Hope, that the future should be better"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "Justice, where a reckoning is had"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "Legitimacy, where rulers are by right"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "Pageantry, of splendor and magnificence"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Prosperity, with wealth easily had"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "Renewal, with things growing brighter"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "Triumph, with victory a fresh memory"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "Unity, where purposes are shared"
+        }
+      ]
+    }
+  }
+}

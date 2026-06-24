@@ -1,0 +1,259 @@
+{
+  "id": "wwn.character_tags",
+  "title": "Character Tags (d100)",
+  "source": "wwn-worldbuilder",
+  "type": "list_d100",
+  "dice": "1d100",
+  "entries": [
+    {
+      "min": 1,
+      "max": 2,
+      "value": "Baneful Success"
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "value": "Betting It All"
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "value": "Bitter Grudge"
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "value": "Black Sheep"
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "value": "Blithe Idealist"
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "value": "Burnt Out"
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "value": "Chance at Glory"
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "value": "Chronic Illness"
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "value": "Concealed Sin"
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "value": "Cultural Outsider"
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "value": "Cursed Misfortune"
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "value": "Delusional Self-Image"
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "value": "Doomed Love"
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "value": "Doomsday Weapon"
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "value": "Double Life"
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "value": "Double Loyalties"
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "value": "Down In the World"
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "value": "Earnest Idiot"
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "value": "Family Alienation"
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "value": "Family Chains"
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "value": "Friend Turned Foe"
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "value": "Grand Plan"
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "value": "Great Disappointment"
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "value": "Great Expectations"
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "value": "Hidden Origins"
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "value": "Impending Treachery"
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "value": "In Over Their Head"
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "value": "Inherited Duty"
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "value": "Irrational Hatred"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "value": "Last Survivor"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "value": "Lives For Today"
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "value": "Load-Bearing Relationship"
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "value": "Lost Cause"
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "value": "Lovesick Fool"
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "value": "Magical Gift"
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "value": "Marked for Success"
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "value": "Misplaced Trust"
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "value": "Natural Leader"
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "value": "Persecuting Foe"
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "value": "Ruined Plan"
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "value": "Ruinous Vice"
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "value": "Secret Cravings"
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "value": "Secret Sectarian"
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "value": "Stolen Reputation"
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "value": "Ticking Bomb"
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "value": "Troublesome Friend"
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "value": "Unexpected Talent"
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "value": "Unreasonably Lucky"
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "value": "Up From the Gutter"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "value": "Veiled Backers"
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "id": "wwn.history_construction",
+  "title": "History Construction",
+  "source": "wwn-worldbuilder (WWN History Construction)",
+  "kind": "bundle",
+  "tables": {
+    "How Did They Originate": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Aboriginal peoples united in the area"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They were refugees from a fallen land"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They were exiles or losers of some civil strife"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "They were colonists who became independent"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They were magically created or shaped here"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "They all followed a faith or ideology here"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They were a conquering army gone native"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They migrated here for profit or plunder"
+        }
+      ]
+    },
+    "Original Inhabitants": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "There were no other humans living here"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They were wiped out in warfare"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They were utterly assimilated"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "They were driven into exile"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They became the ruling class"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "They became an oppressed underclass"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They were partially assimilated"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They retained small areas of self-rule"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Roll 1d8 twice; both happened"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "No one can agree on what happened"
+        }
+      ]
+    },
+    "How They Overcame the Crisis": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "A brilliant and inspirational leader arose"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Organization and unity overcame the trouble"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Grim determination and enduring the evil"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Faith strengthened them against the woe"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Skillful use of magic resolved the problem"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Martial prowess and military cunning"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Diplomatic ties and outside help"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Industrious labor and tireless exertion"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Economic brilliance and trading acumen"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Ruthless but effective sacrifices were made"
+        }
+      ]
+    },
+    "Great About Its Peak": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "A terrible regional evil was driven back"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Academies were built that are still honored"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Ancient foes were united together"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Grand Workings were sorcerously raised"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "It controlled the trade of the entire region"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "It was hegemon over its weaker neighbors"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Its armies were fearsomely mighty"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Its culture was compelling to its neighbors"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Magnificent works of art were created"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Numerous legendary heroes arose"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "The populace was tremendously prosperous"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Wonderful works of architecture were built"
+        }
+      ]
+    },
+    "Why It Failed": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Its people were too deeply divided"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Its leadership was hopelessly inept"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "The gods cursed it to ruin"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Decadence and self-absorption doomed it"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "It was vastly overconfident in its plans"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Its neighbors conspired to help ruin it"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "It was actually two crises, and it was too much"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "It was culturally exhausted and apathetic"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Some tried to take advantage of the crisis"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Its strengths were useless against the problem"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "The crisis was far too vast and overwhelming"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Some leaders were allied with the crisis"
+        }
+      ]
+    },
+    "Unabsorbed Survivors": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "They fled for refuge to a neighboring nation"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They sought to hide in a dangerous wilderness"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They were exterminated by bitter rivals"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "They degenerated into savage remnants"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They were enslaved by their enemies"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "They were magically transformed or twisted"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They were shattered into pockets of survivors"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They became a remnant shadow of themselves"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "They forcibly migrated into a weaker land"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They formed the nucleus of a new culture"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "They split into several new, smaller groups"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Roll twice; the resultant groups hate each other"
+        }
+      ]
+    }
+  }
+}

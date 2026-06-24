@@ -1,0 +1,259 @@
+{
+  "id": "wwn.court_tags",
+  "title": "Court Tags (d100)",
+  "source": "wwn-worldbuilder",
+  "type": "list_d100",
+  "dice": "1d100",
+  "entries": [
+    {
+      "min": 1,
+      "max": 2,
+      "value": "Affliction's Mark"
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "value": "Ancestral Obligation"
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "value": "Awesome Legitimacy"
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "value": "Awkward Birth"
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "value": "Blandished Leadership"
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "value": "Cadet Branches"
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "value": "Capricious Orders"
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "value": "Cultural Insignia"
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "value": "Daring Ambition"
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "value": "Dark Secret"
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "value": "Decadent Court"
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "value": "Devil's Bargain"
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "value": "Diplomatic Demands"
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "value": "Disputed Inheritance"
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "value": "Excess Heirs"
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "value": "False Prize"
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "value": "Fatal Extravagance"
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "value": "Forbidden Romance"
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "value": "Foreign Ties"
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "value": "Gate Keeper"
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "value": "Hidden Blight"
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "value": "Hopeless Rival"
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "value": "Impure Blood"
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "value": "Inadequate Tools"
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "value": "Inept Ruler"
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "value": "Iron Law"
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "value": "Lost Purpose"
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "value": "Magical Subversion"
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "value": "Ministerial Capture"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "value": "New Generation"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "value": "New Opportunity"
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "value": "Outside Debts"
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "value": "Overextended Grasp"
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "value": "Poisonous Cliques"
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "value": "Priestly Influence"
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "value": "Proxy Speaker"
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "value": "Rampant Corruption"
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "value": "Recent Brutality"
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "value": "Regency Council"
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "value": "Restive Lessers"
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "value": "Rival Dreams"
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "value": "Rival Power"
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "value": "Ruling Regalia"
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "value": "Runaway Rule"
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "value": "Shining Successor"
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "value": "Splendid Seat"
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "value": "Sublime Skill"
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "value": "Sudden Strength"
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "value": "Threatened Violence"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "value": "Waning Wealth"
+    }
+  ]
+}

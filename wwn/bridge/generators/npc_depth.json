@@ -1,0 +1,1196 @@
+{
+  "id": "wwn.npc_depth",
+  "title": "NPC One-Roll Characterization (Depth)",
+  "source": "WWN Deluxe, Additional GM Tools",
+  "kind": "bundle",
+  "tables": {
+    "First Thing Noticed": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Their voice is unusual and arresting"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They're disfigured or missing a limb"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They have a distinctive scent or stench"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Their clothing is very unusual"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They have distinct mannerisms of gesture"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Their accent is unusual for the location"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They're abnormally friendly or reserved"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They have signs of a chronic illness or wound"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "They have an unusual hair style or texture"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They are very fat, thin, short, tall or such"
+        }
+      ]
+    },
+    "Ambition Form": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "To win the love or possession of someone"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "To obtain riches and personal wealth"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "To win political power or a particular office"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "To obtain glory or get fame for a skill"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "To gain a particular property or piece of land"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "To go to or explore a far-off place"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "To become a difficult-to-become profession"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "To kill or ruin a hated rival"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "To topple an institution, business, or faith"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "To repay some immeasurable debt"
+        }
+      ]
+    },
+    "Ambition Obstacle": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "A disinterested third party is blocking the way"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They've made promises that are coming due"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They're burning out a resource in the pursuit"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "They're physically pushing themselves too far"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They suffered a recent considerable setback"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "A friend or loved one is somehow in the way"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "A backlash is about to rebound on them"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They're chasing the goal in the wrong way"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "They've been fed some false information"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They've lost a critical resource or tool"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "A traitor is sabotaging their efforts"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Their success is bringing hostile attention"
+        }
+      ]
+    },
+    "Ambition Help or Hinder": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "A cache of saved or discovered wealth"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "A useful magical item"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "A book with critical information in it"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "A jealous \"ally\" seeking to sabotage them"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "A loved one who thinks it all folly"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "An addiction they use to cope with the strain"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "A patron who needs favors at times"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "A failed ambition-seeker with bitter jealousy"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "A rival with no hard feelings toward them"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "A teacher who can impart a great skill"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "A religious zeal to carry out the ambition"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "A terribly good or bad coincidence"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "A sorcerer involved in it somehow"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "A deal they made is coming back to haunt"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "A recent stroke of luck, good or bad"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "A crime they committed for their ambition"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Someone integral to helping them further it"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "A magical trait that aids their purpose"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "A mistake which taught them a great deal"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "Reluctant rival-partner in their ambition"
+        }
+      ]
+    },
+    "Ambition Who Knows": {
+      "type": "list_d6",
+      "dice": "1d6",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "They keep the ambition secret or hidden"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They have a partner with a similar goal"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Their family and friends are aware of it"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "A retired seeker of the goal is involved"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They've gotten rivals involved somehow"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Everyone knows, but no one is helping now"
+        }
+      ]
+    },
+    "Ambition Tools Used": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Money is being spent where it will help"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They're getting training or help from a patron"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They've resorted to magical means of aid"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "They have friends and allies aiding them"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They're taking dangerous risks to get ahead"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "A great natural talent helps their pursuit"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Extended family is proving helpful for it"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Government authority is somehow enlisted"
+        }
+      ]
+    },
+    "Tragedy Form": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "A family member died or worse"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They suffered horrible abuse or torment"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "A treasured ambition was crushed"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "A loving relationship was ruined"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "A terrible betrayal from a trusted one"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "They failed at some critical moment of need"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "A friend or lover died or was lost"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They killed someone they never meant to"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "They were maimed or crippled somehow"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They were beggared or lost a dear thing"
+        }
+      ]
+    },
+    "Tragedy Coping": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "They lost themselves in work or duty"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They plotted revenge against someone"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They sought forgetfulness in an addiction"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "They left and went far away"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They tried to find a duty to consume them"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "They sought a way to undo the tragedy"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They behaved with suicidal recklessness"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They tried to remake what they had lost"
+        }
+      ]
+    },
+    "Tragedy Consequences": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Someone blames them and seeks revenge"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They lost confidence in a great talent of theirs"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They have a great debt to pay"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "They're bitterly resented by a former friend"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They lost the ability to trust others"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "They re-enact their suffering on others"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They bear physical scars from the aftermath"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They're estranged from their family"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "The tragedy made a bitter rival for them"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They're sought as a criminal by someone"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "They despise themselves and act accordingly"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "They made enemies of former allies"
+        }
+      ]
+    },
+    "Tragedy Scars": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "They hate a type of person associated with it"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They picked up an addictive habit"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They are irrational about similar situations"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "They want to share the misery around"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They're haunted by lost possibilities"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "They remake the past in makeshift ways"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They made deals they're still laboring under"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They have visible associated physical scars"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "They accepted a role they hate because of it"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They try to substitute others for the lost"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "They meddled with sinister magic"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "They lost or sold something precious to them"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "They despise a place and its natives"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "They insist on a false narrative of events"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "They made bargains with dark powers"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "They aggressively make light of their loss"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "They obsess over a physical token of it"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "They try to keep it a secret from those near"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "They act so as to punish themselves for it"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "They've displaced their wrath on another"
+        }
+      ]
+    },
+    "Friendship What Done Together": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "They've enjoyed socializing together"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They've shared in a profitable crime"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They covered up a serious mistake one made"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "They've married each others' relatives"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They overcome a shared foe together"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "They made money together somehow"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They got out of a dangerous situation together"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They improved their social standing together"
+        }
+      ]
+    },
+    "Friendship Harmonizing Tie": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "A shared appetite for money and luxury"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Mutual or complementary carnal hungers"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Very compatible personalities"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Respect and admiration for each other"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Trust in each others' judgment"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Confidence in each others' trustworthiness"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They both have fatal blackmail on the other"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "An artistic sensibility only they fully share"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Blood ties or familial bonds between them"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Shared love for a particular cause or faith"
+        }
+      ]
+    },
+    "Friendship What Divides": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "They both want the same man or woman"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "One of them has erred, threatening both"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "One has something the other direly wants"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "One feels painfully inferior about something"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Their associates disapprove of the relation"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "A religious dispute lingers between them"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "One owes the other a large sum of money"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "One is failing to provide needed help"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "One of them is wooing the other's spouse"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They want the same office, title, or role"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "One has become useless to the other lately"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "A misunderstanding has festered of late"
+        }
+      ]
+    },
+    "Friendship Things Between": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "They amiably share a mistress"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They have a getaway they both favor"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "One has a secret the other would detest"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "One hides some contraband for the other"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Their children are wedded"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "They both have stakes in a business"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Staff or servants are traded between them"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "One watches out for useful help for the other"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "They have regular shared meals and drinks"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "They have a friendly rivalry about something"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "They share ownership of a piece of property"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "One covers up a vice of the other"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "They often gamble things between them"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "They share illicit or delicate books or art"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "They both make use of the same mage's help"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "They go to the same temple regularly"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "They go hunting together often"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "They throw celebrations for each other's wins"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "They patronize the same artists or performers"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "They both resent the same group or faith"
+        }
+      ]
+    },
+    "Romance Spark": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Tremendous physical attraction"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Very complementary personalities"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Social obligation that turned to real love"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "A shared secret that brought them close"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "A desperate emotional need of one or both"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Mutual understanding not found elsewhere"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "A shared hardship they weathered together"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Rivalry that transformed to mutual love"
+        }
+      ]
+    },
+    "Romance Problem": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "The pairing is totally socially unacceptable"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Profound insecurity about their worthiness"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Abusive ways of expressing anger or worry"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "A serious addiction or compulsive flaw"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They're already tied in an existing relationship"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "A deep lack of trust, perhaps from past history"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "They love a false image they have of the other"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Expectation the other will or won't change"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Self-centered or thoughtless behavior"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Self-destructive degree of sacrifice"
+        }
+      ]
+    },
+    "Romance Current Issue": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Recent infidelity or suspicion thereof"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "A rival moving in on one of them"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "One made a mistake that threatens the other"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "One takes a dire risk for the sake of the other"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "A sense of lack, that something's missing"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "A recent furious argument over something"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "One is being asked to sacrifice a dear thing"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They cannot agree on a future path"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "One made a mistake that shamed the other"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "A relative is interfering with the two"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "They're being separated by circumstances"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "A shared dream is being threatened"
+        }
+      ]
+    },
+    "Romance Quirks": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Inability to candidly admit their feelings"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "They can't keep their hands off each other"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "They wear tokens the other gave or made"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "One is smitten with a physical trait of the other"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "They've established a secret meeting-place"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Feelings are expressed in ways only they see"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "One side thinks the other really hates them"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "They prefer to communicate by letter or note"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "They only show affection when alone"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "One is burying their feelings in work"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "One or both are cheerfully unfaithful"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "One feels intense pressure to provide a thing"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "They're currently upset and not talking"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "They have very different future hopes"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "One is convinced the relationship will die"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "They share an addiction or vice"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Their friends disapprove of the relationship"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "They're shockingly innocent about love"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "One is plotting a grand deed for the other"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "They operate largely through a go-between"
+        }
+      ]
+    }
+  }
+}

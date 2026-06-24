@@ -1,0 +1,259 @@
+{
+  "id": "wwn.community_tags",
+  "title": "Community Tags (d100)",
+  "source": "wwn-worldbuilder",
+  "type": "list_d100",
+  "dice": "1d100",
+  "entries": [
+    {
+      "min": 1,
+      "max": 2,
+      "value": "Ancient Infrastructure"
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "value": "Bad Neighbors"
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "value": "Blood Feud"
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "value": "Brilliant Innovation"
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "value": "Broken Spirits"
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "value": "Corrupt Laws"
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "value": "Criminal Bosses"
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "value": "Cultural Center"
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "value": "Cursed Circumstances"
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "value": "Decadent Locals"
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "value": "Decaying Working"
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "value": "Demihuman Populace"
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "value": "Dueling Lords"
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "value": "Enemy Within"
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "value": "Faded Remnant"
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "value": "Fallen Prosperity"
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "value": "Foreign Enclave"
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "value": "Guild Oligarchy"
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "value": "Heavy Fortification"
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "value": "Hidden Ruler"
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "value": "Hostile Terrain"
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "value": "Incompetent Leaders"
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "value": "Inherited Architecture"
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "value": "Inhuman Cooperation"
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "value": "Lawless Class"
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "value": "Magical Academy"
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "value": "Martial Tradition"
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "value": "Miserable Penury"
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "value": "Mistreated Blighted"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "value": "Monstrous Tribute"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "value": "Neglectful Ruler"
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "value": "New Industry"
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "value": "Pilgrimage Site"
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "value": "Plagued City"
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "value": "Population Boom"
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "value": "Raider Scourge"
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "value": "Rebel Stronghold"
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "value": "Rigid Castes"
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "value": "Scars of War"
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "value": "Seat of Rule"
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "value": "Secret Treachery"
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "value": "Sinking City"
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "value": "Theocratic Authorities"
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "value": "Toxic Economy"
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "value": "Trade Hub"
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "value": "Unique Product"
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "value": "Upstart Faith"
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "value": "Warring Council"
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "value": "Widespread Prosperity"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "value": "Xenophobic Locals"
+    }
+  ]
+}

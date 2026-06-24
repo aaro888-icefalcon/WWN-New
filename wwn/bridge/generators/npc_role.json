@@ -1,0 +1,15 @@
+{ "id":"wwn.npc_role", "title":"NPC Role (Latter Earth)", "type":"list_d100", "dice":"1d100",
+  "note":"generate:character table for the engine's auto-fire NEW-CHARACTER hook (generators_map.character, mode conjunction = also runs the AC Character Crafter). Roll a role, then flesh the NPC as a Latter Earth native via interpretation.md + setting-canon factions; for a major NPC, layer character_tags.",
+  "entries":[
+    {"min":1,"max":12,"value":"Laborer, servant, or field-hand"},
+    {"min":13,"max":22,"value":"Artisan or craftsman"},
+    {"min":23,"max":33,"value":"Merchant, trader, or fixer"},
+    {"min":34,"max":44,"value":"Soldier, guard, or sworn blade"},
+    {"min":45,"max":53,"value":"Thief, smuggler, or gang criminal"},
+    {"min":54,"max":62,"value":"Priest, cultist, or zealot of a faith"},
+    {"min":63,"max":71,"value":"Scholar, scribe, or physician"},
+    {"min":72,"max":80,"value":"Official, bailiff, or bureaucrat"},
+    {"min":81,"max":88,"value":"Noble, gentry, or courtier"},
+    {"min":89,"max":94,"value":"Sorcerer, hedge-witch, or arcanist"},
+    {"min":95,"max":98,"value":"Outsider-touched, Blighted, or xenosouled"},
+    {"min":99,"max":100,"value":"Legate, warlord, or power-broker"}] }

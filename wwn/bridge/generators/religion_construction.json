@@ -1,0 +1,620 @@
+{
+  "id": "wwn.religion_construction",
+  "title": "Religion Construction",
+  "source": "wwn-worldbuilder (WWN Religion Construction)",
+  "kind": "bundle",
+  "tables": {
+    "Where Did The God Come From": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "It's a deified ancestor-king or progenitor"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "It's a legendary historical hero or teacher"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "It's an abstract principle reified as an entity"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "It simply always existed since creation"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "It was an apotheosized sorcerer"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "It's the genius of a particular land or location"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "It was an Outsider or alien from beyond"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "It was a personified natural phenomenon"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "It was another faith's saint turned into a god"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "It was a tamed or placated supernatural entity"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "It was an artificial construct built by humans"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Roll twice and blend the two"
+        }
+      ]
+    },
+    "Why Does The Faith Matter": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "It's the main purveyor of healing blessings"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "It provides magical favors to the faithful"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "It's locked in conflict with a major local power"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "It supports something the PCs love or hate"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "It's the state faith or otherwise legally important"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "It regularly hires people to do work for it"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "It's trying to expand and needs help"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "It's a huge economic player in the area"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "It plots secret sinister evils against the land"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "It has influence over important locals"
+        }
+      ]
+    },
+    "What Does The Faith Want": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Crush its religious rivals in the area"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Destroy a heretical but powerful sub-sect"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Expand the faith to a foreign land or people"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Recover holy land or a sacred site"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Obtain vast material wealth for the faith"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Depose a hostile royal house or government"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Smash a specific enemy faith or group"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Embody their god with a mighty ritual"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Erect a huge and imposing temple complex"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Perform a tremendously expensive rite"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Strengthen or protect its devout believers"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Roll again; stop a rival from doing that"
+        }
+      ]
+    },
+    "What This God Does in Society": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "It's the war god or patron of those who fight"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "It's the favorite god of the ruling class"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "It's the patron of an important profession"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "It's a devil-figure that must be placated"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "It provides healing or protection from danger"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "It's a patron of an illegal but inevitable trade"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "It hallows the law and consecrates oaths"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "It's flatly illegal and hated by most"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "It's the protector of an ethnic minority"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "It provides good harvests or human fertility"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "It's the patron of the former rulers of the land"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "It guards particular places within the land"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "It provides wisdom and insight at need"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "It gives good luck to its petitioners"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "It's a protector of the weak and humble"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "It empowers those seeking revenge for wrongs"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "It bestows material wealth upon petitioners"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "It protects the soul in the afterlife"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "It explains the creation and order of the world"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "It prevents some type of common disaster"
+        }
+      ]
+    },
+    "Particular Religious Requirement": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Never/always associate with certain types"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Never eat a particular common food type"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Give a significant tithe regularly"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Make particular sacrifices at certain times"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Revere/hate a class or group of people"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Forbid a certain common profession or role"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Forbid an activity common to society"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Give secular obedience to the clergy"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Pray at certain fixed places or times"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Never/always trade with certain sorts"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Never/always live in certain places"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Marry exclusively within the faith"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "Do something society finds repugnant"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "Hold certain places to be taboo"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "Hide the inner faith's teachings from outsiders"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "Make sacrifices that society finds hateful"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Never/always make war on certain types"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "Honor/degrade a particular profession"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "Make certain pilgrimages to holy places"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "Never/always cooperate with a certain faith"
+        }
+      ]
+    },
+    "Human Concern": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "A Human Vice"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "A Kind of Demihuman"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Agriculture"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Cities"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Commerce"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Crafting"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Deception"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Healing"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Justice"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Luck"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Marriage or Family"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Music"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "Prophecy"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "Protection"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "Revenge"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "Ruling"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Theft or Crime"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "Travel or Roads"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "War"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "Wisdom"
+        }
+      ]
+    },
+    "Natural Principle": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "A Local Terrain Type"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Beasts"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Beauty or Sex"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Cosmic Law"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Creation"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Death"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Fertility"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Forests"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Magic"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Mountains"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Night"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "One or More Seasons"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "Pain"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "Sea or Rivers"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "Sky"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "Storms or Rain"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Sun, Moon, or Stars"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "The Underworld"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "Time"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "Untamed Nature"
+        }
+      ]
+    }
+  }
+}

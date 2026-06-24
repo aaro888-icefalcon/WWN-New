@@ -1,0 +1,170 @@
+{
+  "id": "wwn.adventure_seeds",
+  "title": "Adventure Seeds",
+  "source": "wwn-worldbuilder (WWN Adventure Seeds)",
+  "kind": "bundle",
+  "tables": {
+    "Bait": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Direct payment from a specific patron"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "The assurance of rich loot yet unplundered"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Revenge against a foe the party hates"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Help given to a sympathetic figure or friend"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "A magical item that they would prize"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Occult lore and spells useful to mages"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Ancient salvage for skilled mod-crafters"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Escape from some looming calamity or foe"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Fame and the admiration of others"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Curiosity and learning of the unknown"
+        }
+      ]
+    },
+    "Introduction": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Note or map on a defeated foe"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Overheard market gossip or tavern talk"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Sad tale of a survivor or escapee"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Text found while exploring"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Divine omen or magical disturbance"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Former patron seeking them out"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Desperate local looking for help with it"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "A plotter mistakes them for confederates"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Encounter a place scarred by the adventure"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Fight a monster made to flee from the site"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Find a treasure with embedded information"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Be hired by the antagonist as muscle"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "A friend of the party is affected by it"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "Town crier announces it in public"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "They stumble into an active part of it"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "Intercept a message meant for an antagonist"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Government official needs to hire help"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "Failed first group tries to pass along the job"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "Plea for help nailed up in public"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "Guild or business looking for hired help"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "id": "wwn.ruin_tags",
+  "title": "Ruin Tags (d100)",
+  "source": "wwn-worldbuilder",
+  "type": "list_d100",
+  "dice": "1d100",
+  "entries": [
+    {
+      "min": 1,
+      "max": 2,
+      "value": "Ancient Archives"
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "value": "Aspiring Conqueror"
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "value": "Automaton Servants"
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "value": "Birthing Cyst"
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "value": "Bitter Remnants"
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "value": "Civil War"
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "value": "Cyclical Doom"
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "value": "Decrepit Structure"
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "value": "Desperate Hunger"
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "value": "Dire Tombs"
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "value": "Distant Gate"
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "value": "Dungeon Heart"
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "value": "Experimental Lab"
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "value": "Failed Intrusion"
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "value": "Fallen Sanctuary"
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "value": "False Front"
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "value": "Feral Magic"
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "value": "Flooded Halls"
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "value": "Freshly Looted"
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "value": "Friendly Foes"
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "value": "Hidden Within"
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "value": "Hiveminded Natives"
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "value": "Hospitable Natives"
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "value": "Hostile Environment"
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "value": "Infectious Miasma"
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "value": "Invincible Delusion"
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "value": "Lethal Treasure"
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "value": "Limited Access"
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "value": "Lingering Curse"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "value": "Living Dungeon"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "value": "Lost Colony"
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "value": "Magical Wonder"
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "value": "Monster Forge"
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "value": "Outsider Domain"
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "value": "Precious Resource"
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "value": "Raider Lair"
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "value": "Recruiting Drive"
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "value": "Religious Zealots"
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "value": "Rigid Hierarchy"
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "value": "Royal Refuge"
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "value": "Sacrificial Bargain"
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "value": "Sealed Evil"
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "value": "Secret Alliance"
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "value": "Shifting Interior"
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "value": "Spatial Flux"
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "value": "Surfacer Hideout"
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "value": "Taboo Place"
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "value": "Things Below"
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "value": "Useless Treasure"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "value": "Wizard's Lair"
+    }
+  ]
+}

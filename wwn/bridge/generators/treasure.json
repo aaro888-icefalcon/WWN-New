@@ -1,0 +1,517 @@
+{
+  "id": "wwn.treasure",
+  "title": "Treasure Generation",
+  "source": "WWN Deluxe, Placing Treasures (pp. 260-261)",
+  "kind": "bundle",
+  "tables": {
+    "Types of Jewelry": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Rings, whether for fingers, toes, or body parts"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Crowns, tiaras, fillets, or headdresses"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Piercing jewelry, perhaps non-human"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Necklaces, torcs, or strings of jewels"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Bracers, wristlets, anklets, or limb decorations"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Hair ornaments, clasps, sticks, or pins"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Jeweled clothing, straps, or meshes"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Jewelry for non-humanoid alien bodies"
+        }
+      ]
+    },
+    "Magic Item Type": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 6,
+          "value": "Elixir"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Exemplar or Grimoire"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "1d3 Ancient Salvage for modifications"
+        },
+        {
+          "min": 9,
+          "max": 11,
+          "value": "Calyx"
+        },
+        {
+          "min": 12,
+          "max": 14,
+          "value": "Weapon"
+        },
+        {
+          "min": 15,
+          "max": 16,
+          "value": "Armor"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Shield"
+        },
+        {
+          "min": 18,
+          "max": 20,
+          "value": "Device"
+        }
+      ]
+    },
+    "Why Object Is Valuable": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "It's contraband, forbidden by a local faith"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "The gemstones on it are very strange"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "It's made of an unearthly material"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "The workmanship is superlative"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "It's somehow related to the local rulers"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "It's abnormally large or bulky for its type"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "It's clearly sacred to a local faith"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "There's a magnificent jewel set in it"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "It figures in an important historical event"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "It has some petty enchantment on it"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "It induces a positive emotion when touched"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "It's a prized trophy taken from Outsiders"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "It has a famous maker's mark on it"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "It's a matched set of something collectible"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "Other items like it were all lost long ago"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "It's a perfect example of a particular style"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "It was part of an ancient ruler's regalia"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "It belonged to a famous ancient palace"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "It's remarkably durable and hard to harm"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "Its material can no longer be produced"
+        }
+      ]
+    },
+    "Valuable Objects": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        {
+          "min": 1,
+          "max": 1,
+          "value": "Spices of rare worth"
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "value": "Recreational drugs"
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "value": "Elaborately-woven or exotic textiles"
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "value": "Household goods, jeweled or in rare metals"
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "value": "Coffers, casks, or jeweled containers"
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "value": "Ornate and luxurious clothing items"
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "value": "Preserved antique gourmet foodstuffs"
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "value": "Paintings of exquisite skill"
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "value": "Carved ornaments in precious materials"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": "Uncut or unset jewels"
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "value": "Ingots of rare or precious metals"
+        },
+        {
+          "min": 12,
+          "max": 12,
+          "value": "Useful raw magical ingredients"
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "value": "Books of historical or literary value"
+        },
+        {
+          "min": 14,
+          "max": 14,
+          "value": "Deeds of ownership or tokens of legitimacy"
+        },
+        {
+          "min": 15,
+          "max": 15,
+          "value": "Statues or figurines of material value"
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "value": "Religious tokens in precious materials"
+        },
+        {
+          "min": 17,
+          "max": 17,
+          "value": "Medicinal herbs or compounds"
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "value": "Liquors of rare provenance"
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "value": "Vividly illustrated ancient erotica"
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "value": "Musical instruments of precious materials"
+        }
+      ]
+    }
+  },
+  "silver_value_matrix": {
+    "roll": "2d6",
+    "bands": [
+      "2-3",
+      "4-5",
+      "6-8",
+      "9-10",
+      "11-12"
+    ],
+    "rows": {
+      "Minor bandit cache or petty find": {
+        "2-3": "1d6",
+        "4-5": "1d6x10",
+        "6-8": "1d6x25",
+        "9-10": "1d6x50",
+        "11-12": "1d6x100"
+      },
+      "Successful bandit chief's loot": {
+        "2-3": "1d6x10",
+        "4-5": "2d6x20",
+        "6-8": "2d6x50",
+        "9-10": "2d10x50",
+        "11-12": "2d10x100"
+      },
+      "Rural noble or gentry's estate": {
+        "2-3": "1d6x100",
+        "4-5": "2d6x100",
+        "6-8": "2d10x100",
+        "9-10": "1d4x1,000",
+        "11-12": "1d8x1,000"
+      },
+      "Great noble's country estate": {
+        "2-3": "1d6x500",
+        "4-5": "2d6x500",
+        "6-8": "2d6x2,000",
+        "9-10": "2d10x2,000",
+        "11-12": "2d10x4,000"
+      },
+      "Solitary dangerous monster's loot": {
+        "2-3": "1d10x50",
+        "4-5": "1d8x100",
+        "6-8": "2d10x250",
+        "9-10": "2d4x1,000",
+        "11-12": "4d6x1,000"
+      },
+      "Solitary legendary monster's trove": {
+        "2-3": "1d10x1,000",
+        "4-5": "1d8x10,000",
+        "6-8": "3d10x10,000",
+        "9-10": "3d6x20,000",
+        "11-12": "2d6x50,000"
+      },
+      "Minor Deep or ancient ruin": {
+        "2-3": "1d6x500",
+        "4-5": "1d6x1,000",
+        "6-8": "3d6x1,000",
+        "9-10": "2d6x2,000",
+        "11-12": "2d6x5,000"
+      },
+      "Significant Deep or ancient ruin": {
+        "2-3": "1d6x1,000",
+        "4-5": "1d4x5,000",
+        "6-8": "2d4x10,000",
+        "9-10": "2d8x10,000",
+        "11-12": "4d6x10,000"
+      },
+      "Sprawling Deep or megadungeon": {
+        "2-3": "1d6x5,000",
+        "4-5": "2d6x10,000",
+        "6-8": "1d4x50,000",
+        "9-10": "1d10x50,000",
+        "11-12": "2d6x50,000"
+      },
+      "Merchant prince's estate": {
+        "2-3": "1d10x100",
+        "4-5": "2d6x500",
+        "6-8": "2d6x2,000",
+        "9-10": "1d10x5,000",
+        "11-12": "2d6x5,000"
+      },
+      "Outsider settlement or outpost": {
+        "2-3": "1d8x1,000",
+        "4-5": "2d10x1,000",
+        "6-8": "1d4x10,000",
+        "9-10": "1d10x10,000",
+        "11-12": "3d6x10,000"
+      },
+      "Outsider city or major power center": {
+        "2-3": "2d6x1,000",
+        "4-5": "1d8x10,000",
+        "6-8": "1d10x20,000",
+        "9-10": "2d10x20,000",
+        "11-12": "3d10x20,000"
+      },
+      "Ancient royal palace or seat of rule": {
+        "2-3": "2d6x1,000",
+        "4-5": "1d6x5,000",
+        "6-8": "2d6x10,000",
+        "9-10": "1d6x50,000",
+        "11-12": "2d6x50,000"
+      },
+      "Richly adorned great temple": {
+        "2-3": "1d6x1,000",
+        "4-5": "2d10x1,000",
+        "6-8": "3d6x5,000",
+        "9-10": "2d6x10,000",
+        "11-12": "2d6x20,000"
+      },
+      "Lost settlement of limited size": {
+        "2-3": "2d6x100",
+        "4-5": "1d6x500",
+        "6-8": "1d10x1,000",
+        "9-10": "2d8x1,000",
+        "11-12": "1d10x5,000"
+      },
+      "Lost city with many explorable areas": {
+        "2-3": "1d6x1,000",
+        "4-5": "2d8x1,000",
+        "6-8": "2d8x5,000",
+        "9-10": "4d6x10,000",
+        "11-12": "4d6x20,000"
+      },
+      "Great wizard's domicile": {
+        "2-3": "1d8x1,000",
+        "4-5": "2d6x2,000",
+        "6-8": "2d6x5,000",
+        "9-10": "1d6x20,000",
+        "11-12": "1d12x20,000"
+      }
+    }
+  },
+  "magic_item_matrix": {
+    "roll": "1d20",
+    "columns": [
+      "No Items",
+      "One Item",
+      "Two Items",
+      "Three or More"
+    ],
+    "rows": {
+      "Trove of 1 HD creature": {
+        "No Items": "1-19",
+        "One Item": "20",
+        "Two Items": "N/A",
+        "Three or More": "N/A"
+      },
+      "Trove of 2-4 HD creature": {
+        "No Items": "1-18",
+        "One Item": "19",
+        "Two Items": "20",
+        "Three or More": "N/A"
+      },
+      "Trove of 5-10 HD creature": {
+        "No Items": "1-10",
+        "One Item": "11-17",
+        "Two Items": "18-19",
+        "Three or More": "20"
+      },
+      "Trove of 11+ HD creature": {
+        "No Items": "N/A",
+        "One Item": "1-8",
+        "Two Items": "9-16",
+        "Three or More": "17-20"
+      },
+      "Minor unguarded trove": {
+        "No Items": "1-18",
+        "One Item": "19-20",
+        "Two Items": "N/A",
+        "Three or More": "N/A"
+      },
+      "Major unguarded trove": {
+        "No Items": "1-5",
+        "One Item": "6-18",
+        "Two Items": "19",
+        "Three or More": "20"
+      },
+      "Adventurer or noble": {
+        "No Items": "1-10",
+        "One Item": "11-19",
+        "Two Items": "20",
+        "Three or More": "N/A"
+      },
+      "Veteran adventurer": {
+        "No Items": "N/A",
+        "One Item": "1-5",
+        "Two Items": "6-15",
+        "Three or More": "16-20"
+      },
+      "Minor mage or shaman": {
+        "No Items": "1-10",
+        "One Item": "11-18",
+        "Two Items": "19-20",
+        "Three or More": "N/A"
+      },
+      "Great wizard": {
+        "No Items": "N/A",
+        "One Item": "N/A",
+        "Two Items": "1-5",
+        "Three or More": "6-20"
+      }
+    },
+    "item_count_dice": "1d20",
+    "magic_item_distribution_table": "Magic Item Type"
+  },
+  "notes": "Pick the site row, roll 2d6 to choose the column, then roll that cell's dice for the trove's silver value. For magic, pick the owner row and roll 1d20 for the item count, then roll on Magic Item Type per item."
+}
