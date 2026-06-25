@@ -9,8 +9,13 @@
       "kind": "spells",
       "full_or_partial": "both",
       "effort_skill": "Magic",
-      "effort_attrs": ["Int", "Cha"],
-      "spell_lists": ["High Magic"],
+      "effort_attrs": [
+        "Int",
+        "Cha"
+      ],
+      "spell_lists": [
+        "High Magic"
+      ],
       "free_arts": [],
       "art_list": [],
       "arts_pointer": null,
@@ -24,10 +29,21 @@
       "kind": "spells",
       "full_or_partial": "both",
       "effort_skill": "Magic",
-      "effort_attrs": ["Int", "Cha"],
-      "spell_lists": ["High Magic", "Elementalist"],
-      "free_arts": ["Elemental Resilience", "Elemental Sparks"],
-      "art_list": ["Elementalist Art"],
+      "effort_attrs": [
+        "Int",
+        "Cha"
+      ],
+      "spell_lists": [
+        "High Magic",
+        "Elementalist"
+      ],
+      "free_arts": [
+        "Elemental Resilience",
+        "Elemental Sparks"
+      ],
+      "art_list": [
+        "Elementalist Art"
+      ],
       "arts_pointer": null,
       "chosen_arts_L1": 1,
       "known_spells_full": 4,
@@ -39,10 +55,18 @@
       "kind": "spells",
       "full_or_partial": "both",
       "effort_skill": "Magic",
-      "effort_attrs": ["Int", "Cha"],
-      "spell_lists": ["High Magic", "Necromancer"],
+      "effort_attrs": [
+        "Int",
+        "Cha"
+      ],
+      "spell_lists": [
+        "High Magic",
+        "Necromancer"
+      ],
       "free_arts": [],
-      "art_list": ["Necromancer Art"],
+      "art_list": [
+        "Necromancer Art"
+      ],
       "arts_pointer": null,
       "chosen_arts_L1": 1,
       "known_spells_full": 4,
@@ -54,11 +78,15 @@
       "kind": "spellpoints",
       "full_or_partial": "both",
       "effort_skill": "Magic",
-      "effort_attrs": ["Int"],
-      "spell_lists": ["High Magic"],
+      "effort_attrs": [
+        "Int"
+      ],
+      "spell_lists": [
+        "High Magic"
+      ],
       "free_arts": [],
       "art_list": [],
-      "arts_pointer": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md",
+      "arts_pointer": null,
       "chosen_arts_L1": 0,
       "known_spells_full": 4,
       "known_spells_partial": 2,
@@ -69,10 +97,17 @@
       "kind": "arts",
       "full_or_partial": "partial",
       "effort_skill": "Heal",
-      "effort_attrs": ["Int", "Cha"],
+      "effort_attrs": [
+        "Int",
+        "Cha"
+      ],
       "spell_lists": [],
-      "free_arts": ["Healing Touch"],
-      "art_list": ["Healer Art"],
+      "free_arts": [
+        "Healing Touch"
+      ],
+      "art_list": [
+        "Healer Art"
+      ],
       "arts_pointer": null,
       "chosen_arts_L1": 1,
       "known_spells_full": 0,
@@ -86,8 +121,14 @@
       "effort_skill": "order",
       "effort_attrs": "best",
       "spell_lists": [],
-      "free_arts": ["Martial Style", "Unarmed Might", "Unarmored Defense"],
-      "art_list": ["Vowed Art"],
+      "free_arts": [
+        "Martial Style",
+        "Unarmed Might",
+        "Unarmored Defense"
+      ],
+      "art_list": [
+        "Vowed Art"
+      ],
       "arts_pointer": null,
       "chosen_arts_L1": 1,
       "known_spells_full": 0,
@@ -99,11 +140,18 @@
       "kind": "arts",
       "full_or_partial": "partial",
       "effort_skill": "Survive",
-      "effort_attrs": ["Con", "Cha"],
+      "effort_attrs": [
+        "Con",
+        "Cha"
+      ],
       "spell_lists": [],
-      "free_arts": ["Change Form"],
-      "art_list": [],
-      "arts_pointer": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md",
+      "free_arts": [
+        "Change Form"
+      ],
+      "art_list": [
+        "Darian Skinshifter Art"
+      ],
+      "arts_pointer": null,
       "chosen_arts_L1": 1,
       "known_spells_full": 0,
       "known_spells_partial": 0,
@@ -114,11 +162,18 @@
       "kind": "arts",
       "full_or_partial": "partial",
       "effort_skill": "Stab",
-      "effort_attrs": ["Dex", "Int"],
+      "effort_attrs": [
+        "Dex",
+        "Int"
+      ],
       "spell_lists": [],
-      "free_arts": ["Favored Weapon"],
-      "art_list": [],
-      "arts_pointer": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md",
+      "free_arts": [
+        "Favored Weapon"
+      ],
+      "art_list": [
+        "Kistian Duelist Art"
+      ],
+      "arts_pointer": null,
       "chosen_arts_L1": 1,
       "known_spells_full": 0,
       "known_spells_partial": 0,
@@ -129,11 +184,18 @@
       "kind": "arts",
       "full_or_partial": "partial",
       "effort_skill": "Survive",
-      "effort_attrs": ["Wis", "Cha"],
+      "effort_attrs": [
+        "Wis",
+        "Cha"
+      ],
       "spell_lists": [],
-      "free_arts": ["Bind Companion"],
-      "art_list": [],
-      "arts_pointer": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md",
+      "free_arts": [
+        "Bind Companion"
+      ],
+      "art_list": [
+        "Llaigisan Beastmaster Art"
+      ],
+      "arts_pointer": null,
       "chosen_arts_L1": 1,
       "known_spells_full": 0,
       "known_spells_partial": 0,
@@ -144,11 +206,16 @@
       "kind": "arts",
       "full_or_partial": "partial",
       "effort_skill": "Pray",
-      "effort_attrs": ["Wis", "Cha"],
+      "effort_attrs": [
+        "Wis",
+        "Cha"
+      ],
       "spell_lists": [],
       "free_arts": [],
-      "art_list": [],
-      "arts_pointer": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md",
+      "art_list": [
+        "Sarulite Blood Priest Art"
+      ],
+      "arts_pointer": null,
       "chosen_arts_L1": 2,
       "known_spells_full": 0,
       "known_spells_partial": 0,
@@ -159,11 +226,18 @@
       "kind": "arts",
       "full_or_partial": "partial",
       "effort_skill": "Notice",
-      "effort_attrs": ["Int", "Wis"],
+      "effort_attrs": [
+        "Int",
+        "Wis"
+      ],
       "spell_lists": [],
-      "free_arts": ["Open Mind"],
-      "art_list": [],
-      "arts_pointer": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md",
+      "free_arts": [
+        "Open Mind"
+      ],
+      "art_list": [
+        "Vothite Thought Noble Art"
+      ],
+      "arts_pointer": null,
       "chosen_arts_L1": 1,
       "known_spells_full": 0,
       "known_spells_partial": 0,
@@ -174,11 +248,16 @@
       "kind": "arts",
       "full_or_partial": "partial",
       "effort_skill": "Magic",
-      "effort_attrs": ["Int", "Cha"],
+      "effort_attrs": [
+        "Int",
+        "Cha"
+      ],
       "spell_lists": [],
       "free_arts": [],
-      "art_list": [],
-      "arts_pointer": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L473",
+      "art_list": [
+        "Accursed Art"
+      ],
+      "arts_pointer": null,
       "chosen_arts_L1": 2,
       "known_spells_full": 0,
       "known_spells_partial": 0,
@@ -189,11 +268,17 @@
       "kind": "arts",
       "full_or_partial": "partial",
       "effort_skill": "Perform",
-      "effort_attrs": ["Cha"],
+      "effort_attrs": [
+        "Cha"
+      ],
       "spell_lists": [],
-      "free_arts": ["A Thousand Tongues"],
-      "art_list": [],
-      "arts_pointer": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L596",
+      "free_arts": [
+        "A Thousand Tongues"
+      ],
+      "art_list": [
+        "Bard Art"
+      ],
+      "arts_pointer": null,
       "chosen_arts_L1": 1,
       "known_spells_full": 0,
       "known_spells_partial": 0,
@@ -204,11 +289,19 @@
       "kind": "arts",
       "full_or_partial": "partial",
       "effort_skill": "Magic",
-      "effort_attrs": ["Int", "Con"],
+      "effort_attrs": [
+        "Int",
+        "Con"
+      ],
       "spell_lists": [],
-      "free_arts": ["Antimage", "Magebane"],
-      "art_list": [],
-      "arts_pointer": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L693",
+      "free_arts": [
+        "Antimage",
+        "Magebane"
+      ],
+      "art_list": [
+        "Mageslayer Art"
+      ],
+      "arts_pointer": null,
       "chosen_arts_L1": 0,
       "known_spells_full": 0,
       "known_spells_partial": 0,
@@ -219,11 +312,16 @@
       "kind": "arts",
       "full_or_partial": "partial",
       "effort_skill": "none",
-      "effort_attrs": ["Wis", "Cha"],
+      "effort_attrs": [
+        "Wis",
+        "Cha"
+      ],
       "spell_lists": [],
       "free_arts": [],
-      "art_list": [],
-      "arts_pointer": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L774",
+      "art_list": [
+        "Wise Art"
+      ],
+      "arts_pointer": null,
       "chosen_arts_L1": 1,
       "known_spells_full": 0,
       "known_spells_partial": 0,

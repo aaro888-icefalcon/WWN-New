@@ -1006,12 +1006,16 @@ def _eligible_traditions(ch, chassis):
     return out
 
 
-def _pick_tradition(ch, chassis, label, random_choice, kinds=None):
+def _pick_tradition(ch, chassis, label, random_choice, kinds=None, exclude=None):
     """Choose ONE tradition for the given chassis ('full'|'partial'). Returns name.
-    `kinds` (optional set) restricts to traditions of those kinds (e.g. spell casters)."""
+    `kinds` (optional set) restricts to traditions of those kinds (e.g. spell casters).
+    `exclude` (optional set) drops specific traditions (e.g. Adunic Invoker, which
+    cannot mix with another spellcasting partial)."""
     names = _eligible_traditions(ch, chassis)
     if kinds:
         names = [n for n in names if TRADITIONS[n].get("kind") in kinds] or names
+    if exclude:
+        names = [n for n in names if n not in exclude] or names
     if not names:
         names = ["High Mage"]
     if INTERACTIVE and not random_choice:
@@ -1052,7 +1056,7 @@ def _setup_tradition(ch, random_choice):
         if not names:
             names = ["High Mage"]
         t1 = _pick_tradition(ch, "partial", "First partial tradition", random_choice,
-                             kinds=SPELL_KINDS)
+                             kinds=SPELL_KINDS, exclude={"Adunic Invoker"})
         rem = [n for n in names if n != t1] or names
         if INTERACTIVE and not random_choice:
             labels = ["%s [%s]" % (n, TRADITIONS[n]["kind"]) for n in rem]
@@ -1720,9 +1724,10 @@ def _normalize_class(q):
     for full, canon in CLASS_ALIASES.items():
         if k == full.replace(" ", ""):
             return canon
-    sys.exit("Unknown class '%s'. Options: warrior, expert, mage, adventurer, "
-             "partial-expert/partial-warrior, partial-expert/partial-mage, "
-             "partial-mage/partial-warrior, partial-mage/partial-mage." % q)
+    sys.exit("Unknown class '%s'.\nOptions: warrior, expert, mage, adventurer, %s\n"
+             "(aliases: %s)"
+             % (q, ", ".join(sorted(CLASSES.keys())),
+                ", ".join(sorted(CLASS_ALIASES.keys()))))
 
 
 # ---------------------------------------------------------------------------

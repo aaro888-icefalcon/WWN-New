@@ -8,271 +8,271 @@
       "level_req": "None",
       "level_1": "Gain Notice. Can't be surprised or targeted by Execution Attacks; +1 to your side's initiative (or roll individual init twice).",
       "level_2": "You always act first in a round unless another combatant is equally Alert.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L604"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L604"
     },
     "Armored Magic": {
       "level_req": "Mage/Partial Mage only",
       "level_1": "Cast spells/use arts in armor of Encumbrance 2 or less; may use a shield if your other hand is free to gesture.",
       "level_2": "Cast in armor of any Encumbrance, and even with both hands full (not bound).",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L612"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L612"
     },
     "Armsmaster": {
       "level_req": "None",
       "level_1": "Gain Stab. Ready a stowed melee/thrown weapon as an Instant; add Stab skill to melee/thrown damage or Shock. (Doesn't stack with Deadeye.)",
       "level_2": "Your melee Shock treats targets as AC 10; +1 to hit with thrown/melee attacks.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L620"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L620"
     },
     "Artisan": {
       "level_req": "None",
       "level_1": "Gain Craft. Craft counts as one level higher (max 5) for mods, which cost one less salvage; Craft works for any crafting profession.",
       "level_2": "First mod on an item is free of Maintenance and half-cost; auto-succeed at masterwork gear; monthly extra salvage reduction.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L630"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L630"
     },
     "Assassin": {
       "level_req": "None",
       "level_1": "Gain Sneak. Conceal a knife-sized object, draw it On Turn; point-blank surprise-round attacks with it can't miss.",
       "level_2": "Take a (splittable) Move action on the same round as an Execution Attack, closing without alerting the victim.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L638"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L638"
     },
     "Authority": {
       "level_req": "None",
       "level_1": "Gain Lead. Once/day, a Cha/Lead check vs an NPC's Morale makes them comply with a not-harmful request.",
       "level_2": "NPCs you directly lead gain +Lead to Morale and hit rolls and +1 to skill checks; followers won't act against you.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L646"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L646"
     },
     "Close Combatant": {
       "level_req": "None",
       "level_1": "Gain any combat skill. Use knife-sized thrown weapons in melee freely; ignore melee Shock (but doing so disrupts your casting that round).",
       "level_2": "Your melee Shock treats all targets as AC 10; Fighting Withdrawal becomes a free On Turn action for you.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L654"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L654"
     },
     "Connected": {
       "level_req": "None",
       "level_1": "Gain Connect. After a week somewhere not hostile, you have contacts for mildly-illegal favors — one favor/game day.",
       "level_2": "Once/session, plausibly run into someone you know willing to do a modest favor (GM decides who).",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L662"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L662"
     },
     "Cultured": {
       "level_req": "None",
       "level_1": "Gain Connect. Speak all common regional languages; learn a new one in a week; once/day gain a minor no-cost favor from a non-hostile NPC.",
       "level_2": "Once/session, reroll a failed social skill check using your cultural knowledge.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L670"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L670"
     },
     "Die Hard": {
       "level_req": "None",
       "level_1": "+2 max HP per level (retroactive). Auto-stabilize when Mortally Wounded unless torn apart.",
       "level_2": "The first time each day an injury would drop you to 0 HP, you survive at 1 HP instead.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L676"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L676"
     },
     "Deadeye": {
       "level_req": "None",
       "level_1": "Gain Shoot. Ready a stowed ranged weapon as an Instant; use a bow in melee at -4; add Shoot skill to ranged damage.",
       "level_2": "Reload slow weapons On Turn; use any ranged weapon in melee without penalty; once/scene auto-hit an inanimate target.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L684"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L684"
     },
     "Dealmaker": {
       "level_req": "None",
       "level_1": "Gain Trade. In half an hour, find a buyer/seller for any tradeable good or service in the community, legal or not.",
       "level_2": "Once/session, make a request of a non-hostile sentient; if plausible, they'll deal for a price or favor.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L692"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L692"
     },
     "Developed Attribute": {
       "level_req": "Not Mage/Partial Mage",
       "level_1": "Raise one attribute's modifier by +1 (max +3); the score is unchanged. May be taken multiple times for different attributes.",
       "level_2": "(No second level — repeatable instead.)",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L700"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L700"
     },
     "Diplomatic Grace": {
       "level_req": "None",
       "level_1": "Gain Convince. Speak all common regional languages (learn new in a week, fluent in a month); reroll 1s on negotiation/diplomacy dice.",
       "level_2": "Once/day, consecrate a bargain; the other party must Mental save to break it (most NPCs won't try). Must be specific and time-limited.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L708"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L708"
     },
     "Gifted Chirurgeon": {
       "level_req": "None",
       "level_1": "Gain Heal. Stabilize one adjacent Mortally Wounded person/round On Turn; roll Heal checks 3d6-drop-lowest; double post-battle first aid healing.",
       "level_2": "Your healing counts as magical: heal 1d6 + Heal to an adjacent ally as a Main action (+1 Strain), reviving without Frailty.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L714"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L714"
     },
     "Henchkeeper": {
       "level_req": "None",
       "level_1": "Gain Lead. Recruit loyal henchmen (one per 3 levels) within a day of arriving; they escort and risk danger but won't fight except to save themselves.",
       "level_2": "Henchmen will fight for you (treated as Veteran Soldiers); capable NPCs can become henchmen if you've earned their loyalty.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L722"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L722"
     },
     "Impervious Defense": {
       "level_req": "None",
       "level_1": "Innate Armor Class of 15 + half your level (round up). Doesn't stack with armor, but Dex and shield modifiers apply.",
       "level_2": "Once/day, as an Instant, shrug off a single weapon attack or physical trauma (not environmental/falling damage).",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L732"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L732"
     },
     "Impostor": {
       "level_req": "None",
       "level_1": "Gain Perform or Sneak. Once/scene reroll a failed disguise/imposture check; hold one flawless minor false identity.",
       "level_2": "Swap between three chosen appearances with a Main action; establish a new false identity in each community you spend a day in.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L740"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L740"
     },
     "Lucky": {
       "level_req": "An attribute modifier of -1 or worse",
       "level_1": "Once/week, a blow or effect that would kill, Mortally Wound, or disable you simply fails. Roll games of chance twice, take the better.",
       "level_2": "Once/session in peril, roll 1d6: on 2+ something fortunate happens; on a 1 the situation gets much worse.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L750"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L750"
     },
     "Nullifier": {
       "level_req": "Not Mage/Partial Mage",
       "level_1": "You and allies within 20' get +2 saves vs magic; sense magic within 20' On Turn; your first failed save vs magic each day becomes a success.",
       "level_2": "Once/day, as an Instant, be simply unaffected by an unwanted magical effect or monstrous power, even one with no save.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L758"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L758"
     },
     "Poisoner": {
       "level_req": "None",
       "level_1": "Gain Heal. Reroll failed saves vs poison; brew toxins (one dose/level) dealing 2d6 + level on a hit/Shock, Physical save for half.",
       "level_2": "Immune to poison; universal antidote; -Heal penalty to detect/save vs your poisons; ingested poisons count as Execution Attacks.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L766"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L766"
     },
     "Polymath": {
       "level_req": "Expert/Partial Expert only",
       "level_1": "Gain any one skill. Treat all non-combat skills as at least level-0 for checks, even ones you lack. (Phantom levels don't stack/discount.)",
       "level_2": "Treat all non-combat skills as at least level-1 for checks.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L772"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L772"
     },
     "Rider": {
       "level_req": "None",
       "level_1": "Gain Ride. Your steeds count as Morale 12, use your AC if better, and travel 50% further/day; intuitively communicate with riding beasts.",
       "level_2": "Once/scene negate an attack on your steed (Instant); reroll a failed Ride check; telepathic link with a bonded steed within 200'.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L780"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L780"
     },
     "Shocking Assault": {
       "level_req": "None",
       "level_1": "Gain Punch or Stab. Your weapon's Shock treats all targets as AC 10 (if it can harm them and they aren't Shock-immune).",
       "level_2": "+2 to the Shock rating of all melee/unarmed attacks that do Shock.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L788"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L788"
     },
     "Sniper's Eye": {
       "level_req": "None",
       "level_1": "Gain Shoot. On a ranged Execution Attack or target-shooting, roll the skill check 3d6-drop-lowest.",
       "level_2": "Don't miss ranged Execution Attacks; the target takes -4 on the Physical save and double damage even on a success.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L798"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L798"
     },
     "Special Origin": {
       "level_req": "GM permission; pick a species origin",
       "level_1": "Take the origin Focus for a non-human species (from the bestiary) to play that demihuman/alien kind, gaining its listed benefits.",
       "level_2": "(Varies by chosen origin — see the bestiary entry.)",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L806"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L806"
     },
     "Specialist": {
       "level_req": "None",
       "level_1": "Gain any skill (not Magic/Stab/Shoot/Punch). Roll 3d6-drop-lowest for all checks in it. May be taken for different skills.",
       "level_2": "Roll 4d6-drop-two-lowest for all checks in this skill.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L814"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L814"
     },
     "Spirit Familiar": {
       "level_req": "None",
       "level_1": "Gain a loyal familiar (cat- to human-sized) with Evoked Servitor stats, summon/dismiss as a Main action; once/day it refreshes one Committed Effort.",
       "level_2": "Pick two upgrades (extra HP, an attack, a skill bonus, a second shape, flight, or speech). Repeatable for two more each time.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L822"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L822"
     },
     "Trapmaster": {
       "level_req": "None",
       "level_1": "Gain Notice. Once/scene reroll a failed trap-related save/check; improvise a trap (non-lethal lose-a-round, or lethal 1d6 + 2x level) in 5 minutes.",
       "level_2": "Once/scene, your efforts count as Extirpate Arcana (cast as a Mage of twice your level) against a magical trap or hazard.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L842"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L842"
     },
     "Unarmed Combatant": {
       "level_req": "None",
       "level_1": "Gain Punch. Unarmed damage scales with Punch (1d6 at L0 up to 1d12+1 at L4) with Shock = Punch skill vs AC 15; bind ranged-weapon foes.",
       "level_2": "Even on a missed Punch, deal an unmodified 1d6 plus any Shock the blow would inflict.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L852"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L852"
     },
     "Unique Gift": {
       "level_req": "GM agreement",
       "level_1": "A catch-all special power defined by player and GM together, worth one Focus pick; revisable if it proves too weak or strong.",
       "level_2": "(As agreed with the GM.)",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L860"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L860"
     },
     "Valiant Defender": {
       "level_req": "None",
       "level_1": "Gain Stab or Punch. +2 to Screen Ally checks, screen one more attacker, and once/round screen even spells/area effects (vs the attacker's Magic).",
       "level_2": "Your first Screen Ally check each round auto-succeeds; +2 AC while screening; screen foes as large as ogres or oxen.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L868"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L868"
     },
     "Well Met": {
       "level_req": "None",
       "level_1": "Reaction rolls get +1 while you're present; even hostile beings usually grant a round of parley first. Works once per target.",
       "level_2": "Once/session, make a subject as friendly and helpful as plausibly possible when a reaction roll is made.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L876"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L876"
     },
     "Whirlwind Assault": {
       "level_req": "None",
       "level_1": "Gain Stab. Once/scene, as an On Turn action, apply your Shock damage to all foes in melee range susceptible to it.",
       "level_2": "The first time you kill someone in a round with a normal attack, instantly gain a second attack on any target in range.",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L884"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L884"
     },
     "Xenoblooded": {
       "level_req": "GM permission",
       "level_1": "Pick one alien-heritage benefit: heat/smoke immunity; water-adaptation; heavy/light-gravity attribute shift; or need no food/sleep/air + see in the dark.",
       "level_2": "(No second level — a single heritage benefit.)",
-      "page": "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md#L892"
+      "page": "book/Worlds Without Number Deluxe/02 - Character Creation.md#L892"
     },
     "Mundane Alchemist": {
       "pointer": true,
       "effect": "Atlas optional Focus (Experts only): grants the Alchemy skill and basic formulae to brew lesser/greater alchemical works.",
-      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L248"
+      "page": "book/The Atlas of the Latter Earth/04 - Optional Rules and Classes.md#L248"
     },
     "The Accursed (class)": {
       "pointer": true,
       "effect": "Atlas partial-Mage class pacted with an Outsider; wields Accursed Blade/Bolt arts (use Magic to attack) plus dark Effort-fueled arts.",
-      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L411"
+      "page": "book/The Atlas of the Latter Earth/04 - Optional Rules and Classes.md#L411"
     },
     "The Bard (class)": {
       "pointer": true,
       "effect": "Atlas class whose non-magical performance arts hearten allies and dismay foes by tapping the Legacy's archetypes.",
-      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L532"
+      "page": "book/The Atlas of the Latter Earth/04 - Optional Rules and Classes.md#L532"
     },
     "The Mageslayer (class)": {
       "pointer": true,
       "effect": "Atlas combatant class specialized in resisting hostile magic and swiftly butchering enemy spellcasters.",
-      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L401"
+      "page": "book/The Atlas of the Latter Earth/04 - Optional Rules and Classes.md#L401"
     },
     "The Wise (class)": {
       "pointer": true,
       "effect": "Atlas low/no-magic scholar-priest-witch class with limited tricks for settings where full magic is absent.",
-      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L405"
+      "page": "book/The Atlas of the Latter Earth/04 - Optional Rules and Classes.md#L405"
     },
     "Adunic Invoker (Gyre)": {
       "pointer": true,
       "effect": "Gyre tradition: invokes the names and authority of the Adunic powers. Has its own arts list and the Traditional Education focus.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L29"
+      "page": "book/Worlds Without Number Deluxe/11 - Arts of the Gyre.md#L29"
     },
     "Darian Skinshifter (Gyre)": {
       "pointer": true,
       "effect": "Gyre tradition: shapeshifts into beast forms via Effort-fueled Skinshifter arts.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L85"
+      "page": "book/Worlds Without Number Deluxe/11 - Arts of the Gyre.md#L85"
     },
     "Kistian Duelist (Gyre)": {
       "pointer": true,
       "effect": "Gyre tradition: magical warrior-duelist (with the Flaw of Fragility); arts sharpen martial prowess.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L170"
+      "page": "book/Worlds Without Number Deluxe/11 - Arts of the Gyre.md#L170"
     },
     "Llaigisan Beastmaster (Gyre)": {
       "pointer": true,
       "effect": "Gyre tradition: bonds and commands animal companions (the Chosen Friend) through Beastmaster arts.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L258"
+      "page": "book/Worlds Without Number Deluxe/11 - Arts of the Gyre.md#L258"
     },
     "Sarulite Blood Priest (Gyre)": {
       "pointer": true,
       "effect": "Gyre tradition: blood-sacrifice priest whose arts trade vitality for power.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L340"
+      "page": "book/Worlds Without Number Deluxe/11 - Arts of the Gyre.md#L340"
     },
     "Vothite Thought Noble (Gyre)": {
       "pointer": true,
       "effect": "Gyre tradition: psychic noble whose arts dominate and read minds.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L412"
+      "page": "book/Worlds Without Number Deluxe/11 - Arts of the Gyre.md#L412"
     },
     "Legate Writs": {
       "pointer": true,
       "effect": "Legate-tier powers (Writs of Might/Skill/Sorcery/Mastery), fueled by Legate Effort, undispellable and undetectable. Begin with Legate's Impunity + Legate's Wrath. See ch. 13 for the full Writ list.",
-      "page": "book/Worlds-Without-Number-Deluxe/13-Legates.md#L33"
+      "page": "book/Worlds Without Number Deluxe/13 - Legates.md#L33"
     }
   }
 }
