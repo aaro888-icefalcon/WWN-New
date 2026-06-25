@@ -156,10 +156,33 @@ def roll_bundle_table(roller, bundle_slug, table_name, label):
 
 def roll_location_tag(roller, family):
     """A location tag + its 5 d3 sub-tables, exactly as gen.py rolls them.
-    Returns (tag_name, {label: value})."""
+    Returns (tag_name, summary, {label: value}) so the FULL tag — its book
+    summary paragraph AND all five sub-tables — can be surfaced into the
+    committed canon (and the saved place record), not just the tag name."""
     name, detail = gen.roll_tag(roller, family, full=True)
+    summary = ""
+    if detail and name in detail["tags"]:
+        summary = detail["tags"][name].get("summary", "")
     subs = gen.roll_tag_subtables(roller, detail, name)
-    return name, subs
+    return name, summary, subs
+
+
+# Plural -> singular label used when rendering a tag's sub-tables.
+_TAG_SINGULAR = {"Enemies": "Enemy", "Friends": "Friend",
+                 "Complications": "Complication", "Things": "Thing",
+                 "Places": "Place"}
+
+
+def full_tag_block(title, name, summary, subs, indent=""):
+    """Render a tag's COMPLETE information — summary + all five sub-tables — as
+    markdown lines, so the saved site carries the full meaning of its tag."""
+    lines = [f"{indent}- **{title} — {name}**"]
+    if summary:
+        lines.append(f"{indent}  - *{summary}*")
+    for label in ("Enemies", "Friends", "Complications", "Things", "Places"):
+        if label in subs:
+            lines.append(f"{indent}  - {_TAG_SINGULAR[label]}: {subs[label]}")
+    return lines
 
 
 def short_npc(roller):
@@ -179,7 +202,13 @@ def short_npc(roller):
     amb = cd["tags"][ctag]["subtables"]["Ambitions"]
     a = roller.roll(3, "figure Ambition (d3)")
     ambition = amb[min(a, len(amb)) - 1]
-    return f"{role} ({cls}); {twist}; ambition — {ambition.rstrip('.')}"
+    # Surface the character tag's full meaning (name + summary), not just the
+    # rolled ambition, so the NPC's drama reaches context (Mythic/NPC adjunct).
+    csumm = cd["tags"].get(ctag, {}).get("summary", "")
+    line = f"{role} ({cls}); {twist}; tag *{ctag}*; ambition — {ambition.rstrip('.')}"
+    if csumm:
+        line += f"\n    - *{csumm}*"
+    return line
 
 
 def short_hook(roller):
@@ -218,14 +247,10 @@ def compose_place(roller, cmd):
     Map the command to the tag family the way gen.py does (settlement ->
     community), so we reuse the same flat/detail files gen.py reads."""
     family = gen.TAG_DETAIL[cmd]  # settlement->community, ruin->ruin, ...
-    name, subs = roll_location_tag(roller, family)
-    singular = {"Enemies": "Enemy", "Friends": "Friend",
-                "Complications": "Complication", "Things": "Thing",
-                "Places": "Place"}
-    lines = [f"**{family.capitalize()} tag — {name}**"]
-    for label in ("Enemies", "Friends", "Complications", "Things", "Places"):
-        if label in subs:
-            lines.append(f"- {singular[label]}: {subs[label]}")
+    name, summary, subs = roll_location_tag(roller, family)
+    # Surface the FULL tag — its summary paragraph and all five sub-tables —
+    # so the saved site carries its complete meaning into later scene framing.
+    lines = full_tag_block(f"{family.capitalize()} tag", name, summary, subs)
     return name, "\n".join(lines)
 
 
@@ -243,8 +268,11 @@ def compose_nation(roller, fresh):
                              "Good Things Happening Now", "good thing (d20)")
     tension = roll_bundle_table(roller, "nation_construction",
                                 "Disputes With a Neighbor", "tension (d20)")
-    # Ruling court flavor (a court tag, summary only — short)
+    # Ruling court flavor (a court tag — keep its full summary with the nation)
     court_name, court_detail = gen.roll_tag(roller, "court", full=True)
+    court_summary = ""
+    if court_detail and court_name in court_detail["tags"]:
+        court_summary = court_detail["tags"][court_name].get("summary", "")
     figure = short_npc(roller)
 
     origin = None
@@ -255,7 +283,8 @@ def compose_nation(roller, fresh):
     L = [f"### Nation — {name}",
          f"- **Government / theme:** ruled by a {title}; national mood is "
          f"*{gov_theme.split(',')[0].lower()}*.",
-         f"- **Ruling court:** {court_name}.",
+         f"- **Ruling court:** {court_name}."
+         + (f"\n  - *{court_summary}*" if court_summary else ""),
          f"- **Problems (= adventure hooks):**",
          f"  1. {prob1}.",
          f"  2. {prob2}.",
@@ -274,17 +303,17 @@ def compose_region(roller, fresh):
     sc = roller.roll(2, "settlement count (d2)")
     nsettle = sc  # 1 or 2
 
-    wild_name, wild_subs = roll_location_tag(roller, "wilderness")
+    wild_name, wild_summary, wild_subs = roll_location_tag(roller, "wilderness")
 
     settles = []
     for i in range(nsettle):
         sn = place_name(roller)
-        tag, subs = roll_location_tag(roller, "community")
+        tag, summary, subs = roll_location_tag(roller, "community")
         comp = subs.get("Complications", "")
-        settles.append((sn, tag, comp))
+        settles.append((sn, tag, comp, summary, subs))
 
     rn = place_name(roller)
-    ruin_tag, ruin_subs = roll_location_tag(roller, "ruin")
+    ruin_tag, ruin_summary, ruin_subs = roll_location_tag(roller, "ruin")
     ruin_thing = ruin_subs.get("Things", "")
 
     nh = roller.roll(2, "hook count base (d2)") + 1  # 2 or 3
@@ -294,12 +323,19 @@ def compose_region(roller, fresh):
          f"- **Terrain / wilderness tag:** {wild_name} "
          f"(complication: {wild_subs.get('Complications', '—')}).",
          f"- **Settlements:**"]
-    for sn, tag, comp in settles:
+    for sn, tag, comp, _summary, _subs in settles:
         L.append(f"  - **{sn}** — {tag}; current trouble: {comp}.")
     L.append(f"- **Nearby ruin:** **{rn}** — {ruin_tag}; holds: {ruin_thing}.")
     L.append(f"- **Hooks (seeds to attach to canon):**")
     for h in hooks:
         L.append(f"  - {h}.")
+    # FULL tag fidelity: keep every rolled tag's summary + all five sub-tables
+    # with the saved region, so re-entry reads the complete site, not a one-liner.
+    L.append(f"- **Place details (full rolled tags — save with the site):**")
+    L += full_tag_block("Terrain", wild_name, wild_summary, wild_subs, indent="  ")
+    for sn, tag, comp, summary, subs in settles:
+        L += full_tag_block(sn, tag, summary, subs, indent="  ")
+    L += full_tag_block(rn, ruin_tag, ruin_summary, ruin_subs, indent="  ")
     return rname, "\n".join(L)
 
 

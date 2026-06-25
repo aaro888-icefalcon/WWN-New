@@ -240,6 +240,13 @@ matching section — it becomes ground truth, overriding recollection (exactly a
 - **seed deck** ← refreshed to 30–40 from the new canon.
 These are the same `state.py`/`seeds` calls bookkeeping already runs, so the wiring is additive.
 
+**Tag fidelity (hard rule).** Whenever a place/figure is generated from a tag, the **full** tag must be
+surfaced and saved — its **summary paragraph AND all five sub-tables** (Enemies/Friends/Complications/
+Things/Places), and for character tags the summary + Ambition — never just the tag name or one sub-table.
+This is now enforced in the generators (`gen.py` RESULT, `worldgen.py` place/region/nation/NPC composers
+via `full_tag_block`); the `places.json` node must store the same complete tag so re-entry re-surfaces it
+to context rather than re-rolling or reading a thin stub.
+
 ### 4.4 Cadence & "don't over-generate"
 - **Region scope** is generated **rarely** (only when the PC leaves the detailed region) — a once-per-arc
   event, fully player-approved.
