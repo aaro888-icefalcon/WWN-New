@@ -98,9 +98,11 @@ real options for **all 11** traditions and `lookup.py spell <art>` resolves them
 
 ## Part 2 · Atlas of the Latter Earth — folded *into* character creation
 
-The Atlas adds creation-time content that should be selectable in chargen (gated by a campaign
-**content profile**, since much of it is optional/setting-toned). Source: `04-Optional-Rules-and-Classes.md`,
-`05-Character-Tags.md`, plus Latter-Earth origins in the Deluxe `06-The-World-of-the-Latter-Earth.md`.
+The Atlas adds creation-time content. **Default = all classes available** — core (Warrior/Expert/Mage +
+the four Adventurer combos), all Gyre traditions, and the four Atlas partials are *all* on the menu by
+default. The content profile (2.5) is an **opt-out** for tone-restricted games, not an opt-in.
+Source: `04-Optional-Rules-and-Classes.md`, plus Latter-Earth origins in the Deluxe
+`06-The-World-of-the-Latter-Earth.md`. **Character Tags are NOT a creation step** — see 2.3.
 
 ### 2.1 Four new partial classes (Atlas ch. 04)
 Add to `CLASSES` (and `traditions.json` where they grant arts):
@@ -123,12 +125,19 @@ Add to `FOCI` (with correct pages) and `foci.json`:
 - **Amundi Godblood Foci** — bloodline powers.
 Mark each `combat`/eligibility and any class restriction so `_focus_ok_for` filters them correctly.
 
-### 2.3 Character Tags as a creation step (Atlas ch. 05)
-`character_tags.json` / `character_tags_detail.json` already exist but chargen ignores them. Add an
-**optional creation step** (after background, before/after foci): offer to **roll or pick 1 Character Tag**
-(Baneful Success, Bitter Grudge, Hidden Origins, …) to seed the PC's dramatic hook — and record its
-**Ambition** into the sheet's Goal/Ties and as a starting **Thread** for the engine Lists. This directly
-serves the "goal worth dying for" requirement and gives Session Zero a built-in hook.
+### 2.3 Character Tags are an NPC adjunct — NOT a PC creation step
+`character_tags.json` / `character_tags_detail.json` are an **NPC/Mythic tool, not a chargen step.**
+chargen does **not** offer them to the player. They belong to the world-generation side, as an adjunct to
+the Mythic emulator and The Adventure Crafter:
+- They already drive `worldgen.short_npc()` (role + characteristic twist + **Ambition** + now the tag's
+  full summary — see the tag-fidelity fix).
+- When the oracle **spawns or deepens an NPC** (a Random Event "NPC Action", an Adventure Crafter
+  Character/plot-point, a Fate Question that names someone), roll/assign a Character Tag for drama and let
+  its **Ambition become that NPC's Thread** on the engine Lists.
+- The PC's own goal/ties stay a deliberate player choice at "name, goal, ties" (compendium §8), unaided by
+  a tag roll.
+
+This keeps tags surfacing *the world* (NPCs the engine introduces) and out of the player's build.
 
 ### 2.4 Latter-Earth origins & languages
 - **Origins:** enumerate the Latter-Earth playable origins (human default; **Blighted/Anakim** and any
@@ -137,27 +146,64 @@ serves the "goal worth dying for" requirement and gives Session Zero a built-in 
 - **Languages:** at "Record starting languages", offer the **Gyre tongues** list
   (Deluxe p.107 / setting-canon) so a Latter-Earth PC picks real languages, not placeholders.
 
-### 2.5 Campaign content profile (gates all of the above)
-New `campaign/content-profile.json` (written at Session Zero, read by chargen):
+### 2.5 Campaign content profile (an OPT-OUT; default = everything on)
+New `campaign/content-profile.json` (written at Session Zero, read by chargen). **Defaults enable all
+content;** the profile only ever *removes* options for a tone-restricted game.
 ```
-{ "magic_level": "default|low|no",   // low/no-magic class & focus restrictions (Atlas ch.04)
-  "allow_atlas_classes": true, "allow_gyre_arts": true,
-  "allow_nonhuman_origins": false, "optional_rules": ["maiming","slow_healing", ...] }
+{ "magic_level": "default",          // default | low | no   (default = full menu)
+  "allow_atlas_classes": true,        // Accursed / Bard / Mageslayer / Wise
+  "allow_gyre_arts": true,            // the six Gyre arts-classes
+  "allow_nonhuman_origins": true,     // Blighted/Anakim & bestiary origins
+  "optional_rules": [] }              // e.g. "maiming","slow_healing","more_strain"
 ```
-- `magic_level: low` → no full Mages/dual partials, no Healers, Wise becomes the main caster.
-- `magic_level: no` → only Warrior/Expert/Pe-Pw; strike supernatural foci (Nullifier, Lucky, Spirit
-  Familiar, …) per the Atlas list.
-chargen filters the class/focus/tradition menus against this profile so the player is only offered what
-the campaign allows. **Conclusion of creation:** the chosen optional rules (maiming, slow healing, more
-System Strain) are written into `campaign/campaign-state.md` so play and bookkeeping honor them.
+- `magic_level: default` (the default) → **every class/tradition/focus is offered.**
+- `magic_level: low` → opt-out: no full Mages/dual partials, no Healers, Wise becomes the main caster.
+- `magic_level: no` → opt-out: only Warrior/Expert/Pe-Pw; strike supernatural foci (Nullifier, Lucky,
+  Spirit Familiar, …) per the Atlas list.
+chargen filters the menus against this profile, but with defaults the player sees the **full** roster.
+**Conclusion of creation:** any chosen optional rules (maiming, slow healing, more System Strain) are
+written into `campaign/campaign-state.md` so play and bookkeeping honor them.
 
-**Acceptance:** with `magic_level: no` the tradition step is skipped and supernatural foci are hidden;
-with Atlas enabled, Bard/Mageslayer/Wise/Accursed and the Maqqatban styles appear in the menus; a chosen
-Character Tag lands in the sheet's Goal and as a starting Thread.
+**Acceptance:** a default campaign offers **all** classes — core + 4 Adventurer combos + 11 traditions +
+the 4 Atlas partials + Maqqatban/Amundi/Alchemist foci. Setting `magic_level: no` removes casters and
+supernatural foci. No step ever asks the player to roll a Character Tag.
 
 ---
 
 ## Part 3 · worldgen.py — the map / country→region→location pipeline
+
+### 3.0 Design contract (why this stays legible to Mythic)
+
+**Pillar 1 — separate the skeleton from the fill.** The two-map system owns **geometry & adjacency only**.
+It never invents place content: every node it places (settlement/court/ruin/wilderness) gets its character
+by **deferring to the existing tag subsystem** (`gen.py`'s recipes + `*_tags(_detail).json`), which
+`worldgen.py` already imports. The map says *where*; the tag recipe says *what*. No duplicated content.
+
+**Pillar 2 — three synchronized artifacts per run** (the scene system reads canon + Lists + seeds, never a
+raw map):
+1. **Canon block** → prose appended to `setting-canon.md` (human ground truth).
+2. **Location graph** → `campaign/places.json` nodes (the *machine* output; its job is **proximity**, which
+   powers the `world-model.md` §5 weighting — "PC's region > adjacent > distant", "close enough to show a sign").
+3. **List + seed cards** → each hook → **Thread**, each figure → **Character**, each site/hazard →
+   **Adventure Feature** (via `state.py`), each nation → faction board (the `world-model.md` §2 mapping).
+
+**Pillar 3 — the structured card the scene framer already eats.** Per-place output is a short, typed card
+matching the existing fractal-seed shape (no new parser needed):
+```
+- [PLACE site:ruin id=R-07 region=Veshmarch kingdom=Emed-Kist near=cap+2d w=1]
+  Korvault — ruin; <full tag summary + 5 sub-tables>. → Thread: "what woke in Korvault" (w2)
+```
+The bracket header is machine-parsed (proximity/weight); the prose is narrated. Graph node and card share
+the `id`, so they stay in sync. Tag fidelity (Part 4.3) applies: the card carries the **full** tag.
+
+**Pillar 4 — `places.json` schema** (the persistent graph; one node per region/kingdom/site):
+```
+{ "id": "R-07", "name": "Korvault", "kind": "ruin",     // region|kingdom|settlement|court|ruin|wilderness
+  "parent": "K-Emed-Kist", "adjacency": ["S-03","W-02"], // graph edges (neighbours)
+  "travel_days": 2, "status": "sketch",                  // sketch | detailed
+  "tag": { "name": "...", "summary": "...", "subtables": {Enemies..Places} },  // FULL tag, not a stub
+  "threads": ["T-12"], "characters": ["C-09"], "canon_anchor": "setting-canon.md#korvault" }
+```
 
 ### 3.1 New data: `bridge/generators/geography_construction.json`
 Encode the book's tables (Geography Construction ch.04; Placing Ruins ch.10):
@@ -237,8 +283,16 @@ matching section — it becomes ground truth, overriding recollection (exactly a
 - **Threads List** ← one thread per generated hook (`state.py thread add`);
 - **Characters List** ← each named figure (`state.py char add`);
 - **faction board** ← each new nation (faction sheet / `seeds.md`);
-- **seed deck** ← refreshed to 30–40 from the new canon.
-These are the same `state.py`/`seeds` calls bookkeeping already runs, so the wiring is additive.
+- **seed deck** ← refreshed to 30–40 from the new canon;
+- **`places.json`** ← a node per place (Pillar 4 schema), holding the **full tag**, adjacency, `status`,
+  and the shared `id`s of its Threads/Characters + a `canon_anchor` back into `setting-canon.md`.
+These are the same `state.py`/`seeds` calls bookkeeping already runs, plus the one new `places.json` write,
+so the wiring is additive.
+
+**Re-entry is a lookup, not a reroll (Pillar 6).** Because each node persists with its rolled tag and
+links, returning to a place reads its saved character; the generator is called **only** when a node is
+absent or being promoted `sketch → detailed`. Shared `id`s let a resolving Thread find and update the exact
+node — no orphaned prose, no duplicate towns.
 
 **Tag fidelity (hard rule).** Whenever a place/figure is generated from a tag, the **full** tag must be
 surfaced and saved — its **summary paragraph AND all five sub-tables** (Enemies/Friends/Complications/
@@ -247,13 +301,18 @@ This is now enforced in the generators (`gen.py` RESULT, `worldgen.py` place/reg
 via `full_tag_block`); the `places.json` node must store the same complete tag so re-entry re-surfaces it
 to context rather than re-rolling or reading a thin stub.
 
-### 4.4 Cadence & "don't over-generate"
-- **Region scope** is generated **rarely** (only when the PC leaves the detailed region) — a once-per-arc
-  event, fully player-approved.
-- **Kingdom/site scope** is the common case at a border or a new town.
-- Everything beyond what the scene needs stays a **one-line sketch**; deeper detail waits for the PC to
-  commit (ruins fleshed out only on entry). The bookkeeping FRONTIER step explicitly warns against
-  pre-building.
+### 4.4 Cadence & anti-flood (Pillar 5 — called in context, without gumming up Mythic)
+Three governors keep generation from swamping the emulator:
+- **Scope ladder + smallest-covering-scope.** Site < kingdom < region. The frontier hook generates only
+  what the PC can perceive this scene. **Region scope fires rarely** (only when the PC leaves the detailed
+  region) — a once-per-arc, player-approved event; **kingdom/site scope** is the common border/new-town case.
+- **Proximity-graded entry into the Lists/seeds.** A whole new kingdom generated at a border must **not**
+  crowd out the scene in front of the PC. New **distant** content enters the deck at **low weight (≤1)**;
+  the `places.json` adjacency feeds `world-model.md` §5 so near content always outweighs it — distant hooks
+  sit dormant until proximity rises. This is the anti-flood mechanism.
+- **Two fixed call sites, never speculative.** Invoked only from the scene-framing frontier hook (4.1) and
+  the bookkeeping FRONTIER step (4.2, surfaced by `tick.py` via the subsystem row). Everything beyond
+  scene-need stays a **one-line `sketch`** node; ruins flesh out only on PC commitment.
 
 **Acceptance:** travelling into an uncharted kingdom triggers (a) a generated, player-approved kingdom at
 scene-framing, narrated before "What do you do?", and (b) a bookkeeping FRONTIER entry that appends it to
@@ -264,18 +323,20 @@ re-roll.
 
 ## Part 5 · Sequencing & acceptance
 
-1. **Part 1.1** quick wins → 2. **Part 1.2** tradition layer + spells → 3. **Part 2.5 + 2.1–2.4** Atlas
-   content gated by the content profile → 4. **Part 1.3** interactive chargen (now offers the full,
-   profile-filtered menus) → 5. **Part 3** worldgen geography data + commands → 6. **Part 4** scene /
-   bookkeeping wiring + doc updates → 7. **Part 1.5 / 3 stretch** encode Gyre & Atlas arts and ruin tables.
+1. **Part 1.1** quick wins → 2. **Part 1.2** tradition layer + spells → 3. **Part 2.1–2.2, 2.4–2.5** Atlas
+   classes/foci/origins + the all-on-by-default content profile → 4. **Part 1.3** interactive chargen (now
+   offers the full default roster) → 5. **Part 3** worldgen geography data + commands + `places.json` →
+   6. **Part 4** scene / bookkeeping wiring + doc updates → 7. **Part 1.5 / 3 stretch** encode Gyre & Atlas
+   arts and ruin tables. *(2.3 is a no-op for chargen — tags stay an NPC/worldgen adjunct.)*
 
 Every step keeps honest-shown dice, the player-in-the-loop contract, and the frontier rule. Docs to
 update alongside code: `SKILL.md` (play loop + Session Zero), `references/gm/worldgen.md`,
 `references/rules/character-creation.md`, `bridge/subsystems.md`, `scripts/bookkeep.py`.
 
 **Definition of done for the headline goals:**
-- *In-play creation:* `chargen.py --interactive` walks every step, shows every die, offers all
-  book + Atlas options the content profile allows, and writes a complete sheet incl. a Character-Tag goal.
+- *In-play creation:* `chargen.py --interactive` walks every step, shows every die, offers the **full
+  default roster** (all classes/traditions/foci unless the campaign opted out), and writes a complete
+  sheet whose goal/ties are the player's own choice (no tag roll).
 - *Dynamic worlds:* crossing into uncharted land generates the region/kingdom at framing, narrates it,
-  and bookkeeping persists it to `setting-canon.md` + the Lists — new regions appear *because the PC
-  explored them*, and stay.
+  and bookkeeping persists it to `setting-canon.md` + `places.json` + the Lists — new regions appear
+  *because the PC explored them*, carry their full tags, and re-entry is a lookup, not a reroll.
