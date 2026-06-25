@@ -1,0 +1,8 @@
+{
+  "_doc": "Campaign content profile read by chargen.py (and worldgen). DEFAULTS ENABLE EVERYTHING - this is an OPT-OUT, never an opt-in. With no profile or these defaults, the FULL roster is offered: core classes + 4 Adventurer combos + all 11 Gyre traditions + the 4 Atlas partials + Maqqatban/Amundi/Alchemist foci. Set magic_level to 'low' or 'no' (per Atlas ch04) to remove casters and supernatural foci for a tone-restricted game. Written at Session Zero; copy to campaign/content-profile.json.",
+  "magic_level": "default",
+  "allow_atlas_classes": true,
+  "allow_gyre_arts": true,
+  "allow_nonhuman_origins": true,
+  "optional_rules": []
+}

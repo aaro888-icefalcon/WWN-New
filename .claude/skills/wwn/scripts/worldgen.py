@@ -41,13 +41,38 @@ USAGE
         A starting region as committable draft canon: a wilderness/terrain tag
         + 1-2 settlements + a nearby ruin + 2-3 hooks (fractal_seeds).
 
-  world --scope <region|few-nations|continent> [--fresh] [--seed N]
+  geography --scale <region|kingdom> [--fresh] [--seed N] [--campaign DIR]
+        The book's two-map system (Geography Construction pp.124-127).  This is
+        the SKELETON layer — geometry & adjacency only; every node's content
+        comes from the existing tag recipes (no reinvented place flavor).
+          region   = oceanic frame -> ~6 terrain features -> 1d4+2 rivers (split
+                     downstream only, <=1/4 map) -> 1-3 lakes -> 6 nations on
+                     natural borders.  NO cities/ruins.  Relational sketch +
+                     coordinate hints.
+          kingdom  = small-scale terrain -> demographics (60/sq mi; ~10% urban,
+                     1/3 capital, 1/4 of remainder in 2nd city) -> capital on
+                     water then cities CLOCKWISE from a random cardinal -> each
+                     city tagged 2 Community + 2 Court.
+
+  ruins --kingdom <name> [--fresh] [--seed N] [--campaign DIR]
+        ~6 famous ruins (Placing Ruins p.150) in the wilderness gaps between
+        trade routes; each = a ruin-type roll (Latter-Earth d12 / General d20)
+        + 2 Ruin Tags + a line.  Sketch nodes — flesh out on PC commitment.
+
+  world --scope <region|few-nations|continent|kingdom> [--fresh] [--seed N] [--campaign DIR]
         Scaffold a world at the chosen scope by composing the above:
           region       = 1 detailed region (== `region`).
           few-nations  = 2-4 nation briefs + 1 shared tension + a start region.
           continent    = a sketch: 4-6 one-line nations + a relations map.
+          kingdom      = a region SKELETON + the one detailed kingdom inside it
+                         (+ its ~6 ruins) — the two-map start of a campaign.
         --fresh generates names/history from scratch (history_construction);
         without it, assume Latter-Earth seeding (hooks left to attach to canon).
+
+  --campaign DIR  on the geography/ruins/world commands: append the generated
+        place nodes (each carrying its FULL tag, adjacency, status, ids) to
+        DIR/places.json — the machine graph the scene system reads for proximity.
+        Without it, the node JSON is printed in a fenced block in the draft.
 
 Keep every generated place SHORT — this is a frontier sketch, not a novel.
 Only the starting region should be built in detail; grow the rest on demand.
@@ -183,6 +208,165 @@ def full_tag_block(title, name, summary, subs, indent=""):
         if label in subs:
             lines.append(f"{indent}  - {_TAG_SINGULAR[label]}: {subs[label]}")
     return lines
+
+
+# ---------------------------------------------------------------------------
+# Geography Construction data (the book's terrain / detail / ruin tables).
+# Loaded directly via gen.load (not reimplemented); rolled with gen.roll_table.
+# ---------------------------------------------------------------------------
+GEO_FILE = "geography_construction.json"
+
+
+def _geo(roller, table_name, label):
+    """Roll one table inside geography_construction.json via the shared dice."""
+    doc = gen.load(GEO_FILE)
+    return gen.roll_table(roller, doc["tables"][table_name], label)
+
+
+def roll_terrain_feature(roller, label="terrain feature (d20)"):
+    return _geo(roller, "Significant Terrain Features", label)
+
+
+def roll_terrain_details(roller):
+    """The six one-roll detail dice for a terrain feature."""
+    return {
+        "Populated": _geo(roller, "How Populated", "how populated (d4)"),
+        "Dangerous": _geo(roller, "How Dangerous", "how dangerous (d6)"),
+        "Use": _geo(roller, "What Use", "what use (d8)"),
+        "LastEvent": _geo(roller, "Last Event", "last event (d10)"),
+        "Antagonists": _geo(roller, "Common Antagonists", "common antagonists (d12)"),
+        "Quirk": _geo(roller, "Optional Quirk", "optional quirk (d20)"),
+    }
+
+
+def roll_ruin_type(roller, latter_earth=True):
+    """A ruin type from the General (d20) or Latter-Earth (d12) place table."""
+    if latter_earth:
+        return _geo(roller, "Latter-Earth Places", "ruin type · Latter-Earth (d12)")
+    return _geo(roller, "General Places of Adventure", "ruin type · general (d20)")
+
+
+# ---------------------------------------------------------------------------
+# Relational-map geometry (the book's "loose scrawls" — geometry only, the tag
+# subsystem owns all place content).  Honest dice via the shared Roller.
+# ---------------------------------------------------------------------------
+CARDINALS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+EDGES = ["north edge", "east edge", "south edge", "west edge"]
+OCEANIC = {1: "1 oceanic side — a curving coastline",
+           2: "2 oceanic sides — a peninsula / land bridge off two edges",
+           3: "3 oceanic sides — a self-contained peninsula",
+           4: "4 oceanic sides — the region is an island"}
+
+
+def roll_oceanic_sides(roller):
+    n = roller.roll(4, "oceanic sides (d4)")
+    return n, OCEANIC[n]
+
+
+def roll_cardinal(roller, label="cardinal (d8)"):
+    i = roller.roll(8, label)
+    return CARDINALS[i - 1]
+
+
+# ---------------------------------------------------------------------------
+# places.json persistence — the machine graph (Part 3.0 Pillar 4).  Its job is
+# proximity/adjacency so the scene system can weight near vs. distant content.
+# Each node carries the FULL rolled tag (summary + sub-tables), shared ids, and
+# a canon anchor.  Re-entry is a lookup of this file, not a reroll.
+# ---------------------------------------------------------------------------
+def _places_path(campaign):
+    return os.path.join(campaign, "places.json")
+
+
+def load_places(campaign):
+    p = _places_path(campaign)
+    if not os.path.exists(p):
+        return {"nodes": []}
+    import json
+    with open(p, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _next_id(doc, prefix):
+    """Next free id with a kind-prefix: R-/K-/S-/C-/U-/W- + zero-padded count."""
+    n = sum(1 for nd in doc["nodes"] if nd.get("id", "").startswith(prefix + "-"))
+    return f"{prefix}-{n + 1:02d}"
+
+
+KIND_PREFIX = {"region": "RG", "kingdom": "K", "settlement": "S",
+               "court": "CT", "ruin": "R", "wilderness": "W"}
+
+
+def make_node(doc, name, kind, tag_name="", summary="", subs=None,
+              parent=None, adjacency=None, travel_days=None,
+              status="sketch", threads=None, characters=None,
+              canon_anchor=None, node_id=None):
+    """Build a Pillar-4 place node carrying its FULL tag (summary + sub-tables)."""
+    nid = node_id or _next_id(doc, KIND_PREFIX.get(kind, "P"))
+    return {
+        "id": nid,
+        "name": name,
+        "kind": kind,
+        "parent": parent,
+        "adjacency": adjacency or [],
+        "travel_days": travel_days,
+        "status": status,
+        "tag": {"name": tag_name, "summary": summary, "subtables": subs or {}},
+        "threads": threads or [],
+        "characters": characters or [],
+        "canon_anchor": canon_anchor or f"setting-canon.md#{name.lower().replace(' ', '-')}",
+    }
+
+
+def write_places(campaign, nodes):
+    """Append nodes to campaign/places.json (creating it if absent).  Returns the
+    full doc so callers can report the assigned ids."""
+    import json
+    doc = load_places(campaign)
+    doc["nodes"].extend(nodes)
+    os.makedirs(campaign, exist_ok=True)
+    with open(_places_path(campaign), "w", encoding="utf-8") as f:
+        json.dump(doc, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    return doc
+
+
+def place_card(node, near=None, weight=1, extra=""):
+    """The machine-readable place card header the scene framer eats (Pillar 3):
+       - [PLACE site:<kind> id=<id> region=.. kingdom=.. near=.. w=N] <name> — <tag>; <summary>
+    The bracket header is parsed for proximity/weight; the prose is narrated."""
+    tag = node["tag"]
+    region = node.get("_region", "")
+    kingdom = node.get("parent") or node.get("_kingdom", "")
+    bits = [f"site:{node['kind']}", f"id={node['id']}"]
+    if region:
+        bits.append(f"region={region}")
+    if kingdom:
+        bits.append(f"kingdom={kingdom}")
+    if near:
+        bits.append(f"near={near}")
+    bits.append(f"w={weight}")
+    head = f"- [PLACE {' '.join(bits)}]"
+    summ = tag.get("summary", "")
+    name = node["name"]
+    tagname = tag.get("name", "")
+    line = f"  {name} — {node['kind']}"
+    if tagname:
+        line += f"; {tagname}"
+    if summ:
+        line += f". {summ}"
+    if extra:
+        line += f" {extra}"
+    return head + "\n" + line
+
+
+def nodes_to_json_block(nodes):
+    """Render nodes as a fenced JSON block for the draft when no --campaign DIR
+    is given (so the player can still see / save the machine graph)."""
+    import json
+    return ("```json places.json (append these nodes)\n"
+            + json.dumps({"nodes": nodes}, ensure_ascii=False, indent=2)
+            + "\n```")
 
 
 def short_npc(roller):
@@ -350,6 +534,246 @@ def compose_continent_line(roller, fresh):
 
 
 # ---------------------------------------------------------------------------
+# Geography composers (Part 3) — geometry & adjacency ONLY.  Every node's
+# *content* comes from the existing tag recipes (roll_location_tag /
+# full_tag_block); the geography layer just places & indexes.  Each composer
+# returns (title, body_markdown, [place_node...]) so the caller can persist the
+# nodes to places.json and emit the machine place cards.
+# ---------------------------------------------------------------------------
+def compose_geography_region(roller, fresh, campaign=None):
+    """Region scale: oceanic sides -> ~6 terrain features -> 1d4+2 rivers
+    (split downstream only, <=1/4 map) -> 1-3 lakes -> 6 nations on natural
+    borders.  NO cities/ruins at region scale (book p.124-127).  Relational
+    sketch + a simple coordinate table.  Wilderness gets a full tag; nations
+    reuse compose_continent_line-style briefs but bounded by named barriers."""
+    rname = place_name(roller) + " Reach"
+    doc = load_places(campaign) if campaign else {"nodes": []}
+    nodes = []
+
+    n_oce, oce_desc = roll_oceanic_sides(roller)
+    sea_edges = [EDGES[i] for i in
+                 sorted(roller.roll(4, f"oceanic edge {k+1} (d4)") - 1
+                        for k in range(n_oce))]
+    sea_edges = sorted(set(sea_edges))
+
+    # ~6 significant terrain features, each placed at a cardinal/edge hint.
+    nfeat = 6
+    feats = []
+    for i in range(nfeat):
+        feat = roll_terrain_feature(roller, f"feature {i+1} (d20)")
+        card = roll_cardinal(roller, f"feature {i+1} placement (d8)")
+        feats.append((feat, card))
+
+    # rivers: 1d4+2, each from a highland -> sea/lake; split downstream only.
+    nriv = roller.roll(4, "river count (1d4)") + 2
+    highlands = [f for (f, _c) in feats
+                 if any(w in f.lower() for w in
+                        ("mountain", "hills", "canyon", "volcano"))]
+    rivers = []
+    for i in range(nriv):
+        src = (highlands[(i) % len(highlands)].split(" — ")[0]
+               if highlands else "the central highlands")
+        sink = "the sea" if sea_edges else "an inland lake"
+        rivers.append((src, sink))
+
+    # 1-3 lakes; each >=1 river in, <=1 out.
+    nlake = roller.roll(3, "lake count (d3)")
+    lakes = []
+    for i in range(nlake):
+        card = roll_cardinal(roller, f"lake {i+1} placement (d8)")
+        lakes.append(card)
+
+    # 6 nations on natural borders (the named barriers above bound them).
+    barriers = [f.split(" — ")[0] for (f, _c) in feats] + \
+               [f"river from {s}" for (s, _k) in rivers]
+    nations = []
+    for i in range(6):
+        nm = nation_name(roller, fresh)
+        theme = roll_bundle_table(roller, "nation_construction", "Nation Themes",
+                                  f"{nm} theme (d20)")
+        b1 = barriers[(2 * i) % len(barriers)]
+        b2 = barriers[(2 * i + 1) % len(barriers)]
+        nations.append((nm, theme.split(",")[0].lower(), b1, b2))
+
+    # one full wilderness tag for the region's defining wild (content layer).
+    wild_name, wild_summary, wild_subs = roll_location_tag(roller, "wilderness")
+
+    # ---- place node: the region itself (full wilderness tag) ----------------
+    region_node = make_node(doc, rname, "region",
+                            tag_name=wild_name, summary=wild_summary,
+                            subs=wild_subs, status="detailed")
+    region_node["_region"] = rname
+    nodes.append(region_node)
+    doc["nodes"].append(region_node)
+
+    # ---- draft body ---------------------------------------------------------
+    L = [f"### Region — {rname}",
+         f"- **Oceanic frame:** {oce_desc}"
+         + (f" (seas on the {', '.join(sea_edges)})." if sea_edges else "."),
+         f"- **Significant terrain (~6 features):**"]
+    for feat, card in feats:
+        L.append(f"  - {card}: {feat}.")
+    L.append(f"- **Major rivers ({nriv} = 1d4+2; each ≤¼ map, split downstream only):**")
+    for src, sink in rivers:
+        L.append(f"  - from {src} → {sink}.")
+    if lakes:
+        L.append(f"- **Lakes ({nlake}; ≥1 river in, ≤1 out each):** "
+                 + ", ".join(lakes) + ".")
+    else:
+        L.append("- **Lakes:** none.")
+    L.append("- **Nations (6, on natural borders — no cities/ruins at this scale):**")
+    for nm, theme, b1, b2 in nations:
+        L.append(f"  - **{nm}** — *{theme}*; bounded by {b1} and {b2}.")
+    # relational sketch / coordinate hint table
+    L.append("- **Relational sketch (hand-draw from this):**")
+    L.append("  | feature | rough position |")
+    L.append("  |---|---|")
+    for feat, card in feats:
+        L.append(f"  | {feat.split(' — ')[0]} | {card} |")
+    L.append("- **Defining wilderness tag (full, save with the region):**")
+    L += full_tag_block("Wilderness", wild_name, wild_summary, wild_subs, indent="  ")
+    L.append("- **Place card (machine-readable header):**")
+    L.append(place_card(region_node, weight=1))
+
+    return rname, "\n".join(L), nodes
+
+
+def compose_geography_kingdom(roller, fresh, campaign=None, region_name=None):
+    """Kingdom scale: small-scale terrain -> demographics (60/sq mi; ~10% urban,
+    ⅓ in capital, ¼ of remainder in 2nd city) -> capital on water then cities
+    CLOCKWISE from a random cardinal -> tag each city (2 Community + 2 Court)."""
+    kname = nation_name(roller, fresh)
+    doc = load_places(campaign) if campaign else {"nodes": []}
+    nodes = []
+
+    # kingdom node (parent for its cities/ruins)
+    kingdom_node = make_node(doc, kname, "kingdom", status="detailed",
+                             parent=region_name)
+    kingdom_node["_region"] = region_name or ""
+    nodes.append(kingdom_node)
+    doc["nodes"].append(kingdom_node)
+
+    # one obtruding terrain feature riffed for the whole landscape (book p.49).
+    feat = roll_terrain_feature(roller, "kingdom terrain (d20)")
+    details = roll_terrain_details(roller)
+
+    # demographics: pick a map size in 6-mile hexes (honest), derive population.
+    hexes = roller.roll(20, "kingdom span in 6-mile hexes (d20)") + 10  # 11..30
+    pop = hexes * 2000                       # 2000 people / 6-mile hex
+    urban = pop // 10                        # ~10% urban
+    capital_pop = urban // 3                 # ⅓ of urban in the capital
+    second_pop = (urban - capital_pop) // 4  # ¼ of the remainder in 2nd city
+    # how many cities total (capital + 1-2 more), placed clockwise.
+    ncity = roller.roll(2, "extra cities (d2)") + 1  # 2 or 3 cities total
+
+    start_dir = roll_cardinal(roller, "first city bearing from capital (d8)")
+    start_i = CARDINALS.index(start_dir)
+
+    cities = []
+    for i in range(ncity):
+        cn = place_name(roller)
+        # 2 Community + 2 Court tags per city (reuse the tag recipes).
+        comm1 = roll_location_tag(roller, "community")
+        comm2 = roll_location_tag(roller, "community")
+        court1 = roll_location_tag(roller, "court")
+        court2 = roll_location_tag(roller, "court")
+        if i == 0:
+            bearing = "on water (capital)"
+            cpop = capital_pop
+            kind_label = "capital"
+        else:
+            bearing = CARDINALS[(start_i + (i - 1) * 2) % 8] + " of the capital (clockwise)"
+            cpop = second_pop if i == 1 else max(1, second_pop // 2)
+            kind_label = "city"
+        cities.append((cn, kind_label, bearing, cpop,
+                       comm1, comm2, court1, court2))
+
+    # ---- place nodes: each city carries its FULL community tag --------------
+    prev_id = kingdom_node["id"]
+    for cn, kind_label, bearing, cpop, comm1, comm2, court1, court2 in cities:
+        cname, csumm, csubs = comm1
+        node = make_node(doc, cn, "settlement",
+                         tag_name=cname, summary=csumm, subs=csubs,
+                         parent=kingdom_node["id"], adjacency=[prev_id],
+                         status="detailed")
+        node["_region"] = region_name or ""
+        node["_kingdom"] = kname
+        nodes.append(node)
+        doc["nodes"].append(node)
+        prev_id = node["id"]
+
+    # ---- draft body ---------------------------------------------------------
+    L = [f"### Kingdom — {kname}",
+         f"- **Dominant terrain:** {feat}.",
+         f"  - *populated:* {details['Populated']}; *danger:* {details['Dangerous']}; "
+         f"*use:* {details['Use']}.",
+         f"  - *last event:* {details['LastEvent']}; *antagonists:* {details['Antagonists']}; "
+         f"*quirk:* {details['Quirk']}.",
+         f"- **Demographics:** ≈{hexes} six-mile hexes ⇒ ~{pop:,} people "
+         f"(60/sq mi); ~{urban:,} urban (10%). Capital ≈{capital_pop:,}; "
+         f"2nd city ≈{second_pop:,}.",
+         f"- **Cities ({ncity}; capital on water, the rest CLOCKWISE from "
+         f"{start_dir}):**"]
+    for cn, kind_label, bearing, cpop, comm1, comm2, court1, court2 in cities:
+        L.append(f"  - **{cn}** ({kind_label}, {bearing}; ≈{cpop:,}) — "
+                 f"Community: *{comm1[0]}*, *{comm2[0]}*; "
+                 f"Court: *{court1[0]}*, *{court2[0]}*.")
+    L.append("- **City tags (full, save with each city):**")
+    for cn, kind_label, bearing, cpop, comm1, comm2, court1, court2 in cities:
+        L += full_tag_block(f"{cn} · Community", comm1[0], comm1[1], comm1[2], indent="  ")
+        L += full_tag_block(f"{cn} · Community", comm2[0], comm2[1], comm2[2], indent="  ")
+        L += full_tag_block(f"{cn} · Court", court1[0], court1[1], court1[2], indent="  ")
+        L += full_tag_block(f"{cn} · Court", court2[0], court2[1], court2[2], indent="  ")
+    L.append("- **Place cards (machine-readable headers):**")
+    for node in nodes:
+        if node["kind"] == "settlement":
+            L.append(place_card(node, near="cap", weight=2))
+    L.append("> **Next:** place ~6 famous ruins in the wilderness gaps "
+             "(`worldgen.py ruins --kingdom %s`)." % kname)
+
+    return kname, "\n".join(L), nodes
+
+
+def compose_ruins(roller, kingdom_name, campaign=None, n=6, latter_earth=True):
+    """~6 famous ruins per kingdom, placed in the wilderness gaps between trade
+    routes; each = a ruin-type roll + 2 Ruin Tags + 1-2 sentences (book p.150)."""
+    doc = load_places(campaign) if campaign else {"nodes": []}
+    nodes = []
+    L = [f"### Ruins of {kingdom_name} (~{n}, in the wilderness gaps between trade routes)"]
+    for i in range(n):
+        rname = place_name(roller)
+        rtype = roll_ruin_type(roller, latter_earth=latter_earth)
+        # 2 Ruin Tags give it character (full tags, saved with the node).
+        tag1 = roll_location_tag(roller, "ruin")
+        tag2 = roll_location_tag(roller, "ruin")
+        gap = roll_cardinal(roller, f"ruin {i+1} gap bearing (d8)")
+        node = make_node(doc, rname, "ruin",
+                         tag_name=tag1[0], summary=tag1[1], subs=tag1[2],
+                         parent="K-" + kingdom_name, status="sketch")
+        node["_kingdom"] = kingdom_name
+        node["_ruin_type"] = rtype
+        node["_second_tag"] = {"name": tag2[0], "summary": tag2[1],
+                               "subtables": tag2[2]}
+        nodes.append(node)
+        doc["nodes"].append(node)
+        thing = tag1[2].get("Things", "—")
+        L.append(f"- **{rname}** ({gap} gap) — *{rtype}*; tags *{tag1[0]}* + "
+                 f"*{tag2[0]}*; holds: {thing}.")
+    L.append("- **Ruin tags (full, save with each ruin):**")
+    for node in nodes:
+        L += full_tag_block(node["name"] + " · tag 1", node["tag"]["name"],
+                            node["tag"]["summary"], node["tag"]["subtables"],
+                            indent="  ")
+        st = node["_second_tag"]
+        L += full_tag_block(node["name"] + " · tag 2", st["name"],
+                            st["summary"], st["subtables"], indent="  ")
+    L.append("- **Place cards (machine-readable headers):**")
+    for node in nodes:
+        L.append(place_card(node, near="cap+2d", weight=1))
+    return kingdom_name, "\n".join(L), nodes
+
+
+# ---------------------------------------------------------------------------
 # DRAFT-CANON wrappers.
 # ---------------------------------------------------------------------------
 HEADER = (
@@ -376,6 +800,29 @@ def draft_block(title, body, seed, scope_note=None):
     return "\n".join(parts)
 
 
+def _strip_internal(node):
+    """Drop the transient _region/_kingdom hints before persisting (they're
+    derived from parent and only used to render place cards)."""
+    return {k: v for k, v in node.items() if not k.startswith("_")}
+
+
+def persist_note(campaign, nodes):
+    """Either write nodes to campaign/places.json and report the ids, or — when
+    no --campaign DIR is given — return a fenced JSON block of the nodes so the
+    player can still save the machine graph by hand."""
+    clean = [_strip_internal(n) for n in nodes]
+    if campaign:
+        write_places(campaign, clean)
+        ids = ", ".join(n["id"] for n in clean)
+        return (f"\n> **places.json:** appended {len(clean)} node(s) "
+                f"[{ids}] to `{os.path.join(campaign, 'places.json')}` "
+                f"(each carries its FULL tag + adjacency; re-entry is a lookup, "
+                f"not a reroll).")
+    return ("\n> **places.json (no --campaign DIR given):** append these nodes "
+            "to the campaign's `places.json` on approval —\n\n"
+            + nodes_to_json_block(clean))
+
+
 # ---------------------------------------------------------------------------
 # Commands.
 # ---------------------------------------------------------------------------
@@ -400,7 +847,7 @@ def cmd_region(roller, fresh, seed):
     return draft_block(f"Starting Region: {name}", body, seed, note)
 
 
-def cmd_world(roller, scope, fresh, seed):
+def cmd_world(roller, scope, fresh, seed, campaign=None):
     if scope == "region":
         name, body = compose_region(roller, fresh)
         note = "Scope = single region (only the starting region is detailed)."
@@ -452,7 +899,52 @@ def cmd_world(roller, scope, fresh, seed):
                 f"play; grow everything else on demand.")
         return draft_block("World (continent scope)", body, seed, note)
 
-    sys.exit(f"Unknown scope '{scope}'. Use region | few-nations | continent.")
+    if scope == "kingdom":
+        # region skeleton + the one detailed kingdom inside it + its ruins.
+        rname, rbody, rnodes = compose_geography_region(roller, fresh, campaign)
+        kname, kbody, knodes = compose_geography_kingdom(roller, fresh, campaign,
+                                                         region_name=rname)
+        _kk, ruinbody, ruinnodes = compose_ruins(roller, kname, campaign,
+                                                 latter_earth=not fresh)
+        body = rbody + "\n\n" + kbody + "\n\n" + ruinbody
+        body += persist_note(campaign, rnodes + knodes + ruinnodes)
+        note = ("Scope = a region SKELETON + the one detailed kingdom inside it "
+                "(+ ~6 ruins). Geometry & adjacency only; all place content comes "
+                "from the tag recipes. Grow the rest on demand.")
+        return draft_block(f"World (kingdom scope): {kname} in {rname}",
+                           body, seed, note)
+
+    sys.exit(f"Unknown scope '{scope}'. Use "
+             "region | few-nations | continent | kingdom.")
+
+
+def cmd_geography(roller, scale, fresh, seed, campaign=None):
+    if scale == "region":
+        name, body, nodes = compose_geography_region(roller, fresh, campaign)
+        body += persist_note(campaign, nodes)
+        note = ("Region SKELETON (book pp.124-127): oceanic frame, ~6 terrain "
+                "features, 1d4+2 rivers, 1-3 lakes, 6 nations on natural borders. "
+                "NO cities or ruins at this scale — geometry & adjacency only.")
+        return draft_block(f"Geography — Region: {name}", body, seed, note)
+    if scale == "kingdom":
+        name, body, nodes = compose_geography_kingdom(roller, fresh, campaign)
+        body += persist_note(campaign, nodes)
+        note = ("Kingdom DETAIL (book pp.124-127 + p.49): small-scale terrain, "
+                "demographics (60/sq mi, ~10% urban), capital on water then "
+                "cities clockwise; each city carries 2 Community + 2 Court tags. "
+                "Next: `worldgen.py ruins --kingdom %s`." % name)
+        return draft_block(f"Geography — Kingdom: {name}", body, seed, note)
+    sys.exit(f"Unknown scale '{scale}'. Use region | kingdom.")
+
+
+def cmd_ruins(roller, kingdom, fresh, seed, campaign=None):
+    name, body, nodes = compose_ruins(roller, kingdom, campaign,
+                                      latter_earth=not fresh)
+    body += persist_note(campaign, nodes)
+    note = ("~6 famous ruins (book p.150) placed in the wilderness gaps between "
+            "trade routes; each = a ruin-type roll + 2 Ruin Tags + a line. "
+            "These are sketch nodes — flesh one out only when the PC commits.")
+    return draft_block(f"Ruins — {kingdom}", body, seed, note)
 
 
 # ---------------------------------------------------------------------------
@@ -472,6 +964,15 @@ def main():
     scope = None
     if "--scope" in args:
         scope = args[args.index("--scope") + 1]
+    scale = None
+    if "--scale" in args:
+        scale = args[args.index("--scale") + 1]
+    kingdom = None
+    if "--kingdom" in args:
+        kingdom = args[args.index("--kingdom") + 1]
+    campaign = None
+    if "--campaign" in args:
+        campaign = args[args.index("--campaign") + 1]
 
     # Build a Roller from gen.py so the dice contract (honest, shown, seeded,
     # MYTHIC_GM_DICE-aware) is identical to gen.py's.  Redirect its STDOUT dice
@@ -491,11 +992,22 @@ def main():
             block = cmd_nation(roller, fresh, seed)
         elif cmd == "region":
             block = cmd_region(roller, fresh, seed)
+        elif cmd == "geography":
+            if not scale:
+                sys.stdout = real_stdout
+                sys.exit("geography needs --scale <region|kingdom>.")
+            block = cmd_geography(roller, scale, fresh, seed, campaign)
+        elif cmd == "ruins":
+            if not kingdom:
+                sys.stdout = real_stdout
+                sys.exit("ruins needs --kingdom <name>.")
+            block = cmd_ruins(roller, kingdom, fresh, seed, campaign)
         elif cmd == "world":
             if not scope:
                 sys.stdout = real_stdout
-                sys.exit("world needs --scope <region|few-nations|continent>.")
-            block = cmd_world(roller, scope, fresh, seed)
+                sys.exit("world needs --scope "
+                         "<region|few-nations|continent|kingdom>.")
+            block = cmd_world(roller, scope, fresh, seed, campaign)
         else:
             sys.stdout = real_stdout
             sys.exit(f"Unknown command '{cmd}'. See --help.")
