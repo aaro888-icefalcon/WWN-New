@@ -1,11 +1,11 @@
 {
  "theme_order": [
-  "Action",
-  "Tension",
-  "Mystery",
   "Social",
-  "Personal"
+  "Mystery",
+  "Personal",
+  "Tension",
+  "Action"
  ],
  "tens": 0,
- "style": "balanced"
+ "style": "intrigue"
 }

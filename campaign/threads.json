@@ -1,4 +1,13 @@
 {
  "kind": "thread",
- "entries": []
+ "entries": [
+  {
+   "name": "Get home — to New York and to his brother Akhil",
+   "weight": 1
+  },
+  {
+   "name": "Survive the Latter Earth as a frail, foreign castaway",
+   "weight": 1
+  }
+ ]
 }
