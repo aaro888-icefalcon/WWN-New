@@ -46,8 +46,13 @@ def main():
          "4. EXPLORATION CLOCKS\n   (none active — running in a settled scene)"),
         ("5. NAVAL\n   Day at sea → roll `naval` (Seafaring Event / Ship Crisis)." if a.at_sea else None),
         f"6. LISTS (JSON is the source of truth)\n   Add/weight/remove Threads & Characters with `{ENG}/scripts/state.py thread|char add|weight|remove {c}`. Refresh the seed deck (seeds.md). Do NOT hand-edit a Markdown copy.",
-        "7. SELF-AUDIT (gate)\n   • Was any PC task resolved by a Fate Question instead of `check.py`? → that's a FAIL; note it.\n   • Did something real move (a rolled outcome, a resource, a clock, a present threat)? If not, the scene is soft.\n   • Did NPCs/factions act to win?",
-        f"8. WRITE STATE\n   Overwrite `{c}/campaign-state.md` (WWN fields). The Lists already live in threads.json/characters.json.",
+        ("7. FRONTIER (did play reach the edge of charted canon?)\n"
+         f"   Did this scene reach the edge of charted canon, or name a new region/kingdom not in `setting-canon.md`?\n"
+         f"   • If yes → queue `python3 scripts/worldgen.py geography --scale <region|kingdom> --campaign {c}` (or `ruins --kingdom <name>` / a single `settlement|court|ruin|wilderness`) for the NEXT framing; show the DRAFT CANON, then on approval fold it into `setting-canon.md`, seed its hooks as Threads & figures as Characters (`state.py`), put any new nation on the faction board, and write a node per place to `{c}/places.json` (each carries its FULL tag; re-entry is a lookup, not a reroll).\n"
+         "   • Distant new content enters the Lists/seeds at LOW weight (≤1) so it never crowds the scene in front of the PC.\n"
+         "   • Un-recorded new places are a soft scene — the world must persist what play discovered."),
+        "8. SELF-AUDIT (gate)\n   • Was any PC task resolved by a Fate Question instead of `check.py`? → that's a FAIL; note it.\n   • Did something real move (a rolled outcome, a resource, a clock, a present threat)? If not, the scene is soft.\n   • Did NPCs/factions act to win?",
+        f"9. WRITE STATE\n   Overwrite `{c}/campaign-state.md` (WWN fields). The Lists already live in threads.json/characters.json.",
     ]
     for s in steps:
         if s:

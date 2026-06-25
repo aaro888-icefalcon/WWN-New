@@ -19,6 +19,7 @@ silent — telegraph it now and fire it next beat as a Random Event (Close a Thr
 | Wandering encounters | per watch/turn while exploring | roll the region's encounter check; on a hit, draw `wilderness_tags`/`monster_gen` + a Reaction (2d6). |
 | Supplies & privation | per day in the field | spend food/water/light; on a shortfall, Physical saves + System Strain (`references/rules/saves.md`). |
 | Naval ship-crisis | per day at sea | roll `naval` (Seafaring Event / Ship Crisis) honestly. |
+| Frontier expansion | on trigger: PC approaches/names an uncharted region or kingdom | generate it with `scripts/worldgen.py` at the smallest covering scope (`settlement\|court\|ruin\|wilderness` for a new site, `geography --scale kingdom` (+ `ruins --kingdom <name>`) for a new kingdom, `geography --scale region` for a new region) BEFORE the next scene; show the DRAFT CANON, then on approval append it to `setting-canon.md`, add its hooks as Threads and named figures as Characters (`state.py`), put any new nation on the faction board, and write a node per place to `places.json` (`worldgen.py … --campaign <dir>`). Distant content enters the Lists/seeds at low weight (≤1) so it never crowds the scene in front of the PC; re-entry is a lookup of `places.json`, not a reroll. |
 
 # SURFACING: advancing a clock is not enough — surface it. When tick.py advances or fills a clock,
 # convert it per world-model.md §3: show a visible sign now (telegraph), and fire a FILLED clock on the

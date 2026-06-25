@@ -729,7 +729,7 @@ def compose_geography_kingdom(roller, fresh, campaign=None, region_name=None):
         if node["kind"] == "settlement":
             L.append(place_card(node, near="cap", weight=2))
     L.append("> **Next:** place ~6 famous ruins in the wilderness gaps "
-             "(`worldgen.py ruins --kingdom %s`)." % kname)
+             "(`worldgen.py ruins --kingdom " + kname + "`).")
 
     return kname, "\n".join(L), nodes
 
@@ -932,7 +932,7 @@ def cmd_geography(roller, scale, fresh, seed, campaign=None):
         note = ("Kingdom DETAIL (book pp.124-127 + p.49): small-scale terrain, "
                 "demographics (60/sq mi, ~10% urban), capital on water then "
                 "cities clockwise; each city carries 2 Community + 2 Court tags. "
-                "Next: `worldgen.py ruins --kingdom %s`." % name)
+                "Next: `worldgen.py ruins --kingdom " + name + "`.")
         return draft_block(f"Geography — Kingdom: {name}", body, seed, note)
     sys.exit(f"Unknown scale '{scale}'. Use region | kingdom.")
 

@@ -41,10 +41,37 @@ This is the same generate-on-demand frontier `setting-canon.md` describes — ke
 | A wild region / terrain is generated | `python3 scripts/worldgen.py wilderness [--seed N]` |
 | A faction-ready **nation** brief (problems = hooks, court, figure, tension) | `python3 scripts/worldgen.py nation [--fresh] [--seed N]` |
 | A detailed **starting region** (terrain + 1–2 settlements + a ruin + 2–3 hooks) | `python3 scripts/worldgen.py region [--fresh] [--seed N]` |
-| **Scaffold the world** at Session Zero | `python3 scripts/worldgen.py world --scope <region\|few-nations\|continent> [--fresh] [--seed N]` |
+| The book's **region SKELETON** (oceanic frame · ~6 features · 1d4+2 rivers · 1–3 lakes · 6 nations on natural borders) | `python3 scripts/worldgen.py geography --scale region [--fresh] [--seed N] [--campaign DIR]` |
+| The book's **detailed kingdom** (demographics · capital-on-water then cities clockwise · 2 Community + 2 Court tags per city) | `python3 scripts/worldgen.py geography --scale kingdom [--fresh] [--seed N] [--campaign DIR]` |
+| **~6 famous ruins** in a kingdom's wilderness gaps (type + 2 Ruin Tags + a line each) | `python3 scripts/worldgen.py ruins --kingdom <name> [--fresh] [--seed N] [--campaign DIR]` |
+| **Scaffold the world** at Session Zero | `python3 scripts/worldgen.py world --scope <region\|few-nations\|continent\|kingdom> [--fresh] [--seed N] [--campaign DIR]` |
 
-Scopes: `region` = 1 detailed region · `few-nations` = 2–4 nation briefs + a shared tension + a start region · `continent` = a sketch (4–6 one-line nations + a relations map; then detail one region before play). `--fresh` rolls names/origins from scratch; omit it to seed from Latter-Earth canon. Capture just the canon text with `… > draft.md` (dice go to STDERR).
+Scopes: `region` = 1 detailed region · `few-nations` = 2–4 nation briefs + a shared tension + a start region · `continent` = a sketch (4–6 one-line nations + a relations map; then detail one region before play) · `kingdom` = a region **skeleton** + the one **detailed** kingdom inside it (+ its ~6 ruins) — the book's two-map start. `--fresh` rolls names/origins from scratch; omit it to seed from Latter-Earth canon. Capture just the canon text with `… > draft.md` (dice go to STDERR).
 
 Each generated place is deliberately **short** — a frontier sketch, not a novel. For a single sub-table or tag in isolation, prefer `gen.py` / `lookup.py`; `worldgen.py` is for composed, committable world-pieces.
+
+## 5 · The two-map hierarchy (skeleton vs. fill)
+
+The `geography` commands implement the book's **two maps** (Geography Construction pp.124–127): a **regional** map of the campaign backdrop and a **kingdom** map of where the first sessions happen. They own **geometry & adjacency only** — every node's *content* defers to the existing tag recipes (`community`/`court`/`ruin`/`wilderness` tags), so there is no duplicated place flavor. Region scope fires **rarely** (only when the PC leaves the detailed region); kingdom/site scope is the common border/new-town case.
+
+**Key book numbers encoded** (`bridge/generators/geography_construction.json`):
+- **Region:** decide oceanic sides (1–2 coastline / 3 peninsula / 4 island); ~6 significant terrain features (d20); **1d4+2** major rivers (each ≤¼ the max map dimension; split *downstream only* — once a river splits it never rejoins); 1–3 lakes (≥1 river in, ≤1 out); **6 nations** coterminous with natural barriers. **No cities or ruins at region scale.**
+- **Kingdom:** 60 people/sq mi (2,000 per 6-mile hex); ~10% urban → ⅓ in the capital, ¼ of the remainder in the 2nd city; **capital on water**, then place cities **clockwise from a random cardinal**; tag each city with **2 Community + 2 Court** tags.
+- **Ruins:** ~6 famous ruins per kingdom, placed in the **wilderness gaps between trade routes**; each = a type roll (Latter-Earth d12 / General d20) + **2 Ruin Tags** + 1–2 sentences. Sketch nodes — flesh one out only on PC commitment.
+- **One-roll terrain detail dice** (used on the kingdom's dominant feature): d4 populated · d6 dangerous · d8 use · d10 last event · d12 antagonists · d20 quirk.
+
+**Three synchronized artifacts per run** (the scene system reads canon + Lists + the graph, never a raw map):
+1. **Canon block** → DRAFT CANON markdown on STDOUT; on approval append to `setting-canon.md`.
+2. **`places.json` graph** → with `--campaign DIR`, each place is appended as a node carrying its **FULL** tag (summary + all five sub-tables), `adjacency`, `travel_days`, `status` (`sketch`/`detailed`), shared Thread/Character `id`s, and a `canon_anchor`. Without `--campaign`, the nodes print as a fenced JSON block to save by hand. This graph is the **machine** output — its job is **proximity**, which powers the scene-weighting (PC's region > adjacent > distant). **Re-entry is a lookup of this file, not a reroll.**
+3. **List + seed cards** → each place also emits a machine-readable **place card** header — `- [PLACE site:<kind> id=<id> region=… kingdom=… near=… w=N]` — that the scene framer parses for proximity/weight; the prose under it is narrated. Hooks → Threads, figures → Characters, nations → the faction board.
+
+## 6 · Frontier wiring — generate as play explores
+
+A new region/kingdom is generated **the moment play reaches or names it**, then folded into canon so it persists. Two integration points keep this symmetric:
+
+- **Front of the Turn (scene-framing).** When the GM frames a scene and the PC is entering somewhere **not yet in `setting-canon.md`** (or an oracle/Fate Question *names* a place that doesn't exist): classify the destination (new **site** → `settlement`/`court`/`ruin`/`wilderness`; new **kingdom** → `geography --scale kingdom` + `ruins`; new **region** → `geography --scale region`, then detail the entered kingdom), **generate just-in-time** at the smallest scope the PC can perceive this scene, show the DRAFT CANON, let the player keep/reroll/adjust, **then** describe the scene and ask "What do you do?".
+- **Back of the Turn (bookkeeping).** `bridge/subsystems.md` carries a **Frontier expansion** row (surfaced by `tick.py`), and `bookkeep.py` prints a **FRONTIER step** (between LISTS and SELF-AUDIT): if the scene reached the edge of charted canon or named a new region/kingdom, **queue** the right-scope `worldgen.py` call for next framing and, on approval, fold the result into `setting-canon.md`, seed its hooks as Threads and figures as Characters, put any new nation on the faction board, and write its nodes to `places.json --campaign <dir>`.
+
+**Anti-flood.** Region scope is a rare, once-per-arc event; distant new content enters the Lists/seeds at **low weight (≤1)** so it never crowds the scene in front of the PC, and the `places.json` adjacency lets near content always outweigh it. Un-recorded new places are a soft scene — the world must persist what play discovered.
 
 Source: `book/Worlds-Without-Number-Deluxe/07-Creating-Your-Campaign/` — Building Your Backdrop (pp. 121–123), Geography Construction (pp. 124–127), Nation Construction (pp. 128–131), Society Construction (pp. 132–135), Government Construction (pp. 136–139), History Construction (pp. 140–143), Religion Construction (pp. 144–149), Placing Ruins & Points of Interest (p. 150). Tag tables: `…/11–15 (Location/Community/Court/Ruin/Wilderness Tags)`.
