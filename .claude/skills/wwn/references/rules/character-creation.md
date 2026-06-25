@@ -2,7 +2,7 @@
 
 > Use this when: rolling up a new WWN PC (or a named NPC of class), or checking how attributes, backgrounds, classes, foci, HP, saves, Effort, or starting gear are built. `scripts/chargen.py` automates all of this with honest, shown dice.
 
-**Run it:** `python3 scripts/chargen.py --random --seed N` (full random) or `--class mage --background scholar --out sheet.md`. Pull any focus or spell verbatim with `python3 scripts/lookup.py focus <name>` / `lookup.py spell <name>`.
+**Run it:** `python3 scripts/chargen.py --random --seed N` (full random) or `--class mage --background scholar --out sheet.md`. For **player-in-the-loop** creation, add `--interactive` (step-by-step, every die shown, you make each choice). Name traditions with `--tradition "High Mage"` (repeatable per mage slot) and Vowed's order-skill with `--vowed-skill Exert`. Class spec accepts tradition names directly, e.g. `--class "partial-warrior/partial-healer"`, `--class "partial-expert/vowed"`, `--class "necromancer/healer"`. Pull any focus or spell verbatim with `python3 scripts/lookup.py focus <name>` / `lookup.py spell <name>`.
 
 WWN is lethal and tactical — a level-1 hero can die to one good spear-thrust. Build honestly.
 
@@ -22,7 +22,7 @@ WWN is lethal and tactical — a level-1 hero can die to one good spear-thrust. 
    - **AC:** unarmored 10; else armor value (**+1 if a shield and you already wear equal/better armor**, else the shield sets base 13/14) **+ Dex mod**.
    - **Attack bonus:** from the class table. **Hit = d20 + attack bonus + combat-skill (Stab/Shoot/Punch) + attribute mod**; untrained weapon = −2.
    - **Saves** (roll d20 ≥ target): **Physical** 16 − level − best Str/Con · **Evasion** 16 − level − best Int/Dex · **Mental** 16 − level − best Wis/Cha · **Luck** 16 − level (no attr).
-   - **Effort** (casters only): **1 + Magic skill level + better of Int/Cha mod** (Partial Mage −1, min 1); each tradition has its own pool. Full Mage knows **4** first-level spells, Partial **2** (dual-partial 4).
+   - **Effort** (per tradition, own pool): High Mage/Elementalist/Necromancer **1 + Magic level + better Int/Cha mod** (Partial −1, min 1); **Healer = Heal level + better Int/Cha** (min 1, no +1); **Vowed = order-skill level + best attribute mod** (min 1, no +1). Full Mage knows **4** first-circle spells, Partial caster **2**, dual-Partial-caster **4**; a caster+non-caster pair (e.g. Necromancer/Healer) still **2**. **Healer/Vowed are partial-only, non-casting** traditions (Healer's arts work in armor; Vowed floors HD at 1d6/level and auto-gets Martial Style/Unarmed Might/Unarmored Defense).
    - **System Strain:** current 0, **max = Con score**. **Initiative:** 1d8 + Dex mod.
 6. **Gear** — pick an **equipment package** (below) *or* roll **3d6 × 10** starting silver and buy from the gear/armor/weapon tables. Note each weapon's damage + attribute mod and its **Shock N/AC** (Punch also adds Punch skill to damage).
 7. **Name, goal, ties** — every hero needs an active **goal** worth risking death for and a reason to trust the party. Also: native language + Trade Cant + 1 tongue per Connect/Know at level-0 (2 each at level-1).
