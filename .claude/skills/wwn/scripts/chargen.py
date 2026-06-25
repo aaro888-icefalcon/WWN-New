@@ -1006,9 +1006,12 @@ def _eligible_traditions(ch, chassis):
     return out
 
 
-def _pick_tradition(ch, chassis, label, random_choice):
-    """Choose ONE tradition for the given chassis ('full'|'partial'). Returns name."""
+def _pick_tradition(ch, chassis, label, random_choice, kinds=None):
+    """Choose ONE tradition for the given chassis ('full'|'partial'). Returns name.
+    `kinds` (optional set) restricts to traditions of those kinds (e.g. spell casters)."""
     names = _eligible_traditions(ch, chassis)
+    if kinds:
+        names = [n for n in names if TRADITIONS[n].get("kind") in kinds] or names
     if not names:
         names = ["High Mage"]
     if INTERACTIVE and not random_choice:
@@ -1031,9 +1034,10 @@ def _setup_tradition(ch, random_choice):
         ch.tradition = "%s (partial Atlas arts)" % atlas_name
         ch.tradition_rec = rec
         print("  Atlas tradition: %s  (%s)" % (atlas_name, rec.get("notes", "") if rec else ""))
-        # if the chassis also carries a partial-mage half, offer a real mage tradition
+        # if the chassis also carries a partial-mage half, offer a real spellcasting tradition
         if "partial-mage/" in ch.cls_key:
-            mage_name = _pick_tradition(ch, "partial", "Partial-Mage half", random_choice)
+            mage_name = _pick_tradition(ch, "partial", "Partial-Mage half", random_choice,
+                                        kinds={"spells", "spellpoints"})
             mrec = TRADITIONS.get(mage_name)
             ch.tradition = "%s + %s (partial)" % (mage_name, atlas_name)
             ch.tradition_rec = [mrec, rec]
@@ -1151,27 +1155,27 @@ def _apply_focus(ch, name, kind):
     if skl:
         g, l = ch.gain_skill(skl, prefer_combat=(f.get("combat") is True))
         rec["bonus_skill"] = "%s-%d" % (g, l)
-    # mechanical numbers
+    # mechanical numbers — foci HP folds into ch.focus_hp_bonus (set in step_final)
     if f.get("hp_per_level"):
         bonus = f["hp_per_level"] * ch.level
-        ch.hp_max += bonus
+        ch.focus_hp_bonus += bonus
         rec["hp_bonus"] = bonus
     if f.get("needs_attr"):
-        # Developed Attribute: +1 to a modifier. Apply to best class attribute.
+        # Developed Attribute / Amundi Godblood: +1 to a modifier.
         a = _choose_14_attr(ch)
-        ch.notes.append("Developed Attribute: %s modifier +1 (now treated as %+d)."
-                        % (a, attr_mod(ch.scores[a]) + 1))
+        ch.notes.append("%s: %s modifier +1 (now treated as %+d)."
+                        % (name, a, attr_mod(ch.scores[a]) + 1))
         rec["attr_mod_bonus"] = a
     if f.get("innate_ac"):
         innate = 15 + (ch.level + 1) // 2
         rec["innate_ac"] = innate
         ch.notes.append("Impervious Defense: innate AC %d (used if > worn armor)." % innate)
     ch.foci.append(rec)
-    line = "  Focus [%s]: %s (p.%d)" % (kind, name, f["page"])
+    line = "  Focus [%s]: %s (p.%s)" % (kind, name, f["page"])
     if rec.get("bonus_skill"):
         line += "  -> bonus skill %s" % rec["bonus_skill"]
     if rec.get("hp_bonus"):
-        line += "  -> +%d HP" % rec["hp_bonus"]
+        line += "  -> %+d HP" % rec["hp_bonus"]
     print(line)
     print("      %s" % f["note"])
 
@@ -1183,26 +1187,34 @@ def step_final(ch, package=None, roll_wealth=False, random_choice=False):
     g, l = ch.gain_skill("Any Skill")
     print("  Free skill pick: %s-%d" % (g, l))
 
-    # --- Hit points (p.28): class hit die + Con mod, min 1 --------------
+    # --- Hit points (p.28): class hit die + Con mod, min 1; +focus HP -----
     hd = ch.cls["hd"](ch.level)
     base = roll(hd, label="hit points (%s)" % ch.cls["name"])
     con = attr_mod(ch.scores["Con"])
-    hp = base + con
-    if hp < 1:
-        hp = 1
-    # Die Hard etc. already added a flat bonus to ch.hp_max during foci.
-    ch.hp_max = ch.hp_max - 1 + hp if ch.hp_max != 1 else hp
-    # (ch.hp_max started at 1; fold the rolled HP in, keep any focus HP bonus)
-    print("  HP = %s + Con(%+d) = %d  (min 1)%s"
-          % (hd, con, hp, "  +focus HP already added" if any('hp_bonus' in f for f in ch.foci) else ""))
-    if ch.hp_max != hp:
-        print("  HP (incl. Die Hard / focus): %d" % ch.hp_max)
+    ch.hp_max = max(1, base + con) + ch.focus_hp_bonus
+    if ch.hp_max < 1:
+        ch.hp_max = 1
+    fnote = ("  (+%d focus HP)" % ch.focus_hp_bonus) if ch.focus_hp_bonus else ""
+    print("  HP = max(1, %s + Con(%+d))%s = %d"
+          % (hd, con, (" %+d focus" % ch.focus_hp_bonus) if ch.focus_hp_bonus else "", ch.hp_max))
+    if fnote:
+        print("  HP (incl. focus): %d" % ch.hp_max)
 
     # --- Equipment (p.29): package OR 3d6 x10 sp ------------------------
+    if INTERACTIVE and not random_choice and package is None and not roll_wealth:
+        opts = ["Equipment package"] + ["Roll 3d6 x 10 sp (buy individually)"]
+        sel = ask_menu("Equipment: take a package, or roll starting silver?", opts, default_index=0)
+        if sel.startswith("Roll"):
+            roll_wealth = True
+        else:
+            pkg_names = list(PACKAGES.keys())
+            default = PACKAGE_FOR_CLASS.get(ch.cls_key, "gentry-wayfarer")
+            d = pkg_names.index(default) if default in pkg_names else 0
+            package = ask_menu("Choose an equipment package:", pkg_names, default_index=d)
     if roll_wealth:
         sp = roll("3d6", label="starting wealth x10") * 10
         ch.cash = sp
-        print("  Starting wealth: %d sp (rolled; buy gear individually).")
+        print("  Starting wealth: %d sp (rolled; buy gear individually)." % sp)
         ch.notes.append("No package chosen; spend %d sp on gear from pp.33-37." % sp)
     else:
         pkg = package or PACKAGE_FOR_CLASS.get(ch.cls_key, "gentry-wayfarer")
@@ -1219,26 +1231,180 @@ def step_final(ch, package=None, roll_wealth=False, random_choice=False):
         print("    Gear: %s" % "; ".join(P["gear"]))
         print("    Cash: %d sp" % P["cash"])
 
-    # --- Effort (casters) (Magic ch.): 1 + Magic level + better Int/Cha --
+    # --- Effort & spells/arts (casters) — driven by the tradition record --
     if ch.cls["caster"]:
-        magic_lvl = ch.skills.get("Magic", -1)
-        if magic_lvl < 0:
-            # caster always has scholarly Magic; treat unrolled as level-0 baseline
-            magic_lvl = 0
-        better = max(attr_mod(ch.scores["Int"]), attr_mod(ch.scores["Cha"]))
-        eff = 1 + magic_lvl + better
-        if ch.cls["caster"] in ("partial",):
+        _resolve_magic(ch, random_choice)
+
+    # --- Languages (p.29): native + Trade Cant + Connect/Know bonuses -----
+    _record_languages(ch)
+
+    # --- Name / goal / ties (p.29) — the player's own choice, never a roll -
+    if INTERACTIVE:
+        if not ch.name:
+            ch.name = ask_text("Character name", ch.name or "")
+        goal = ask_text("Active goal (something worth dying for)", "")
+        ties = ask_text("Ties (why this PC trusts the party)", "")
+        if goal:
+            ch.notes.append("Goal: %s" % goal)
+        if ties:
+            ch.notes.append("Ties: %s" % ties)
+
+
+def _effort_from_record(ch, rec):
+    """Compute Effort for one tradition record per its kind and the rules.
+    Returns (effort, explanation-string)."""
+    kind = rec.get("kind", "arts")
+    skill_name = rec.get("effort_skill", "Magic")
+    attrs = rec.get("effort_attrs", ["Int", "Cha"])
+    # attribute term
+    if attrs == "best":
+        attr_term = max(attr_mod(ch.scores[a]) for a in ATTRS)
+        attr_lbl = "best of all mods"
+    else:
+        attr_term = max(attr_mod(ch.scores[a]) for a in attrs)
+        attr_lbl = "better " + "/".join(attrs)
+    # base skill level (treat scholarly/baseline as 0 if unrolled)
+    if skill_name in ("order", "none"):
+        skill_lvl = 0
+        skill_lbl = "(order skill)" if skill_name == "order" else "(no Effort)"
+    else:
+        skill_lvl = ch.skills.get(skill_name, -1)
+        if skill_lvl < 0:
+            skill_lvl = 0
+        skill_lbl = "%s(%d)" % (skill_name, skill_lvl)
+    if kind == "spellpoints":
+        # Adunic Invoker: spell points = 1 + Int mod
+        pts = 1 + attr_mod(ch.scores["Int"])
+        if pts < 1:
+            pts = 1
+        return pts, "spell points = 1 + Int(%+d) = %d" % (attr_mod(ch.scores["Int"]), pts)
+    eff = 1 + skill_lvl + attr_term
+    note = "1 + %s + %s(%+d)" % (skill_lbl, attr_lbl, attr_term)
+    # partial casters take -1 to Effort
+    if ch.cls["caster"] in ("partial", "dual-partial", "atlas-arts"):
+        # Atlas Bard/Mageslayer/Accursed effort formulas already include their own
+        # skill+attr; they are partial-grade and do not take an extra -1 here.
+        if ch.cls["caster"] == "partial":
             eff -= 1
-        if eff < 1:
-            eff = 1
-        ch.effort = eff
-        print("  Effort = 1 + Magic(%d) + better Int/Cha(%+d)%s = %d"
-              % (magic_lvl, better, "  -1 partial" if ch.cls["caster"] == "partial" else "", eff))
-        # starting spells: full = 4, partial = 2, dual-partial = 4 (p.28)
-        n_spells = 2 if ch.cls["caster"] == "partial" else 4
-        ch.spells = ["<1st-level spell %d>" % (i + 1) for i in range(n_spells)]
-        print("  Starting spells: %d (choose from tradition's 1st-level list). # TODO verify list, p.60+"
-              % n_spells)
+            note += " - 1 partial"
+    if eff < 1:
+        eff = 1
+    return eff, note
+
+
+def _starting_magic_names(ch, rec, random_choice):
+    """Build the list of starting spell/art names for one tradition record."""
+    kind = rec.get("kind", "arts")
+    out = []
+    if kind in ("spells", "spellpoints"):
+        n = (rec.get("known_spells_partial", 2)
+             if ch.cls["caster"] in ("partial", "dual-partial", "atlas-arts")
+             else rec.get("known_spells_full", 4))
+        lists = rec.get("spell_lists", [])
+        pool = [name for name, r in SPELLS.items()
+                if r.get("type") in lists and r.get("circle") == 1]
+        pool = sorted(pool)
+        if not pool:
+            return ["<1st-level spell %d - see Magic ch.>" % (i + 1) for i in range(n)]
+        chosen = _choose_n(ch, pool, n, "1st-level spell", random_choice)
+        return chosen
+    # arts
+    free = list(rec.get("free_arts", []))
+    out.extend(free)
+    n_chosen = rec.get("chosen_arts_L1", 0)
+    if n_chosen > 0:
+        art_types = rec.get("art_list", [])
+        pool = sorted([name for name, r in SPELLS.items()
+                       if r.get("type") in art_types and name not in free]) if art_types else []
+        if pool:
+            out.extend(_choose_n(ch, pool, n_chosen, "art", random_choice))
+        else:
+            ptr = rec.get("arts_pointer")
+            if ptr:
+                out.append("<choose %d art(s) — see %s>" % (n_chosen, os.path.basename(ptr)))
+            else:
+                out.append("<choose %d art(s)>" % n_chosen)
+    return out
+
+
+def _choose_n(ch, pool, n, label, random_choice):
+    """Pick n items from pool: interactive menu, honest roll, or random sample."""
+    pool = list(pool)
+    picked = []
+    for i in range(n):
+        rem = [p for p in pool if p not in picked]
+        if not rem:
+            break
+        if INTERACTIVE and not random_choice:
+            sel = ask_menu("Choose %s %d of %d:" % (label, i + 1, n), rem, default_index=0)
+        elif random_choice:
+            r = roll("1d%d" % len(rem), label="%s %d/%d" % (label, i + 1, n))
+            sel = rem[r - 1]
+        else:
+            sel = random.choice(rem)
+        picked.append(sel)
+    return picked
+
+
+def _resolve_magic(ch, random_choice):
+    """Compute Effort and starting spells/arts from ch.tradition_rec."""
+    recs = ch.tradition_rec
+    if recs is None:
+        # fallback: old behavior so a missing record never crashes
+        magic_lvl = max(0, ch.skills.get("Magic", 0))
+        better = max(attr_mod(ch.scores["Int"]), attr_mod(ch.scores["Cha"]))
+        ch.effort = max(1, 1 + magic_lvl + better)
+        print("  Effort = 1 + Magic(%d) + better Int/Cha(%+d) = %d (no tradition record)"
+              % (magic_lvl, better, ch.effort))
+        return
+    if isinstance(recs, list):
+        # dual / mage+atlas: report each, Effort is the max of the two pools
+        efforts = []
+        allnames = []
+        for rec in recs:
+            if not rec:
+                continue
+            eff, note = _effort_from_record(ch, rec)
+            efforts.append(eff)
+            if note.startswith("spell points"):
+                print("  Effort [%s] (%s)" % (rec.get("kind", "?"), note))
+            else:
+                print("  Effort [%s] = %s = %d" % (rec.get("kind", "?"), note, eff))
+            allnames.extend(_starting_magic_names(ch, rec, random_choice))
+        ch.effort = max(efforts) if efforts else 1
+        ch.spells = allnames
+    else:
+        if recs.get("effort_skill") == "none":
+            ch.effort = 0
+            print("  Effort: none (the Wise do not use Effort; arts are constant or N/day).")
+        else:
+            eff, note = _effort_from_record(ch, recs)
+            ch.effort = eff
+            if note.startswith("spell points"):
+                print("  Effort (%s)" % note)
+            else:
+                print("  Effort = %s = %d" % (note, eff))
+        ch.spells = _starting_magic_names(ch, recs, random_choice)
+    label = "spells/arts" if any("<" not in s for s in ch.spells) else "spells/arts (pointers)"
+    print("  Starting %s: %s" % (label, ", ".join(ch.spells) if ch.spells else "(none)"))
+
+
+def _record_languages(ch):
+    """Native + Trade Cant + 1/tongue per Connect/Know-0, 2 each at level-1 (p.29)."""
+    bonus = 0
+    for s in ("Connect", "Know"):
+        lvl = ch.skills.get(s)
+        if lvl is None:
+            continue
+        bonus += 1 if lvl == 0 else 2
+    langs = ["Native", "Trade Cant"]
+    note = "Languages: Native + Trade Cant"
+    if bonus:
+        note += " + %d more (Connect/Know)" % bonus
+        if ch.origin != "Human" or ch.profile is None or (ch.profile or {}).get("allow_nonhuman_origins", True):
+            note += "; Gyre tongues available: %s" % ", ".join(GYRE_TONGUES[:6])
+    ch.notes.append(note)
+    print("  %s" % note)
 
 
 # ---------------------------------------------------------------------------
@@ -1378,13 +1544,14 @@ def render_summary(ch):
         if f.get("innate_ac"):
             extra.append("innate AC %d" % f["innate_ac"])
         tail = ("  [%s]" % ", ".join(extra)) if extra else ""
-        out.append("  - %s (L%d, p.%d)%s" % (f["name"], f["level"], f["page"], tail))
+        out.append("  - %s (L%d, p.%s)%s" % (f["name"], f["level"], f["page"], tail))
         out.append("      %s" % f["note"])
     if ch.effort is not None:
         out.append("")
         out.append("MAGIC")
         out.append("  Tradition: %s" % ch.tradition)
-        out.append("  Effort: %d   Prepared spells: %s" % (ch.effort, ", ".join(ch.spells)))
+        eff_txt = "none (constant/N-per-day arts)" if ch.effort == 0 else str(ch.effort)
+        out.append("  Effort: %s   Prepared spells/arts: %s" % (eff_txt, ", ".join(ch.spells)))
     out.append("")
     out.append("WEAPONS")
     for (nm, hit, dmg, shock, note) in wlines:
@@ -1403,8 +1570,14 @@ def render_summary(ch):
         for n in ch.notes:
             out.append("  - %s" % n)
     out.append("")
-    out.append("GOAL / TIES: <fill in: every PC needs an active goal and a reason to")
-    out.append("             trust the party> (p.29)")
+    goal = next((n[6:] for n in ch.notes if n.startswith("Goal: ")), None)
+    ties = next((n[6:] for n in ch.notes if n.startswith("Ties: ")), None)
+    if goal or ties:
+        out.append("GOAL: %s" % (goal or "<active goal — required> (p.29)"))
+        out.append("TIES: %s" % (ties or "<why this PC trusts the party> (p.29)"))
+    else:
+        out.append("GOAL / TIES: <fill in: every PC needs an active goal and a reason to")
+        out.append("             trust the party> (p.29)")
     return "\n".join(out)
 
 
@@ -1425,9 +1598,11 @@ def render_sheet(ch):
     L.append("> campaign character record (`assets/templates/_engine-character-sheet.reference.md`).")
     L.append("")
     L.append("- **Level / Class:** %d  %s" % (ch.level, ch.cls["name"]))
-    L.append("- **Background:** %s" % ch.background)
-    L.append("- **Goal:** <active goal — required>")
-    L.append("- **Ties:** <why this PC trusts the party>")
+    L.append("- **Background:** %s   ·   **Origin:** %s" % (ch.background, ch.origin))
+    goal = next((n[6:] for n in ch.notes if n.startswith("Goal: ")), None)
+    ties = next((n[6:] for n in ch.notes if n.startswith("Ties: ")), None)
+    L.append("- **Goal:** %s" % (goal or "<active goal — required>"))
+    L.append("- **Ties:** %s" % (ties or "<why this PC trusts the party>"))
     L.append("")
     L.append("## Attributes")
     L.append("| Str | Dex | Con | Int | Wis | Cha |")
@@ -1456,17 +1631,22 @@ def render_sheet(ch):
         if f.get("bonus_skill"):
             bits.append("skill %s" % f["bonus_skill"])
         if f.get("hp_bonus"):
-            bits.append("+%d HP" % f["hp_bonus"])
+            bits.append("%+d HP" % f["hp_bonus"])
         if f.get("innate_ac"):
             bits.append("innate AC %d" % f["innate_ac"])
         tail = ("  — %s" % ", ".join(bits)) if bits else ""
-        L.append("- **%s** (L%d, p.%d)%s — %s" % (f["name"], f["level"], f["page"], tail, f["note"]))
+        L.append("- **%s** (L%d, p.%s)%s — %s" % (f["name"], f["level"], f["page"], tail, f["note"]))
     L.append("")
     if ch.effort is not None:
+        rec = ch.tradition_rec
+        skl = rec.get("effort_skill") if isinstance(rec, dict) else "Magic/varies"
         L.append("## Magic")
         L.append("- **Tradition:** %s" % ch.tradition)
-        L.append("- **Effort:** %d  (1 + Magic level + better Int/Cha mod%s)"
-                 % (ch.effort, "; −1 partial" if ch.cls["caster"] == "partial" else ""))
+        if ch.effort == 0:
+            L.append("- **Effort:** none — the Wise use no Effort; arts are constant or N/day.")
+        else:
+            L.append("- **Effort:** %d  (Effort skill = %s + tradition attribute mod)"
+                     % (ch.effort, skl))
         L.append("- **Prepared spells / Arts:** %s" % ", ".join(ch.spells))
         L.append("")
     L.append("## Weapons")
@@ -1559,23 +1739,52 @@ def main():
     ap.add_argument("--set14", help="attribute (Str..Cha) to set to 14 after rolling")
     ap.add_argument("--skill-mode", choices=["quick", "pick", "roll"], default="quick",
                     help="background skill acquisition (default quick; --random forces roll)")
+    ap.add_argument("--interactive", action="store_true",
+                    help="step-by-step build: pause at each choice with a numbered menu + default")
+    ap.add_argument("--content-profile",
+                    help="path to a content-profile.json (opt-out filters; default = full roster)")
     args = ap.parse_args()
 
     if args.seed is not None:
         random.seed(args.seed)
+
+    global INTERACTIVE
+    INTERACTIVE = bool(args.interactive)
+
+    # load the content profile (defaults enable everything)
+    profile = None
+    if args.content_profile:
+        try:
+            profile = json.load(open(args.content_profile, encoding="utf-8"))
+        except (ValueError, OSError) as e:
+            sys.exit("Could not read content profile %r: %s" % (args.content_profile, e))
 
     print("Worlds Without Number — Character Creation (honest dice shown)")
     if _engine_dice_available():
         print("(engine dice.py detected at MYTHIC_GM_DICE; rolls shown here in matching format)")
     if args.seed is not None:
         print("Seed: %d" % args.seed)
+    if profile:
+        print("Content profile: magic_level=%s (opt-out filters applied)"
+              % profile.get("magic_level", "default"))
+    if INTERACTIVE:
+        print("Interactive mode: answer each prompt, or press Enter for the default.")
 
     ch = Character()
     ch.name = args.name
     ch.level = max(1, args.level)
+    ch.profile = profile
 
     # class first so attribute-14 and foci choices can be class-aware
     step_class(ch, key=args.cls, random_choice=args.random)
+    # optional Latter-Earth origin (interactive only; default Human)
+    if INTERACTIVE and not args.random:
+        allow_nh = (profile or {}).get("allow_nonhuman_origins", True)
+        opts = list(LATTER_EARTH_ORIGINS.keys()) if allow_nh else ["Human"]
+        labels = ["%s — %s" % (o, LATTER_EARTH_ORIGINS[o]) for o in opts]
+        chosen = ask_menu("Origin (Latter Earth). Non-human origins use a Special Origin / "
+                          "Amundi focus and GM permission.", labels, default_index=0)
+        ch.origin = opts[labels.index(chosen)]
     step_attributes(ch, set14=args.set14, random_choice=args.random)
     step_background(ch, name=args.background, mode=args.skill_mode, random_choice=args.random)
     step_foci(ch, requested=args.focus, random_choice=args.random)
