@@ -63,7 +63,7 @@ Follow `.claude/skills/wwn/SKILL.md` → **WWN SESSION ZERO**. In short:
    `.claude/skills/wwn/bridge/setting-canon.md`.
 4. **Genre & stakes** — exploration-survival + intrigue. Set the Theme order:
    ```
-   python3 .claude/skills/mythic-gm/scripts/adventure_crafter.py themes --style intrigue --campaign campaign
+   python3 .claude/skills/mythic-gm/scripts/adventure_crafter.py themes --style wwn --campaign campaign
    ```
    Chaos Factor = 5.
 5. **Create the PC** — `python3 .claude/skills/wwn/scripts/chargen.py` → `campaign/character-sheet.md`.
@@ -143,7 +143,7 @@ greatest threat to the game**. Hold the engine's **Creed** every scene:
 | Validate the bridge | `python3 .claude/skills/mythic-gm/scripts/bridge.py validate .claude/skills/wwn/bridge` |
 | Scaffold a campaign | `python3 .claude/skills/mythic-gm/scripts/state.py init campaign` |
 | Scene Test (Adventure Crafter always on) | `python3 .claude/skills/mythic-gm/scripts/dice.py scene <CF>` |
-| Adventure Themes | `python3 .claude/skills/mythic-gm/scripts/adventure_crafter.py themes --style intrigue --campaign campaign` |
+| Adventure Themes | `python3 .claude/skills/mythic-gm/scripts/adventure_crafter.py themes --style wwn --campaign campaign` |
 | Turning Point | `python3 .claude/skills/mythic-gm/scripts/adventure_crafter.py turning-point --campaign campaign --bridge .claude/skills/wwn/bridge` |
 | Fate Question | `python3 .claude/skills/mythic-gm/scripts/dice.py fate <odds> <CF> --campaign campaign --bridge .claude/skills/wwn/bridge` |
 | Resolve a PC action | `python3 .claude/skills/wwn/scripts/check.py skill\|attack\|save\|opposed …` |

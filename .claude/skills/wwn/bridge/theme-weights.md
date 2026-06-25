@@ -1,21 +1,20 @@
 # Theme Weights — Latter Earth   (hook: themes; FIXED for the whole campaign)
 
 ## Operative
-Roll EVERY adventure's 5 Theme priorities from these fixed weights
-(`adventure_crafter.py themes --style intrigue --campaign <dir>`) — don't default to balanced. WWN
-stories are exploration-survival + intrigue: Tension carries the attrition and lethal grit, Mystery the
-ancient ruins and Deeps, Social the faction and court play, Action the deadly fights, Personal kept
-light in a disposable-adventurer world. No fixed First Priority — let the world's volatility decide.
+EVERY adventure uses this **fixed Theme priority order** — Action ▸ Social ▸ Tension ▸ Personal ▸
+Mystery — via `adventure_crafter.py themes --style wwn --campaign <dir>` (the `wwn` style is the default;
+running `themes` with no `--style` yields the same order). This is a deterministic order, not a weighted
+draw: Action leads (the lethal fights and decisive moves), then Social (faction and court play), Tension
+(attrition and grit), Personal (kept present but not dominant in a disposable-adventurer world), and
+Mystery last (the ancient ruins and Deeps).
 
-# Every adventure rolls its 5 Theme priorities from these weights (weighted draw).
-Action: 3
-Tension: 4
-Mystery: 3
-Social: 3
-Personal: 1
-# Optional fixed First-Priority theme:
-first_priority: none
-# Why: WWN leans exploration-survival + intrigue. Tension carries the grit (attrition,
-# scarcity, lethal stakes); Mystery feeds the ancient ruins/Deeps; Social drives faction
-# play and court intrigue; Action for the lethal fights; Personal kept light in a deadly,
-# disposable-adventurer world. No fixed first-priority — let the world's volatility decide.
+# Deterministic 1st..5th Theme priority for every adventure (style 'wwn').
+order: [Action, Social, Tension, Personal, Mystery]
+first_priority: Action
+# The order is fixed in adventure_crafter's fixed_orders['wwn']; the weights below are only a
+# fallback if a non-fixed style is ever used.
+Action: 5
+Social: 4
+Tension: 3
+Personal: 2
+Mystery: 1

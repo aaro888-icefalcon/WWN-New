@@ -41,6 +41,10 @@ STRUCT = load("adventure_crafter/plot_point_structure.json")["universal"]
 META_TBL = load("adventure_crafter/meta_plot_points.json")
 
 def weighted_theme_order(style):
+    # A style with a fixed order yields that exact 1st..5th priority, deterministically.
+    fixed = THEMES_DEF.get("fixed_orders", {}).get(style)
+    if fixed:
+        return list(fixed)
     w = dict(THEMES_DEF["style_weights"].get(style, THEMES_DEF["style_weights"]["balanced"]))
     order = []
     pool = list(w.items())
@@ -161,7 +165,7 @@ def main():
     a = sys.argv[1:]
     if not a or a[0] in ("-h","--help"): print(__doc__); return
     def opt(f, dv): return type(dv)(a[a.index(f)+1]) if f in a else dv
-    style = opt("--style", "balanced")
+    style = opt("--style", THEMES_DEF.get("default_style", "balanced"))
     campaign = opt("--campaign", "") or None
     bridge = opt("--bridge", "") or None
     if a[0] == "themes": cmd_themes(style, campaign)
@@ -172,7 +176,7 @@ def main():
         elif campaign:
             order = lists.load_adventure(campaign)["theme_order"]
         else:
-            order = THEMES_DEF["themes"]
+            order = weighted_theme_order(THEMES_DEF.get("default_style", "balanced"))
         tens = opt("--tens", -1)
         if tens < 0:
             tens = lists.load_adventure(campaign)["tens"] if campaign else 0

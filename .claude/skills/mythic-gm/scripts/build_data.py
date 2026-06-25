@@ -258,7 +258,13 @@ def build_ac():
             "mystery":{"Mystery":4,"Tension":2,"Social":1,"Personal":1,"Action":1},
             "intrigue":{"Social":4,"Personal":2,"Mystery":2,"Tension":1,"Action":1},
             "drama":{"Personal":3,"Social":3,"Tension":1,"Mystery":1,"Action":1},
-            "balanced":{t:1 for t in THEMES}}})
+            "wwn":{"Action":5,"Social":4,"Tension":3,"Personal":2,"Mystery":1},
+            "balanced":{t:1 for t in THEMES}},
+        # Fixed (deterministic) theme priority orders. A style listed here always
+        # yields this exact 1st..5th order instead of a weighted roll. 'wwn' is the
+        # default for Worlds Without Number adventures.
+        "fixed_orders":{"wwn":["Action","Social","Tension","Personal","Mystery"]},
+        "default_style":"wwn"})
     # Plot Point Table — mechanical structure hard-coded; specific titles read from canon.
     write("adventure_crafter/plot_point_structure.json",{"id":"ac.plot_point_structure",
         "title":"Plot Point Table — structure","type":"themed_d100","dice":"3d10",

@@ -54,6 +54,13 @@
    "Mystery": 1,
    "Action": 1
   },
+  "wwn": {
+   "Action": 5,
+   "Social": 4,
+   "Tension": 3,
+   "Personal": 2,
+   "Mystery": 1
+  },
   "balanced": {
    "Action": 1,
    "Tension": 1,
@@ -61,5 +68,15 @@
    "Social": 1,
    "Personal": 1
   }
- }
+ },
+ "fixed_orders": {
+  "wwn": [
+   "Action",
+   "Social",
+   "Tension",
+   "Personal",
+   "Mystery"
+  ]
+ },
+ "default_style": "wwn"
 }
