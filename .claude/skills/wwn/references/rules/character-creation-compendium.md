@@ -23,7 +23,8 @@ uncertain Level-2 attributions — verify against the book before relying on the
 1. **Rolling & Resolution** — dice, skill checks, saves, attacks, Shock
 2. **Character Creation** — procedure, attributes, classes, the focus-count rule, final touches, equipment
 3. **Backgrounds** — all 20
-4. **Mage Traditions** — High Mage · Elementalist · Healer · Necromancer · Vowed (+ Gyre pointers)
+4. **Mage Traditions** — High Mage · Elementalist · Healer · Necromancer · Vowed
+4b. **Gyre Traditions & Atlas Classes** — the 6 Gyre professions + Accursed · Bard · Mageslayer · Wise
 5. **Foci — Core** — the 47 base foci
 6. **Foci — Atlas / Optional** — Maqqatban styles · Godblood · Arcane Secret · Non-Human Origin
 
@@ -711,6 +712,209 @@ Six professions unique to the **Gyre** region, detailed in **`book/Worlds-Withou
 - **Sarulite Blood Priest** — traditional cleric type; a modest selection of generally-useful miracles rather than full spellcasting.
 - **Vothite Thought Noble** — mind-control / mindbender PC; mental-domination focus (the WWN analogue of a Stars Without Number Telepath).
 
+
+---
+
+
+
+---
+
+# PART 4b — GYRE TRADITIONS & ATLAS CLASSES
+
+> The six **Gyre professions** and the four **Atlas optional classes** (Accursed, Bard, Mageslayer, Wise).
+> All are **partial classes** taken via the Adventurer; most grant **Arts** (not spells). Sources:
+> `11-Arts-of-the-Gyre.md` and `04-Optional-Rules-and-Classes.md`.
+
+# Gyre Traditions
+
+> Source: `/home/user/WWN-New/.claude/skills/wwn/book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md` (WWN Deluxe, pp. 348–359). Six professions unique to the Gyre region. Per the section intro (lines 13–14): the **Adunic Invoker** is a magical tradition takeable by **partial OR full** Mages; the **other five** are all **non-spellcasting partial Mage classes** mixed in by an Adventurer.
+
+---
+
+### Adunic Invoker
+
+- **Availability:** Both — **Full OR Partial** Mage class (lines 13, 39–52 full table, 70–83 partial table). Partial Invoker **may NOT be mixed with another partial spellcasting class** (line 62).
+- **Caster type:** Casts **High Magic spells** via a **spell-point** system rather than Vancian slots (lines 32–33, 58, 60). Knows/prepares spells from the High Magic tradition; **does NOT normally gain arts** (line 62).
+- **Effort basis / pool:** Uses **Spell Points**, not Effort. Spell points = level-based value (table) **+ Intelligence modifier**, subtract spell's level to cast, refresh each morning (lines 60, 43–52). (Effort only enters play via the optional Focus below, where max Effort = Magic skill.)
+- **Spells known / prepared @ L1:**
+  - Begins knowing **four 1st-level High Magic spells** (full), or **two** if partial (line 64).
+  - Spell points @ L1: full = **1 + Int mod**; partial = **1 + Int mod** (lines 43, 74).
+  - Spells prepared @ L1: full = **2 + Int mod**; partial = **1 + Int mod** (lines 43, 74).
+  - On level-up: learns **two more** spells (any level/tradition castable), or **one** if partial (line 64).
+- **Arts @ L1:** **None by default** (line 62). Exception via Focus below.
+- **Bonus skill:** **Magic** as a bonus skill at level-0, or level-1 if already level-0 (line 56).
+- **Focus granted:** Optional class-only **Focus: Traditional Education** (lines 66–68) — lets you also learn/prepare a specialist tradition (High Magic arts / Elementalism / Necromancy), gain arts as a 1st-level practitioner of it, and **max Effort = Magic skill (min 1)**. Only Invokers may take it; once only.
+- **Restrictions:** Same **armor-casting limits as High Magic** (line 58); cannot blend Invoker training with conventional spellcasting (line 35); partial may not pair with another partial spellcaster (line 62).
+- **Flavor:** A High Mage tradition of Ka-Adun that trades burst power for flexible, spell-point endurance — many small enchantments instead of a few mighty spells (lines 31–33).
+
+---
+
+### Darian Skinshifter
+
+- **Availability:** **Partial-only** Mage class; Adventurer pairing (lines 97–98, 114). Header is "Partial Darian Skinshifter."
+- **Caster type:** **Arts-only — no spells.** A shapeshifting Mage tradition (line 13).
+- **Effort basis:** **Survive + higher of Constitution or Charisma modifier**, min 1 (line 136). Skinshifter Effort = Survive skill level + best of Con/Cha mod.
+- **Auto Arts @ L1:** **Change Form** + **any one** (lines 101, 136).
+- **Additional arts picked @ L1:** **1** (the "Any One" on the L1 row, lines 101, 136).
+- **Bonus skill:** **Survive-0** (or Survive-1 if already have Survive-0) (line 116).
+- **Chassis facts:**
+  - **Form Bonus** column (acts as hit/attack bonus while in non-humanoid shape): **+1 at L1** (line 101), used in place of basic class hit bonus when in a non-humanoid form, unless the other partial class is better (line 124).
+  - No separate hit die listed (alternate forms use the PC's own HP/attributes; line 124).
+  - One alternate form mastered per character level (line 122); max **3 arts applied per form** (line 126); forms sized between a horse and a kitten (line 128).
+- **Restrictions:** Standard partial-Mage pairing required (line 114). Some arts (e.g., Feral Prowess, Sculptor's Beauty, Warform) make the form unable to pass as a normal human (lines 146, 160, 166).
+- **Flavor:** Heirs of fallen Emed-Dar's aesthete biomancers — occult self-sculpting into beast and hybrid forms (lines 87–93).
+
+---
+
+### Kistian Duelist
+
+- **Availability:** **Partial-only** Mage class; Adventurer pairing (lines 180, 199–200). Header is "Partial Kistian Duelist."
+- **Caster type:** **Arts-only — no spells** (non-spellcasting partial Mage, line 13).
+- **Effort basis:** **Stab + higher of Dexterity or Intelligence modifier**, min 1 (line 218). Duelist Effort = Stab skill + best of Dex/Int mod.
+- **Auto Arts @ L1:** **Favored Weapon** + **any one** (lines 187, 218, 222).
+- **Additional arts picked @ L1:** **1** (lines 187, 218).
+- **Bonus skill:** **Stab-0** (or Stab-1 if already have it at level-0) (line 202).
+- **Chassis facts:**
+  - **Favored Weapon attack-bonus** column: **+1 at L1** (line 187); used as base hit bonus with the chosen weapon type unless better otherwise. If second partial class is **Partial Warrior**, base hit bonus with the weapon instead **= your level** (line 224).
+  - **Hit die flaw:** A Partial Warrior/Kistian Duelist uses **1d6 hit dice** instead of the Partial Warrior's usual **1d6+2** (the Flaw of Fragility). Other partial mixes unaffected (line 208).
+- **Restrictions:** **Cannot benefit from any Duelist art while wearing medium or heavy armor or carrying a large shield** (line 220). Arts **cannot apply to thrown weapons** (lines 220, 224). Favored Weapon must be a **non-unarmed melee weapon** (line 224).
+- **Flavor:** Swordmaster of Emed-Kist who cultivates inner energy to imbue steel with supernatural grace — a mobile, low-armor one-on-one duelist (lines 171–176).
+
+---
+
+### Llaigisan Beastmaster
+
+- **Availability:** **Partial-only** Mage class; Adventurer pairing (lines 268, 282–284). Header is "Partial Llaigisan Beastmaster."
+- **Caster type:** **Arts-only — no spells** (non-spellcasting partial Mage, line 13).
+- **Effort basis:** **Survive + higher of Wisdom or Charisma modifier**, min 1 (line 308). Beastmaster Effort = Survive skill level + best of Wis/Cha mod.
+- **Auto Arts @ L1:** **Bind Companion** + **any one** (lines 271, 308).
+- **Additional arts picked @ L1:** **1** (lines 271, 308).
+- **Bonus skill:** **Survive** at level-0 (or level-1 if already have it at level-0) (line 286).
+- **Chassis facts:**
+  - **No Form/attack-bonus column** — the Beastmaster table has only Level + Arts Gained (lines 269–280).
+  - **Beastmasters can use their arts normally while armored** (line 308) — notable exception to typical Mage armor restrictions.
+  - Companion HD ≤ Beastmaster level + 1; non-human intelligence; one companion at a time; must be named (lines 292–300). Optional "Chosen Friend" build (line 304).
+- **Restrictions:** Standard partial-Mage pairing required. (No armor restriction — explicitly allowed, line 308.)
+- **Flavor:** Llaigisan tamer who binds dire beasts as a fighting animal companion via Legacy-pacts and training — the ranger/druid-with-a-beast template (lines 258–266).
+
+---
+
+### Sarulite Blood Priest
+
+- **Availability:** **Partial-only** Mage class; Adventurer pairing (lines 350, 370–372). Header is "Partial Sarulite Blood Priest."
+- **Caster type:** **Arts-only — no spells.** Grants **miracles** (the class's term for its arts), not full spellcasting (lines 21, 378, 384).
+- **Effort basis:** **Pray + higher of Wisdom or Charisma modifier**, min 1 (line 382). Blood Priest Effort = Pray skill + best of Wis/Cha mod.
+- **Auto Arts @ L1:** **None forced** — chooses **any two** miracles at L1 (lines 353, 384). (No mandatory starting miracle.)
+- **Additional arts picked @ L1:** **2** (the "Any Two" on the L1 row, lines 353, 384). ⚠️ Note this differs from the others: Blood Priest picks **2** miracles at L1 with **no auto-granted** one.
+- **Bonus skill:** **Pray** at level-0 (or level-1 if already have it at level-0) (line 374).
+- **Chassis facts:**
+  - Table is Level + Miracles Gained only; no attack-bonus or form column (lines 352–362).
+  - Miracle picks are **permanent** once chosen (line 384).
+- **Restrictions:** **Miracles are NOT hindered by armor** and require no gestures or free hand, though usually a prayer must be vocalized (line 384). Power works even for non-believers (embedded in the Legacy) (line 344).
+- **Flavor:** Cleric of Sarul's Bleeding God — a fighting-priest template wielding a modest set of broadly useful miracles (lines 21, 340–344).
+
+---
+
+### Vothite Thought Noble
+
+- **Availability:** **Partial-only** Mage class; Adventurer pairing (lines 428, 430, 444). Header is "Partial Vothite Thought Noble."
+- **Caster type:** **Arts-only — no spells.** Explicitly **"Thought Nobles do not cast spells"** — they develop cognitive/telepathic arts instead (lines 23, 442).
+- **Effort basis:** **Notice + better of Intelligence or Wisdom modifier**, min 1 (line 422). Notably computed from **Notice rather than Magic** (line 422). Thought Noble Effort = Notice skill level + best of Int/Wis mod.
+- **Auto Arts @ L1:** **Open Mind** + **any one** (lines 418, 426, 447).
+- **Additional arts picked @ L1:** **1** (lines 418, 447).
+- **Bonus skill:** **Notice** at level-0 (or level-1 if already have it at level-0) (line 434).
+- **Chassis facts:**
+  - Table is Level + Arts only; ⚠️ the partial table grants **"Any One" every level 1–10** (lines 446–456), i.e., an art at every level — unusually, no "blank" levels (contrast Skinshifter/Duelist/Beastmaster/Blood Priest tables which have empty rows at levels 3/7/9). Worth confirming this isn't an OCR duplication, but the table is consistent across all ten rows.
+- **Restrictions:** Standard partial-Mage pairing required. Arts are invisible to non-magical senses and don't reveal the user even on a successful save (line 426).
+- **Flavor:** Heir to the lost mental arts of the Vothite Empire — a mind-control / telepathy specialist needing no other magic (lines 23, 412–414).
+
+---
+
+# Atlas Classes
+
+Source: `/home/user/WWN-New/.claude/skills/wwn/book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md`, "New Character Classes" (L385–838).
+
+**Global note (L409):** ALL FOUR are explicitly *partial classes*, "meant to be mixed with some other set of abilities." None is a full class; none is a Focus. The `foci.json` "(class)" stubs are mislabels — in the book these are **partial class chassis** taken via the Adventurer, each pairing a base Partial class (Warrior/Expert/Mage) with the new partial class. Their granted powers are **Arts** (not Foci), drawn from class-specific Art lists.
+
+---
+
+### The Accursed
+*Flavor:* A PC pacted with some otherworldly power in exchange for magical gifts and an eldritch weapon against their foes; powers blend with deceit, bargains, and trickery (L391, L413).
+
+- **Type:** Partial **Mage** class, joined with a second partial class by an Adventurer (L423). Not a full class, not a Focus. Valid pairings: Partial Warrior/Accursed, Partial Expert/Accursed, Partial Mage/Accursed (L423).
+- **Hit die / Attack bonus (chassis):** Depends on the partner partial class (L429–471):
+  - Partial Expert/Accursed: 1d6 HD, +0 atk at L1 (to +5 @ L10).
+  - Partial Mage/Accursed: 1d6**-1** HD (i.e. 1d6−level), +0 atk at L1 (to +2 @ L10).
+  - Partial Warrior/Accursed: 1d6**+2** HD, +1 atk at L1 (to +7 @ L10).
+- **Caster type:** Magic-using; uses **Arts**, not a spell list. All Accursed gain **Magic-0** at character creation (L425). Accursed arts may be used in or out of armor (L475).
+- **Effort basis:** Effort = **Magic skill level + Intelligence OR Charisma modifier** (best of the two), minimum 1 (L475).
+- **Auto-granted Arts @ L1:** Either **Accursed Bolt** OR **Accursed Blade**, PLUS **one** more Art of choice (L475, L502–503). Additional Arts gained at L2, 4, 5, 6, 8, 10 (Accursed Art Progression L501–512).
+  - *Accursed Blade* (L477): On-Turn occult melee weapon, 1d8 (1h) or 2d6 (2h), +Magic to damage, Shock 2/15, attack via Magic + best of Str/Dex/Int/Cha.
+  - *Accursed Bolt* (L479): ranged version, 1d8 + Magic, 200' range, throwable in melee at −4, needs both hands.
+- **Bonus skill/focus:** No bonus Focus beyond the chassis Focus Picks. Note (L427): Foci that apply to mundane weapons (e.g. Armsmaster, Deadeye) read "Magic" in place of "Shoot"/"Stab" for the Accursed weapon arts.
+- **Restrictions/prereqs:** Must be built via Adventurer with a second partial class (L423); gains Magic-0 (L425). Several arts cost System Strain (Dire Pact, Snaring Speech, Sorcerous Battery) (L487, L518, L520).
+
+---
+
+### The Bard
+*Flavor:* A performer charged with the power of the Legacy — music, song, and speech infused with unnatural puissance; heartens allies, dismays foes (L397, L532–540).
+
+- **Type:** Partial **Expert** class, joined with a second partial class by an Adventurer (L546). Not a full class, not a Focus. Valid pairings: Partial Warrior/Bard, Partial Expert/Bard, Partial Mage/Bard (L546).
+- **Hit die / Attack bonus (chassis):** (L552–594):
+  - Partial Expert/Bard: 1d6 HD, +0 atk at L1 (to +5 @ L10).
+  - Partial Mage/Bard: 1d6 HD, +0 atk at L1 (to +5 @ L10).
+  - Partial Warrior/Bard: 1d6**+2** HD, +1 atk at L1 (to +7 @ L10).
+- **Caster type:** **NOT magical** — Arts are not magic, not blocked by wards against sorcery; do not count as magical for counter/detect-magic abilities (L398, L540, L598). Arts-only; no spell list. All Bards gain **Perform-0** at character creation (L548). Arts usable in or out of armor (L598).
+- **Effort basis:** Effort = **Perform skill level + Charisma modifier**, minimum 1 (L598).
+- **Auto-granted Arts @ L1:** **A Thousand Tongues** (auto), PLUS **one** more Art of choice (L600, L621). Additional Arts at L2, 4, 6, 8, 10 (Bard Art Progression L620–630).
+  - *A Thousand Tongues* (L602): communication arts intuitively understood by all intelligent creatures; learn a new language in a week with a native speaker.
+- **Bonus skill/focus:** ⚠️ Unlike a normal Partial Expert, the Bard does **NOT** get a bonus non-combat Focus at L1, nor the Partial Expert's bonus skill point on level-up (L550). A PC who takes the *standard* Partial Expert as their other half gains those normally (L550).
+- **Restrictions/prereqs:** Must be built via Adventurer with a second partial class (L546); gains Perform-0 (L548). Range of arts is normal unaided voice range unless stated (L598). Rally art costs 1 System Strain (L636).
+
+---
+
+### The Mageslayer
+*Flavor:* A specialist combatant whose arts focus on butchering wizards and spell-wielders; many tricks for resisting hostile magic and swiftly slaughtering enemy sorcerers (L401, L644).
+
+- **Type:** Partial **Warrior** class, joined with a second partial class by an Adventurer (L654). Not a full class, not a Focus. **No Mage class may pair with it** — so only Partial Warrior/Mageslayer or Partial Expert/Mageslayer (L654).
+- **Hit die / Attack bonus (chassis):** (L664–679):
+  - **Partial Warrior/Mageslayer:** 1d6**+2** HD, +1 atk at L1 (advances to +10 @ L10). Focus Picks: 1 Warrior + 1 Any @ L1, then +1 Any at L2,5,7,10.
+  - **Partial Expert/Mageslayer:** 1d6 HD, **+1** atk at L1 (advances to +7 @ L10). Focus Picks: 1 Expert + 1 Any @ L1, then +1 Any at L2,5,7,10.
+- **Caster type:** Magic-using only for understanding prey; uses **Arts**, no spell list. All Mageslayers gain **Magic-0** at character creation, usable for understanding (not item creation/magical pursuits) (L662). Arts usable in or out of armor, no free hands/incantations needed (L695).
+- **Effort basis:** Effort = **Magic skill level + highest modifier among Intelligence and Constitution**, minimum 1 (L695).
+- **Auto-granted Arts @ L1:** **Antimage** AND **Magebane** (both fixed at L1; no L1 free pick) (L697, L712). Arts gained at a **fixed schedule**, not player choice (Mageslayer Art Progression L709–721): L1 Antimage+Magebane; L2 Witchfinder+Spellshield; L3 Disrupt Sorcery; L4 Know Your Prey; L5 Share the Pain; L6 Dispel Enchantment; L7 Ward Ally; L8 Immaculate Body; L9 Immaculate Mind; L10 Absolute Negation.
+  - *Antimage* (L701): grants one level of the **Nullifier** Focus free (or a free Focus if you already have both Nullifier levels).
+  - *Magebane* (L727): add half level (round up) to all damage inflicted on casters from any source; does not stack with a Warrior's Killing Blow.
+- **Bonus skill/focus:** ⚠️ Unlike a normal Partial Warrior, Mageslayers do **NOT** get the bonus combat Focus at L1, nor the Partial Warrior's +2 HP/HD (L658). (Note: *Antimage* still effectively yields a Nullifier Focus level at L1 — see L701.)
+- **Restrictions/prereqs:** Must be built via Adventurer (L654); no Mage pairing (L654); gains Magic-0 (L662). Arts cannot negate Legate Writs, Imperator sorcery, or demi-divine wizardry (L691). Specific definitions of "spell"/"caster" apply (L681–689).
+
+---
+
+### The Wise
+*Flavor:* A scholar/priest/witch class for low- or no-magic campaigns — a mundane priest, feared forest warlock, or sacred oracle (L405, L737–739).
+
+- **Type:** Partial **Expert** class, taken by an Adventurer with another partial class (L745). Not a full class, not a Focus. Suited to low-magic; strictly mundane versions can fit no-magic settings (L745).
+- **Hit die / Attack bonus (chassis):** ⚠️ The Wise table (L757–772) is OCR-garbled; it states HD and Attack Bonus are "As per page 21 of the core rulebook, with the Wise class counting as a partial Expert." So use the **standard Partial Expert** progression (1d6 HD; +0 atk @ L1 rising to +5 @ L10 per the core Partial Expert chassis). Exact numbers not printed here — counts as Partial Expert.
+- **Caster type:** Arts-only; abilities are "not exactly magical" though some may be minor/subtle magic (L739, L741). No spell list.
+- **Effort basis:** **NONE — The Wise do NOT use Effort.** All arts are constantly in effect, or usable under particular circumstances / a fixed number of times per day (L751).
+- **Auto-granted Arts/abilities @ L1:** No single fixed L1 art across all Wise — arts are determined by the PC's **concept/role** via progression tables (L753–755). Example L1 picks (L805): Mundane Priest → *Holy Sanctity*; Witch → *Dread Awe*; Seer → *Erudite or Folk-Friend*; Esoteric → *Any Art*. Most arts can be taken only once (L753).
+- **Bonus skill/focus:** All Wise gain **level-0 in a bonus skill** appropriate to concept — Pray, Know, Magic, Survive, or GM-approved other (L749). ⚠️ Unlike a normal Partial Expert, the Wise do **NOT** gain the Partial Expert's **Quick Learner** class ability or the bonus non-combat Focus at L1 (L747). A standard Partial Expert/partial Wise build does get those perks (L747).
+- **Restrictions/prereqs:** Must be built via Adventurer with another partial class (L745). Intended for low/no-magic settings (GM discretion). Curses/Blessings can affect a given creature only once per day (L822).
+
+**The Wise — Art categories:**
+
+- **General Arts (L774–792):** Dread Awe (intimidation +1, once/scene curse for −1 enemy Morale), Elite Ties (audiences with notables; once/session minor favor), Erudite (once/day reroll a failed intellectual skill check), Folk-Friend (once/day modest favor from a commoner), Healer (+1 Heal; once/day auto-stabilize a Mortally Wounded subject), Holy Sanctity (+1 social with non-opposed locals), Personal Impunity (harming you is taboo; most won't initiate violence), Skilled (3 non-combat skill points; repeatable).
+- **Divination Arts (L794–818):** Compel Truth (scene-long ordeal → one truthful answer on a secret Cha/Magic check vs Morale+1, or level+6 for PCs), Deliver Oracle (day-long ritual → secret Wis/Magic check; diff 8 = partial truth, diff 12 = clear oracle, ≤7 = ambiguous, natural 2 = misleading), Find Object (scene ritual; secret Wis/Magic vs diff 8–11 by distance; >5 miles undetectable; once/day) ⚠️ *Find Object is printed mid-Curses/Blessings block (L826) but is functionally a Divination Art*, Read Omens (scene ritual w/ 10+ sp sacrifice; secret Wis/Magic vs diff 10; success/failure impression of a proposed course; cost ×10 = +1; same course once/month) ⚠️ *also printed in the Curses/Blessings block (L832)*.
+- **Curses and Blessings (L820–836):** A creature may be cursed or blessed by one such art only once/day (L822). Auspicious Undertaking (bless a plan → reroll one failed check/missed hit), Evil Eye (upgrade curse/blessing arts to Instant action by mere look), Ill Fate (curse → −1 to next pertinent check; raw roll ≤ Magic+1 = disastrous failure), Luck Blessing (+1 to target's next skill check that day), War Curse (enemy −2 to hit/damage/Shock for the scene; self-harm on low raw miss).
+  - ⚠️ *Esoteric progression* (L755, L805): for player-made concepts, use the Esoteric column or a custom GM/player progression.
+
+---
+
+## Uncertainties (⚠️) summary
+1. **The Wise HD / Attack Bonus** — table (L757–772) is OCR-garbled, explicitly defers to "page 21 of the core rulebook, counting as a partial Expert." Exact L1 numbers not printed in this file.
+2. **Find Object** and **Read Omens** are physically printed inside the "Curses and Blessings" block (L826, L832) but read as **Divination Arts** by function — likely OCR interleaving; attribution uncertain.
+3. **Bard / Mageslayer / Wise "bonus Focus / skill" exceptions** — each strips the normal Partial-class perks (Bard L550, Mageslayer L658, Wise L747); confirmed in text but worth flagging because it changes foci-count expectations versus a vanilla Partial Expert/Warrior.
+4. **Accursed Effort attribute** — text says "Intelligence or Charisma modifier" (L475); read as best-of (player/character choice), not additive.
 
 ---
 
