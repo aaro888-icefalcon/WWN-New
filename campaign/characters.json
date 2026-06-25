@@ -1,0 +1,25 @@
+{
+ "kind": "character",
+ "entries": [
+  {
+   "name": "Xerxes, merciless mine-lord of Khatin",
+   "weight": 1
+  },
+  {
+   "name": "Blasina, herbwife healer wise in the plague",
+   "weight": 1
+  },
+  {
+   "name": "Urcrin, amoral sorcerer after the grimoire",
+   "weight": 1
+  },
+  {
+   "name": "Mina, hermit of the Unzent works (secret identity)",
+   "weight": 1
+  },
+  {
+   "name": "Talorg, crazed wildcat miner",
+   "weight": 1
+  }
+ ]
+}
