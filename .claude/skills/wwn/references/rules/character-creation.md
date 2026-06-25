@@ -2,7 +2,9 @@
 
 > Use this when: rolling up a new WWN PC (or a named NPC of class), or checking how attributes, backgrounds, classes, foci, HP, saves, Effort, or starting gear are built. `scripts/chargen.py` automates all of this with honest, shown dice.
 
-**Run it:** `python3 scripts/chargen.py --random --seed N` (full random) or `--class mage --background scholar --out sheet.md`. Pull any focus or spell verbatim with `python3 scripts/lookup.py focus <name>` / `lookup.py spell <name>`.
+**Run it:** `python3 scripts/chargen.py --random --seed N` (full random) or `--class pm/pw --tradition healer --background physician --set14 Int --focus "One Point Strike Style" --out sheet.md`. Use `--tradition <name>` for any of the 15 traditions (core 5 + 6 Gyre + 4 Atlas: Accursed/Bard/Mageslayer/Wise) and `--art <name>` to pick tradition Arts. Pull any focus or spell verbatim with `python3 scripts/lookup.py focus <name>` / `lookup.py spell <name>`.
+
+**Full data reference** (every skill, all 20 backgrounds, all classes & the Adventurer partial system, all 15 traditions, and every focus — core + the Atlas Maqqatban/Godblood/Arcane-Secret/Origin sets): `references/rules/character-creation-compendium.md`.
 
 WWN is lethal and tactical — a level-1 hero can die to one good spear-thrust. Build honestly.
 

@@ -219,60 +219,401 @@
       "effect": "Atlas optional Focus (Experts only): grants the Alchemy skill and basic formulae to brew lesser/greater alchemical works.",
       "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L248"
     },
-    "The Accursed (class)": {
-      "pointer": true,
-      "effect": "Atlas partial-Mage class pacted with an Outsider; wields Accursed Blade/Bolt arts (use Magic to attack) plus dark Effort-fueled arts.",
-      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L411"
-    },
-    "The Bard (class)": {
-      "pointer": true,
-      "effect": "Atlas class whose non-magical performance arts hearten allies and dismay foes by tapping the Legacy's archetypes.",
-      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L532"
-    },
-    "The Mageslayer (class)": {
-      "pointer": true,
-      "effect": "Atlas combatant class specialized in resisting hostile magic and swiftly butchering enemy spellcasters.",
-      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L401"
-    },
-    "The Wise (class)": {
-      "pointer": true,
-      "effect": "Atlas low/no-magic scholar-priest-witch class with limited tricks for settings where full magic is absent.",
-      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L405"
-    },
-    "Adunic Invoker (Gyre)": {
-      "pointer": true,
-      "effect": "Gyre tradition: invokes the names and authority of the Adunic powers. Has its own arts list and the Traditional Education focus.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L29"
-    },
-    "Darian Skinshifter (Gyre)": {
-      "pointer": true,
-      "effect": "Gyre tradition: shapeshifts into beast forms via Effort-fueled Skinshifter arts.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L85"
-    },
-    "Kistian Duelist (Gyre)": {
-      "pointer": true,
-      "effect": "Gyre tradition: magical warrior-duelist (with the Flaw of Fragility); arts sharpen martial prowess.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L170"
-    },
-    "Llaigisan Beastmaster (Gyre)": {
-      "pointer": true,
-      "effect": "Gyre tradition: bonds and commands animal companions (the Chosen Friend) through Beastmaster arts.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L258"
-    },
-    "Sarulite Blood Priest (Gyre)": {
-      "pointer": true,
-      "effect": "Gyre tradition: blood-sacrifice priest whose arts trade vitality for power.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L340"
-    },
-    "Vothite Thought Noble (Gyre)": {
-      "pointer": true,
-      "effect": "Gyre tradition: psychic noble whose arts dominate and read minds.",
-      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md#L412"
-    },
     "Legate Writs": {
       "pointer": true,
       "effect": "Legate-tier powers (Writs of Might/Skill/Sorcery/Mastery), fueled by Legate Effort, undispellable and undetectable. Begin with Legate's Impunity + Legate's Wrath. See ch. 13 for the full Writ list.",
       "page": "book/Worlds-Without-Number-Deluxe/13-Legates.md#L33"
+    },
+    "Ghost Archer Style": {
+      "level_req": "Warriors / Partial Warriors only; only one style may be learned.",
+      "classes": [
+        "warrior",
+        "partial-warrior"
+      ],
+      "one_style": true,
+      "level_1": "Gain Shoot. -4 to hit with non-bow/crossbow weapons. On Turn: manifest a 0-encumbrance spirit copy of any bow you've ever fired (it makes its own ammunition with no bonus); fire it even when meleed. Only you can manifest a copied bow.",
+      "level_2": "Once/scene, On Turn, shoot an arrow anywhere in range and instantly appear where it lands (gain 1 System Strain).",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L846"
+    },
+    "All Directions Edge Style": {
+      "level_req": "Warriors / Partial Warriors only; only one style may be learned.",
+      "classes": [
+        "warrior",
+        "partial-warrior"
+      ],
+      "one_style": true,
+      "level_1": "Gain a combat skill. Your hit die is penalized by 2 (e.g. 1d6+2 becomes 1d6; lose 2 max HP/level if taken later). On Turn, once/round, make a normal non-grappling attack; after the first use each day, extra uses cost 1 System Strain.",
+      "level_2": "Once/day, as a Main Action, attack every enemy within range once (ranged max = Shoot skill + 1).",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L866"
+    },
+    "One Point Strike Style": {
+      "level_req": "Warriors / Partial Warriors only; only one style may be learned.",
+      "classes": [
+        "warrior",
+        "partial-warrior"
+      ],
+      "one_style": true,
+      "level_1": "Gain a combat skill. All your attacks use the better of your Int or Wis modifier. As a Main Action, make a melee attack that does minimum damage but whose hit roll is automatically a 15 (not usable for maneuvers/grapples).",
+      "level_2": "Once/scene, as an Instant, a melee hit made with this style has its weapon damage maximized.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L864"
+    },
+    "Pyre of Heaven Style": {
+      "level_req": "Warriors / Partial Warriors only; only one style may be learned.",
+      "classes": [
+        "warrior",
+        "partial-warrior"
+      ],
+      "one_style": true,
+      "level_1": "Gain a combat skill. Ignore the first 5 fire/heat damage/round and glow at will. Instant (+1 System Strain): ignite your weapon/fist/ammo for the round, gaining +level+2 damage and Shock (each foe takes the bonus only once/scene).",
+      "level_2": "As level 1, plus immunity to non-magical flame/smoke; your whole body ignites (harming only intended targets) and you can't be grappled while ignited. First ignition each scene deals 1d6 fire/3 levels (round up) to all foes in melee.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L882"
+    },
+    "Catalytic Soul Style": {
+      "level_req": "Warriors / Partial Warriors only; only one style may be learned.",
+      "classes": [
+        "warrior",
+        "partial-warrior"
+      ],
+      "one_style": true,
+      "level_1": "Gain Shoot. Works only with ranged attacks lacking Shock. Your shots pass harmlessly through allies. On a ranged attack, Instant: nominate an ally in melee with your target; the target suffers Shock as if melee-attacked by that ally.",
+      "level_2": "When you hit a target with a level-1-boosted ranged attack, you or the ally may gain 1 System Strain to heal 2d6 + the target's level/HD (a given subject heals only once/scene this way).",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L884"
+    },
+    "Wrathful Mountain Style": {
+      "level_req": "Warriors / Partial Warriors only; only one style may be learned.",
+      "classes": [
+        "warrior",
+        "partial-warrior"
+      ],
+      "one_style": true,
+      "level_1": "Gain Stab or Punch. -2 to all hit rolls. Instant: manifest a 0-encumbrance magical large shield usable even with both hands full, persisting at will. Once/round, when a Screened ally is meleed, make an Instant melee attack on the attacker first.",
+      "level_2": "Your retaliation also strikes those making ranged attacks on your Screened ally, at any distance. Instant (+1 System Strain): for the round, retaliate against every enemy attacking your ward (once/foe/round).",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L898"
+    },
+    "Righteous Iron Style": {
+      "level_req": "Warriors / Partial Warriors only; only one style may be learned.",
+      "classes": [
+        "warrior",
+        "partial-warrior"
+      ],
+      "one_style": true,
+      "level_1": "Gain Exert. Benefits apply only in heavy armor. Worn armor gains +1 AC and 0 encumbrance (still counts for Armored Magic); armor no longer penalizes Sneak/Exert; sleep comfortably in it. If taken at L1, begin play with free heavy armor worth up to 750 sp.",
+      "level_2": "While armored, you need not eat, drink, sleep, or breathe and ignore normal heat/cold; the armor AC bonus becomes +2.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L900"
+    },
+    "World Tree Lance Style": {
+      "level_req": "Warriors / Partial Warriors only; only one style may be learned.",
+      "classes": [
+        "warrior",
+        "partial-warrior"
+      ],
+      "one_style": true,
+      "level_1": "Gain Stab. Works only with spears/pikes/polearms. Your spear has 0 encumbrance, always returns when thrown, doubled thrown ranges (or 30/60 ft if not normally throwable), and +1 to hit and damage as a magic weapon.",
+      "level_2": "While wielding a spear, your melee reach is 10 ft + your level; intervening allies don't hinder your attacks (a wall of enemy bodies might). Does not stack with the Long magic-weapon property.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L914"
+    },
+    "Master Tracker": {
+      "level_req": "Full or Partial Experts only; only one Godblood Focus (attribute boosts cap at +2).",
+      "classes": [
+        "expert",
+        "partial-expert"
+      ],
+      "level_1": "Gain Survive. Follow any trail made within a day (city) or week (wilderness), ignoring weather/water; read the number, shape, and condition of those who passed.",
+      "level_2": "+1 Wis modifier. Identify specific people by their tracks if you've met them; once/day reconstruct the general actions of a scene from the past week.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L930"
+    },
+    "Night Walker": {
+      "level_req": "Full or Partial Experts only; only one Godblood Focus (attribute boosts cap at +2).",
+      "classes": [
+        "expert",
+        "partial-expert"
+      ],
+      "level_1": "Gain Sneak. See normally in all but pitch blackness; even blinded, sense your surroundings out to 30 ft; sleep as light as wakefulness, waking at will.",
+      "level_2": "+1 Dex modifier. Unless lit by torchlight or brighter, you are effectively invisible until you draw attention.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L948"
+    },
+    "Danger Sense": {
+      "level_req": "Full or Partial Experts only; only one Godblood Focus (attribute boosts cap at +2).",
+      "classes": [
+        "expert",
+        "partial-expert"
+      ],
+      "level_1": "Gain Notice. Sense Execution Attacks on you or those present in time to spoil them; once/day, sense a trap/ambush/peril in time to stop the action.",
+      "level_2": "+1 Wis modifier. Once/day, as an Instant in danger, intuit the best course to escape with minimum losses.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L950"
+    },
+    "Pack Beast": {
+      "level_req": "Full or Partial Experts only; only one Godblood Focus (attribute boosts cap at +2).",
+      "classes": [
+        "expert",
+        "partial-expert"
+      ],
+      "level_1": "Gain Exert. Treat your Strength as 18 for encumbrance (22 if already 18).",
+      "level_2": "+1 Str modifier. Once/scene, On Turn, lift and move an object up to 1,000 lb, setting it down by end of turn.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L966"
+    },
+    "Folie a Deux": {
+      "level_req": "Full or Partial Experts only; only one Godblood Focus (attribute boosts cap at +2).",
+      "classes": [
+        "expert",
+        "partial-expert"
+      ],
+      "level_1": "Gain Convince. Lies never register as false (magic reads you as sincere); once/day make a listener believe you are absolutely sincere until evidence disproves it (a target is immune after the first disproven lie).",
+      "level_2": "+1 Cha modifier. Once/day, tell a bald lie; unless impossible/intolerable, the listener makes a Mental save (penalty = your Convince) or believes it 1d4 rounds.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L972"
+    },
+    "Provident Crafter": {
+      "level_req": "Full or Partial Experts only; only one Godblood Focus (attribute boosts cap at +2).",
+      "classes": [
+        "expert",
+        "partial-expert"
+      ],
+      "level_1": "Gain Craft. Treat your Strength as 4 higher for encumbrance; gear you need for a check or item use counts as Readied even if Stowed.",
+      "level_2": "+1 Dex modifier. Once/day, as an Instant, you happen to have Stowed a normal <=2-encumbrance item you could have bought/made in the past week (pay its price; not provisions; not the same item twice a week).",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L984"
+    },
+    "Wildtongue": {
+      "level_req": "Full or Partial Experts only; only one Godblood Focus (attribute boosts cap at +2).",
+      "classes": [
+        "expert",
+        "partial-expert"
+      ],
+      "level_1": "Gain Survive. Communicate simple ideas with animals (natural or magical beasts of bestial intellect); appeased ones may do basic immediate favors.",
+      "level_2": "+1 Cha modifier. Once/day, command a visible animal for one scene to obey even complex non-suicidal orders (magical beasts get a Mental save).",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L982"
+    },
+    "Walk Like Wind": {
+      "level_req": "Full or Partial Experts only; only one Godblood Focus (attribute boosts cap at +2).",
+      "classes": [
+        "expert",
+        "partial-expert"
+      ],
+      "level_1": "Gain Exert. +10 ft base ground movement; move up or down vertical surfaces so long as you end on a flat surface or handhold.",
+      "level_2": "+1 Dex modifier. Leap 20 ft horizontally or 10 ft vertically as a Move; once/scene, On Turn, gain a bonus Move action.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1000"
+    },
+    "Atlantean Divination": {
+      "level_req": "Mages / Partial Mages only; only one Arcane Secret Focus (single level).",
+      "classes": [
+        "mage",
+        "partial-mage"
+      ],
+      "one_level": true,
+      "level_1": "Gain Know. Spend an hour in ritual to ask one one-sentence question about a future event within a week (GM rolls Int/Know vs difficulty 9 secretly; success = a true few-word answer, failure = a plausible false oracle). No repeats; each use within 7 days adds +1 difficulty; +1 System Strain/use.",
+      "level_2": "(No second level — Arcane Secret Foci are single-level by rule.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1016"
+    },
+    "Iteral Pacting": {
+      "level_req": "Mages / Partial Mages only; only one Arcane Secret Focus (single level).",
+      "classes": [
+        "mage",
+        "partial-mage"
+      ],
+      "one_level": true,
+      "level_1": "Gain Pray. Pick a patron portfolio (core p.142). Once/day, +1 System Strain for one of: +4 to a hit roll, +1 to a skill check, or cast a portfolio-related 1st-level spell as a Main Action (no prepared spell/slot, even for non-casters). -1 to non-intimidation social checks.",
+      "level_2": "(No second level — Arcane Secret Foci are single-level by rule.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1022"
+    },
+    "Nagadi Hemomancy": {
+      "level_req": "Mages / Partial Mages only; only one Arcane Secret Focus (single level).",
+      "classes": [
+        "mage",
+        "partial-mage"
+      ],
+      "one_level": true,
+      "level_1": "Gain Heal. Once/day, as an Instant after casting a (non-harmful, willing-target) spell, take 1d4 damage per spell level so the casting doesn't count against your usable spells/day; +1 System Strain/use.",
+      "level_2": "(No second level — Arcane Secret Foci are single-level by rule.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1028"
+    },
+    "Old Empire Sigilism": {
+      "level_req": "Mages / Partial Mages only; only one Arcane Secret Focus (single level).",
+      "classes": [
+        "mage",
+        "partial-mage"
+      ],
+      "one_level": true,
+      "level_1": "Embed one spell at a time in a personal token-calyx (10 min/spell level + a daily spell use, recoverable). Using it is a Main Action needing only a firm presentation (no voice/gestures) and cannot be disrupted by damage.",
+      "level_2": "(No second level — Arcane Secret Foci are single-level by rule.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1034"
+    },
+    "Vothite Mind-Sorcery": {
+      "level_req": "Mages / Partial Mages only; only one Arcane Secret Focus (single level).",
+      "classes": [
+        "mage",
+        "partial-mage"
+      ],
+      "one_level": true,
+      "level_1": "Your spellcasting needs no vocalization or gestures (still a Main Action, still disruptable by damage, still no casting in armor for most), and hides its source. You can no longer cast spells that deal non-mental HP damage.",
+      "level_2": "(No second level — Arcane Secret Foci are single-level by rule.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1040"
+    },
+    "Choeru Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Convince or Connect. +1 Cha modifier; +1 to reaction rolls made in your presence; gain serviceable fluency in any language after a week of exposure.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1058"
+    },
+    "Ghoul": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Must eat a pound of human flesh a month. Gain Sneak, the benefits of Ghoulish Vigor, and +1 to your Str or Dex modifier. After 21 days without cannibalism, make a Mental save daily or attack the nearest human to devour them; automatic after 30 days.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1068"
+    },
+    "!Man": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Pick any skill but Magic. Once/day, as an Instant, your algorithm grants +1 to a skill check or +2 to hit. Immune to mind-affecting magic; otherwise a perfectly normal human (not an automaton).",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1076"
+    },
+    "Guer Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Notice or Sneak. +1 to your Wis or Cha modifier; see clearly in low light; +10 ft ground movement.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1082"
+    },
+    "Accipiter Anak": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Exert. You are an accipiter with the Accipiter Flight ability; -1 Con modifier and +1 Dex modifier.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1088"
+    },
+    "Harbinger Anak": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Sneak or Convince and the Harbinger's Face ability. +1 Cha modifier and -1 Con modifier.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1092"
+    },
+    "Aristoi Anak": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Lead and any one other non-Magic skill. +1 Wis modifier; use Wis as the attribute for any weapon in place of Str or Dex.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1106"
+    },
+    "Hua Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Exert. +1 Str modifier and -1 Dex modifier; treat Str as 4 higher for encumbrance; +2 to your maximum System Strain.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1108"
+    },
+    "Kitsune Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Notice or Convince. +1 Cha modifier; gain the Elemental Sparks Elementalist art (or a bonus Elementalist art if you already have it).",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1116"
+    },
+    "Deepfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "See clearly in any light; need half the food, water, and air of a baseline; raise one physical attribute to 14 if lower. Exposing eyes/skin to direct sunlight forces a Physical save each round or +1 System Strain (collapsing if over max).",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1124"
+    },
+    "Manu Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Exert or Survive. +1 Con or Str modifier and -1 Dex or Cha modifier; swim at full speed; hold breath 15 minutes; reduce all Shock taken by 1 (min 1).",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1132"
+    },
+    "Nahu Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Sneak or Notice. +1 Dex or Cha modifier; claws count as daggers; see clearly in low light. In real combat, make a Mental save to deal non-lethal damage or the attack is lethal.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1138"
+    },
+    "Oni": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Stab or Punch. +1 Str modifier and count Str 4 higher for encumbrance; -1 Wis modifier and -2 on all Mental saving throws.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1144"
+    },
+    "Pichi Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Notice. +1 Wis or Dex modifier and -1 Str or Con modifier; see normally in low light; interact with objects within 10 ft as if sighted even when blinded.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1150"
+    },
+    "Piren Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Exert. Once/scene, as a Move action, give an adjacent ally a bonus Main Action for a physical act (not casting); a given ally benefits once/scene.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1156"
+    },
+    "Still Cities Undead": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "You are undead: no need to eat, sleep, drink, or breathe (but need 8 hours of quiet to recover HP/spells/Effort). Immune to poison and disease; auto-stabilize at 0 HP unless mangled. You don't count as undead for conventional Necromancer spells.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1162"
+    },
+    "Sui Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Survive. +1 Con modifier; immune to mundane poisons; once/day, act for one full round after dropping to 0 HP (unless mangled; counts against your stabilization timer).",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1168"
+    },
+    "Tanuki Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Sneak. Climb scalable surfaces at full movement; once/day, as a Main Action, transform as with Adopt the Simulacular Visage (without its language powers) for up to 2 hours/level.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1174"
+    },
+    "Tengu Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Stab. Fly at 30 ft outdoors at normal encumbrance, but interiors are too cramped and you cannot fight or act complexly while flying or use it for long travel.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1180"
+    },
+    "Usagi Beastfolk": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Exert or Sneak and +1 to all saving throws. +1 Dex modifier and -1 Str or Con modifier. Once/scene, On Turn, double your ground movement for the round; once/week, as an Instant, automatically make a Luck save.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1186"
+    },
+    "Zakathi": {
+      "level_req": "GM permission; a non-human origin (single level; attribute shifts cap at +2/-2).",
+      "classes": [],
+      "origin": true,
+      "level_1": "Gain Exert. Raise Con to 14 if lower (to 18 if already 14+); +2 maximum System Strain. You must exhaust yourself daily to recover with rest, else gain 1 System Strain overnight (dying if over max); while exhausted, roll all hit/skill rolls twice and take the worst.",
+      "level_2": "(Single-level origin Focus — see the Bestiary entry for special abilities.)",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L1194"
     }
   }
 }

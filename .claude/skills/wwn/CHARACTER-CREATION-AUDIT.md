@@ -1,5 +1,12 @@
 # WWN Skill — Character-Creation Audit & Fix Plan
 
+> **STATUS (implemented):** Phase 1 (data + docs) and Phase 2 (`chargen.py` rewrite) are **DONE**.
+> `chargen.py` now supports all 15 traditions (`--tradition`/`--art`), correct per-tradition Effort,
+> the ~46 Atlas foci with class-gating, and fixed step ordering; `foci.json` carries the Atlas foci and
+> the 10 mislabeled tradition stubs were removed (79 records, valid JSON). Verified: Shake builds with
+> Heal-1 / Effort 2; `build_data.py` → PASSED; `bridge.py validate` → valid. Phase 3 hardening (a
+> `--scores` flag to inject pre-rolled attributes; a foci.json build step) remains optional.
+
 Findings from a full review of WWN character creation (rulebook vs. the skill's scripts/data), prompted by
 trying to build a **Partial Warrior / Partial Healer** Adventurer with the **One Point Strike Style** focus —
 a legal PC the tooling currently **cannot** generate. Companion deliverable: the new

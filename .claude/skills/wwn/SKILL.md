@@ -97,7 +97,8 @@ Follow the engine's Session Zero, with these WWN specifics (record all in `campa
 | Saving throws & hazards | `references/rules/saves.md` |
 | Healing, System Strain, poisons | `references/rules/healing-and-strain.md` |
 | Magic — Effort, Arts, spells, traditions | `references/rules/magic-and-effort.md` |
-| Character creation / a specific focus or class | `references/rules/character-creation.md` · `scripts/lookup.py focus <name>` |
+| Character creation (quick procedure) | `references/rules/character-creation.md` · `scripts/lookup.py focus <name>` |
+| Character creation (FULL data: every skill/background/class/tradition/focus incl. Gyre + Atlas) | `references/rules/character-creation-compendium.md` |
 | Exploration, travel, supplies, encounters | `references/rules/exploration-survival.md` |
 | **Build/expand the world (region, nation, court, ruin)** | `references/gm/worldgen.md` · `scripts/worldgen.py` |
 | **Run a Faction Turn / projects / domains** | `references/gm/faction-turn.md` · `scripts/faction_turn.py` |
