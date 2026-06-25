@@ -30,6 +30,16 @@ USAGE
   python3 scripts/faction_turn.py <faction-sheet.md> [--seed N] [--out <path>]
   python3 scripts/faction_turn.py <faction-sheet.md> --seed 2          # dry run, log only
   python3 scripts/faction_turn.py <faction-sheet.md> --seed 2 --out same  # rewrite the sheet
+  python3 scripts/faction_turn.py <faction-sheet.md> --move [auto|<Name>]  # per-scene MOVE
+
+Two cadences:
+  * FULL TURN (default, no --move): the WWN faction turn — every faction earns
+    Treasure, pays upkeep, takes an action, advances its clock. Run it at the
+    in-world-week cadence (~every 4-6 scenes).
+  * PER-SCENE MOVE (--move): ONE faction takes ONE Faction Action and advances
+    its Major-Project clock — no economy. Fires at EVERY scene's bookkeeping so
+    the world's powers act every beat. `--move auto` picks a faction with an
+    unfilled project clock (honest roll); `--move <Name>` picks a specific one.
 
 FACTION-SHEET FORMAT (see assets/templates/faction-sheet.md)
   ## Faction: <Name>
@@ -334,6 +344,136 @@ def hp_repair_amount(f):
 # ---------------------------------------------------------------------------
 # The turn.
 # ---------------------------------------------------------------------------
+def resolve_action(f, factions, aidx, roller, deltas):
+    """Resolve ONE faction's Faction Action + advance its Major-Project
+    clock + goal reminder. Shared by the full turn and the per-scene move."""
+    # 5) Faction Action.
+    enemies = [g for g in factions if g is not f]
+    action, why = choose_action(f, aidx, factions)
+    print(f"   [action] {action}  ({why})")
+
+    acted_on_project = False
+
+    if action == "Attack":
+        targets = find_targets(f, factions)
+        attackers = attack_assets(f, aidx)
+        if not targets or not attackers:
+            print("           no valid attackers/targets in shared locations — holds position")
+        else:
+            # each attacker hits the first available target in its own location
+            for a, rec in attackers:
+                local = [(e, t) for (e, t) in targets if t["loc"] == a["loc"]
+                         and (t["hp"] is None or t["hp"] > 0)]
+                if not local:
+                    continue
+                enemy, tgt = local[0]
+                trec = aidx.get(tgt["name"].lower(), {})
+                atk_attr, def_attr, dmg = parse_attack(rec["attack"])
+                if not atk_attr:
+                    continue
+                print(f"           {a['name']} ({a['loc']}) attacks "
+                      f"{enemy['name']}'s {tgt['name']}  [{rec['attack']}]")
+                an = extra_dice_for(f, atk_attr)
+                dn = extra_dice_for(enemy, def_attr)
+                atk_roll = roller.roll(10, f"           atk {atk_attr}", n=an,
+                                       keep_high=an > 1) + f["attrs"].get(atk_attr, 0)
+                def_roll = roller.roll(10, f"           def {def_attr}", n=dn,
+                                       keep_high=dn > 1) + enemy["attrs"].get(def_attr, 0)
+                print(f"           → {atk_attr} {atk_roll} vs {def_attr} {def_roll} "
+                      f"(attacker needs strictly higher)")
+                if atk_roll > def_roll:
+                    dealt = roller.roll_expr(dmg, "           damage") if dmg else None
+                    if dealt is None:
+                        print("           HIT — special effect (apply per asset ability)")
+                        deltas.append((f["name"],
+                                       f"{a['name']} landed a special effect on "
+                                       f"{enemy['name']}'s {tgt['name']}"))
+                    else:
+                        if tgt["hp"] is not None:
+                            tgt["hp"] = max(0, tgt["hp"] - dealt)
+                        print(f"           HIT — {dealt} damage → {tgt['name']} "
+                              f"HP {tgt['hp']}/{tgt['hp_max']}")
+                        # base damage carries to faction HP (no overflow)
+                        if tgt["base"] and enemy["hp"] is not None:
+                            carry = min(dealt, snap_base_overflow(tgt, dealt))
+                            enemy["hp"] = max(0, enemy["hp"] - carry)
+                            print(f"           (Base of Influence — {carry} also to "
+                                  f"{enemy['name']} faction HP → {enemy['hp']}/{enemy['hp_max']})")
+                        if tgt["hp"] == 0:
+                            print(f"           {tgt['name']} DESTROYED")
+                            if tgt in enemy["assets"]:
+                                enemy["assets"].remove(tgt)
+                            deltas.append((enemy["name"], f"lost {tgt['name']} @ {tgt['loc']}"))
+                        deltas.append((f["name"],
+                                       f"{a['name']} dealt {dealt} to "
+                                       f"{enemy['name']}'s {tgt['name']}"))
+                else:
+                    cexpr = counter_expr(trec)
+                    if cexpr:
+                        taken = roller.roll_expr(cexpr, "           counter")
+                        if a["hp"] is not None:
+                            a["hp"] = max(0, a["hp"] - taken)
+                        print(f"           MISS — counterattack {taken} → {a['name']} "
+                              f"HP {a['hp']}/{a['hp_max']}")
+                        if a["hp"] == 0:
+                            print(f"           {a['name']} DESTROYED by counterattack")
+                            if a in f["assets"]:
+                                f["assets"].remove(a)
+                            deltas.append((f["name"], f"lost {a['name']} (counterattack)"))
+                    else:
+                        print("           MISS — no counterattack from target")
+            # attacking the enemy advances a Project only if the sheet frames it so
+    elif action == "Repair Asset":
+        # heal one wounded asset (half its attribute, round up) + optionally faction HP
+        wounded = [a for a in f["assets"]
+                   if a["hp"] is not None and a["hp_max"] and a["hp"] < a["hp_max"]
+                   and not a["base"]]
+        if wounded and f["treasure"] >= 1:
+            a = wounded[0]
+            rec = aidx.get(a["name"].lower(), {})
+            attr = rec.get("attr", "Force")
+            heal = math.ceil(f["attrs"].get(attr, 0) / 2)
+            f["treasure"] -= 1
+            a["hp"] = min(a["hp_max"], a["hp"] + heal)
+            print(f"           repair {a['name']}: +{heal} HP (½ {attr}) for 1 Treasure "
+                  f"→ {a['hp']}/{a['hp_max']}; Treasure {f['treasure']}")
+            deltas.append((f["name"], f"repaired {a['name']} (+{heal} HP)"))
+        if f["hp"] is not None and f["hp_max"] and f["hp"] < f["hp_max"] and f["treasure"] >= 1:
+            heal = hp_repair_amount(f)
+            f["treasure"] -= 1
+            f["hp"] = min(f["hp_max"], f["hp"] + heal)
+            print(f"           repair faction HP: +{heal} for 1 Treasure "
+                  f"→ {f['hp']}/{f['hp_max']}; Treasure {f['treasure']}")
+            deltas.append((f["name"], f"healed faction HP (+{heal})"))
+        if not wounded and (f["hp"] is None or f["hp"] >= (f["hp_max"] or 0)):
+            print("           nothing to repair")
+    elif action == "Create Asset":
+        print("           buys an Asset at a Base of Influence (GM picks from the catalog; "
+              "must meet attribute + Magic req and pay cost). One per turn.")
+        deltas.append((f["name"], "intends to Create an Asset (GM to resolve purchase)"))
+    elif action == "Move Asset":
+        print("           repositions Assets up to one turn's move (~100 mi); "
+              "Subtle/Stealth ignore restrictions.")
+        deltas.append((f["name"], "moved/repositioned Assets"))
+
+    # 6) Advance Major-Project clock.
+    if f["project"]:
+        adv = 2 if (action == "Create Asset" or acted_on_project) else 1
+        before = f["project"]["n"]
+        f["project"]["n"] = min(f["project"]["N"], f["project"]["n"] + adv)
+        filled = f["project"]["n"] >= f["project"]["N"]
+        print(f"   [project] {f['project']['name']}: {before} → "
+              f"{f['project']['n']}/{f['project']['N']} (+{adv})"
+              + ("  ★ FILLED — fire it next beat (Turning Point / Random Event)" if filled else ""))
+        deltas.append((f["name"],
+                       f"project {f['project']['name']} {f['project']['n']}/{f['project']['N']}"
+                       + (" FILLED" if filled else "")))
+
+    # goal reminder
+    if f["goal"]:
+        print(f"   [goal] check vs: {f['goal']}")
+
+
 def run_turn(factions, data, roller):
     aidx = _asset_index(data)
     deltas = []  # (faction, text)
@@ -399,131 +539,7 @@ def run_turn(factions, data, roller):
             print("   [abilities] free-action assets to resolve: "
                   + ", ".join(a["name"] for a in free))
 
-        # 5) Faction Action.
-        enemies = [g for g in factions if g is not f]
-        action, why = choose_action(f, aidx, factions)
-        print(f"   [action] {action}  ({why})")
-
-        acted_on_project = False
-
-        if action == "Attack":
-            targets = find_targets(f, factions)
-            attackers = attack_assets(f, aidx)
-            if not targets or not attackers:
-                print("           no valid attackers/targets in shared locations — holds position")
-            else:
-                # each attacker hits the first available target in its own location
-                for a, rec in attackers:
-                    local = [(e, t) for (e, t) in targets if t["loc"] == a["loc"]
-                             and (t["hp"] is None or t["hp"] > 0)]
-                    if not local:
-                        continue
-                    enemy, tgt = local[0]
-                    trec = aidx.get(tgt["name"].lower(), {})
-                    atk_attr, def_attr, dmg = parse_attack(rec["attack"])
-                    if not atk_attr:
-                        continue
-                    print(f"           {a['name']} ({a['loc']}) attacks "
-                          f"{enemy['name']}'s {tgt['name']}  [{rec['attack']}]")
-                    an = extra_dice_for(f, atk_attr)
-                    dn = extra_dice_for(enemy, def_attr)
-                    atk_roll = roller.roll(10, f"           atk {atk_attr}", n=an,
-                                           keep_high=an > 1) + f["attrs"].get(atk_attr, 0)
-                    def_roll = roller.roll(10, f"           def {def_attr}", n=dn,
-                                           keep_high=dn > 1) + enemy["attrs"].get(def_attr, 0)
-                    print(f"           → {atk_attr} {atk_roll} vs {def_attr} {def_roll} "
-                          f"(attacker needs strictly higher)")
-                    if atk_roll > def_roll:
-                        dealt = roller.roll_expr(dmg, "           damage") if dmg else None
-                        if dealt is None:
-                            print("           HIT — special effect (apply per asset ability)")
-                            deltas.append((f["name"],
-                                           f"{a['name']} landed a special effect on "
-                                           f"{enemy['name']}'s {tgt['name']}"))
-                        else:
-                            if tgt["hp"] is not None:
-                                tgt["hp"] = max(0, tgt["hp"] - dealt)
-                            print(f"           HIT — {dealt} damage → {tgt['name']} "
-                                  f"HP {tgt['hp']}/{tgt['hp_max']}")
-                            # base damage carries to faction HP (no overflow)
-                            if tgt["base"] and enemy["hp"] is not None:
-                                carry = min(dealt, snap_base_overflow(tgt, dealt))
-                                enemy["hp"] = max(0, enemy["hp"] - carry)
-                                print(f"           (Base of Influence — {carry} also to "
-                                      f"{enemy['name']} faction HP → {enemy['hp']}/{enemy['hp_max']})")
-                            if tgt["hp"] == 0:
-                                print(f"           {tgt['name']} DESTROYED")
-                                if tgt in enemy["assets"]:
-                                    enemy["assets"].remove(tgt)
-                                deltas.append((enemy["name"], f"lost {tgt['name']} @ {tgt['loc']}"))
-                            deltas.append((f["name"],
-                                           f"{a['name']} dealt {dealt} to "
-                                           f"{enemy['name']}'s {tgt['name']}"))
-                    else:
-                        cexpr = counter_expr(trec)
-                        if cexpr:
-                            taken = roller.roll_expr(cexpr, "           counter")
-                            if a["hp"] is not None:
-                                a["hp"] = max(0, a["hp"] - taken)
-                            print(f"           MISS — counterattack {taken} → {a['name']} "
-                                  f"HP {a['hp']}/{a['hp_max']}")
-                            if a["hp"] == 0:
-                                print(f"           {a['name']} DESTROYED by counterattack")
-                                if a in f["assets"]:
-                                    f["assets"].remove(a)
-                                deltas.append((f["name"], f"lost {a['name']} (counterattack)"))
-                        else:
-                            print("           MISS — no counterattack from target")
-                # attacking the enemy advances a Project only if the sheet frames it so
-        elif action == "Repair Asset":
-            # heal one wounded asset (half its attribute, round up) + optionally faction HP
-            wounded = [a for a in f["assets"]
-                       if a["hp"] is not None and a["hp_max"] and a["hp"] < a["hp_max"]
-                       and not a["base"]]
-            if wounded and f["treasure"] >= 1:
-                a = wounded[0]
-                rec = aidx.get(a["name"].lower(), {})
-                attr = rec.get("attr", "Force")
-                heal = math.ceil(f["attrs"].get(attr, 0) / 2)
-                f["treasure"] -= 1
-                a["hp"] = min(a["hp_max"], a["hp"] + heal)
-                print(f"           repair {a['name']}: +{heal} HP (½ {attr}) for 1 Treasure "
-                      f"→ {a['hp']}/{a['hp_max']}; Treasure {f['treasure']}")
-                deltas.append((f["name"], f"repaired {a['name']} (+{heal} HP)"))
-            if f["hp"] is not None and f["hp_max"] and f["hp"] < f["hp_max"] and f["treasure"] >= 1:
-                heal = hp_repair_amount(f)
-                f["treasure"] -= 1
-                f["hp"] = min(f["hp_max"], f["hp"] + heal)
-                print(f"           repair faction HP: +{heal} for 1 Treasure "
-                      f"→ {f['hp']}/{f['hp_max']}; Treasure {f['treasure']}")
-                deltas.append((f["name"], f"healed faction HP (+{heal})"))
-            if not wounded and (f["hp"] is None or f["hp"] >= (f["hp_max"] or 0)):
-                print("           nothing to repair")
-        elif action == "Create Asset":
-            print("           buys an Asset at a Base of Influence (GM picks from the catalog; "
-                  "must meet attribute + Magic req and pay cost). One per turn.")
-            deltas.append((f["name"], "intends to Create an Asset (GM to resolve purchase)"))
-        elif action == "Move Asset":
-            print("           repositions Assets up to one turn's move (~100 mi); "
-                  "Subtle/Stealth ignore restrictions.")
-            deltas.append((f["name"], "moved/repositioned Assets"))
-
-        # 6) Advance Major-Project clock.
-        if f["project"]:
-            adv = 2 if (action == "Create Asset" or acted_on_project) else 1
-            before = f["project"]["n"]
-            f["project"]["n"] = min(f["project"]["N"], f["project"]["n"] + adv)
-            filled = f["project"]["n"] >= f["project"]["N"]
-            print(f"   [project] {f['project']['name']}: {before} → "
-                  f"{f['project']['n']}/{f['project']['N']} (+{adv})"
-                  + ("  ★ FILLED — fire it next beat (Turning Point / Random Event)" if filled else ""))
-            deltas.append((f["name"],
-                           f"project {f['project']['name']} {f['project']['n']}/{f['project']['N']}"
-                           + (" FILLED" if filled else "")))
-
-        # goal reminder
-        if f["goal"]:
-            print(f"   [goal] check vs: {f['goal']}")
+        resolve_action(f, factions, aidx, roller, deltas)
 
     # 7) ONE Background Actor event for the turn.
     print("\n" + "-" * 64)
@@ -564,6 +580,59 @@ def run_turn(factions, data, roller):
             print(f"  actor: {txt}")
     print("\nRecord the deltas to campaign-state.md (faction board + project clocks); "
           "surface any FILLED clock next beat per bridge/world-model.md.")
+    return factions, deltas
+
+
+def _pick_mover(factions, roller, who):
+    """Choose which faction takes the per-scene move. A name picks it directly;
+    'auto' rolls honestly among factions with an unfilled Major-Project clock
+    (falling back to all factions)."""
+    if who and who != "auto":
+        for f in factions:
+            if f["name"].lower() == who.lower():
+                return f
+        for f in factions:
+            if who.lower() in f["name"].lower():
+                return f
+        sys.exit("No faction named %r on the board." % who)
+    cands = [f for f in factions
+             if f.get("project") and f["project"]["n"] < f["project"]["N"]] or factions
+    r = roller.roll(len(cands), "which faction moves (d%d)" % len(cands))
+    return cands[r - 1]
+
+
+def run_single_move(factions, data, roller, who="auto", background=True):
+    """Per-scene faction MOVE: ONE faction takes ONE Faction Action and advances
+    its Major-Project clock — NO economy/initiative/upkeep (those belong to the
+    full weekly Faction Turn). Honest dice; surface the result as a sign next beat
+    (bridge/world-model.md). This is what fires at every scene's bookkeeping."""
+    aidx = _asset_index(data)
+    deltas = []
+    print("=" * 64)
+    print("WWN FACTION MOVE — one faction acts this scene")
+    print("=" * 64)
+    f = _pick_mover(factions, roller, who)
+    tagstr = (" [" + ", ".join(f["tags"]) + "]") if f["tags"] else ""
+    print(f"\n### {f['name']}{tagstr}")
+    print(f"   F{f['attrs'].get('Force',0)} C{f['attrs'].get('Cunning',0)} "
+          f"W{f['attrs'].get('Wealth',0)} | HP {f['hp']}/{f['hp_max']} | "
+          f"Treasure {f['treasure']}")
+    resolve_action(f, factions, aidx, roller, deltas)
+    if background:
+        print("\n-- Background Actor event --")
+        actor_type = (f.get("actor") or "").lower().strip()
+        tbl_name = ACTOR_TABLE.get(actor_type, "Background Actor — General (d20)")
+        tbl = data["tables"][tbl_name]
+        sides = int(tbl["type"].split("list_d")[1])
+        r = roller.roll(sides, f"   {tbl_name}")
+        val = next(e["value"] for e in tbl["entries"] if e["min"] <= r <= e["max"])
+        print(f"   → {f.get('actor') or 'background'}: {val}")
+        deltas.append(("(actor)", val))
+    print("\n" + "-" * 64)
+    print("Record the move to campaign-state.md (project clock / asset HP); surface "
+          "it next beat as a sign or seed (world-model.md). A FILLED clock fires as a "
+          "Turning Point / Random Event. If this scene introduced a power not yet on "
+          "the board, generate it: `worldgen.py faction --name <X> --campaign <dir>`.")
     return factions, deltas
 
 
@@ -649,6 +718,13 @@ def main():
         out = args[args.index("--out") + 1]
         if out == "same":
             out = sheet
+    # --move [auto|<FactionName>] = the per-scene single-faction move (no economy).
+    move = None
+    if "--move" in args:
+        idx = args.index("--move")
+        move = "auto"
+        if idx + 1 < len(args) and not args[idx + 1].startswith("--"):
+            move = args[idx + 1]
     if not os.path.exists(sheet):
         sys.exit(f"No faction-sheet at '{sheet}'.")
 
@@ -659,7 +735,10 @@ def main():
 
     roller = Roller(seed)
     roller.banner()
-    factions, _ = run_turn(factions, data, roller)
+    if move is not None:
+        factions, _ = run_single_move(factions, data, roller, who=move)
+    else:
+        factions, _ = run_turn(factions, data, roller)
 
     if out:
         rewrite_sheet(out, factions, text)
