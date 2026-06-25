@@ -31,11 +31,22 @@ USAGE
         recipes roll (via the shared gen.py primitives), reframed as a short
         DRAFT CANON place stub.
 
-  nation [--fresh] [--seed N]
+  nation [--fresh] [--seed N] [--campaign DIR]
         A faction-ready nation brief: nation_construction (2 problems = hooks,
         1 good thing, 1 theme, 1 tension) + a ruling court (court tag) + a
         notable figure (NPC) + a name flavor.  --fresh rolls an origin from
         history_construction; default seeds the name from Latter-Earth canon.
+        The nation IS a faction on the board, so a board-ready faction block is
+        emitted too (Major-Project seeded from problem 1); with --campaign it is
+        appended to DIR/factions.md.
+
+  faction [--name NAME] [--seed N] [--campaign DIR]
+        A standalone board-ready WWN faction (book ch.10): a Force/Cunning/Wealth
+        spread, max HP summed by the per-rating HP table, a starting goal & tag,
+        a Major-Project clock, and an HQ Base of Influence + 1-2 affordable
+        Assets.  Parses with scripts/faction_turn.py.  With --campaign, appended
+        to DIR/factions.md (created from the template header if absent; a
+        same-named faction is never duplicated).
 
   region [--fresh] [--seed N]
         A starting region as committable draft canon: a wilderness/terrain tag
@@ -174,8 +185,11 @@ def ruler_title(roller):
 # Reuse helpers built on gen.py primitives.  All dice come from gen.py's Roller.
 # ---------------------------------------------------------------------------
 def roll_bundle_table(roller, bundle_slug, table_name, label):
-    """Roll one named table inside a construction bundle, via gen.py.load + dice."""
-    doc = gen.load(gen.BUNDLE_FILES[bundle_slug])
+    """Roll one named table inside a construction bundle, via gen.py.load + dice.
+    Accepts the faction generator (faction.json lives in generators/ but isn't in
+    gen.BUNDLE_FILES) by name as well."""
+    fname = gen.BUNDLE_FILES.get(bundle_slug, bundle_slug + ".json")
+    doc = gen.load(fname)
     return gen.roll_table(roller, doc["tables"][table_name], label)
 
 
@@ -477,7 +491,17 @@ def compose_nation(roller, fresh):
          f"- **Tension with a neighbor:** {tension}."]
     if origin:
         L.insert(1, f"- **Origin (fresh):** {origin}.")
-    return name, "\n".join(L), tension
+
+    # The nation IS a faction on the board: emit a board-ready faction block,
+    # seeding its Major-Project clock from the first problem and (loosely) its
+    # drive from the tension.  seed_project is a short clause from prob1.
+    proj_seed = prob1.rstrip(".").split(",")[0].strip()
+    if len(proj_seed) > 60:
+        proj_seed = proj_seed[:57].rstrip() + "..."
+    faction_block = compose_faction(roller, name, seed_project=proj_seed)
+    L.append(f"- **On the faction board:** see the faction block emitted with "
+             f"this nation (Major-Project seeded from problem 1).")
+    return name, "\n".join(L), tension, faction_block
 
 
 def compose_region(roller, fresh):
@@ -635,7 +659,14 @@ def compose_geography_region(roller, fresh, campaign=None):
     L.append("- **Place card (machine-readable header):**")
     L.append(place_card(region_node, weight=1))
 
-    return rname, "\n".join(L), nodes
+    # Each of the 6 nations is a power on the board: emit a faction block,
+    # seeding its Major-Project clock from one of its bounding barriers.
+    faction_blocks = []
+    for nm, theme, b1, b2 in nations:
+        faction_blocks.append(
+            compose_faction(roller, nm, seed_project=f"Master {b1}"))
+
+    return rname, "\n".join(L), nodes, faction_blocks
 
 
 def compose_geography_kingdom(roller, fresh, campaign=None, region_name=None):
@@ -774,6 +805,243 @@ def compose_ruins(roller, kingdom_name, campaign=None, n=6, latter_earth=True):
 
 
 # ---------------------------------------------------------------------------
+# Faction composer (book ch.10, Factions and Major Projects).  A generated
+# nation IS a faction on the board; this emits a faction-sheet markdown block
+# that PARSES with faction_turn.py (same parser contract).  Honest dice via the
+# shared Roller; the committable markdown goes to STDOUT through the draft.
+#
+# FACTION HP RULE (Worlds Without Number Deluxe, ch.10, mirrored in
+# bridge/generators/faction.json -> rules.hp_by_rating / rules.hp_formula):
+#   Each attribute rating maps to an HP value — 1->1, 2->2, 3->4, 4->6, 5->9,
+#   6->12, 7->16, 8->20 — and a faction's MAX HP is the SUM of the HP values of
+#   its Force, Cunning, and Wealth ratings.  The HQ Base of Influence always has
+#   HP equal to that faction maximum.
+# ---------------------------------------------------------------------------
+HP_BY_RATING = {1: 1, 2: 2, 3: 4, 4: 6, 5: 9, 6: 12, 7: 16, 8: 20}
+
+# A faction "kind" leans the attribute spread, the stance, the background actor,
+# and which asset list it draws its starting Asset from.
+FACTION_KINDS = {
+    "martial":    {"lead": "Force",   "stance": "aggressive",
+                   "actor": "Warlords", "asset_list": "Force_assets"},
+    "mercantile": {"lead": "Wealth",  "stance": "builder",
+                   "actor": "Merchants", "asset_list": "Wealth_assets"},
+    "cunning":    {"lead": "Cunning", "stance": "schemer",
+                   "actor": "Demagogues", "asset_list": "Cunning_assets"},
+}
+_KIND_LIST = ["martial", "mercantile", "cunning"]
+
+# Stance hint by kind already in FACTION_KINDS; a defensive option for builders.
+
+
+def faction_hp(attrs):
+    """Max faction HP = sum of HP_BY_RATING for Force/Cunning/Wealth ratings."""
+    return sum(HP_BY_RATING[attrs[a]] for a in ("Force", "Cunning", "Wealth"))
+
+
+def _roll_attr_spread(roller, kind):
+    """Roll a sensible STARTING spread: each attribute 1-8, total ~8-12, leaning
+    toward the kind's lead attribute.  Honest dice (each shown)."""
+    lead = FACTION_KINDS[kind]["lead"]
+    others = [a for a in ("Force", "Cunning", "Wealth") if a != lead]
+    # lead 3..5 (1d3+2), the two others 1..4 (1d4) — total lands ~5..13, the
+    # fresh-regional-power band, with the lead reliably highest-ish.
+    attrs = {}
+    attrs[lead] = roller.roll(3, f"{lead} (lead) rating (1d3+2)") + 2
+    for a in others:
+        attrs[a] = roller.roll(4, f"{a} rating (1d4)")
+    # Guarantee the lead attribute is the faction's strict highest so leaning
+    # tags (Martial/Rich/Machiavellian) stay legal if rolled.
+    top_other = max(attrs[o] for o in others)
+    if attrs[lead] <= top_other:
+        attrs[lead] = min(8, top_other + 1)
+    return attrs
+
+
+def _affordable_assets(data, asset_list, attrs, treasure):
+    """Assets from the given list the faction can both QUALIFY for (rating <=
+    its score in that list's attribute) and AFFORD (cost <= treasure)."""
+    attr = asset_list.split("_")[0]
+    score = attrs.get(attr, 0)
+    out = []
+    for a in data.get(asset_list, []):
+        if a.get("rating", 1) <= score and a.get("cost", 99) <= treasure:
+            out.append(a)
+    return out
+
+
+def compose_faction(roller, name, seed_goal=None, seed_project=None, stance=None):
+    """Compose a board-ready faction (returns a faction-sheet markdown block that
+    PARSES with faction_turn.py).  `name` is the HQ/faction name; `seed_goal`
+    overrides the rolled goal line; `seed_project` seeds the Major-Project clock
+    name (e.g. a nation's tension/problem); `stance` overrides the kind stance."""
+    data = gen.load("faction.json")
+
+    # ---- kind -> attribute spread, stance, actor, asset list ----------------
+    ki = roller.roll(3, "faction kind (1d3: 1 martial / 2 mercantile / 3 cunning)")
+    kind = _KIND_LIST[ki - 1]
+    kdef = FACTION_KINDS[kind]
+    attrs = _roll_attr_spread(roller, kind)
+    hp_max = faction_hp(attrs)
+
+    # ---- starting Treasure (small) ------------------------------------------
+    treasure = roller.roll(6, "starting Treasure (1d6)")
+
+    # ---- goal (seed or rolled from Example Faction Goals) --------------------
+    if seed_goal:
+        goal = seed_goal
+    else:
+        goal = roll_bundle_table(roller, "faction", "Example Faction Goals",
+                                 "faction goal (d10)")
+        # The table entries read "Name (Difficulty X): description." — keep the
+        # name + difficulty (the parser only echoes the Goal line).
+        goal = goal.split(":", 1)[0].strip()
+
+    # ---- one tag from the Faction Tags table --------------------------------
+    # Three tags lean on an attribute that MUST be the faction's highest
+    # (Martial->Force, Rich->Wealth, Machiavellian->Cunning).  Reroll a leaning
+    # tag whose attribute isn't this faction's strict highest, so the tag stays
+    # legal (bounded tries; dice shown each time).
+    lean_attr = {"Martial": "Force", "Rich": "Wealth", "Machiavellian": "Cunning"}
+    highest = max(("Force", "Cunning", "Wealth"), key=lambda a: attrs[a])
+    is_strict_high = lambda a: attrs[a] == max(attrs.values()) and \
+        list(attrs.values()).count(attrs[a]) == 1
+    tag_name = ""
+    for _try in range(6):
+        tag = roll_bundle_table(roller, "faction", "Faction Tags",
+                                "faction tag (d15)")
+        tag_name = tag.split(":", 1)[0].strip()
+        need = lean_attr.get(tag_name)
+        if need is None or (need == highest and is_strict_high(need)):
+            break
+
+    # ---- stance & actor (from kind unless overridden) -----------------------
+    chosen_stance = stance or kdef["stance"]
+    actor = kdef["actor"]
+
+    # ---- Major-Project clock (seeded from the nation's problem/tension) ------
+    clock_size = 6 if roller.roll(2, "project clock size (1d2: 1->6 / 2->8)") == 1 else 8
+    if seed_project:
+        proj_name = seed_project
+    else:
+        # a generic ambition if no seed given
+        proj_name = roll_bundle_table(roller, "faction", "Example Faction Goals",
+                                      "project seed (d10)").split("(", 1)[0].strip()
+    proj_name = proj_name.rstrip(". ").strip()
+
+    # ---- starting Assets: HQ Base of Influence + 1-2 from the kind's list ----
+    # Base of Influence HP == faction maximum (book rule).
+    assets = [(name, "Base of Influence", hp_max, hp_max, ["base"])]
+    pool = _affordable_assets(data, kdef["asset_list"], attrs, treasure)
+    n_assets = roller.roll(2, "starting Assets count (1d2)")
+    picks = []
+    pool_names = [a["name"] for a in pool]
+    for k in range(n_assets):
+        if not pool:
+            break
+        i = roller.roll(len(pool), f"starting Asset {k+1} "
+                        f"(d{len(pool)} from affordable {kdef['asset_list'].split('_')[0]})")
+        a = pool[i - 1]
+        picks.append(a)
+        treasure = max(0, treasure - a.get("cost", 0))
+        hp = a.get("hp", 1)
+        assets.append((name, a["name"], hp, hp, []))
+        # don't repeat the exact same asset; refresh affordability with new budget
+        pool = [x for x in _affordable_assets(data, kdef["asset_list"], attrs, treasure)
+                if x["name"] != a["name"]]
+
+    # ---- render the faction-sheet block (EXACT parser format) ---------------
+    L = [f"## Faction: {name}",
+         f"- Tags: {tag_name}",
+         f"- Force: {attrs['Force']}   Cunning: {attrs['Cunning']}   Wealth: {attrs['Wealth']}",
+         f"- HP: {hp_max} / {hp_max}",
+         f"- Treasure: {treasure}",
+         f"- Goal: {goal}",
+         f"- Project: {proj_name} — clock 0/{clock_size}",
+         f"- Stance: {chosen_stance}",
+         f"- Actor: {actor}",
+         "### Assets"]
+    for loc, aname, hp, hpmax, flags in assets:
+        line = f"- {loc} | {aname} | HP {hp}/{hpmax}"
+        if flags:
+            line += " | " + " ".join(flags)
+        L.append(line)
+    return "\n".join(L)
+
+
+# ---------------------------------------------------------------------------
+# factions.md persistence — the campaign faction board faction_turn.py runs off.
+# Seeded once from the template header; worldgen APPENDS generated faction
+# blocks here (never duplicating a faction with the same `## Faction: <name>`).
+# ---------------------------------------------------------------------------
+FACTIONS_TEMPLATE = os.path.join(SKILL_ROOT, "assets", "templates", "factions.md")
+
+
+def _factions_path(campaign):
+    return os.path.join(campaign, "factions.md")
+
+
+def _faction_names_in(text):
+    """Set of existing `## Faction: <name>` names in a board file's text."""
+    import re
+    return {m.group(1).strip()
+            for m in re.finditer(r"^##\s+Faction:\s+(.*)$", text, re.M)}
+
+
+def append_factions(campaign, blocks):
+    """Append faction-sheet blocks to campaign/factions.md, creating the file
+    from the template header if absent.  Skips any block whose `## Faction:
+    <name>` already appears in the file.  Returns (added_names, skipped_names)."""
+    import re
+    os.makedirs(campaign, exist_ok=True)
+    path = _factions_path(campaign)
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            text = f.read()
+    elif os.path.exists(FACTIONS_TEMPLATE):
+        with open(FACTIONS_TEMPLATE, encoding="utf-8") as f:
+            text = f.read()
+    else:
+        text = "# Faction Board\n"
+    existing = _faction_names_in(text)
+    added, skipped = [], []
+    for block in blocks:
+        m = re.search(r"^##\s+Faction:\s+(.*)$", block, re.M)
+        nm = m.group(1).strip() if m else None
+        if nm and nm in existing:
+            skipped.append(nm)
+            continue
+        if not text.endswith("\n"):
+            text += "\n"
+        text += "\n" + block.rstrip() + "\n"
+        if nm:
+            existing.add(nm)
+            added.append(nm)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(text)
+    return added, skipped
+
+
+def factions_persist_note(campaign, blocks):
+    """Append faction blocks to the board (with --campaign) and report; without
+    a campaign dir, fold the blocks into the draft under a Factions section."""
+    if campaign:
+        added, skipped = append_factions(campaign, blocks)
+        msg = (f"\n> **factions.md:** appended {len(added)} faction(s) "
+               f"[{', '.join(added) if added else '—'}] to "
+               f"`{_factions_path(campaign)}` (run "
+               f"`scripts/faction_turn.py {_factions_path(campaign)} --seed N`).")
+        if skipped:
+            msg += f" Skipped {len(skipped)} already-present: [{', '.join(skipped)}]."
+        return msg
+    body = "\n\n## Factions (faction board)\n\n" + "\n\n".join(blocks)
+    body += ("\n\n> **factions.md (no --campaign DIR):** on approval, append the "
+             "blocks above to the campaign's `factions.md` so `faction_turn.py` "
+             "can run them.")
+    return body
+
+
+# ---------------------------------------------------------------------------
 # DRAFT-CANON wrappers.
 # ---------------------------------------------------------------------------
 HEADER = (
@@ -831,12 +1099,33 @@ def cmd_place(roller, family, seed):
     return draft_block(f"{family.capitalize()}: {name}", body, seed)
 
 
-def cmd_nation(roller, fresh, seed):
-    name, body, _ = compose_nation(roller, fresh)
+def cmd_nation(roller, fresh, seed, campaign=None):
+    name, body, _tension, faction_block = compose_nation(roller, fresh)
     note = ("Fresh world: name & origin rolled from scratch." if fresh
             else "Latter-Earth seeding: name drawn from Gyre canon; attach "
                  "hooks to existing setting-canon.md entries.")
+    body += factions_persist_note(campaign, [faction_block])
     return draft_block(f"Nation: {name}", body, seed, note)
+
+
+def cmd_faction(roller, name, seed, campaign=None):
+    """Standalone faction generator: print a DRAFT CANON faction block; with
+    --campaign, append it to DIR/factions.md (created from the template header if
+    absent, never duplicating a same-named faction)."""
+    if not name:
+        name = place_name(roller) + " Compact"
+    block = compose_faction(roller, name)
+    if campaign:
+        body = block + factions_persist_note(campaign, [block])
+    else:
+        body = (block + "\n\n> **factions.md (no --campaign DIR):** on approval, "
+                "append the faction block above to the campaign's `factions.md` "
+                "so `faction_turn.py` can run it.")
+    note = ("A board-ready WWN faction (book ch.10): Force/Cunning/Wealth spread, "
+            "max HP summed by the per-rating HP table, a starting goal & tag, a "
+            "Major-Project clock, an HQ Base of Influence + 1-2 affordable Assets. "
+            "Parses with `scripts/faction_turn.py`.")
+    return draft_block(f"Faction: {name}", body, seed, note)
 
 
 def cmd_region(roller, fresh, seed):
@@ -855,12 +1144,13 @@ def cmd_world(roller, scope, fresh, seed, campaign=None):
 
     if scope == "few-nations":
         nn = roller.roll(3, "nation count base (d3)") + 1  # 2..4
-        blocks, names, tensions = [], [], []
+        blocks, names, tensions, faction_blocks = [], [], [], []
         for _ in range(nn):
-            nm, body, tension = compose_nation(roller, fresh)
+            nm, body, tension, faction_block = compose_nation(roller, fresh)
             names.append(nm)
             tensions.append(tension)
             blocks.append(body)
+            faction_blocks.append(faction_block)
         # one shared tension binding the cluster
         shared = roll_bundle_table(roller, "nation_construction",
                                    "Disputes With a Neighbor",
@@ -871,8 +1161,10 @@ def cmd_world(roller, scope, fresh, seed, campaign=None):
         body += (f"\n\n### Shared tension (binds the cluster)\n"
                  f"- All of {', '.join(names)} are entangled by: {shared}.\n")
         body += f"\n{rbody}"
+        body += factions_persist_note(campaign, faction_blocks)
         note = (f"Scope = a few neighboring nations ({nn}); only the starting "
-                f"region below is detailed — grow the rest on demand.")
+                f"region below is detailed — grow the rest on demand. Each "
+                f"nation is also placed on the faction board.")
         return draft_block("World (few-nations scope)", body, seed, note)
 
     if scope == "continent":
@@ -901,16 +1193,22 @@ def cmd_world(roller, scope, fresh, seed, campaign=None):
 
     if scope == "kingdom":
         # region skeleton + the one detailed kingdom inside it + its ruins.
-        rname, rbody, rnodes = compose_geography_region(roller, fresh, campaign)
+        rname, rbody, rnodes, rfactions = compose_geography_region(
+            roller, fresh, campaign)
         kname, kbody, knodes = compose_geography_kingdom(roller, fresh, campaign,
                                                          region_name=rname)
         _kk, ruinbody, ruinnodes = compose_ruins(roller, kname, campaign,
                                                  latter_earth=not fresh)
         body = rbody + "\n\n" + kbody + "\n\n" + ruinbody
         body += persist_note(campaign, rnodes + knodes + ruinnodes)
+        # the detailed kingdom is the seat power — put it on the faction board,
+        # alongside the region's other nations as rival powers.
+        kfaction = compose_faction(roller, kname)
+        body += factions_persist_note(campaign, [kfaction] + rfactions)
         note = ("Scope = a region SKELETON + the one detailed kingdom inside it "
                 "(+ ~6 ruins). Geometry & adjacency only; all place content comes "
-                "from the tag recipes. Grow the rest on demand.")
+                "from the tag recipes. Grow the rest on demand. The kingdom is "
+                "placed on the faction board.")
         return draft_block(f"World (kingdom scope): {kname} in {rname}",
                            body, seed, note)
 
@@ -920,18 +1218,24 @@ def cmd_world(roller, scope, fresh, seed, campaign=None):
 
 def cmd_geography(roller, scale, fresh, seed, campaign=None):
     if scale == "region":
-        name, body, nodes = compose_geography_region(roller, fresh, campaign)
+        name, body, nodes, faction_blocks = compose_geography_region(
+            roller, fresh, campaign)
         body += persist_note(campaign, nodes)
+        body += factions_persist_note(campaign, faction_blocks)
         note = ("Region SKELETON (book pp.124-127): oceanic frame, ~6 terrain "
                 "features, 1d4+2 rivers, 1-3 lakes, 6 nations on natural borders. "
-                "NO cities or ruins at this scale — geometry & adjacency only.")
+                "NO cities or ruins at this scale — geometry & adjacency only. "
+                "Each nation is also placed on the faction board.")
         return draft_block(f"Geography — Region: {name}", body, seed, note)
     if scale == "kingdom":
         name, body, nodes = compose_geography_kingdom(roller, fresh, campaign)
         body += persist_note(campaign, nodes)
+        # the kingdom is a power — put it on the faction board.
+        body += factions_persist_note(campaign, [compose_faction(roller, name)])
         note = ("Kingdom DETAIL (book pp.124-127 + p.49): small-scale terrain, "
                 "demographics (60/sq mi, ~10% urban), capital on water then "
                 "cities clockwise; each city carries 2 Community + 2 Court tags. "
+                "The kingdom is also placed on the faction board. "
                 "Next: `worldgen.py ruins --kingdom " + name + "`.")
         return draft_block(f"Geography — Kingdom: {name}", body, seed, note)
     sys.exit(f"Unknown scale '{scale}'. Use region | kingdom.")
@@ -973,6 +1277,9 @@ def main():
     campaign = None
     if "--campaign" in args:
         campaign = args[args.index("--campaign") + 1]
+    name = None
+    if "--name" in args:
+        name = args[args.index("--name") + 1]
 
     # Build a Roller from gen.py so the dice contract (honest, shown, seeded,
     # MYTHIC_GM_DICE-aware) is identical to gen.py's.  Redirect its STDOUT dice
@@ -989,7 +1296,9 @@ def main():
         if cmd in PLACE_RECIPE_TITLE:
             block = cmd_place(roller, cmd, seed)
         elif cmd == "nation":
-            block = cmd_nation(roller, fresh, seed)
+            block = cmd_nation(roller, fresh, seed, campaign)
+        elif cmd == "faction":
+            block = cmd_faction(roller, name, seed, campaign)
         elif cmd == "region":
             block = cmd_region(roller, fresh, seed)
         elif cmd == "geography":
