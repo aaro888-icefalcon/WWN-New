@@ -9,12 +9,20 @@ Before drafting, ask the player four things and record the answers:
 
 | Ask | Options |
 |---|---|
-| **Scope** | single **region** ▸ a **few nations** ▸ a whole **continent** |
+| **Scope** | single **region** ▸ a **few nations** ▸ a **kingdom** ▸ a whole **continent** |
 | **Tone** | how grim / weird / heroic; any content lines |
-| **Magic level** | rare-and-feared (default Latter Earth) ▸ common ▸ other |
-| **World** | **default Latter Earth** (the Gyre / `setting-canon.md`) ▸ a **fresh** world (`--fresh`, names & history rolled from scratch) |
+| **Magic level** | rare-and-feared (default Latter Earth) ▸ common ▸ other (also set by the content profile) |
+| **World source** | one of the **four** below |
 
-Scope sets the command (below). **Default = Latter Earth**: leave generated hooks to attach to existing canon NPCs/factions. **Fresh** replaces `bridge/setting-canon.md` wholesale.
+**The four world sources:**
+1. **Default Latter Earth** (the Gyre / `setting-canon.md`) — generate seeded from existing canon; hooks attach to canon NPCs/factions. The out-of-the-box start.
+2. **Fresh world** (`--fresh`) — names & history rolled from scratch; **replaces `setting-canon.md` wholesale**.
+3. **Provided setting** — the player supplies their own setting (their homebrew, another book, a pitch). The GM **ingests the provided text into `setting-canon.md`** (premise, powers, named NPCs, content lines, a name/place seed-pool), then generates places/factions seeded from *that* canon (not Latter Earth, not random) — hooks attach to the provided world. Use the provided proper nouns as the name pool instead of the Latter-Earth list.
+4. **Guided / Modified Latter Earth** — start from Latter Earth canon, but the player **specifies the themes or gameplay for one (or more) region(s)** (e.g. "make the starting march a plague-haunted naval frontier; lean Mystery+Tension"). The GM keeps the Latter-Earth backdrop but **biases that region's generation** — its terrain/community/ruin tag picks, its faction goals/projects, and its scene themes — toward the stated direction, recording the guidance in `setting-canon.md`. The rest of the world stays default Latter Earth.
+
+Scope sets the command (below). Sources 1 & 4 seed from Latter-Earth canon; 2 rolls fresh; 3 seeds from the player's provided canon. In every case the **frontier rule** still holds — detail only the starting region/kingdom and grow the rest on demand.
+
+**Factions are generated as part of world building** (every nation becomes a faction on `campaign/factions.md` via the `--campaign DIR` option), and **faction moves fire every scene** at bookkeeping (`faction_turn.py --move auto`), with new factions generated whenever play surfaces an untracked power. See `SETUP-GUIDE.md`.
 
 ## 2 · The draft → feedback → commit loop
 1. **Generate at scope** — run the matching command; show the player the DRAFT CANON block (it is a *proposal*, clearly labeled, never yet canon).

@@ -58,9 +58,12 @@ Follow `.claude/skills/wwn/SKILL.md` → **WWN SESSION ZERO**. In short:
    python3 .claude/skills/mythic-gm/scripts/state.py init campaign
    ```
 3. **Worldgen (player-in-the-loop, scope-scaled)** — `.claude/skills/wwn/references/gm/worldgen.md` +
-   `.claude/skills/wwn/scripts/worldgen.py`. Default to **Latter Earth**, or generate fresh. Detail only
-   the starting region; grow the rest on demand at the frontier. Commit to
-   `.claude/skills/wwn/bridge/setting-canon.md`.
+   `.claude/skills/wwn/scripts/worldgen.py`. Pick one of **four world sources**: default **Latter Earth**,
+   a **fresh** world (`--fresh`), a **provided setting** (ingest the player's own into `setting-canon.md`),
+   or **guided/modified Latter Earth** (Latter Earth, but the player sets one region's themes/gameplay).
+   **Factions are generated here too** (`--campaign campaign` populates `campaign/factions.md`). Detail only
+   the starting region/kingdom; grow the rest on demand at the frontier. Commit to
+   `.claude/skills/wwn/bridge/setting-canon.md`. Full setup: `.claude/skills/wwn/SETUP-GUIDE.md`.
 4. **Genre & stakes** — exploration-survival + intrigue. Set the Theme order:
    ```
    python3 .claude/skills/mythic-gm/scripts/adventure_crafter.py themes --style wwn --campaign campaign
