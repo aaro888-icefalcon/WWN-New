@@ -1044,10 +1044,15 @@ def _setup_tradition(ch, random_choice):
             print("  Partial-Mage tradition: %s" % mage_name)
         return
     if caster == "dual-partial":
-        names = _eligible_traditions(ch, "partial")
-        # Adunic Invoker can't mix with another spellcasting partial
-        names = [n for n in names if n != "Adunic Invoker"] or names
-        t1 = _pick_tradition(ch, "partial", "First partial tradition", random_choice)
+        # canonical dual-partial = two spellcasting traditions (arts-classes get
+        # their own Adventurer combos). Adunic Invoker can't mix with another caster.
+        SPELL_KINDS = {"spells", "spellpoints"}
+        names = [n for n in _eligible_traditions(ch, "partial")
+                 if TRADITIONS[n].get("kind") in SPELL_KINDS and n != "Adunic Invoker"]
+        if not names:
+            names = ["High Mage"]
+        t1 = _pick_tradition(ch, "partial", "First partial tradition", random_choice,
+                             kinds=SPELL_KINDS)
         rem = [n for n in names if n != t1] or names
         if INTERACTIVE and not random_choice:
             labels = ["%s [%s]" % (n, TRADITIONS[n]["kind"]) for n in rem]
