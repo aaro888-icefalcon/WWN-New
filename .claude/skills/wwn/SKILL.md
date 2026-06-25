@@ -61,7 +61,7 @@ The engine and this pack **share one Chaos Factor and one `campaign-state.md`.**
 
 - **Skill check:** `2d6 + skill level + attribute modifier` vs difficulty **6 / 8 / 10 / 12 / 14** (routine→legendary). Opposed = higher total; ties to the PC. → `dice.py roll 2d6+<mod>`
 - **Saving throw:** `d20`, roll **≥** target. PC target = **16 − level − best relevant attribute modifier**; Luck save = **16 − level** (no attribute). Monster save = **15 − ½ HD**. → `dice.py roll 1d20`
-- **Attack:** `d20 + hit bonus + attribute mod (+ level if a Warrior/partial)` vs target **Armor Class** (ascending). → `dice.py roll 1d20+<mod>`
+- **Attack:** `d20 + class attack bonus + combat-skill level (Stab/Shoot/Punch) + attribute mod` vs target **Armor Class** (ascending). The class attack bonus already equals a Warrior's level — never add level again. Untrained weapon = −2. → `dice.py roll 1d20+<mod>`
 - **Shock:** weapons list **Shock N/AC** — on a miss against a target whose AC ≤ the listed value, deal **N** damage anyway. Tactical attrition; never "nothing happens."
 - **Damage / death:** roll the weapon die + mods; at **0 HP** a PC is dying → **mortal wounds**: stabilize within rounds or die. Death is real (engine discipline).
 - **Magic:** **Effort = 1 + Magic-skill level + better of Int/Cha mod**, committed for the scene / day / indefinitely; spells are Vancian slots. (`references/rules/magic-and-effort.md`.)

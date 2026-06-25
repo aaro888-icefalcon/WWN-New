@@ -11,9 +11,11 @@ central lookup.py consumes (`python3 scripts/lookup.py spell|focus <name>`):
                  them (Elementalist, Healer, Necromancer, Vowed) and their
                  tradition-specific New Magic spells.  Arts are tagged
                  type:"<Tradition> Art"; New Magic spells type:"<Tradition>".
-  foci.json    — all 35 core character Foci (level-1 / level-2 effects, concise)
-                 PLUS name+page pointers to the special Foci/classes of the
-                 Atlas, the Arts of the Gyre, and the Legate Writs (not fully
+  foci.json    — the 35 core character Foci PLUS the 43 Atlas optional & setting
+                 Foci (Mundane Alchemy, Maqqatban styles, Amundi Godblood, Arcane
+                 Secret, Non-Human Origins), all with level-1 / level-2 effects;
+                 PLUS name+page pointers to the four Atlas optional CLASSES, the
+                 six Arts-of-the-Gyre traditions, and the Legate Writs (not fully
                  encoded — use the book chapter via the cited page).
 
 Schema (both files), exactly as the lookup.py consumer expects:
@@ -48,12 +50,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SKILL_ROOT = os.path.dirname(HERE)
 OUT_DIR = os.path.join(SKILL_ROOT, "bridge", "generators")
 
-# Book chapter the page pointers reference.
-MAGIC = "book/Worlds Without Number Deluxe/05 - Magic.md"
-CHARGEN = "book/Worlds Without Number Deluxe/02 - Character Creation.md"
-GYRE = "book/Worlds Without Number Deluxe/11 - Arts of the Gyre.md"
-LEGATES = "book/Worlds Without Number Deluxe/13 - Legates.md"
-ATLAS04 = "book/The Atlas of the Latter Earth/04 - Optional Rules and Classes.md"
+# Book chapter the page pointers reference (paths match the on-disk filenames,
+# which use hyphens — keep these in sync with book/ or the references break).
+MAGIC = "book/Worlds-Without-Number-Deluxe/05-Magic.md"
+CHARGEN = "book/Worlds-Without-Number-Deluxe/02-Character-Creation.md"
+GYRE = "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md"
+LEGATES = "book/Worlds-Without-Number-Deluxe/13-Legates.md"
+ATLAS04 = "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md"
 
 
 def _pg(chapter, line):
@@ -633,16 +636,156 @@ FOCI = {
         level_2="(No second level — a single heritage benefit.)"),
 }
 
+# ===========================================================================
+# ATLAS FOCI — fully-encoded optional & setting Foci from the Atlas (ch.4):
+# Mundane Alchemy, the Maqqatban Knight styles, the Amundi Godblood Foci, the
+# Arcane Secret Foci, and the Non-Human Origin Foci.  Lines -> ATLAS04.
+# ===========================================================================
+ATLAS_FOCI = {
+    # Mundane Alchemy (Experts only)
+    "Mundane Alchemist": dict(level_req="Experts/Partial Experts only", line=248,
+        level_1="Gain Alchemy-0 (only this Focus can raise Alchemy); formulae for all common lesser works; jury-rig a lesser lab anywhere.",
+        level_2="Formulae for all common greater works; a week of lab work yields level x25 sp of alchemical components."),
+    # Maqqatban Knight styles (Warriors only; only ONE style ever)
+    "Ghost Archer Style": dict(level_req="Warriors only; one style only", line=842,
+        level_1="Gain Shoot. Manifest a spiritual copy of any bow you've fired (no enc, self-generating ammo, fire even when meleed); a copied bow locks to you until death. -4 to hit with non-bows.",
+        level_2="Once/scene, On Turn, shoot any spot in range and instantly teleport to where the arrow lands (+1 System Strain)."),
+    "All Directions Edge Style": dict(level_req="Warriors only; one style only", line=856,
+        level_1="Hit die -2/level (1d6+2 becomes 1d6). Gain a combat skill. On Turn, make a non-grappling attack once/round; extra uses/day each cost 1 Strain.",
+        level_2="Once/day, as a Main Action, attack every enemy in range once (ranged max = Shoot skill + 1)."),
+    "One Point Strike Style": dict(level_req="Warriors only; one style only", line=860,
+        level_1="Gain a combat skill. All attacks use the better of Int/Wis. Main Action: a strike auto-rolls 15 to hit but deals minimum damage (no maneuver/grapple).",
+        level_2="Once/scene, as an Instant, a melee hit with this style has its weapon damage maximized."),
+    "Pyre of Heaven Style": dict(level_req="Warriors only; one style only", line=872,
+        level_1="Gain a combat skill. Ignore the first 5 fire/heat dmg each round; glow at will; Instant (1 Strain) ignite weapon for +level+2 dmg & Shock that round (once/foe/scene).",
+        level_2="Immune to non-magical flame/smoke; full-body ignite (can't be grappled); first ignite/scene deals 1d6 per 3 levels to melee foes."),
+    "Catalytic Soul Style": dict(level_req="Warriors only; one style only; no-Shock ranged only", line=874,
+        level_1="Gain Shoot. Ranged attacks pass harmlessly through allies; nominate a melee ally so the target suffers that ally's Shock.",
+        level_2="On a boosted hit, you or the ally may take 1 Strain to heal 2d6 + target level (once/subject/scene)."),
+    "Wrathful Mountain Style": dict(level_req="Warriors only; one style only", line=890,
+        level_1="Gain Stab or Punch. Manifest a 0-enc magic large shield (Instant, works hands-full); 1/round Instant melee retaliation vs anyone meleeing a Screened ally.",
+        level_2="Retaliate against ranged attackers of your ward too; 1 Strain to retaliate vs all who attack your ward that round."),
+    "Righteous Iron Style": dict(level_req="Warriors only; one style only; heavy armor only", line=892,
+        level_1="Gain Exert. Worn armor: +1 AC, no encumbrance (still counts for Armored Magic), no Sneak/Exert penalty, sleep in it, stays clean. Free 750sp armor if taken at L1.",
+        level_2="While armored: need not eat/drink/sleep/breathe and are climate-immune; the armor AC bonus becomes +2."),
+    "World Tree Lance Style": dict(level_req="Warriors only; one style only; spears/polearms only", line=906,
+        level_1="Gain Stab. Your spear has no enc, returns when thrown, gains/doubles a thrown range, +1 hit & dmg, and counts as a magic weapon.",
+        level_2="Melee reach becomes 10' + your level; allies between you and the target never hinder your attacks."),
+    # Amundi Godblood Foci (Experts only; only ONE; +1 attr mod at L2, cap +2)
+    "Master Tracker": dict(level_req="Experts only; one Godblood Focus only", line=928,
+        level_1="Gain Survive. Follow any trail (1 day old in a city, 1 week in the wild) ignoring weather/water; read numbers, shape, and condition.",
+        level_2="+1 Wis modifier. Identify known people by their tracks; 1/day reconstruct a recent (<=1 week) scene's actions."),
+    "Night Walker": dict(level_req="Experts only; one Godblood Focus only", line=944,
+        level_1="Gain Sneak. See in all but pitch black (and 30' even when blinded); your sleep is effective wakefulness.",
+        level_2="+1 Dex modifier. Effectively invisible in anything dimmer than torchlight until you act."),
+    "Danger Sense": dict(level_req="Experts only; one Godblood Focus only", line=946,
+        level_1="Gain Notice. Sense Execution Attacks on you or nearby allies in time to spoil them; 1/day sense a trap/ambush in time to stop.",
+        level_2="+1 Wis modifier. 1/day, Instant, intuit the best course to escape peril with minimal loss."),
+    "Pack Beast": dict(level_req="Experts only; one Godblood Focus only", line=964,
+        level_1="Gain Exert. Treat Strength as 18 (22 if already 18) for encumbrance purposes.",
+        level_2="+1 Str modifier. 1/scene, On Turn, lift and move up to 1000 lb (set down by end of turn)."),
+    "Folie a Deux": dict(level_req="Experts only; one Godblood Focus only", line=968,
+        level_1="Gain Convince. Your lies never register as lies to magic; 1/day make a listener accept your sincerity until disproven.",
+        level_2="+1 Cha modifier. 1/day a bald-faced lie forces a Mental save at -Convince or be believed for 1d4 rounds."),
+    "Provident Crafter": dict(level_req="Experts only; one Godblood Focus only", line=978,
+        level_1="Gain Craft. Treat Strength as +4 for encumbrance; items you need to use count as Readied even if Stowed.",
+        level_2="+1 Dex modifier. 1/day, Instant, you happen to have a Stowed item (<=2 enc) you could have bought/made recently (pay its cost)."),
+    "Wildtongue": dict(level_req="Experts only; one Godblood Focus only", line=980,
+        level_1="Gain Survive. Communicate simple ideas with animals; appeased animals may do minor immediate favors.",
+        level_2="+1 Cha modifier. 1/day command a visible animal for a scene (magical beasts get a Mental save)."),
+    "Walk Like Wind": dict(level_req="Experts only; one Godblood Focus only", line=996,
+        level_1="Gain Exert. +10' ground movement; move up/down vertical surfaces so long as you end on a handhold or flat ground.",
+        level_2="+1 Dex modifier. Leap 20' horizontal / 10' vertical as a Move; 1/scene gain a bonus Move action."),
+    # Arcane Secret Foci (Mages/Partial Mages only; only ONE; single level)
+    "Atlantean Divination": dict(level_req="Mages/Partial Mages only; one Arcane Secret only; single level", line=1014,
+        level_1="Gain Know. 1/day, an hour ritual asks a one-sentence question about an event/plan within the next week (secret Int/Know vs 9; +1 difficulty per repeat in 7 days; +1 Strain). No past/present questions.",
+        level_2="(Single level — Arcane Secret Focus.)"),
+    "Iteral Pacting": dict(level_req="Mages/Partial Mages only; one Arcane Secret only; single level", line=1020,
+        level_1="Gain Pray. Pick a patron portfolio. 1/day (+1 Strain), Instant: +4 to a hit roll, OR +1 to a skill check, OR cast a portfolio-related 1st-level spell with no slot. -1 to non-intimidation social checks.",
+        level_2="(Single level — Arcane Secret Focus.)"),
+    "Nagadi Hemomancy": dict(level_req="Mages/Partial Mages only; one Arcane Secret only; single level", line=1026,
+        level_1="Gain Heal. 1/day, Instant after casting a non-harmful spell, take 1d4 per spell level so the casting doesn't count against your daily casts (+1 Strain).",
+        level_2="(Single level — Arcane Secret Focus.)"),
+    "Old Empire Sigilism": dict(level_req="Mages/Partial Mages only; one Arcane Secret only; single level", line=1032,
+        level_1="Embed a spell in a personal token/calyx (10 min/level + a spell use, recoverable). Activate with a Main Action, no vocal/gesture, undisruptable. Only one token empowered at a time.",
+        level_2="(Single level — Arcane Secret Focus.)"),
+    "Vothite Mind-Sorcery": dict(level_req="Mages/Partial Mages only; one Arcane Secret only; single level", line=1038,
+        level_1="Cast with no vocalization or gesture (still a Main Action, still armor-limited & disruptable); your spells show no obvious tie to you. But you can no longer deal non-mental HP damage with spells.",
+        level_2="(Single level — Arcane Secret Focus.)"),
+    # Non-Human Origin Foci (GM permission; usually the free/any pick; cap +-2)
+    "Choeru Beastfolk": dict(level_req="GM permission; origin Focus", line=1056,
+        level_1="Capybara-folk: gain Convince or Connect; +1 Cha modifier; +1 to reaction rolls in your presence; learn a language in a week.",
+        level_2="(Single level — origin Focus.)"),
+    "Ghoul": dict(level_req="GM permission; origin Focus", line=1066,
+        level_1="Gain Sneak, Ghoulish Vigor, and +1 Str or Dex; must eat a pound of human flesh monthly or risk going feral.",
+        level_2="(Single level — origin Focus.)"),
+    "!Man": dict(level_req="GM permission; origin Focus", line=1072,
+        level_1="Algorithmic human-simulacrum: gain any non-Magic skill; 1/day +1 a skill check or +2 to hit; immune to mind-affecting magic.",
+        level_2="(Single level — origin Focus.)"),
+    "Guer Beastfolk": dict(level_req="GM permission; origin Focus", line=1080,
+        level_1="Swamp fox-folk: gain Notice or Sneak; +1 Wis or Cha modifier; low-light vision; +10' move.",
+        level_2="(Single level — origin Focus.)"),
+    "Accipiter Anak": dict(level_req="GM permission; origin Focus", line=1086,
+        level_1="Winged Anak: gain Exert and Accipiter Flight; +1 Dex / -1 Con modifier.",
+        level_2="(Single level — origin Focus.)"),
+    "Harbinger Anak": dict(level_req="GM permission; origin Focus", line=1090,
+        level_1="Face-shifting Anak: gain Sneak or Convince and Harbinger's Face; +1 Cha / -1 Con modifier.",
+        level_2="(Single level — origin Focus.)"),
+    "Aristoi Anak": dict(level_req="GM permission; origin Focus", line=1102,
+        level_1="Bred ruler: gain Lead + any non-Magic skill; +1 Wis modifier; use Wis as the attribute for any weapon.",
+        level_2="(Single level — origin Focus.)"),
+    "Hua Beastfolk": dict(level_req="GM permission; origin Focus", line=1104,
+        level_1="Bull-folk: gain Exert; +1 Str / -1 Dex modifier; Str +4 for encumbrance; +2 max System Strain.",
+        level_2="(Single level — origin Focus.)"),
+    "Kitsune Beastfolk": dict(level_req="GM permission; origin Focus", line=1114,
+        level_1="Fox-folk: gain Notice or Convince; +1 Cha modifier; gain the Elemental Sparks art (or another Elementalist art if you have it).",
+        level_2="(Single level — origin Focus.)"),
+    "Deepfolk": dict(level_req="GM permission; origin Focus", line=1122,
+        level_1="Far-Deeps human: see in any light; half food/water/air; raise one physical attribute to 14. Direct sunlight on eyes/skin forces Strain saves.",
+        level_2="(Single level — origin Focus.)"),
+    "Manu Beastfolk": dict(level_req="GM permission; origin Focus", line=1130,
+        level_1="Lizardfolk: gain Exert or Survive; +1 Con or Str / -1 Dex or Cha modifier; swim at full speed; hold breath 15 min; -1 Shock taken.",
+        level_2="(Single level — origin Focus.)"),
+    "Nahu Beastfolk": dict(level_req="GM permission; origin Focus", line=1136,
+        level_1="Catfolk: gain Sneak or Notice; +1 Dex or Cha modifier; claws count as daggers; low-light vision; Mental save to pull a lethal blow.",
+        level_2="(Single level — origin Focus.)"),
+    "Oni": dict(level_req="GM permission; origin Focus", line=1142,
+        level_1="Oni: gain Stab or Punch; +1 Str modifier (Str +4 for enc); -1 Wis modifier; -2 on Mental saves.",
+        level_2="(Single level — origin Focus.)"),
+    "Pichi Beastfolk": dict(level_req="GM permission; origin Focus", line=1148,
+        level_1="Ratfolk: gain Notice; +1 Wis or Dex / -1 Str or Con modifier; low-light vision; blindsense out to 10'.",
+        level_2="(Single level — origin Focus.)"),
+    "Piren Beastfolk": dict(level_req="GM permission; origin Focus", line=1154,
+        level_1="Wolfmen: gain Exert; 1/scene, Move action, give a melee ally a bonus physical Main Action.",
+        level_2="(Single level — origin Focus.)"),
+    "Still Cities Undead": dict(level_req="GM permission; origin Focus", line=1160,
+        level_1="Intelligent undead: no need to eat/sleep/drink/breathe; immune to poison/disease; auto-stabilize at 0 HP; revive slowly; not 'undead' for Necromancy.",
+        level_2="(Single level — origin Focus.)"),
+    "Sui Beastfolk": dict(level_req="GM permission; origin Focus", line=1166,
+        level_1="Pigfolk: gain Survive; +1 Con modifier; immune to mundane poison; 1/day act 1 more round after reaching 0 HP.",
+        level_2="(Single level — origin Focus.)"),
+    "Tanuki Beastfolk": dict(level_req="GM permission; origin Focus", line=1172,
+        level_1="Raccoon-dog folk: gain Sneak; climb at full move; 1/day shapeshift (as Adopt the Simulacular Visage, no language) for up to 2 hours/level.",
+        level_2="(Single level — origin Focus.)"),
+    "Tengu Beastfolk": dict(level_req="GM permission; origin Focus", line=1178,
+        level_1="Crow-folk: gain Stab; fly 30' outdoors at normal encumbrance, but not while fighting/doing complex acts and not for overland travel.",
+        level_2="(Single level — origin Focus.)"),
+    "Usagi Beastfolk": dict(level_req="GM permission; origin Focus", line=1184,
+        level_1="Rabbit-folk: gain Exert or Sneak and +1 to all saves; +1 Dex / -1 Str or Con modifier; 1/scene double move; 1/week auto Luck save.",
+        level_2="(Single level — origin Focus.)"),
+    "Zakathi": dict(level_req="GM permission; origin Focus", line=1192,
+        level_1="Laborer-folk: gain Exert; raise Con to 14 (or 18 if already 14+); +2 max System Strain; must exert daily or gain Strain overnight.",
+        level_2="(Single level — origin Focus.)"),
+}
+
+
 # ---------------------------------------------------------------------------
-# POINTER FOCI — special Foci / class-arts encoded by NAME + PAGE only.
-# (Atlas optional classes & their Arcane Secret/specialist foci, the six Gyre
-# traditions and their arts, and the Legate Writs.)  These are not fully
-# encoded — pull the detail from the cited chapter.
+# POINTER FOCI — special class-arts encoded by NAME + PAGE only.
+# (The four Atlas optional CLASSES, the six Gyre traditions and their arts, and
+# the Legate Writs.)  These are not fully encoded — pull detail from the chapter.
 # ---------------------------------------------------------------------------
 POINTER_FOCI = {
-    # --- Atlas: Optional Rules & Classes (Atlas/04) ---
-    "Mundane Alchemist": dict(source="Atlas", line=248,
-        note="Atlas optional Focus (Experts only): grants the Alchemy skill and basic formulae to brew lesser/greater alchemical works."),
+    # --- Atlas: Optional Classes (Atlas/04) — full mechanics live in chargen.py ---
     "The Accursed (class)": dict(source="Atlas", line=411,
         note="Atlas partial-Mage class pacted with an Outsider; wields Accursed Blade/Bolt arts (use Magic to attack) plus dark Effort-fueled arts."),
     "The Bard (class)": dict(source="Atlas", line=532,
@@ -727,6 +870,13 @@ def build_foci():
             "level_1": d["level_1"],
             "level_2": d["level_2"],
             "page": _pg(CHARGEN, d["line"]),
+        }
+    for name, d in ATLAS_FOCI.items():
+        records[name] = {
+            "level_req": d["level_req"],
+            "level_1": d["level_1"],
+            "level_2": d["level_2"],
+            "page": _pg(ATLAS04, d["line"]),
         }
     src_map = {"Atlas": ATLAS04, "Gyre": GYRE, "Legates": LEGATES}
     for name, d in POINTER_FOCI.items():
