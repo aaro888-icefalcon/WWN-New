@@ -74,6 +74,11 @@ def _engine_dice_available():
 # ---------------------------------------------------------------------------
 # ATTRIBUTE MODIFIERS — p.9:  3 = -2 | 4-7 = -1 | 8-13 = 0 | 14-17 = +1 | 18 = +2
 # ---------------------------------------------------------------------------
+def _page(p):
+    """Format a focus page ref: int -> 'p.22', string -> 'Atlas 248'."""
+    return ("p.%d" % p) if isinstance(p, int) else str(p)
+
+
 def attr_mod(score):
     if score <= 3:
         return -2
@@ -248,6 +253,52 @@ CLASSES = {
         "name": "Adventurer (Partial Mage/Partial Mage)", "hd": _hd(-1), "ab": AB_MAGE,
         "foci": [("any", 1)], "caster": "dual-partial",
         "ability": "Two Arcane Traditions (each a partial pool of Effort/spells)."},
+    # --- Atlas optional-class combos (ch.4). `atlas` names the attached art-set;
+    #     `mage_slot` means a standard caster tradition is ALSO chosen. -----------
+    "partial-warrior/accursed": {
+        "name": "Adventurer (Partial Warrior/Accursed)", "hd": _hd(2), "ab": AB_PARTIAL_WAR,
+        "foci": [("warrior", 1), ("any", 1)], "caster": False, "atlas": "Accursed",
+        "ability": "Accursed pact arts (Blade/Bolt use Magic to attack); improved HD/attack."},
+    "partial-expert/accursed": {
+        "name": "Adventurer (Partial Expert/Accursed)", "hd": _hd(0), "ab": AB_PARTIAL_EXPMAGE,
+        "foci": [("expert", 1), ("any", 1)], "caster": False, "atlas": "Accursed",
+        "ability": "Quick Learner; Accursed pact arts."},
+    "partial-mage/accursed": {
+        "name": "Adventurer (Partial Mage/Accursed)", "hd": _hd(-1), "ab": AB_MAGE,
+        "foci": [("any", 1)], "caster": False, "atlas": "Accursed", "mage_slot": True,
+        "ability": "Partial caster tradition + Accursed pact arts."},
+    "partial-warrior/bard": {
+        "name": "Adventurer (Partial Warrior/Bard)", "hd": _hd(2), "ab": AB_PARTIAL_WAR,
+        "foci": [("warrior", 1), ("any", 1)], "caster": False, "atlas": "Bard",
+        "ability": "Martial skald; Bard arts (non-magical, work in armor)."},
+    "partial-expert/bard": {
+        "name": "Adventurer (Partial Expert/Bard)", "hd": _hd(0), "ab": AB_PARTIAL_EXPMAGE,
+        "foci": [("expert", 1), ("any", 1)], "caster": False, "atlas": "Bard",
+        "ability": "Quick Learner; Bard arts (the Bard side gives no bonus Expert focus)."},
+    "partial-mage/bard": {
+        "name": "Adventurer (Partial Mage/Bard)", "hd": _hd(0), "ab": AB_PARTIAL_EXPMAGE,
+        "foci": [("any", 1)], "caster": False, "atlas": "Bard", "mage_slot": True,
+        "ability": "Partial caster tradition + Bard arts."},
+    "partial-warrior/mageslayer": {
+        "name": "Adventurer (Partial Warrior/Mageslayer)", "hd": _hd(2), "ab": AB_WARRIOR,
+        "foci": [("warrior", 1), ("any", 1)], "caster": False, "atlas": "Mageslayer",
+        "ability": "Mage-killer arts (full-Warrior attack progression); no Mage pairing allowed."},
+    "partial-expert/mageslayer": {
+        "name": "Adventurer (Partial Expert/Mageslayer)", "hd": _hd(0), "ab": AB_PARTIAL_WAR,
+        "foci": [("expert", 1), ("any", 1)], "caster": False, "atlas": "Mageslayer",
+        "ability": "Quick Learner; Mage-killer arts (no +2 HP/die from Mageslayer)."},
+    "partial-warrior/wise": {
+        "name": "Adventurer (Partial Warrior/Wise)", "hd": _hd(2), "ab": AB_PARTIAL_WAR,
+        "foci": [("warrior", 1), ("any", 1)], "caster": False, "atlas": "Wise",
+        "ability": "Wise arts (priest/witch/seer); no Effort, fixed by concept."},
+    "partial-expert/wise": {
+        "name": "Adventurer (Partial Expert/Wise)", "hd": _hd(0), "ab": AB_PARTIAL_EXPMAGE,
+        "foci": [("expert", 1), ("any", 1)], "caster": False, "atlas": "Wise",
+        "ability": "Quick Learner; Wise arts (the Wise side gives no bonus Expert focus)."},
+    "partial-mage/wise": {
+        "name": "Adventurer (Partial Mage/Wise)", "hd": _hd(0), "ab": AB_PARTIAL_EXPMAGE,
+        "foci": [("any", 1)], "caster": False, "atlas": "Wise", "mage_slot": True,
+        "ability": "Partial caster tradition + Wise arts."},
 }
 # canonical aliases for convenience
 CLASS_ALIASES = {
@@ -314,8 +365,45 @@ TRADITIONS = {
                  "Leap of the Heavens", "Master's Vigor", "Mob Justice", "Nimble Ascent",
                  "Purified Body", "Revivifying Breath", "Shattering Strike", "Style Weaponry",
                  "Unobtrusive Step"]},
+    # --- Atlas optional partial classes (ch.4) — art-sets attached by combo ----
+    "Accursed": {
+        "caster": False, "atlas": True, "bonus_skill": "Magic", "effort": "accursed",
+        "partial_only": True, "auto_arts": [], "attack_art": ["Accursed Blade", "Accursed Bolt"],
+        "l1_arts_full": 2, "l1_arts_partial": 2, "spells_1st": [],
+        "arts": ["Accursed Blade", "Accursed Bolt", "Bewitching Distraction", "Compelling Shriek",
+                 "Devil's Bargain", "Dire Pact", "Lying Face", "Night-Black Eyes", "Pacted Protection",
+                 "Rob Vitality", "Scourging Curse", "Shadowed Steps", "Snaring Speech",
+                 "Sorcerous Battery", "Soul Consumption", "Tendrils of Night", "Unseen Steps",
+                 "Weight of Sin", "Weeping Wounds"]},
+    "Bard": {
+        "caster": False, "atlas": True, "bonus_skill": "Perform", "effort": "bard",
+        "partial_only": True, "auto_arts": ["A Thousand Tongues"],
+        "l1_arts_full": 1, "l1_arts_partial": 1, "spells_1st": [],
+        "arts": ["Battle Cry", "Cursed Tune", "Deft Fingers", "Entangle Incantation", "Evoke Emotion",
+                 "Inspire Dread", "Keen Senses", "Liberating Song", "Rally", "Soothe the Savage",
+                 "Soothing Graces", "Swift Misdirection"]},
+    "Mageslayer": {
+        "caster": False, "atlas": True, "bonus_skill": "Magic", "effort": "mageslayer",
+        "partial_only": True, "auto_arts": ["Antimage", "Magebane"],
+        "l1_arts_full": 0, "l1_arts_partial": 0, "spells_1st": [],
+        "fixed_progression": "Antimage/Magebane (L1), Witchfinder/Spellshield (L2), Disrupt Sorcery (L3), "
+                             "Know Your Prey (L4), Share the Pain (L5), Dispel Enchantment (L6), "
+                             "Ward Ally (L7), Immaculate Body (L8), Immaculate Mind (L9), Absolute Negation (L10)",
+        "arts": ["Absolute Negation", "Dispel Enchantment", "Disrupt Sorcery", "Immaculate Body",
+                 "Immaculate Mind", "Know Your Prey", "Share the Pain", "Spellshield", "Ward Ally",
+                 "Witchfinder"]},
+    "Wise": {
+        "caster": False, "atlas": True, "bonus_skill": None, "effort": "none",
+        "partial_only": True, "auto_arts": [], "l1_arts_full": 1, "l1_arts_partial": 1,
+        "spells_1st": [],
+        "arts": ["Dread Awe", "Elite Ties", "Erudite", "Folk-Friend", "Healer (Wise)", "Holy Sanctity",
+                 "Personal Impunity", "Skilled",  # General
+                 "Compel Truth", "Deliver Oracle", "Find Object", "Read Omens",  # Divination
+                 "Auspicious Undertaking", "Evil Eye", "Ill Fate", "Luck Blessing", "War Curse"]},  # Curse/Blessing
 }
 CASTING_TRADITIONS = [n for n, t in TRADITIONS.items() if t["caster"]]
+ATLAS_ARTSETS = [n for n, t in TRADITIONS.items() if t.get("atlas")]
+STD_TRADITIONS = [n for n, t in TRADITIONS.items() if not t.get("atlas")]
 # tokens accepted in --class for each partial type / tradition
 _CLASS_TOKENS = {
     "warrior": ("warrior", None), "pw": ("warrior", None), "partial-warrior": ("warrior", None),
@@ -325,7 +413,11 @@ _CLASS_TOKENS = {
     "elementalist": ("mage", "Elementalist"), "elem": ("mage", "Elementalist"),
     "necromancer": ("mage", "Necromancer"), "necro": ("mage", "Necromancer"),
     "healer": ("mage", "Healer"), "vowed": ("mage", "Vowed"),
+    # Atlas optional partial classes (ch.4)
+    "accursed": ("accursed", None), "bard": ("bard", None),
+    "mageslayer": ("mageslayer", None), "wise": ("wise", None),
 }
+ATLAS_TYPES = {"accursed", "bard", "mageslayer", "wise"}
 
 
 def parse_class(spec):
@@ -364,11 +456,26 @@ def parse_class(spec):
             trads.append(trad)
     if len(types) == 1:
         base = types[0]
+        if base in ATLAS_TYPES:
+            sys.exit("%s is a partial class — pair it with another partial, e.g. partial-warrior/%s."
+                     % (base.title(), base))
         if base == "mage" and not trads:
             trads = [None]
         return base, trads
     if len(types) != 2:
         sys.exit("A class is one full class or two partials; got %d in '%s'." % (len(types), spec))
+    atlas = [t for t in types if t in ATLAS_TYPES]
+    std = [t for t in types if t not in ATLAS_TYPES]
+    if len(atlas) == 2:
+        sys.exit("Two Atlas partials can't be combined; pair one with Warrior/Expert/Mage.")
+    if len(atlas) == 1:
+        a, other = atlas[0], std[0]
+        if a == "mageslayer" and other == "mage":
+            sys.exit("The Mageslayer cannot be paired with any Mage class.")
+        base = "partial-%s/%s" % (other, a)
+        if base not in CLASSES:
+            sys.exit("Unsupported Atlas pairing '%s'." % spec)
+        return base, trads
     s = set(types)
     if s == {"warrior", "expert"}:
         base = "partial-expert/partial-warrior"
@@ -462,8 +569,105 @@ FOCI = {
                  "note": "+1 to reaction rolls while present."},
     "Whirlwind Assault": {"page": 28, "skill": "Stab", "combat": True,
                           "note": "1/scene apply Shock to all foes in melee range."},
-    "Xenoblooded": {"page": 28, "skill": None, "combat": None,
-                    "note": "Alien adaptation (choose a benefit). # TODO verify p.28."},
+    "Xenoblooded": {"page": 28, "skill": None, "combat": None, "no_auto": True,
+                    "note": "Alien adaptation: pick heat/smoke immunity, water-adaptation, a gravity attr shift, or no need for food/sleep/air + dark sight."},
+
+    # ===== ATLAS optional & setting Foci (Atlas ch.4) ========================
+    # Mundane Alchemy (Experts only)
+    "Mundane Alchemist": {"page": "Atlas 248", "skill": "Alchemy", "combat": False, "expert_only": True, "source": "atlas",
+                          "note": "Gain Alchemy-0; formulae for all lesser works (greater at L2). Brew non-magical potions, dusts, oils, poisons."},
+
+    # Maqqatban Knight styles (Warriors only; only ONE style ever)
+    "Ghost Archer Style": {"page": "Atlas 842", "skill": "Shoot", "combat": True, "warrior_only": True, "source": "atlas",
+                           "note": "Manifest a spiritual copy of any bow you've fired (no enc, self-ammo); fire in melee. L2: teleport to where your arrow lands (1/scene). -4 to hit with non-bows."},
+    "All Directions Edge Style": {"page": "Atlas 856", "skill": "Any Combat", "combat": True, "warrior_only": True, "source": "atlas",
+                                  "note": "Hit die -2/level. On Turn extra non-grappling attack 1/round (+Strain after first/day). L2: 1/day attack every enemy in range."},
+    "One Point Strike Style": {"page": "Atlas 860", "skill": "Any Combat", "combat": True, "warrior_only": True, "source": "atlas",
+                               "note": "Attacks use the better of Int/Wis. Main Action: a strike that auto-rolls 15 to hit but does minimum damage. L2: 1/scene maximize a melee hit (Instant)."},
+    "Pyre of Heaven Style": {"page": "Atlas 872", "skill": "Any Combat", "combat": True, "warrior_only": True, "source": "atlas",
+                             "note": "Ignore first 5 fire/heat dmg/round; ignite your weapon for +level+2 dmg & Shock (1 Strain; once/foe/scene). L2: fire/smoke immunity + AoE ignite."},
+    "Catalytic Soul Style": {"page": "Atlas 874", "skill": "Shoot", "combat": True, "warrior_only": True, "source": "atlas",
+                             "note": "Ranged attacks pass through allies; route a melee ally's Shock onto your target. L2: a boosted hit can heal you or the ally 2d6+target level (1 Strain). No-Shock ranged only."},
+    "Wrathful Mountain Style": {"page": "Atlas 890", "skill": "Stab/Punch", "combat": True, "warrior_only": True, "source": "atlas",
+                                "note": "Manifest a 0-enc magic large shield (Instant, even hands-full); 1/round Instant melee retaliation vs attackers of a Screened ally. -2 to hit. L2: ranged retaliation + AoE (1 Strain)."},
+    "Righteous Iron Style": {"page": "Atlas 892", "skill": "Exert", "combat": True, "warrior_only": True, "source": "atlas",
+                             "note": "Worn armor: +1 AC, no encumbrance, no Sneak/Exert penalty, sleep in it. L2: need not eat/drink/sleep/breathe and climate-immune while armored; AC bonus +2. Heavy armor only."},
+    "World Tree Lance Style": {"page": "Atlas 906", "skill": "Stab", "combat": True, "warrior_only": True, "source": "atlas",
+                               "note": "Spear: 0 enc, returns when thrown, +1 hit/dmg & magic. L2: melee reach 10'+level, allies don't block. Spears/polearms only."},
+
+    # Amundi Godblood Foci (Experts only; only ONE; +1 attr modifier at L2, cap +2)
+    "Master Tracker": {"page": "Atlas 928", "skill": "Survive", "combat": False, "expert_only": True, "source": "atlas",
+                       "note": "Follow any trail (1 day old in city / 1 week wild), read numbers & condition. L2: +1 Wis mod; identify people by tracks; reconstruct a recent scene."},
+    "Night Walker": {"page": "Atlas 944", "skill": "Sneak", "combat": False, "expert_only": True, "source": "atlas",
+                     "note": "See in all but pitch black; sleep as light wakefulness. L2: +1 Dex mod; effectively invisible in anything dimmer than torchlight."},
+    "Danger Sense": {"page": "Atlas 946", "skill": "Notice", "combat": False, "expert_only": True, "source": "atlas",
+                     "note": "Sense Execution Attacks in time to spoil them; 1/day avert a trap/ambush. L2: +1 Wis mod; 1/day intuit the best escape from peril."},
+    "Pack Beast": {"page": "Atlas 964", "skill": "Exert", "combat": False, "expert_only": True, "source": "atlas",
+                   "note": "Strength counts as 18 (22 if already 18) for encumbrance. L2: +1 Str mod; 1/scene briefly carry up to 1000 lb."},
+    "Folie a Deux": {"page": "Atlas 968", "skill": "Convince", "combat": False, "expert_only": True, "source": "atlas",
+                     "note": "Your lies never read as lies to magic; 1/day make a listener accept your sincerity. L2: +1 Cha mod; 1/day a believed bald-faced lie (Mental save at -Convince)."},
+    "Provident Crafter": {"page": "Atlas 978", "skill": "Craft", "combat": False, "expert_only": True, "source": "atlas",
+                          "note": "Str +4 for encumbrance; items you need count as Readied. L2: +1 Dex mod; 1/day 'happen to have' a Stowed item (pay its cost)."},
+    "Wildtongue": {"page": "Atlas 980", "skill": "Survive", "combat": False, "expert_only": True, "source": "atlas",
+                   "note": "Communicate simple ideas with animals; small favors if appeased. L2: +1 Cha mod; 1/day command a visible animal for a scene."},
+    "Walk Like Wind": {"page": "Atlas 996", "skill": "Exert", "combat": False, "expert_only": True, "source": "atlas",
+                       "note": "+10' move; move on vertical surfaces (end on a handhold). L2: +1 Dex mod; leap 20'/10'; 1/scene a bonus Move action."},
+
+    # Arcane Secret Foci (Mages/Partial Mages only; only ONE; single level)
+    "Atlantean Divination": {"page": "Atlas 1014", "skill": "Know", "combat": False, "mage_only": True, "source": "atlas", "single_level": True,
+                             "note": "1/day hour-long ritual: ask a one-sentence question about the next week (secret Int/Know vs 9; +1 difficulty per repeat). +1 System Strain."},
+    "Iteral Pacting": {"page": "Atlas 1020", "skill": "Pray", "combat": False, "mage_only": True, "source": "atlas", "single_level": True,
+                       "note": "Pick a patron portfolio. 1/day (+1 Strain) gain +4 hit, OR +1 a skill check, OR cast a related 1st-level spell with no slot. -1 to social checks."},
+    "Nagadi Hemomancy": {"page": "Atlas 1026", "skill": "Heal", "combat": False, "mage_only": True, "source": "atlas", "single_level": True,
+                         "note": "1/day after casting a helpful spell, take 1d4/spell-level damage so it doesn't count against your daily casts. +1 Strain."},
+    "Old Empire Sigilism": {"page": "Atlas 1032", "skill": None, "combat": False, "mage_only": True, "source": "atlas", "single_level": True,
+                            "note": "Embed a spell in a personal token (10 min/level + a slot, recoverable). Cast from it with no vocal/gesture, undisruptable. One token at a time."},
+    "Vothite Mind-Sorcery": {"page": "Atlas 1038", "skill": None, "combat": False, "mage_only": True, "source": "atlas", "single_level": True,
+                             "note": "Cast with no vocal/gesture (still a Main Action, still armor-limited & disruptable); spells untraceable to you. But you can't deal non-mental HP damage."},
+
+    # Non-Human Origin Foci (GM permission; usually taken as the free/any pick)
+    "Choeru Beastfolk": {"page": "Atlas 1056", "skill": "Convince/Connect", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                         "note": "Capybara-folk: +1 Cha mod, +1 to reaction rolls in your presence, learn languages in a week."},
+    "Ghoul": {"page": "Atlas 1066", "skill": "Sneak", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+              "note": "Ghoulish Vigor, +1 Str or Dex; must eat human flesh monthly or risk going feral."},
+    "!Man": {"page": "Atlas 1072", "skill": "Any Non-Magic", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+             "note": "Algorithmic human-simulacrum: 1/day +1 a skill check or +2 to hit; immune to mind-affecting magic."},
+    "Guer Beastfolk": {"page": "Atlas 1080", "skill": "Notice/Sneak", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                       "note": "Swamp fox-folk: +1 Wis or Cha mod, low-light vision, +10' move."},
+    "Accipiter Anak": {"page": "Atlas 1086", "skill": "Exert", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                       "note": "Winged Anak: Accipiter Flight, +1 Dex / -1 Con mod."},
+    "Harbinger Anak": {"page": "Atlas 1090", "skill": "Sneak/Convince", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                       "note": "Face-shifting Anak: Harbinger's Face, +1 Cha / -1 Con mod."},
+    "Aristoi Anak": {"page": "Atlas 1102", "skill": "Lead", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                     "note": "Bred ruler: gain Lead + any non-Magic skill, +1 Wis mod, use Wis as the attribute for any weapon."},
+    "Hua Beastfolk": {"page": "Atlas 1104", "skill": "Exert", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                      "note": "Bull-folk: +1 Str / -1 Dex mod, Str +4 for encumbrance, +2 max System Strain."},
+    "Kitsune Beastfolk": {"page": "Atlas 1114", "skill": "Notice/Convince", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                          "note": "Fox-folk: +1 Cha mod; gain the Elemental Sparks art (or another Elementalist art)."},
+    "Deepfolk": {"page": "Atlas 1122", "skill": None, "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                 "note": "Far-Deeps human: see in any light, half food/water/air, raise one physical attr to 14; sunlight harms you (Strain)."},
+    "Manu Beastfolk": {"page": "Atlas 1130", "skill": "Exert/Survive", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                       "note": "Lizardfolk: +1 Con or Str / -1 Dex or Cha mod, swim at full speed, hold breath 15 min, -1 Shock taken."},
+    "Nahu Beastfolk": {"page": "Atlas 1136", "skill": "Sneak/Notice", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                       "note": "Catfolk: +1 Dex or Cha mod, claws count as daggers, low-light vision; Mental save to pull a lethal blow."},
+    "Oni": {"page": "Atlas 1142", "skill": "Stab/Punch", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+            "note": "Oni: +1 Str mod (Str +4 for enc), -1 Wis mod, -2 on Mental saves."},
+    "Pichi Beastfolk": {"page": "Atlas 1148", "skill": "Notice", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                        "note": "Ratfolk: +1 Wis or Dex / -1 Str or Con mod, low-light vision, blindsense 10'."},
+    "Piren Beastfolk": {"page": "Atlas 1154", "skill": "Exert", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                        "note": "Wolfmen: 1/scene give a melee ally a bonus physical Main Action."},
+    "Still Cities Undead": {"page": "Atlas 1160", "skill": None, "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                            "note": "Intelligent undead: no eat/sleep/drink/breathe, immune to poison/disease, auto-stabilize; revives slowly; not 'undead' for Necromancy."},
+    "Sui Beastfolk": {"page": "Atlas 1166", "skill": "Survive", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                      "note": "Pigfolk: +1 Con mod, immune to mundane poison, 1/day act 1 round after hitting 0 HP."},
+    "Tanuki Beastfolk": {"page": "Atlas 1172", "skill": "Sneak", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                         "note": "Raccoon-dog folk: climb at full move; 1/day shapeshift (as Adopt the Simulacular Visage, no language)."},
+    "Tengu Beastfolk": {"page": "Atlas 1178", "skill": "Stab", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                        "note": "Crow-folk: fly 30' outdoors (no fighting/complex acts aloft; not for overland travel)."},
+    "Usagi Beastfolk": {"page": "Atlas 1184", "skill": "Exert/Sneak", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                        "note": "Rabbit-folk: +1 to all saves, +1 Dex / -1 Str or Con mod, 1/scene double move, 1/week auto Luck save."},
+    "Zakathi": {"page": "Atlas 1192", "skill": "Exert", "combat": None, "origin": True, "no_auto": True, "source": "atlas",
+                "note": "Laborer-folk: Con to 14 (18 if already 14+), +2 max Strain; must exert daily or gain Strain; powerful but short-lived."},
 }
 
 # ---------------------------------------------------------------------------
@@ -562,6 +766,7 @@ class Character(object):
         self.is_caster = False     # any spell-casting tradition present
         self.traditions = []       # list of {name, effort, arts:[...], spells:[...]}
         self.vowed_skill = None    # the order-skill a Vowed picked (drives Effort)
+        self.wise_skill = None     # the concept-skill a Wise picked (bonus skill)
         self.effort = None         # legacy single value (kept for old callers/tests)
         self.tradition = None      # legacy single label (kept for old callers/tests)
         self.spells = []           # legacy flat spell list (mirrors traditions' spells)
@@ -825,19 +1030,17 @@ def _is_partial(base):
 
 
 def _setup_traditions(ch, base, requested, random_choice):
-    """Resolve one tradition per mage-partial slot (or one for full Mage).
-    Grants each tradition's bonus skill and records its Effort/arts/spell plan."""
+    """Resolve one tradition per standard mage-partial slot (or one for full
+    Mage), then attach any Atlas art-set named by the combo.  Grants each
+    tradition's bonus skill and records its Effort/arts/spell plan."""
     n_slots = 1 if base == "mage" else base.count("partial-mage")
-    if n_slots == 0:
-        return
-    chosen = []
-    used = set()
+    names, used = [], set()
     for i in range(n_slots):
         want = requested[i] if i < len(requested) else None
         want = _match_tradition(want) if want else None
         if want is None:
             # full Mage and spellcasting partials must be casters; dual picks distinct
-            pool = CASTING_TRADITIONS if base == "mage" else list(TRADITIONS.keys())
+            pool = CASTING_TRADITIONS if base == "mage" else list(STD_TRADITIONS)
             pool = [t for t in pool if t not in used] or pool
             if base == "mage":
                 pool = [t for t in pool if not TRADITIONS[t].get("partial_only")]
@@ -845,24 +1048,35 @@ def _setup_traditions(ch, base, requested, random_choice):
         if base == "mage" and TRADITIONS[want].get("partial_only"):
             sys.exit("%s exists only as a partial Mage class; pick it on an Adventurer." % want)
         used.add(want)
-        chosen.append(want)
-    ch.is_caster = any(TRADITIONS[t]["caster"] for t in chosen)
-    for name in chosen:
-        T = TRADITIONS[name]
-        rec = {"name": name, "caster": T["caster"], "arts": list(T["auto_arts"]),
-               "spells": [], "effort": 0}
-        # bonus skill (Magic / Heal / order-skill)
-        bs = T["bonus_skill"]
-        if name == "Vowed":
-            bs = ch.vowed_skill or _pick_vowed_skill(ch)
-            ch.vowed_skill = bs
-        if bs:
-            g, l = ch.gain_skill(bs)
-            rec["bonus_skill"] = "%s-%d" % (g, l)
-            print("  %s bonus skill: %s-%d" % (name, g, l))
-        ch.traditions.append(rec)
+        names.append(want)
+    atlas = ch.cls.get("atlas")
+    if atlas:
+        names.append(atlas)
+    for name in names:
+        _attach_tradition(ch, name)
+    ch.is_caster = any(t["caster"] for t in ch.traditions)
     # legacy mirror
     ch.tradition = " + ".join(t["name"] for t in ch.traditions) or None
+
+
+def _attach_tradition(ch, name):
+    """Grant a tradition's bonus skill and append its record to the character."""
+    T = TRADITIONS[name]
+    rec = {"name": name, "caster": T["caster"], "arts": list(T["auto_arts"]),
+           "spells": [], "effort": 0}
+    bs = T["bonus_skill"]
+    if name == "Vowed":
+        bs = ch.vowed_skill or _pick_vowed_skill(ch)
+        ch.vowed_skill = bs
+    elif name == "Wise" and not bs:
+        bs = ch.wise_skill or "Pray"
+        ch.wise_skill = bs
+    if bs:
+        g, l = ch.gain_skill(bs)
+        rec["bonus_skill"] = "%s-%d" % (g, l)
+        print("  %s bonus skill: %s-%d" % (name, g, l))
+    ch.traditions.append(rec)
+    return rec
 
 
 def _pick_vowed_skill(ch):
@@ -894,6 +1108,8 @@ def step_foci(ch, requested=None, random_choice=False):
             nm = _auto_focus(ch, kind)
         else:
             nm = _match_focus(nm)
+            if not _focus_ok_for(ch, nm, kind) and not FOCI[nm].get("no_auto"):
+                print("  ⚠ %s is not normally available to this class/slot — taking it anyway per your request." % nm)
         _apply_focus(ch, nm, kind)
 
 
@@ -901,17 +1117,36 @@ def _focus_is_combat(f):
     return FOCI[f].get("combat") is True
 
 
+ARMOR_RESTRICTED_TRADS = {"High Mage", "Elementalist", "Necromancer", "Vowed"}
+
+
+def _is_mage_class(ch):
+    """True if the PC is a Mage or Partial Mage (incl. the Accursed)."""
+    k = ch.cls_key or ""
+    if k == "mage" or "partial-mage" in k:
+        return True
+    return any(t["name"] == "Accursed" for t in ch.traditions)
+
+
+def _has_warrior(ch):
+    return "warrior" in (ch.cls_key or "") or any(t["name"] == "Mageslayer" for t in ch.traditions)
+
+
 def _focus_ok_for(ch, name, kind):
     f = FOCI[name]
     if f.get("expert_only") and "expert" not in (ch.cls_key or ""):
         return False
-    if f.get("needs_neg_attr") and not any(attr_mod(ch.scores[a]) <= -1 for a in ATTRS):
+    if f.get("warrior_only") and not _has_warrior(ch):
         return False
-    if name in ("Developed Attribute", "Nullifier") and "mage" in (ch.cls_key or ""):
+    if f.get("mage_only") and not _is_mage_class(ch):
+        return False
+    if f.get("needs_neg_attr") and not any(ch.amod(a) <= -1 for a in ATTRS):
+        return False
+    if name in ("Developed Attribute", "Nullifier") and _is_mage_class(ch):
         return False  # both forbidden to Mages/Partial Mages
     if name == "Armored Magic":
-        # only Mages/Partial Mages whose arts/casting are hindered by armor (not Healers)
-        if not any(t["name"] != "Healer" for t in ch.traditions):
+        # only traditions whose casting/arts are actually hindered by armor
+        if not any(t["name"] in ARMOR_RESTRICTED_TRADS for t in ch.traditions):
             return False
     if kind == "warrior" and f.get("combat") is False:
         return False
@@ -922,6 +1157,8 @@ def _focus_ok_for(ch, name, kind):
 
 def _auto_focus(ch, kind):
     pool = [n for n in FOCI if _focus_ok_for(ch, n, kind)]
+    # never auto-pick origins / GM-permission catch-alls (they need GM sign-off)
+    pool = [n for n in pool if not FOCI[n].get("no_auto")] or pool
     # avoid duplicating an already-taken focus name at creation
     taken = {x["name"] for x in ch.foci}
     pool = [n for n in pool if n not in taken] or pool
@@ -962,7 +1199,7 @@ def _apply_focus(ch, name, kind):
         rec["innate_ac"] = innate
         ch.notes.append("Impervious Defense: innate AC %d (used if > worn armor)." % innate)
     ch.foci.append(rec)
-    line = "  Focus [%s]: %s (p.%d)" % (kind, name, f["page"])
+    line = "  Focus [%s]: %s (%s)" % (kind, name, _page(f["page"]))
     if rec.get("bonus_skill"):
         line += "  -> bonus skill %s" % rec["bonus_skill"]
     if rec.get("hp_bonus"):
@@ -1041,29 +1278,59 @@ def _finalize_traditions(ch, random_choice, chooser=None):
             lvl = ch.skills.get("Heal", 0)
             eff = lvl + better_ic
             formula = "Heal(%d) + better Int/Cha(%+d)" % (lvl, better_ic)
-        else:  # order (Vowed)
+        elif T["effort"] == "order":  # Vowed
             sk = ch.vowed_skill or "Exert"
             lvl = ch.skills.get(sk, 0)
             eff = lvl + best_any
             formula = "%s(%d) + best attr mod(%+d)" % (sk, lvl, best_any)
-        t["effort"] = max(1, eff)
+        elif T["effort"] == "accursed":
+            lvl = ch.skills.get("Magic", 0)
+            eff = lvl + better_ic
+            formula = "Magic(%d) + better Int/Cha(%+d)" % (lvl, better_ic)
+        elif T["effort"] == "bard":
+            lvl = ch.skills.get("Perform", 0)
+            eff = lvl + ch.amod("Cha")
+            formula = "Perform(%d) + Cha(%+d)" % (lvl, ch.amod("Cha"))
+        elif T["effort"] == "mageslayer":
+            lvl = ch.skills.get("Magic", 0)
+            best_ic = max(ch.amod("Int"), ch.amod("Con"))
+            eff = lvl + best_ic
+            formula = "Magic(%d) + best Int/Con(%+d)" % (lvl, best_ic)
+        else:  # "none" (Wise) — no Effort pool
+            eff, formula = None, None
+        t["effort"] = None if eff is None else max(1, eff)
         # Arts: auto-granted + the L1 picks for this tradition
         n_pick = T["l1_arts_full"] if not partial else T["l1_arts_partial"]
         options = [a for a in T["arts"] if a not in t["arts"]]
+        attack_opts = [a for a in T.get("attack_art", []) if a in options]
         if chooser and n_pick and options:
-            picks = chooser("%s — pick %d art(s)" % (t["name"], n_pick), options, n_pick)
+            picks = chooser("%s — pick %d art(s)%s" % (t["name"], n_pick,
+                            " (incl. Accursed Blade or Bolt)" if attack_opts else ""), options, n_pick)
             t["arts"] += picks
             t["art_pick_note"] = "+%d chosen" % len(picks)
         elif random_choice and n_pick and options:
-            picks = random.sample(options, min(n_pick, len(options)))
+            if attack_opts:  # Accursed must take Blade or Bolt as one pick
+                first = random.choice(attack_opts)
+                rest = random.sample([o for o in options if o != first], min(n_pick - 1, len(options) - 1))
+                picks = [first] + rest
+            else:
+                picks = random.sample(options, min(n_pick, len(options)))
             t["arts"] += picks
             t["art_pick_note"] = "+%d chosen" % len(picks)
+        elif n_pick:
+            t["art_pick_note"] = "choose %d more%s from: %s" % (
+                n_pick, " (incl. Accursed Blade or Bolt)" if attack_opts else "", ", ".join(options))
         else:
-            t["art_pick_note"] = "choose %d more from: %s" % (n_pick, ", ".join(options)) if n_pick else ""
-        print("  %s Effort = %s = %d" % (t["name"], formula, t["effort"]))
+            t["art_pick_note"] = ""
+        if T.get("fixed_progression"):
+            t["art_pick_note"] = "fixed progression — " + T["fixed_progression"]
+        if formula is None:
+            print("  %s — no Effort (Wise arts are always-on or limited-use)." % t["name"])
+        else:
+            print("  %s Effort = %s = %d" % (t["name"], formula, t["effort"]))
         if t["arts"]:
             print("    Arts: %s" % ", ".join(t["arts"]))
-        if t.get("art_pick_note") and not random_choice:
+        if t.get("art_pick_note") and (not random_choice or T.get("fixed_progression")):
             print("    (%s)" % t["art_pick_note"])
 
     # legacy mirror of the first pool
@@ -1230,17 +1497,18 @@ def render_summary(ch):
         if f.get("innate_ac"):
             extra.append("innate AC %d" % f["innate_ac"])
         tail = ("  [%s]" % ", ".join(extra)) if extra else ""
-        out.append("  - %s (L%d, p.%d)%s" % (f["name"], f["level"], f["page"], tail))
+        out.append("  - %s (L%d, %s)%s" % (f["name"], f["level"], _page(f["page"]), tail))
         out.append("      %s" % f["note"])
     if ch.traditions:
         out.append("")
         out.append("MAGIC")
         for t in ch.traditions:
             kind = "caster" if t["caster"] else "art-user"
-            out.append("  %s (%s) — Effort %d" % (t["name"], kind, t["effort"]))
+            eff = "no Effort" if t["effort"] is None else "Effort %d" % t["effort"]
+            out.append("  %s (%s) — %s" % (t["name"], kind, eff))
             if t["arts"]:
                 out.append("    Arts: %s" % ", ".join(t["arts"]))
-            if t.get("art_pick_note") and "choose" in t["art_pick_note"]:
+            if t.get("art_pick_note") and ("choose" in t["art_pick_note"] or "fixed" in t["art_pick_note"]):
                 out.append("    (%s)" % t["art_pick_note"])
         if ch.spells:
             out.append("  Spells (1st circle): %s" % ", ".join(ch.spells))
@@ -1319,16 +1587,17 @@ def render_sheet(ch):
         if f.get("innate_ac"):
             bits.append("innate AC %d" % f["innate_ac"])
         tail = ("  — %s" % ", ".join(bits)) if bits else ""
-        L.append("- **%s** (L%d, p.%d)%s — %s" % (f["name"], f["level"], f["page"], tail, f["note"]))
+        L.append("- **%s** (L%d, %s)%s — %s" % (f["name"], f["level"], _page(f["page"]), tail, f["note"]))
     L.append("")
     if ch.traditions:
         L.append("## Magic")
         for t in ch.traditions:
             kind = "caster" if t["caster"] else "art-user"
-            L.append("- **%s** (%s) — **Effort %d**" % (t["name"], kind, t["effort"]))
+            eff = "no Effort" if t["effort"] is None else "Effort %d" % t["effort"]
+            L.append("- **%s** (%s) — **%s**" % (t["name"], kind, eff))
             if t["arts"]:
                 L.append("  - Arts: %s" % ", ".join(t["arts"]))
-            if t.get("art_pick_note") and "choose" in t["art_pick_note"]:
+            if t.get("art_pick_note") and ("choose" in t["art_pick_note"] or "fixed" in t["art_pick_note"]):
                 L.append("  - _%s_" % t["art_pick_note"])
         if ch.spells:
             L.append("- **Spells (1st circle):** %s" % ", ".join(ch.spells))
@@ -1419,17 +1688,20 @@ def _in(prompt, default=""):
     return s or default
 
 
-def _choose(label, options, allow_blank_random=True, n=1):
-    """Prompt for one or n options from a numbered list; blank = random pick(s)."""
+def _choose(label, options, allow_blank_random=True, n=1, no_random=None):
+    """Prompt for one or n options from a numbered list; blank = random pick(s).
+    Options in `no_random` are listed but never chosen by the blank-random path."""
+    no_random = no_random or set()
     print("  %s:" % label)
     for i, o in enumerate(options, 1):
-        print("    %2d) %s" % (i, o))
+        print("    %2d) %s%s" % (i, o, "  (GM permission)" if o in no_random else ""))
     picks = []
     while len(picks) < n:
         hint = " (blank = random)" if allow_blank_random else ""
         s = _in("  choose %s%s: " % ("#%d" % (len(picks) + 1) if n > 1 else "one", hint))
         if not s and allow_blank_random:
-            rest = [o for o in options if o not in picks] or options
+            rest = [o for o in options if o not in picks and o not in no_random] or \
+                   [o for o in options if o not in picks] or options
             picks.append(random.choice(rest))
             print("    -> %s (random)" % picks[-1])
             continue
@@ -1523,6 +1795,9 @@ def run_interactive(args):
     if "vowed" in spec.lower() or any(t == "Vowed" for t in named):
         vs = _in("Vowed order-skill (Exert/Know/Pray/Magic...) [Exert]: ", "Exert")
         ch.vowed_skill = _match_one(vs, NONCOMBAT_SKILLS, "skill")
+    if "wise" in spec.lower():
+        ws = _in("Wise concept-skill (Pray/Know/Magic/Survive...) [Pray]: ", "Pray")
+        ch.wise_skill = _match_one(ws, NONCOMBAT_SKILLS, "skill")
     # let the player name any unfilled traditions
     n_slots = 1 if base == "mage" else base.count("partial-mage")
     trads = list(named)
@@ -1548,7 +1823,8 @@ def run_interactive(args):
     for kind in slots:
         pool = sorted(n for n in FOCI if _focus_ok_for(ch, n, kind)
                       and n not in {x["name"] for x in ch.foci})
-        nm = _choose("Focus [%s slot]" % kind, pool, allow_blank_random=True)
+        no_rand = {n for n in pool if FOCI[n].get("no_auto")}
+        nm = _choose("Focus [%s slot]" % kind, pool, allow_blank_random=True, no_random=no_rand)
         _apply_focus(ch, nm, kind)
 
     # --- STEP 5: FINAL ------------------------------------------------------
@@ -1605,6 +1881,7 @@ def main():
                     help="name a mage tradition (repeatable, per mage slot): "
                          "High Mage|Elementalist|Necromancer|Healer|Vowed")
     ap.add_argument("--vowed-skill", help="the Vowed order-skill (drives Effort), e.g. Exert/Know/Pray")
+    ap.add_argument("--wise-skill", help="the Wise concept bonus-skill, e.g. Pray/Know/Survive")
     ap.add_argument("--interactive", "--step", action="store_true", dest="interactive",
                     help="walk through creation step by step, player-in-the-loop")
     args = ap.parse_args()
@@ -1633,6 +1910,8 @@ def main():
     ch.level = max(1, args.level)
     if args.vowed_skill:
         ch.vowed_skill = _match_one(args.vowed_skill, NONCOMBAT_SKILLS, "skill")
+    if args.wise_skill:
+        ch.wise_skill = _match_one(args.wise_skill, NONCOMBAT_SKILLS, "skill")
 
     # class first so attribute-14 and foci choices can be class-aware
     step_class(ch, key=args.cls, random_choice=args.random, traditions=args.tradition)

@@ -224,12 +224,23 @@ Used from campaign start for larger-than-life heroes. All Heroic PCs also get **
 - **Heroic Mage** — three partial casters, or one full + one partial (all spellcasting); uses the Heroic Mage spell table; **Heroic Mage's Fray** (1/round, 1d4 + ½ level to any target within 60 ft).
 - **Heroic Adventurer** — one full + one partial, or three partials; free bonus Focus; picks one Fray ability matching a class it has.
 
-### Atlas optional classes (ch. 4) — summaries (pull full text from the book)
+### Atlas optional classes (ch. 4)
 
-- **The Accursed** — partial-Mage class pacted with an Outsider; wields **Accursed Blade/Bolt** arts (attack with Magic) plus dark Effort-fueled arts. *(book p. 411)*
-- **The Bard** — non-magical performance class whose arts hearten allies and dismay foes by tapping the Legacy's archetypes. *(book p. 532)*
-- **The Mageslayer** — combatant specialized in resisting hostile magic and butchering enemy spellcasters; taken as Partial Warrior/Mageslayer or Partial Expert/Mageslayer. *(book p. 644)*
-- **The Wise** — low/no-magic scholar-priest-witch with limited tricks (General, Divination, Curse & Blessing arts) for settings without full magic. *(book p. 737)*
+All four are **partial classes** taken by an Adventurer alongside a second partial. Their arts are **non-magical / pact-based and work in armor** (except where noted), and don't count as magic for dispel/detect. `chargen.py` builds them all — e.g. `--class "partial-warrior/accursed"`, `"partial-expert/bard"`, `"necromancer/accursed"`, `"partial-warrior/mageslayer"`, `"partial-expert/wise"`.
+
+**The Accursed** — pacted with an Outsider; a **partial Mage** class. Gains **Magic-0**. **Effort = Magic + better Int/Cha** (min 1). At L1 take **Accursed Blade or Accursed Bolt + one more art**. *Foci like Armsmaster/Deadeye read "Magic" for the Blade/Bolt.* HD/attack: Warrior pairing 1d6+2 / partial-warrior AB; Expert 1d6 / Pe-Pm AB; Mage 1d6−1 / Mage AB.
+- **Blade** (On Turn): 1d8 one-hand or 2d6 two-hand, + Magic to damage, Shock 2/15, attack with Magic + best of Str/Dex/Int/Cha. **Bolt**: as Blade but 200' ranged (1d8 + Magic).
+- Arts: Bewitching Distraction · Compelling Shriek · Devil's Bargain · Dire Pact · Lying Face · Night-Black Eyes · Pacted Protection · Rob Vitality · Scourging Curse · Shadowed Steps · Snaring Speech · Sorcerous Battery · Soul Consumption · Tendrils of Night · Unseen Steps · Weight of Sin · Weeping Wounds.
+
+**The Bard** — Legacy-charged performer; a **partial Expert** variant (no Quick Learner / bonus Expert focus from the Bard side). Gains **Perform-0**. **Effort = Perform + Cha** (min 1). Auto **A Thousand Tongues** + 1 art. HD/attack: Warrior 1d6+2 / partial-warrior AB; Expert or Mage 1d6 / Pe-Pm AB.
+- Arts: Battle Cry · Cursed Tune · Deft Fingers · Entangle Incantation · Evoke Emotion · Inspire Dread · Keen Senses · Liberating Song · Rally · Soothe the Savage · Soothing Graces · Swift Misdirection.
+
+**The Mageslayer** — mage-killer; a **partial Warrior** variant (no +2 HP/die or bonus combat focus from the Mageslayer side; **no Mage pairing allowed**). Gains **Magic-0**. **Effort = Magic + best of Int/Con** (min 1). **Fixed art progression:** Antimage + Magebane (L1), Witchfinder + Spellshield (L2), Disrupt Sorcery (L3), Know Your Prey (L4), Share the Pain (L5), Dispel Enchantment (L6), Ward Ally (L7), Immaculate Body (L8), Immaculate Mind (L9), Absolute Negation (L10). HD/attack: Partial Warrior/Mageslayer 1d6+2 / **full-Warrior AB**; Partial Expert/Mageslayer 1d6 / partial-warrior AB.
+
+**The Wise** — low/no-magic priest, witch, or seer; a **partial Expert** variant (no Quick Learner / bonus Expert focus from the Wise side). Gains a **concept skill** (Pray/Know/Survive…). **No Effort** — arts are always-on or limited-use. Picks arts by concept from three lists. HD/attack as a partial Expert.
+- **General:** Dread Awe · Elite Ties · Erudite · Folk-Friend · Healer · Holy Sanctity · Personal Impunity · Skilled.
+- **Divination:** Compel Truth · Deliver Oracle · Find Object · Read Omens.
+- **Curses & Blessings:** Auspicious Undertaking · Evil Eye · Ill Fate · Luck Blessing · War Curse.
 
 ---
 
@@ -275,13 +286,55 @@ Every Focus has two levels (take it once for L1, again for L2). Many grant a **b
 | **Whirlwind Assault** | — | Gain Stab. 1/scene, On Turn, apply your Shock to all foes in melee range susceptible to it. | First time you kill someone in a round with a normal attack, instantly gain a second attack. |
 | **Xenoblooded** | GM permission | Pick one alien-heritage benefit (heat/smoke immunity; water-adaptation; gravity attribute shift; or no food/sleep/air + see in the dark). | *(single heritage benefit — no L2)* |
 
-### Optional / setting Foci (Atlas, ch. 4 — pointers)
+### Atlas optional & setting Foci (ch. 4)
 
-- **Mundane Alchemist** (Experts only) — grants the Alchemy skill + formulae for lesser/greater alchemical works. *(p. 248)*
-- **Maqqatban Knight styles** — Ghost Archer, All Directions Edge, One Point Strike, Pyre of Heaven, Catalytic Soul, Wrathful Mountain, Righteous Iron, World Tree Lance. *(p. 838+)*
-- **Amundi Godblood Foci** — Master Tracker, Night Walker, Danger Sense, Pack Beast, Folie à Deux, Provident Crafter, Wildtongue, Walk Like Wind. *(p. 920+)*
-- **Arcane Secret Foci** — Atlantean Divination, Iteral Pacting, Nagadi Hemomancy, Old Empire Sigilism, Vothite Mind-Sorcery. *(p. 1008+)*
-- **Non-Human Origin Foci** — Beastfolk (Choeru/Guer/Hua/Kitsune/Manu/Nahu/Pichi/Piren/Sui/Tanuki/Tengu/Usagi), Ghoul, !Man, Anak (Accipiter/Harbinger/Aristoi), Deepfolk, Oni, Still Cities Undead, Zakathi. *(p. 1052+)*
+All selectable in `chargen.py` and via `lookup.py focus <name>`. Each `Level 1 // Level 2`.
+
+**Mundane Alchemy** *(Experts/Partial Experts only)*
+
+| Focus | Level 1 // Level 2 |
+|---|---|
+| **Mundane Alchemist** | Gain Alchemy-0 (only this Focus raises Alchemy); all lesser-work formulae; jury-rig a lesser lab. // All greater-work formulae; a week of lab work yields level×25 sp of components. |
+
+**Maqqatban Knight styles** *(Warriors/Partial Warriors only; only ONE style ever)*
+
+| Style | Level 1 // Level 2 |
+|---|---|
+| **Ghost Archer** | Gain Shoot; manifest spirit-copies of bows you've fired (no enc, self-ammo, fire in melee); −4 with non-bows. // 1/scene teleport to where your arrow lands (+1 Strain). |
+| **All Directions Edge** | Hit die −2/level. Gain a combat skill; On Turn extra non-grappling attack 1/round (extra/day cost 1 Strain). // 1/day attack every enemy in range. |
+| **One Point Strike** | Gain a combat skill; attacks use better of Int/Wis; Main Action auto-15-to-hit but minimum damage. // 1/scene maximize a melee hit (Instant). |
+| **Pyre of Heaven** | Gain a combat skill; ignore first 5 fire/heat dmg; ignite weapon for +level+2 dmg & Shock (1 Strain, once/foe/scene). // Fire/smoke immunity; full-body ignite; first ignite/scene burns melee foes 1d6 per 3 levels. |
+| **Catalytic Soul** | Gain Shoot; ranged attacks pass through allies; route a melee ally's Shock onto your target (no-Shock ranged only). // Boosted hit can heal you or the ally 2d6+target level (1 Strain). |
+| **Wrathful Mountain** | Gain Stab/Punch; manifest a 0-enc magic large shield; 1/round Instant retaliation vs meleers of a Screened ally. // Retaliate vs ranged attackers too; 1 Strain to hit all attackers of your ward. |
+| **Righteous Iron** | Gain Exert; worn armor +1 AC, no enc, no Sneak/Exert penalty, sleep in it; free 750sp armor at L1. // Armored: no need to eat/drink/sleep/breathe, climate-immune; AC bonus +2. Heavy armor only. |
+| **World Tree Lance** | Gain Stab; spear 0 enc, returns when thrown, +1 hit/dmg & magic. // Reach 10'+level; allies don't block. Spears/polearms only. |
+
+**Amundi Godblood Foci** *(Experts only; only ONE; the +1 modifier caps at +2)*
+
+| Focus | Level 1 // Level 2 |
+|---|---|
+| **Master Tracker** | Gain Survive; follow any trail (1 day city / 1 week wild), read numbers & condition. // +1 Wis; ID people by tracks; reconstruct a recent scene. |
+| **Night Walker** | Gain Sneak; see in all but pitch black; sleep as wakefulness. // +1 Dex; invisible in dim light until you act. |
+| **Danger Sense** | Gain Notice; sense Execution Attacks; 1/day avert a trap/ambush. // +1 Wis; 1/day intuit the best escape from peril. |
+| **Pack Beast** | Gain Exert; Str counts as 18 (22 if already 18) for encumbrance. // +1 Str; 1/scene carry up to 1000 lb briefly. |
+| **Folie à Deux** | Gain Convince; lies read as sincere to magic; 1/day be believed sincere. // +1 Cha; 1/day a bald-faced lie forces a Mental save (−Convince). |
+| **Provident Crafter** | Gain Craft; Str +4 for enc; needed items count as Readied. // +1 Dex; 1/day "happen to have" a Stowed item (pay cost). |
+| **Wildtongue** | Gain Survive; talk with animals (minor favors). // +1 Cha; 1/day command an animal for a scene. |
+| **Walk Like Wind** | Gain Exert; +10' move; move on vertical surfaces. // +1 Dex; leap 20'/10'; 1/scene bonus Move. |
+
+**Arcane Secret Foci** *(Mages/Partial Mages only; only ONE; single level)*
+
+| Focus | Effect |
+|---|---|
+| **Atlantean Divination** | Gain Know; 1/day ritual asks a one-sentence question about the next week (Int/Know vs 9; +1 Strain). |
+| **Iteral Pacting** | Gain Pray; pick a patron portfolio; 1/day (+1 Strain) +4 hit, or +1 skill, or cast a related 1st-level spell w/o a slot; −1 social. |
+| **Nagadi Hemomancy** | Gain Heal; 1/day after a helpful spell, take 1d4/spell-level so it doesn't count against daily casts (+1 Strain). |
+| **Old Empire Sigilism** | Embed a spell in a personal token (10 min/level + a slot); cast w/o vocal/gesture, undisruptable; one token at a time. |
+| **Vothite Mind-Sorcery** | Cast w/o vocal/gesture (still Main Action/armor-limited); spells untraceable to you — but you can't deal non-mental HP damage. |
+
+**Non-Human Origin Foci** *(GM permission; usually the free/any pick; modifiers cap at ±2 — the GM applies them)*
+
+Choeru Beastfolk (capybara: Convince/Connect, +1 Cha, +reaction) · Ghoul (Sneak, +1 Str/Dex, must eat flesh) · !Man (algorithmic: any skill, mind-immune) · Guer Beastfolk (fox: Notice/Sneak, +1 Wis/Cha, +10' move) · Accipiter Anak (winged: Flight, +1 Dex/−1 Con) · Harbinger Anak (face-shift: +1 Cha/−1 Con) · Aristoi Anak (ruler: Lead+skill, +1 Wis, Wis for any weapon) · Hua Beastfolk (bull: +1 Str/−1 Dex, +Strain) · Kitsune Beastfolk (fox: +1 Cha, Elemental Sparks) · Deepfolk (dark-vision, ½ needs, raise a physical to 14; sun harms) · Manu Beastfolk (lizard: swim, breath-hold, −1 Shock) · Nahu Beastfolk (cat: claws=daggers, low-light) · Oni (+1 Str/−1 Wis, −2 Mental saves) · Pichi Beastfolk (rat: blindsense 10') · Piren Beastfolk (wolf: grant an ally a bonus Main) · Still Cities Undead (no needs, auto-stabilize, immune poison/disease) · Sui Beastfolk (pig: poison-immune, act 1 round at 0 HP) · Tanuki Beastfolk (climb, 1/day shapeshift) · Tengu Beastfolk (crow: fly outdoors) · Usagi Beastfolk (rabbit: +1 all saves, double move) · Zakathi (Con→14/18, +Strain, must labor).
 
 ---
 
