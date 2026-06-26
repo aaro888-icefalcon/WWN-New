@@ -13,11 +13,11 @@
 - **Open canon answers (Fate Questions made true):** none yet. *(Open signs: how King Urcrin died; why the rift opened on a Working of Old Vael; which diaspora faction is the more ruthless kingmaker.)*
 
 ## Party & PCs
-- **Abhishek "Shake" Rao** — Adventurer (Partial Warrior / Partial Healer) L1 · Physician · **HP 6/6 · AC 14 · Strain 0/11 · Effort 2/2** · Heal-1, Stab-1 · Foci: One Point Strike Style (attacks use Int), Artisan · Arts: Healing Touch, Vital Furnace · *Frail at 6 HP.* **Full sheet: `character-sheet.md`.**
-- **Shared:** short sword · buff coat + buckler · physician's kit · traveling gear · ~25 sp · a few New York relics (penlight, dead phone, badge). **Start:** Shire of **Monze**, by the rift outside **Aurholt**.
+- **Abhishek "Shake" Rao** — Adventurer (Partial Warrior / Partial Healer) L1 · Physician · Int **18** (+2) · **HP 6/6 · AC 14 · Strain 0/11 · Effort 3/3** · Heal-1, Stab-1, Craft-0 · Foci: One Point Strike Style (attacks use Int +2), Artisan · Arts: Healing Touch, Vital Furnace · longsword **d20+4 / 1d8+3 / Shock 2-AC13** · *Frail at 6 HP.* **Full sheet: `character-sheet.md`.**
+- **Shared:** long sword · buff coat + buckler · throwing blades ×5 · physician's kit · traveling gear · ~25 sp · a few New York relics (penlight, dead phone, badge). **Start:** Shire of **Monze**, by the rift outside **Aurholt**.
 
 ## Effort & Strain  (per caster / PC)
-- **Shake:** Effort 2/2 (none committed) · System Strain 0/11. *(Scene-Effort returns at scene end; day-Effort at dawn.)*
+- **Shake:** Effort 3/3 (none committed) · System Strain 0/11. *(Scene-Effort returns at scene end; day-Effort at dawn.)*
 
 ## Faction board  (summary; full board: `factions.md`)
 - **The Dragon Throne** (Boy-King Phillipe) — F5 C2 W2 · HP 13/13 · *Free and Crown Phillipe* 0/8 · partly backed by the Arrival.
