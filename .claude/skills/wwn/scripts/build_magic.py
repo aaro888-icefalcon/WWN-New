@@ -55,6 +55,15 @@ GYRE = "book/Worlds Without Number Deluxe/11 - Arts of the Gyre.md"
 LEGATES = "book/Worlds Without Number Deluxe/13 - Legates.md"
 ATLAS04 = "book/The Atlas of the Latter Earth/04 - Optional Rules and Classes.md"
 
+# Gyre (ch.11) + Atlas (ch.04) class arts live in a sibling module so this file
+# stays readable. They become spells.json records exactly like the four book
+# traditions' arts below.
+sys.path.insert(0, HERE)
+from _arts_gyre_atlas import (  # noqa: E402
+    SKINSHIFTER_ARTS, KISTIAN_ARTS, BEASTMASTER_ARTS, BLOODPRIEST_ARTS,
+    THOUGHTNOBLE_ARTS, ACCURSED_ARTS, BARD_ARTS, MAGESLAYER_ARTS, WISE_ARTS,
+)
+
 
 def _pg(chapter, line):
     return f"{chapter}#L{line}"
@@ -518,7 +527,27 @@ TRADITIONS = [
     ("Healer", HEALER_ARTS, None),
     ("Necromancer", NECROMANCER_ARTS, NECROMANCER_SPELLS),
     ("Vowed", VOWED_ARTS, None),
+    # Arts of the Gyre (ch.11) — five arts-classes (Adunic Invoker has no arts
+    # of its own; it is a spell-point High Magic caster).
+    ("Darian Skinshifter", SKINSHIFTER_ARTS, None),
+    ("Kistian Duelist", KISTIAN_ARTS, None),
+    ("Llaigisan Beastmaster", BEASTMASTER_ARTS, None),
+    ("Sarulite Blood Priest", BLOODPRIEST_ARTS, None),
+    ("Vothite Thought Noble", THOUGHTNOBLE_ARTS, None),
+    # Atlas ch.04 — four new partial classes.
+    ("Accursed", ACCURSED_ARTS, None),
+    ("Bard", BARD_ARTS, None),
+    ("Mageslayer", MAGESLAYER_ARTS, None),
+    ("Wise", WISE_ARTS, None),
 ]
+
+# Which book chapter each tradition's art page-pointers index.
+TRAD_CHAPTER = {
+    "Elementalist": MAGIC, "Healer": MAGIC, "Necromancer": MAGIC, "Vowed": MAGIC,
+    "Darian Skinshifter": GYRE, "Kistian Duelist": GYRE, "Llaigisan Beastmaster": GYRE,
+    "Sarulite Blood Priest": GYRE, "Vothite Thought Noble": GYRE,
+    "Accursed": ATLAS04, "Bard": ATLAS04, "Mageslayer": ATLAS04, "Wise": ATLAS04,
+}
 
 
 # ===========================================================================
@@ -689,8 +718,13 @@ def build_spells():
         }
     # Tradition arts + New Magic spells
     for trad, arts, spells in TRADITIONS:
+        chap = TRAD_CHAPTER.get(trad, MAGIC)
         for name, d in arts.items():
-            records[name] = {
+            # Collision-safe: an art name shared across traditions (e.g.
+            # "A Thousand Tongues" in Bard and Blood Priest) keeps the first and
+            # suffixes the later with its tradition, so neither is clobbered.
+            key = name if name not in records else "%s (%s)" % (name, trad)
+            records[key] = {
                 "circle": 0,
                 "type": f"{trad} Art",
                 "effort": d["effort"],
@@ -698,7 +732,7 @@ def build_spells():
                 "effect": d["effect"],
                 "dice": d["dice"],
                 "duration": "—",
-                "page": _pg(MAGIC, d["line"]),
+                "page": _pg(chap, d["line"]),
             }
         if spells:
             for name, d in spells.items():

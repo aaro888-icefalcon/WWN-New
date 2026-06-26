@@ -1,0 +1,332 @@
+{
+  "id": "wwn.traditions",
+  "kind": "lookup",
+  "category": "tradition",
+  "key": "name",
+  "_doc": "Mage traditions & magic-using partial classes for chargen.py. One record per tradition. 'kind' = spells|spellpoints|arts. 'full_or_partial' = which class chassis may take it (full=Mage only; partial=partial-mage slot only; both=either). 'effort_skill' = the skill whose level feeds Effort (or 'order' for the Vowed, who pick their order's skill). 'effort_attrs' = the attribute pair whose better mod is added, or 'best' for the best of all six. 'spell_lists' = spells.json 'type' values this tradition draws spells from. 'free_arts'/'art_list' = spells.json art 'type' values (arts encoded) OR [] with an arts_pointer when not yet encoded. 'chosen_arts_L1' = arts the player picks at L1 beyond free_arts. 'known_spells_full'/'known_spells_partial' = starting prepared/known spell count by chassis.",
+  "records": {
+    "High Mage": {
+      "kind": "spells",
+      "full_or_partial": "both",
+      "effort_skill": "Magic",
+      "effort_attrs": [
+        "Int",
+        "Cha"
+      ],
+      "spell_lists": [
+        "High Magic"
+      ],
+      "free_arts": [],
+      "art_list": [],
+      "arts_pointer": null,
+      "chosen_arts_L1": 0,
+      "known_spells_full": 4,
+      "known_spells_partial": 2,
+      "notes": "Orthodox wizard; +2 new High Magic spells each level. No casting in armor without Armored Magic.",
+      "page": "book/Worlds-Without-Number-Deluxe/05-Magic.md"
+    },
+    "Elementalist": {
+      "kind": "spells",
+      "full_or_partial": "both",
+      "effort_skill": "Magic",
+      "effort_attrs": [
+        "Int",
+        "Cha"
+      ],
+      "spell_lists": [
+        "High Magic",
+        "Elementalist"
+      ],
+      "free_arts": [
+        "Elemental Resilience",
+        "Elemental Sparks"
+      ],
+      "art_list": [
+        "Elementalist Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 1,
+      "known_spells_full": 4,
+      "known_spells_partial": 2,
+      "notes": "Earth/fire/wind/water specialist; only this class learns Elementalist New Magic. Free arts: Elemental Resilience + Elemental Sparks + 1 chosen.",
+      "page": "book/Worlds-Without-Number-Deluxe/05-Magic.md"
+    },
+    "Necromancer": {
+      "kind": "spells",
+      "full_or_partial": "both",
+      "effort_skill": "Magic",
+      "effort_attrs": [
+        "Int",
+        "Cha"
+      ],
+      "spell_lists": [
+        "High Magic",
+        "Necromancer"
+      ],
+      "free_arts": [],
+      "art_list": [
+        "Necromancer Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 1,
+      "known_spells_full": 4,
+      "known_spells_partial": 2,
+      "notes": "Death/undeath; widely outlawed and feared (a social hazard, not a stat). 1 chosen art at L1.",
+      "page": "book/Worlds-Without-Number-Deluxe/05-Magic.md"
+    },
+    "Adunic Invoker": {
+      "kind": "spellpoints",
+      "full_or_partial": "both",
+      "effort_skill": "Magic",
+      "effort_attrs": [
+        "Int"
+      ],
+      "spell_lists": [
+        "High Magic"
+      ],
+      "free_arts": [],
+      "art_list": [],
+      "arts_pointer": null,
+      "chosen_arts_L1": 0,
+      "known_spells_full": 4,
+      "known_spells_partial": 2,
+      "notes": "Spell-point caster (repeats minor spells, no top-end arts). Spell points = 1 + Int mod (scaling); prepare 2 + Int (full) / 1 + Int (partial). Cannot mix with any other spellcasting partial. Gains a tradition's arts only via the Traditional Education focus.",
+      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md"
+    },
+    "Healer": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "Heal",
+      "effort_attrs": [
+        "Int",
+        "Cha"
+      ],
+      "spell_lists": [],
+      "free_arts": [
+        "Healing Touch"
+      ],
+      "art_list": [
+        "Healer Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 1,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Works in armor. Heal 2d6+Heal as Main Action (+1 Strain). Limb-restore/revive need L8+. Free: Healing Touch + 1 chosen.",
+      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md"
+    },
+    "Vowed": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "order",
+      "effort_attrs": "best",
+      "spell_lists": [],
+      "free_arts": [
+        "Martial Style",
+        "Unarmed Might",
+        "Unarmored Defense"
+      ],
+      "art_list": [
+        "Vowed Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 1,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Monastic; works in armor (but Unarmored Defense wants none). Effort uses the order's chosen skill + best attribute mod (min 1). Free: Martial Style + Unarmed Might + Unarmored Defense + 1 chosen.",
+      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md"
+    },
+    "Darian Skinshifter": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "Survive",
+      "effort_attrs": [
+        "Con",
+        "Cha"
+      ],
+      "spell_lists": [],
+      "free_arts": [
+        "Change Form"
+      ],
+      "art_list": [
+        "Darian Skinshifter Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 1,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Gyre; works in armor. Masters 1 alt form/level; <=3 arts per form. Free: Change Form + 1 chosen. Arts not yet encoded in spells.json - see 11-Arts-of-the-Gyre.md.",
+      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md"
+    },
+    "Kistian Duelist": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "Stab",
+      "effort_attrs": [
+        "Dex",
+        "Int"
+      ],
+      "spell_lists": [],
+      "free_arts": [
+        "Favored Weapon"
+      ],
+      "art_list": [
+        "Kistian Duelist Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 1,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Gyre; no arts in medium/heavy armor or with a large shield. Pw/Duelist uses 1d6 HD (Flaw of Fragility). Free: Favored Weapon + 1 chosen. Arts not yet encoded - see 11-Arts-of-the-Gyre.md.",
+      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md"
+    },
+    "Llaigisan Beastmaster": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "Survive",
+      "effort_attrs": [
+        "Wis",
+        "Cha"
+      ],
+      "spell_lists": [],
+      "free_arts": [
+        "Bind Companion"
+      ],
+      "art_list": [
+        "Llaigisan Beastmaster Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 1,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Gyre; works in armor. One animal companion HD <= level+1; arts buff the bond. Free: Bind Companion + 1 chosen. Arts not yet encoded - see 11-Arts-of-the-Gyre.md.",
+      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md"
+    },
+    "Sarulite Blood Priest": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "Pray",
+      "effort_attrs": [
+        "Wis",
+        "Cha"
+      ],
+      "spell_lists": [],
+      "free_arts": [],
+      "art_list": [
+        "Sarulite Blood Priest Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 2,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Gyre fighting-cleric; miracles need no gestures or free hand, only a prayer; works in armor. Picks 2 miracles at L1. Arts not yet encoded - see 11-Arts-of-the-Gyre.md.",
+      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md"
+    },
+    "Vothite Thought Noble": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "Notice",
+      "effort_attrs": [
+        "Int",
+        "Wis"
+      ],
+      "spell_lists": [],
+      "free_arts": [
+        "Open Mind"
+      ],
+      "art_list": [
+        "Vothite Thought Noble Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 1,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Gyre psychic; works in armor; gains a new art every level L1-10. Free: Open Mind + 1 chosen. Arts not yet encoded - see 11-Arts-of-the-Gyre.md.",
+      "page": "book/Worlds-Without-Number-Deluxe/11-Arts-of-the-Gyre.md"
+    },
+    "Accursed": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "Magic",
+      "effort_attrs": [
+        "Int",
+        "Cha"
+      ],
+      "spell_lists": [],
+      "free_arts": [],
+      "art_list": [
+        "Accursed Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 2,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Atlas partial Mage. Gain Magic-0. Effort = Magic + better Int/Cha (min 1). Accursed arts work in/out of armor. Take Accursed Blade OR Accursed Bolt plus one more chosen at L1. Arts in Atlas ch04.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L473"
+    },
+    "Bard": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "Perform",
+      "effort_attrs": [
+        "Cha"
+      ],
+      "spell_lists": [],
+      "free_arts": [
+        "A Thousand Tongues"
+      ],
+      "art_list": [
+        "Bard Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 1,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Atlas partial Expert. Gain Perform-0. Effort = Perform + Cha mod (min 1). Bard arts are not magical and work in armor. Free: A Thousand Tongues + 1 chosen. Arts in Atlas ch04.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L596"
+    },
+    "Mageslayer": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "Magic",
+      "effort_attrs": [
+        "Int",
+        "Con"
+      ],
+      "spell_lists": [],
+      "free_arts": [
+        "Antimage",
+        "Magebane"
+      ],
+      "art_list": [
+        "Mageslayer Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 0,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Atlas partial Warrior. Gain Magic-0. Effort = Magic + better Int/Con (min 1). Arts work in/out of armor, no free hands or incantations. Fixed progression: Antimage + Magebane at L1. No Mage class may pair with it. Arts in Atlas ch04.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L693"
+    },
+    "Wise": {
+      "kind": "arts",
+      "full_or_partial": "partial",
+      "effort_skill": "none",
+      "effort_attrs": [
+        "Wis",
+        "Cha"
+      ],
+      "spell_lists": [],
+      "free_arts": [],
+      "art_list": [
+        "Wise Art"
+      ],
+      "arts_pointer": null,
+      "chosen_arts_L1": 1,
+      "known_spells_full": 0,
+      "known_spells_partial": 0,
+      "notes": "Atlas partial Expert for low/no-magic games. Gain a bonus skill-0 fitting the concept (Pray/Know/Magic/Survive). The Wise DO NOT use Effort; arts are constant or used a set number of times/day. Pick a starting General/Divination art + Curses & Blessings per concept. Arts in Atlas ch04.",
+      "page": "book/The-Atlas-of-the-Latter-Earth/04-Optional-Rules-and-Classes.md#L774"
+    }
+  }
+}

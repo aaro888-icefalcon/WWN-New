@@ -1,0 +1,174 @@
+{
+  "id": "wwn.geography_construction",
+  "title": "Geography Construction",
+  "source": "WWN Deluxe — Creating Your Campaign · Geography Construction (pp.124-127) & Placing Ruins and Points of Interest (p.150)",
+  "kind": "bundle",
+  "tables": {
+    "Significant Terrain Features": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        { "min": 1,  "max": 1,  "value": "Ancient farmland — a huge stretch of land re-engineered for optimal farming" },
+        { "min": 2,  "max": 2,  "value": "Arratu wasteland — once xenoformed by the Outsiders into an environment hostile to humanity, or inhabited by dangerous alien lifeforms" },
+        { "min": 3,  "max": 3,  "value": "Blasted lands — radioactive or scorched over by ancient war; many ruins are likely" },
+        { "min": 4,  "max": 4,  "value": "Canyons — extensive canyons cut by rivers present or long-vanished (rivers don't climb after leaving them)" },
+        { "min": 5,  "max": 5,  "value": "Dense forest — trackless, dark, and an effective natural barrier" },
+        { "min": 6,  "max": 6,  "value": "Grasslands — a broad sweep of savanna or grassy plains as a coherent whole" },
+        { "min": 7,  "max": 7,  "value": "Islands — a single significant island off the coast or an archipelago of note" },
+        { "min": 8,  "max": 8,  "value": "Jagged mountains — a young, tall mountain range forming a barrier; likely casts a substantial rain shadow" },
+        { "min": 9,  "max": 9,  "value": "Jungle — a classic adventure-worthy jungle of wild, semi-alien flora and fauna" },
+        { "min": 10, "max": 10, "value": "Light forest — interspersed with other terrain" },
+        { "min": 11, "max": 11, "value": "Megaplex — the ruins of a single huge ancient structure stretching for endless miles" },
+        { "min": 12, "max": 12, "value": "Pit — a Deep or other underground megastructure collapsed, leaving a hole tens of miles across" },
+        { "min": 13, "max": 13, "value": "Rain forest — vast, damp, and green" },
+        { "min": 14, "max": 14, "value": "Rocky hills — rough and stony, little arable land; herding and raiding most profitable" },
+        { "min": 15, "max": 15, "value": "Rolling hills — gently rolling hills make for good agricultural land" },
+        { "min": 16, "max": 16, "value": "Sand desert — a waste of sand and dunes, from rain shadow or legacy of ancient war" },
+        { "min": 17, "max": 17, "value": "Scrub desert — often on the leeward side of mountain ranges; borders are often grassland or savanna" },
+        { "min": 18, "max": 18, "value": "Swamp — a sinking river, lake margin, or wet coastal delta forms a vast bog in flat land" },
+        { "min": 19, "max": 19, "value": "Volcano — one or more mountains nearby are volcanically active, naturally or by Legacy flux" },
+        { "min": 20, "max": 20, "value": "Weathered mountains — rounded, low mountains with a skirt of hills; limited rain shadow" }
+      ]
+    },
+    "How Populated": {
+      "type": "list_d4",
+      "dice": "1d4",
+      "entries": [
+        { "min": 1, "max": 1, "value": "Almost unpopulated for something like it" },
+        { "min": 2, "max": 2, "value": "Very few settlers or workers there" },
+        { "min": 3, "max": 3, "value": "Average or more population density" },
+        { "min": 4, "max": 4, "value": "A rush of people have gone there" }
+      ]
+    },
+    "How Dangerous": {
+      "type": "list_d6",
+      "dice": "1d6",
+      "entries": [
+        { "min": 1, "max": 1, "value": "Safer than usual for someplace like it" },
+        { "min": 2, "max": 2, "value": "There's one notable kind of danger there" },
+        { "min": 3, "max": 3, "value": "It's got some site-specific flavors of peril" },
+        { "min": 4, "max": 4, "value": "It's unusually dangerous in several ways" },
+        { "min": 5, "max": 5, "value": "It will quickly kill the unprepared or unwary" },
+        { "min": 6, "max": 6, "value": "It's a death zone for all but the strongest" }
+      ]
+    },
+    "What Use": {
+      "type": "list_d8",
+      "dice": "1d8",
+      "entries": [
+        { "min": 1, "max": 1, "value": "A rare and precious resource is found there" },
+        { "min": 2, "max": 2, "value": "Ancient sites and relics are common there" },
+        { "min": 3, "max": 3, "value": "It's sacred land to a group or religion" },
+        { "min": 4, "max": 4, "value": "Controlling it has military significance" },
+        { "min": 5, "max": 5, "value": "It has substantial productive infrastructure" },
+        { "min": 6, "max": 6, "value": "A major trade route goes through it" },
+        { "min": 7, "max": 7, "value": "Uncontrolled, it's a nest of raiders and worse" },
+        { "min": 8, "max": 8, "value": "A mighty Working is still functioning there" }
+      ]
+    },
+    "Last Event": {
+      "type": "list_d10",
+      "dice": "1d10",
+      "entries": [
+        { "min": 1,  "max": 1,  "value": "A significant battle was fought there" },
+        { "min": 2,  "max": 2,  "value": "A mad prophet tried to start a faith there" },
+        { "min": 3,  "max": 3,  "value": "A usurper and supporters fled into it" },
+        { "min": 4,  "max": 4,  "value": "A resource strike drew numerous people" },
+        { "min": 5,  "max": 5,  "value": "A major nest of bandits or raiders formed" },
+        { "min": 6,  "max": 6,  "value": "A rich ancient ruin was discovered there" },
+        { "min": 7,  "max": 7,  "value": "An uncanny plague erupted in the area" },
+        { "min": 8,  "max": 8,  "value": "Some grim and terrible thing was awoken" },
+        { "min": 9,  "max": 9,  "value": "A community of outcasts or marginals formed" },
+        { "min": 10, "max": 10, "value": "A natural or uncanny disaster struck there" }
+      ]
+    },
+    "Common Antagonists": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        { "min": 1,  "max": 1,  "value": "Violent secessionist rebels" },
+        { "min": 2,  "max": 2,  "value": "Angry cultists of a local faith" },
+        { "min": 3,  "max": 3,  "value": "Locals who resent interloping outsiders" },
+        { "min": 4,  "max": 4,  "value": "A type of cunning, dangerous beast" },
+        { "min": 5,  "max": 5,  "value": "Relic-creatures of ancient settlements" },
+        { "min": 6,  "max": 6,  "value": "Elemental emanations of the disordered land" },
+        { "min": 7,  "max": 7,  "value": "A hostile sentient monster civilization" },
+        { "min": 8,  "max": 8,  "value": "Brutal envoys of the central government" },
+        { "min": 9,  "max": 9,  "value": "Raiders and bandits driven into the area" },
+        { "min": 10, "max": 10, "value": "Rapacious local lords and gang bosses" },
+        { "min": 11, "max": 11, "value": "Remnants of a furious native population" },
+        { "min": 12, "max": 12, "value": "Outsider remnants with a bitter grudge" }
+      ]
+    },
+    "Optional Quirk": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        { "min": 1,  "max": 1,  "value": "It has significant magical structures in it" },
+        { "min": 2,  "max": 2,  "value": "It has a place in the national origin legend" },
+        { "min": 3,  "max": 3,  "value": "It is entirely man-made by ancient arts" },
+        { "min": 4,  "max": 4,  "value": "Time and space sometimes slip there" },
+        { "min": 5,  "max": 5,  "value": "The magical power there attracts wizards" },
+        { "min": 6,  "max": 6,  "value": "It subtly changes those who live there" },
+        { "min": 7,  "max": 7,  "value": "It's holy land to a particular faith" },
+        { "min": 8,  "max": 8,  "value": "It was formerly a different kind of terrain" },
+        { "min": 9,  "max": 9,  "value": "It has human-worked vistas of beauty" },
+        { "min": 10, "max": 10, "value": "It was formerly an Outsider stronghold" },
+        { "min": 11, "max": 11, "value": "A significant part of it is subterranean" },
+        { "min": 12, "max": 12, "value": "It'd expand were it not for ancient wards" },
+        { "min": 13, "max": 13, "value": "It was a nature preserve of a megastructure" },
+        { "min": 14, "max": 14, "value": "It's maintained by an ancient artificial mind" },
+        { "min": 15, "max": 15, "value": "Magic is somehow warped in its area" },
+        { "min": 16, "max": 16, "value": "The flora and fauna are queasily \"off\"" },
+        { "min": 17, "max": 17, "value": "The locals once populated it more heavily" },
+        { "min": 18, "max": 18, "value": "Rulership of the feature is widely disputed" },
+        { "min": 19, "max": 19, "value": "It's riddled with caves and delvings" },
+        { "min": 20, "max": 20, "value": "A unique type of sentient lives there" }
+      ]
+    },
+    "General Places of Adventure": {
+      "type": "list_d20",
+      "dice": "1d20",
+      "entries": [
+        { "min": 1,  "max": 1,  "value": "A lost temple to a dead god" },
+        { "min": 2,  "max": 2,  "value": "Ruins of an ancient city" },
+        { "min": 3,  "max": 3,  "value": "Cavernous tunnels and strange geology" },
+        { "min": 4,  "max": 4,  "value": "Ruined fortress of a former empire" },
+        { "min": 5,  "max": 5,  "value": "Town ruins swept away by some disaster" },
+        { "min": 6,  "max": 6,  "value": "Lair of a legendary beast or monster" },
+        { "min": 7,  "max": 7,  "value": "Wizard's tower or complex" },
+        { "min": 8,  "max": 8,  "value": "Failed colony or forward outpost" },
+        { "min": 9,  "max": 9,  "value": "Prison-pit to shackle a dangerous power" },
+        { "min": 10, "max": 10, "value": "Pilgrimage site for a lost religion" },
+        { "min": 11, "max": 11, "value": "Nexus point for otherworldly powers" },
+        { "min": 12, "max": 12, "value": "Mortuary complex for a lost people" },
+        { "min": 13, "max": 13, "value": "Stronghold of exiles, rebels, or invaders" },
+        { "min": 14, "max": 14, "value": "City or settlement of dangerous nonhumans" },
+        { "min": 15, "max": 15, "value": "Subterranean settlement or complex" },
+        { "min": 16, "max": 16, "value": "Abandoned pleasure-palace of a ruler" },
+        { "min": 17, "max": 17, "value": "Lost fortified bridge or crossing-point" },
+        { "min": 18, "max": 18, "value": "Sinister ruined estate of a former lord" },
+        { "min": 19, "max": 19, "value": "Roll again; now inhabited by interlopers" },
+        { "min": 20, "max": 20, "value": "Roll twice; one built on top of the other" }
+      ]
+    },
+    "Latter-Earth Places": {
+      "type": "list_d12",
+      "dice": "1d12",
+      "entries": [
+        { "min": 1,  "max": 1,  "value": "An abandoned Outsider outpost, possibly with a hazardous local environment" },
+        { "min": 2,  "max": 2,  "value": "A Deep long since abandoned" },
+        { "min": 3,  "max": 3,  "value": "An alien xenoforming complex, possibly with a surrounding arratu" },
+        { "min": 4,  "max": 4,  "value": "A relic-palace of a vanished sorcerer-king" },
+        { "min": 5,  "max": 5,  "value": "A city once inhabited by not-quite-humans" },
+        { "min": 6,  "max": 6,  "value": "A megastructure of now-irrelevant purpose" },
+        { "min": 7,  "max": 7,  "value": "An old stronghold of hostile Outsiders or antagonistic demihumans" },
+        { "min": 8,  "max": 8,  "value": "Massive monument complex dedicated to a vanished kingdom, god, or ethnic group" },
+        { "min": 9,  "max": 9,  "value": "Fortress raised by a dead sorcerer-king, lost empire, or militant faith" },
+        { "min": 10, "max": 10, "value": "Wizard's lair once or presently inhabited by a powerful and dangerous sorcerer" },
+        { "min": 11, "max": 11, "value": "Roll twice on 1d10; the first roll was built on top of or in the ruins of the second" },
+        { "min": 12, "max": 12, "value": "Roll again, but now inhabited by bandits, exiles, hostile refugees, or other interlopers" }
+      ]
+    }
+  }
+}

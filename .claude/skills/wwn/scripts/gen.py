@@ -186,6 +186,9 @@ def recipe_location(roller, family, title, full=False, extra=None):
     subs = roll_tag_subtables(roller, detail, name)
     print()
     print(f"RESULT — {title}: {name}")
+    summ = detail["tags"].get(name, {}).get("summary") if detail else None
+    if summ:
+        print(f"  {summ}")
     for label in detail["labels"]:
         if label in subs:
             print(f"  {label}: {subs[label]}")

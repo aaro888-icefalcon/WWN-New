@@ -1175,6 +1175,29 @@ def build(quiet=False):
             "entries": count_entries(rec),
         })
 
+    # Fold in HAND-AUTHORED generators (not built from source here, e.g.
+    # geography_construction.json) so a rebuild doesn't silently drop them from
+    # the manifest. Any generators/*.json not written above is treated as
+    # hand-authored and preserved in the manifest.
+    import glob as _glob
+    generated = {fname for fname, _ in records} | {"manifest.json"}
+    for _p in sorted(_glob.glob(os.path.join(OUT_DIR, "*.json"))):
+        _fn = os.path.basename(_p)
+        if _fn in generated:
+            continue
+        try:
+            _rec = json.load(open(_p, encoding="utf-8"))
+        except Exception:
+            continue
+        manifest_gens.append({
+            "id": _rec.get("id", _fn) if isinstance(_rec, dict) else _fn,
+            "file": f"generators/{_fn}",
+            "type": (_rec.get("kind", _rec.get("type", "hand-authored"))
+                     if isinstance(_rec, dict) else "hand-authored"),
+            "entries": count_entries(_rec) if isinstance(_rec, dict) else 0,
+            "hand_authored": True,
+        })
+
     verification = "PASSED" if not all_issues else "FAILED"
     manifest = {
         "built": datetime.now(timezone.utc).isoformat(timespec="seconds"),

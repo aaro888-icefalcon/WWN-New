@@ -37,6 +37,7 @@ output:
 | architecture / civ flavor   | a culture's buildings or a ruin's style is needed  | `architecture` (7 × d8 style generators)                        | replace     |
 | religion / god              | a faith or deity is built                          | `religion_construction` (origin · matter · want · function · portfolio · requirement) | replace |
 | nation                      | a nation's problems, ties, or theme are set        | `nation_construction` (Problems · Good Things · Disputes · Ties · Themes) | replace |
+| geography / terrain         | a region/kingdom's land, features, or ruins are placed | `geography_construction` (Significant Terrain Features d20 · How Populated d4 · How Dangerous d6 · What Use d8 · Last Event d10 · Common Antagonists d12 · Optional Quirk d20 · General Places of Adventure d20 · Latter-Earth Places d12) — composed by `worldgen.py geography\|ruins\|world` | replace |
 | history                     | a group's origin/rise/peak/fall is built           | `history_construction`  +  `historical_crises` (d100)  +  `historical_events` (d100) | replace |
 | wound / mishap              | a Mortal Wound maims, or an alchemy lab fails      | `wounds` (Maiming Wound d12 · Alchemical Accident d6)           | replace     |
 | generic inspiration         | Discover Meaning with no WWN-specific need         | Mythic Elements (Meaning Tables)                                | default     |
