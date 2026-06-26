@@ -61,7 +61,7 @@ _Hit = attack bonus + Stab + Int mod (via Style). Damage adds Int + Stab._
 - **Gear:** Backpack · Rations 1 week · Waterskin · Tinder box + 3 torches · Grappling hook + 50' rope · a physician's kit (sutures, herbs, splints) · Long Sword · Throwing Blades ×5
 - **From New York (on him at the crossing):** NYU hospital ID badge · trauma shears · a penlight (limited battery) · a dead smartphone (black-glass relic) · wallet (useless cash, cards) · keys · scrub top / white coat. *(The penlight and the "speaking glass" are curiosities others may covet.)*
 - **Cash / wealth:** ~25 sp scraped together since the Arrival
-- **Languages:** Native **English** (New York) · **Trade Cant** (broken) · the **Marcher tongue** of Auragne — *barely any* (no Know skill; a hard barrier in play)
+- **Languages:** Native **English** (New York) = **Marcher**, the tongue of Auragne (all-but-identical — he speaks freely with the Marchen). Other Amundi tongues (Qasiri, Nabar, etc.) remain **foreign** to him.
 
 ## Record-keeping
 - **XP:** 0

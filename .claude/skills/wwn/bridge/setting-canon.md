@@ -58,6 +58,8 @@ None by default — confirm with the player at session zero and record here.
 ## The premise — the Arrival
 Everyone from the modern city of **New York** was torn out of their world and scattered across the continent of **Agathon**. The largest shard fell through a **shattered First-Age Working** (the *Working Wreckage* of Old Vael) beside Auragne's capital and rained a slice of the city — and the **player-character** — into the **Shire of Monze**, months ago. The Latter Earth did not ask and does not care: tens of thousands of bewildered modern people now scrabble to survive a lethal sword-and-sorcery world mid–civil war, and every power covets them. **The PC is one of the fallen New Yorkers.**
 
+**A strange grace — the tongue.** The Marchen of Auragne speak **Marcher**, a tongue all-but-perfectly intelligible with the New Yorkers' **English** — so the Arrival can be understood *here*, and largely only here (Qasiri, Nabar, and the other Amundi peoples speak their own foreign tongues). No one knows why a kingdom of the far-future Latter Earth speaks the language of a city that shouldn't exist — an unsettling clue to why the rift opened *here*, on a Working of Old Vael. *(Open sign; not yet earned.)*
+
 ## The kingdom & its crisis
 Great **King Urcrin** united the seven shires and was about to **reconquer Old Vael** — the lost ancestral empire — when he abruptly **died** (*how he truly died is an open question, not yet earned*). The realm now cracks **three ways** for the **Dragon Throne**:
 
