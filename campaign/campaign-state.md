@@ -5,25 +5,33 @@
 ## Engine block (mythic-gm)
 *Lists are stored canonically as `threads.json` / `characters.json` (engine `state.py thread|char` / `lists.py`); the lines below mirror them for reading. `state.py init <campaign>` scaffolds the JSON; pass `--campaign <dir>` to the engine's List / Fate / Turning-Point scripts.*
 
-- **Chaos Factor:** 5
-- **Adventure mode:** Pure Mythic | Adventure Crafter | Prepared
+- **Chaos Factor:** 6  *(floor 6: active civil war / lawless frontier — never drop below per bridge chaos rule)*
+- **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **Last scene recap (2–3 sentences):** …
-- **Open canon answers (Fate Questions made true):** …
+- **Last scene recap (2–3 sentences):** Session Zero — built the **Kingdom of Auragne** (the Lost March of Amund): a revanchist Norse/Saxon realm cracking into a **three-way succession war** (boy-king Phillipe vs. regent-uncle Almeric vs. Countess Marie) as a rift pours in the people of **New York**. World, factions, 7 shires, ruins, and Lists committed. **PC not yet created.**
+- **Open canon answers (Fate Questions made true):** none yet. *(Open signs: how King Urcrin died; why the rift opened on a Working of Old Vael; which diaspora faction is the more ruthless kingmaker.)*
 
 ## Party & PCs
-- **<PC name>** — class/level · HP cur/max · AC · System Strain cur/max · Effort cur/max · key foci · condition (Frail? Mortally Wounded?). *Full sheet: a `character-sheet.md` per PC.*
-- **Shared:** light & supplies · mounts/vehicles · wealth · marching order · current party goal.
+- **PC — PENDING** (Session Zero): a transported New Yorker, to be built together next. *Full sheet → `character-sheet.md` once created.*
+- **Shared:** TBD at character creation. **Start location:** the Shire of **Monze**, by the rift outside the capital **Aurholt**.
 
 ## Effort & Strain  (per caster / PC)
-- **<PC>:** Effort committed — scene: … · day: … · indefinite: … ; **System Strain** …/Con.
+- **PC:** pending character creation.
 
-## Faction board  (summary; full board: `faction-sheet.md`)
-- **<Faction>** — C/F/W · HP cur/max · Major-Project clock n/N · attitude to PC. *Run `faction_turn.py` at the world-tick cadence.*
+## Faction board  (summary; full board: `factions.md`)
+- **The Dragon Throne** (Boy-King Phillipe) — F5 C2 W2 · HP 13/13 · *Free and Crown Phillipe* 0/8 · partly backed by the Arrival.
+- **The Lord Protector's Party** (Almeric) — F3 C5 W2 · HP 15/15 · *Make the Regency Permanent* 0/8 · holds Aurholt & the boy.
+- **The Mauressac Claim** (Marie) — F2 C3 W5 · HP 15/15 · *Press the Claim* 0/8 · Shinbu-Anak backed.
+- **The Worm-Cult of Vael** — F4 C1 W1 · HP 8/8 · *Wake the Crowned Worm* 0/8 · serves the dragon Vörniss.
+- **The Arrival** (the New Yorkers) — F3 C2 W4 · HP 12/12 · *Find a Foothold (or the Way Home)* 0/8 · split; the PC is one of them.
+- **Mishar's Hand** (Despot Amiya) — F3 C4 W3 · HP 14/14 · *Vassalize Auragne* 0/8 · buys the counts. *Run `faction_turn.py` at the world-tick cadence.*
 
 ## World ledger — clocks & threats  (see `world-model.md`)
-- **<Clock / threat name>** n/N — advances by … — touches (where/whom) …
+- **The Three-Way Succession War** 0/12 — advances by faction turns & decisive moves — touches all of Auragne.
+- **The Stalled Reconquest of Old Vael** 0/10 — advances when a claimant consolidates the crown — touches the western waste / Vörniss' Crown (R-06).
+- **Vörniss Wakes** 0/8 — advances by the Worm-Cult's project & any disturbance at R-06 — if filled, the dragon stirs (telegraph, then fire).
+- **Mishar's Vassalization** 0/8 — advances by Mishar's Hand — touches the bought counts (Deidre, Gruith, Qasim).
 
 ## Domains / holdings
 - **<Holding>** — income vs upkeep net per interval; unrest …
@@ -32,7 +40,35 @@
 - **Supplies:** days remaining … · **Wandering-encounter:** per watch/turn while exploring · **Days at sea:** …
 
 ## Committed-canon frontier  (worldgen)
-- **Detailed now:** <starting region / nations>.
-- **Generate on demand:** everything else — call `scripts/worldgen.py` when play reaches it, then fold the result here and into the Lists.
+- **Detailed now:** the **Kingdom of Auragne** — 7 shires (Altdobern, Verzeille, Hermsdorf, Mauressac, Briach, Shakal, Monze/**Aurholt**), 6 ruins, and Old Vael's edge — all in `campaign/places.json`; canon in `bridge/setting-canon.md`.
+- **Generate on demand:** the rest of Amund (Qasir, Mishar, Pelegrin, Vois, Ostmark, Fidach, Nabardura), the continent of Agathon, and beyond — call `scripts/worldgen.py` when play reaches it, then fold the result into canon and the Lists.
 
 *Overwrite each scene end. Run the engine SELF-AUDIT before sending a scene: did dice decide every uncertain outcome, were stakes pre-committed, did the world act to win, did a clock/List/Chaos move?*
+
+<!-- LISTS:BEGIN — generated by `state.py render`; edit threads.json/characters.json, not here -->
+## Threads List — generated snapshot of threads.json (do not hand-edit)
+1. The Three-Way Succession for the Dragon Throne  _(weight 3)_
+2. The Stalled Reconquest of Old Vael  _(weight 2)_
+3. The Arrival — the City That Fell Through  _(weight 3)_
+4. Vörniss Stirs Beneath Old Vael  _(weight 2)_
+5. Despot Amiya Buys the Counts  _(weight 2)_
+6. The Split Diaspora at the Rift  _(weight 2)_
+7. Marie and Gruith's Bloc Against the Crown
+8. The Worm-Cult Rises in the West
+_Σ weighted slots = 16_
+
+## Characters List — generated snapshot of characters.json (do not hand-edit)
+1. Boy-King Phillipe  _(weight 3)_
+2. Lord Protector Almeric  _(weight 3)_
+3. Countess Marie  _(weight 2)_
+4. Count Heinrich of Altdobern
+5. Countess Deidre of Verzeille
+6. Count Carloman of Hermsdorf
+7. Count Gruith of Briach
+8. Count Qasim of Shakal
+9. Count Chilperic of Monze
+10. Vörniss the Crowned Worm
+11. Despot Amiya of Mishar
+_Σ weighted slots = 16_
+
+<!-- LISTS:END -->
