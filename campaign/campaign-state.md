@@ -9,8 +9,8 @@
 - **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **Last scene recap (2–3 sentences):** Session Zero — built the **Kingdom of Auragne** (the Lost March of Amund): a revanchist Norse/Saxon realm cracking into a **three-way succession war** (boy-king Phillipe vs. regent-uncle Almeric vs. Countess Marie) as a rift pours in the people of **New York**. World, factions, 7 shires, ruins, and Lists committed. **PC built: Abhishek "Shake" Rao** — a transported NYU vascular surgeon, now a Partial Warrior / Healer who fights with precision and mends with sorcery.
-- **Open canon answers (Fate Questions made true):** none yet. *(Open signs: how King Urcrin died; why the rift opened on a Working of Old Vael; which diaspora faction is the more ruthless kingmaker.)*
+- **Last scene recap (2–3 sentences):** **Scene 1 — "Triage" (the Landing, Monze).** A boy-king's man, **Wystan**, was carried dying into Shake's aid-tent, hunted by the Landing's own **marshals** (the Arrival faction sworn to the Lord Protector). Shake saved him with Healing Touch (pulled him to a bare 4 HP), then judged the camp's winter above a stranger and let **Sgt. Doyle** take him back toward Aurholt — buying the camp's grain and Doyle's debt, and the lasting enmity of Wystan's sister **Aldith**. Wystan's parting words linger: *the seal isn't in the reliquary; the boy is true-blooded.*
+- **Open canon answers (made true in play):** The **Landing** — the Arrival's shanty in Monze, by the rift below Aurholt — is policed by **Sgt. Doyle's marshals**, who keep the camp fed by serving the **Lord Protector's** deal (handing back what wanders in). **Wystan** (a Dragon-Throne man) claims *the boy-king is true-blooded and the royal seal is not in the reliquary* — and is now in Almeric's hands. **Aldith** (his sister) blames Shake. *(Open signs: how King Urcrin died; why the rift speaks English / opened on a Working of Old Vael; where the seal truly is.)*
 
 ## Party & PCs
 - **Abhishek "Shake" Rao** — Adventurer (Partial Warrior / Partial Healer) L1 · Physician · Int **18** (+2) · **HP 6/6 · AC 14 · Strain 0/11 · Effort 3/3** · Heal-1, Stab-1, Craft-0 · Foci: One Point Strike Style (attacks use Int +2), Artisan · Arts: Healing Touch, Vital Furnace · longsword **d20+4 / 1d8+3 / Shock 2-AC13** · *Frail at 6 HP.* **Full sheet: `character-sheet.md`.**
@@ -30,7 +30,7 @@
 ## World ledger — clocks & threats  (see `world-model.md`)
 - **The Three-Way Succession War** 0/12 — advances by faction turns & decisive moves — touches all of Auragne.
 - **The Stalled Reconquest of Old Vael** 0/10 — advances when a claimant consolidates the crown — touches the western waste / Vörniss' Crown (R-06).
-- **Vörniss Wakes** 0/8 — advances by the Worm-Cult's project & any disturbance at R-06 — if filled, the dragon stirs (telegraph, then fire).
+- **Vörniss Wakes** 1/8 — *(Worm-Cult moved in scene 1: 0→1)* advances by the Worm-Cult's project & any disturbance at R-06 — if filled, the dragon stirs (telegraph, then fire).
 - **Mishar's Vassalization** 0/8 — advances by Mishar's Hand — touches the bought counts (Deidre, Gruith, Qasim).
 
 ## Domains / holdings
@@ -52,11 +52,12 @@
 3. The Arrival — the City That Fell Through  _(weight 3)_
 4. Vörniss Stirs Beneath Old Vael  _(weight 2)_
 5. Despot Amiya Buys the Counts  _(weight 2)_
-6. The Split Diaspora at the Rift  _(weight 2)_
+6. The Split Diaspora at the Rift  _(weight 3)_
 7. Marie and Gruith's Bloc Against the Crown
 8. The Worm-Cult Rises in the West
 9. The Search for Akhil (his brother)  _(weight 2)_
-_Σ weighted slots = 18_
+10. The Secret Wystan Left — the seal & the true boy-king  _(weight 2)_
+_Σ weighted slots = 21_
 
 ## Characters List — generated snapshot of characters.json (do not hand-edit)
 1. Boy-King Phillipe  _(weight 3)_
@@ -70,6 +71,9 @@ _Σ weighted slots = 18_
 9. Count Chilperic of Monze
 10. Vörniss the Crowned Worm
 11. Despot Amiya of Mishar
-_Σ weighted slots = 16_
+12. Sgt. Doyle (Landing marshal captain)
+13. Aldith (Wystan's sister — wronged)
+14. Wystan (the king's-man, taken)
+_Σ weighted slots = 19_
 
 <!-- LISTS:END -->

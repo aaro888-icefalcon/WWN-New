@@ -540,6 +540,39 @@
       "threads": [],
       "characters": [],
       "canon_anchor": "setting-canon.md#v-rniss-crown"
+    },
+    {
+      "id": "S-08",
+      "name": "The Landing",
+      "kind": "settlement",
+      "parent": "RG-07",
+      "adjacency": [
+        "RG-07",
+        "S-07"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Refugee Shanty \u2014 the Arrival's camp",
+        "summary": "The shantytown of ~9,000 transported New Yorkers grown up around the rift (a shattered Working of Old Vael) below the walls of Aurholt. Policed by Sgt. Doyle's marshals, who keep it fed by serving the Lord Protector's deal. The diaspora is split; Shake's aid-tent is its clinic.",
+        "subtables": {
+          "Enemies": "Marshals who hand back 'what wanders in'",
+          "Friends": "The desperate who need the leech",
+          "Complications": "The camp's grain depends on the Lord Protector",
+          "Things": "New York relics; the humming rift",
+          "Places": "Shake's aid-tent; the rift-slab"
+        }
+      },
+      "threads": [
+        "The Arrival \u2014 the City That Fell Through",
+        "The Split Diaspora at the Rift",
+        "The Secret Wystan Left \u2014 the seal & the true boy-king"
+      ],
+      "characters": [
+        "Sgt. Doyle (Landing marshal captain)",
+        "Aldith (Wystan's sister \u2014 wronged)"
+      ],
+      "canon_anchor": "setting-canon.md#the-landing"
     }
   ]
 }
