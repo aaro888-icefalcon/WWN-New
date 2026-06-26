@@ -9,15 +9,15 @@
 - **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **Last scene recap (2–3 sentences):** Session Zero — built the **Kingdom of Auragne** (the Lost March of Amund): a revanchist Norse/Saxon realm cracking into a **three-way succession war** (boy-king Phillipe vs. regent-uncle Almeric vs. Countess Marie) as a rift pours in the people of **New York**. World, factions, 7 shires, ruins, and Lists committed. **PC not yet created.**
+- **Last scene recap (2–3 sentences):** Session Zero — built the **Kingdom of Auragne** (the Lost March of Amund): a revanchist Norse/Saxon realm cracking into a **three-way succession war** (boy-king Phillipe vs. regent-uncle Almeric vs. Countess Marie) as a rift pours in the people of **New York**. World, factions, 7 shires, ruins, and Lists committed. **PC built: Abhishek "Shake" Rao** — a transported NYU vascular surgeon, now a Partial Warrior / Healer who fights with precision and mends with sorcery.
 - **Open canon answers (Fate Questions made true):** none yet. *(Open signs: how King Urcrin died; why the rift opened on a Working of Old Vael; which diaspora faction is the more ruthless kingmaker.)*
 
 ## Party & PCs
-- **PC — PENDING** (Session Zero): a transported New Yorker, to be built together next. *Full sheet → `character-sheet.md` once created.*
-- **Shared:** TBD at character creation. **Start location:** the Shire of **Monze**, by the rift outside the capital **Aurholt**.
+- **Abhishek "Shake" Rao** — Adventurer (Partial Warrior / Partial Healer) L1 · Physician · **HP 6/6 · AC 14 · Strain 0/11 · Effort 2/2** · Heal-1, Stab-1 · Foci: One Point Strike Style (attacks use Int), Artisan · Arts: Healing Touch, Vital Furnace · *Frail at 6 HP.* **Full sheet: `character-sheet.md`.**
+- **Shared:** short sword · buff coat + buckler · physician's kit · traveling gear · ~25 sp · a few New York relics (penlight, dead phone, badge). **Start:** Shire of **Monze**, by the rift outside **Aurholt**.
 
 ## Effort & Strain  (per caster / PC)
-- **PC:** pending character creation.
+- **Shake:** Effort 2/2 (none committed) · System Strain 0/11. *(Scene-Effort returns at scene end; day-Effort at dawn.)*
 
 ## Faction board  (summary; full board: `factions.md`)
 - **The Dragon Throne** (Boy-King Phillipe) — F5 C2 W2 · HP 13/13 · *Free and Crown Phillipe* 0/8 · partly backed by the Arrival.
@@ -55,7 +55,8 @@
 6. The Split Diaspora at the Rift  _(weight 2)_
 7. Marie and Gruith's Bloc Against the Crown
 8. The Worm-Cult Rises in the West
-_Σ weighted slots = 16_
+9. The Search for Akhil (his brother)  _(weight 2)_
+_Σ weighted slots = 18_
 
 ## Characters List — generated snapshot of characters.json (do not hand-edit)
 1. Boy-King Phillipe  _(weight 3)_
