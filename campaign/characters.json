@@ -54,10 +54,6 @@
    "weight": 1
   },
   {
-   "name": "Wystan (the king's-man, taken)",
-   "weight": 1
-  },
-  {
    "name": "Reza (Shake's apprentice)",
    "weight": 1
   },
@@ -75,6 +71,10 @@
   },
   {
    "name": "Father Garin (Bleeding God priest, employer)",
+   "weight": 1
+  },
+  {
+   "name": "Tanya (Bronx FDNY medic — leader of the Factors' rift-folk stock)",
    "weight": 1
   }
  ]
