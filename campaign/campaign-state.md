@@ -9,7 +9,7 @@
 - **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **★ SAVE POINT (resume here):** **Scene 8 — inside the Factors' counting-house.** Shake talked in as a cheap discreet leech to tend the guild's "stock" — and found the **gathered rift-folk** warehoused in the lower house (≈40 sick New Yorkers). Healing them (Healing Touch) drew **no suspicion** (Exc No) and won deep trust; **Tanya** (Bronx, 30-yr FDNY medic, the stock's de-facto leader) became his protected ally inside. The lead: **Alys** is the coerced "ledger-girl" who logs/tags everyone — kind, unwilling — and her books are *the only record of who came through* (the job AND the Akhil hunt run through her). Faint sign: a "young healer's-apprentice, brown, real young" was tagged weeks back and **"placed"/sold-on** — name unknown; Alys's ledgers would have it. HP 6/6 · **Effort 2/3** (Healing Touch committed this scene) · Chaos 6. **Next beat:** *reach Alys / get at the ledgers.*
+- **★ SAVE POINT (resume here):** **Scene 9 — first contact with Alys.** Reached the ledger-girl on her rounds (Convince success): she's **Garin's ward**, coerced, watched — and *not* taken for marriage (Fate No). She secretly keeps a hidden **"second book"**: where every gathered rift-folk is **sent/sold** — to Countess Marie, to "men who pay more and ask less," and where the **unbought "don't come back."** They wanted a clever, powerless clerk they can **drown when the book is full.** **Deal struck:** Shake carries her word to **Garin**; she'll pull **Akhil's destination** from the second book at **dusk tomorrow** (risky — the book's in a locked press under the under-factor's eye). HP 6/6 · Effort 2/3 · Chaos 6. **Next beat:** *carry Alys's message to Garin (& squeeze what he hid) / collect Akhil's location at dusk / case her extraction.*
 - **Last scene recap:** **Scenes 2–5 — the road west, and the catastrophe on it.** Shake left the Landing with **Hild's** westbound salt-caravan (apprentice **Reza** in tow), bound for **Mauressac** on a thin 4-month-old lead that his brother **Akhil** fell west; his first four months are now canon, and road-rumor says Mauressac's countess is *gathering rift-folk* (his hope, unconfirmed). Shake talked captain **Hild** off a first-strike against **5 Blighted** (who were *fleeing* something west and let the caravan pass). The caravan camped to wait the threat out — and **drew it**: a thing that *unmakes* what it touches turned onto the camp when a mule panicked. Fleeing on a horse with **Reza**, Shake's Evasion failed and the edge caught them (3d6=6 → **0 HP, saved only by Vital Furnace**). The horror tore a furrow and passed on; the road west is now grimly **clear**. **Dead: captain Hild and a few others**; the caravan broken and **leaderless**; Reza alive and hurt; Shake woke at 1 HP. In the aftermath he **healed himself and the wounded** (Healing Touch), **salvaged enough to limp on**, burned the dead (Hild among them), and — the survivors cohering to the one man still standing — now **leads ~11 caravaners west toward Mauressac**, the road clear, a brother's rumor ahead. The watchful **man in the good coat** lived, and is *calculating*. At the city's edge Shake **healed, named, and released the band**, read the coat-man as an opaque agent who priced him on the road, and walked the last miles into Mauressac's country with only **Reza**. *(Prior — Scene 1: saved then surrendered the king's-man Wystan to Doyle's marshals; made an enemy of his sister Aldith; heard "the seal isn't in the reliquary; the boy is true-blooded.")*
 - **Open canon answers (made true in play):** The **Landing** — the Arrival's shanty in Monze, by the rift below Aurholt — is policed by **Sgt. Doyle's marshals**, who keep the camp fed by serving the **Lord Protector's** deal (handing back what wanders in). **Wystan** (a Dragon-Throne man) claims *the boy-king is true-blooded and the royal seal is not in the reliquary* — and is now in Almeric's hands. **Aldith** (his sister) blames Shake. *(Open signs: how King Urcrin died; why the rift speaks English / opened on a Working of Old Vael; where the seal truly is.)*
 
@@ -37,6 +37,7 @@
 - **Mishar's Vassalization** 0/8 — advances by Mishar's Hand — touches the bought counts (Deidre, Gruith, Qasim).
 - **The Unmaking-thing** (scene 5) — a Destruction-driven horror that *unmakes* what it touches; tore through the caravan camp (killed Hild + several) and continued on its line, **out of the area** — the western road is now clear, but the beast still roams the western country toward Mauressac.
 - **Maela's secret** (scene 6, GM sign) — Shake's Mauressac landlady is no mere landlady: a hidden identity and **veiled backers**, presently tangled with one of her patrons' "clients" who has **gone rogue**. Shake only reads her as "off." *(Surfaces when earned.)*
+- **The Factors' "second book"** (scene 9) — the secret ledger Alys is forced to keep: where the gathered rift-folk are **sent/sold** (Marie · "men who pay more and ask less" · and the **unbought who "don't come back"** — destination unknown). Holds **Akhil's destination**. The Factors mean to **kill Alys** once it's full. *(Open: who buys the unbought, and where they're "taken"; Garin's hidden complicity.)*
 - **The Factors' Guild = the rift-folk apparatus** (scene 7) — **Master Corvin's** Factors' Guild sorts and sells the gathered rift-folk (some to Countess Marie, some to whoever pays). Garin's ward **Alys** counts them into ledgers from the inside — so finding Alys IS Shake's road to Akhil. *(GM signs: who Alys was really taken for, and why; Corvin's tie to the Mauressac Claim / Marie's "gathering.")*
 
 ## Domains / holdings
@@ -82,11 +83,11 @@ _Σ weighted slots = 24_
 12. Sgt. Doyle (Landing marshal captain)
 13. Aldith (Wystan's sister — wronged)
 14. Reza (Shake's apprentice)
-15. Brann (Marcher rag-picker, owed a debt)
-16. The man in the good coat (caravan survivor, watchful)
-17. Maela (Mauressac landlady — secret backers)
-18. Father Garin (Bleeding God priest, employer)
-19. Tanya (Bronx FDNY medic — leader of the Factors' rift-folk stock)
+15. The man in the good coat (caravan survivor, watchful)
+16. Maela (Mauressac landlady — secret backers)
+17. Father Garin (Bleeding God priest, employer)
+18. Tanya (Bronx FDNY medic — leader of the Factors' rift-folk stock)
+19. Alys (the Factors' coerced ledger-girl; Garin's ward)
 _Σ weighted slots = 24_
 
 <!-- LISTS:END -->
