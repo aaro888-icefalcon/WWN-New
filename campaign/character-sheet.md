@@ -19,7 +19,7 @@ _★ Int = his keystone: powers BOTH his attacks (One Point Strike Style) and hi
 
 ## Defenses & Health
 - **AC:** 14  (Buff Coat 12 + Small Shield, Dex +1) — small shield also **ignores the first Shock each round**
-- **HP:** 6 / 6   ·   **System Strain:** 0 / 11 (max = Con)
+- **HP:** **1 / 6**   ·   **System Strain:** 0 / 11 (max = Con)  — *dropped to 0 in scene 5; Vital Furnace auto-stabilized (free, passive); woke at 1 HP. One more hit drops him again.*
 - **Attack bonus:** +1   ·   **Initiative:** 1d8 +1
 - **Saving throws** (roll d20 ≥ target):
   - **Physical** 15  (16 − 1 − best Str/Con)

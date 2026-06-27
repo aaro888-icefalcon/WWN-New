@@ -5,16 +5,16 @@
 ## Engine block (mythic-gm)
 *Lists are stored canonically as `threads.json` / `characters.json` (engine `state.py thread|char` / `lists.py`); the lines below mirror them for reading. `state.py init <campaign>` scaffolds the JSON; pass `--campaign <dir>` to the engine's List / Fate / Turning-Point scripts.*
 
-- **Chaos Factor:** 6  *(floor 6: active civil war / lawless frontier — never drop below per bridge chaos rule)*
+- **Chaos Factor:** 7  *(floor 6; +1 scene 5 — the unmaking catastrophe on the road)*
 - **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **Last scene recap:** **Scenes 2–3 — the road west.** Shake left the Landing with **Hild's** westbound salt-caravan (apprentice **Reza** in tow), bound for **Mauressac** on a thin 4-month-old lead that his brother **Akhil** fell west; his first four months are now canon, and road-rumor says Mauressac's countess is *gathering rift-folk* (his hope, unconfirmed). A failed read of the war-road left the caravan unready — and on **day 7** Shake talked captain **Hild** off a first-strike against **5 Blighted** (contagion argument — success); the caravan withdrew without a drop of blood, and the Blighted — who were *fleeing*, not hunting — let them go, warning them back from something on the road **west**. Shake earned Hild's wary respect; the way to Mauressac is now blocked by an unknown threat that turned cursed war-things into refugees. *(Prior — Scene 1: saved then surrendered the king's-man Wystan to Doyle's marshals; made an enemy of his sister Aldith; heard "the seal isn't in the reliquary; the boy is true-blooded.")*
+- **Last scene recap:** **Scenes 2–5 — the road west, and the catastrophe on it.** Shake left the Landing with **Hild's** westbound salt-caravan (apprentice **Reza** in tow), bound for **Mauressac** on a thin 4-month-old lead that his brother **Akhil** fell west; his first four months are now canon, and road-rumor says Mauressac's countess is *gathering rift-folk* (his hope, unconfirmed). Shake talked captain **Hild** off a first-strike against **5 Blighted** (who were *fleeing* something west and let the caravan pass). The caravan camped to wait the threat out — and **drew it**: a thing that *unmakes* what it touches turned onto the camp when a mule panicked. Fleeing on a horse with **Reza**, Shake's Evasion failed and the edge caught them (3d6=6 → **0 HP, saved only by Vital Furnace**). The horror tore a furrow and passed on; the road west is now grimly **clear**. **Dead: captain Hild and a few others**; the caravan broken and **leaderless**; Reza alive and hurt; **Shake awake at 1 HP**. *(Prior — Scene 1: saved then surrendered the king's-man Wystan to Doyle's marshals; made an enemy of his sister Aldith; heard "the seal isn't in the reliquary; the boy is true-blooded.")*
 - **Open canon answers (made true in play):** The **Landing** — the Arrival's shanty in Monze, by the rift below Aurholt — is policed by **Sgt. Doyle's marshals**, who keep the camp fed by serving the **Lord Protector's** deal (handing back what wanders in). **Wystan** (a Dragon-Throne man) claims *the boy-king is true-blooded and the royal seal is not in the reliquary* — and is now in Almeric's hands. **Aldith** (his sister) blames Shake. *(Open signs: how King Urcrin died; why the rift speaks English / opened on a Working of Old Vael; where the seal truly is.)*
 
 ## Party & PCs
-- **Abhishek "Shake" Rao** — Adventurer (Partial Warrior / Partial Healer) L1 · Physician · Int **18** (+2) · **HP 6/6 · AC 14 · Strain 0/11 · Effort 3/3** · Heal-1, Stab-1, Craft-0 · Foci: One Point Strike Style (attacks use Int +2), Artisan · Arts: Healing Touch, Vital Furnace · longsword **d20+4 / 1d8+3 / Shock 2-AC13** · *Frail at 6 HP.* **Full sheet: `character-sheet.md`.**
-- **Shared:** long sword · buff coat + buckler · throwing blades ×5 · physician's kit · traveling gear · ~25 sp · a few New York relics (penlight, dead phone, badge). **Start:** Shire of **Monze**, by the rift outside **Aurholt**.
+- **Abhishek "Shake" Rao** — Adventurer (Partial Warrior / Partial Healer) L1 · Physician · Int **18** (+2) · **HP 1/6 · AC 14 · Strain 0/11 · Effort 3/3** · Heal-1, Stab-1, Craft-0 · Foci: One Point Strike Style (attacks use Int +2), Artisan · Arts: Healing Touch, Vital Furnace · longsword **d20+4 / 1d8+3 / Shock 2-AC13** · *dropped to 0 in scene 5, Vital Furnace auto-stabilized; now **1 HP** — one hit from down again.* **Full sheet: `character-sheet.md`.**
+- **On his person:** long sword · buff coat + buckler · NY relics (penlight, dead phone, badge) · belt pouch (~25 sp). **In the caravan wreck (recoverable):** backpack · physician's kit · throwing blades · rations. **Location:** the western road, ~day 8, the broken camp.
 
 ## Effort & Strain  (per caster / PC)
 - **Shake:** Effort 3/3 (none committed) · System Strain 0/11. *(Scene-Effort returns at scene end; day-Effort at dawn.)*
@@ -23,16 +23,16 @@
 - **The Dragon Throne** (Boy-King Phillipe) — F5 C2 W2 · HP 13/13 · *Free and Crown Phillipe* 0/8 · partly backed by the Arrival.
 - **The Lord Protector's Party** (Almeric) — F3 C5 W2 · HP 15/15 · *Make the Regency Permanent* **1/8** *(moved scene 4: tightening his grip)* · holds Aurholt & the boy.
 - **The Mauressac Claim** (Marie) — F2 C3 W5 · HP 15/15 · *Press the Claim* **1/8** *(moved scene 3: consolidating/gathering in the west)* · Shinbu-Anak backed.
-- **The Worm-Cult of Vael** — F4 C1 W1 · HP 8/8 · *Wake the Crowned Worm* 0/8 · serves the dragon Vörniss.
+- **The Worm-Cult of Vael** — F4 C1 W1 · HP 8/8 · *Wake the Crowned Worm* **2/8** *(moved scenes 1 & 5)* · serves the dragon Vörniss.
 - **The Arrival** (the New Yorkers) — F3 C2 W4 · HP 12/12 · *Find a Foothold (or the Way Home)* 0/8 · split; the PC is one of them.
 - **Mishar's Hand** (Despot Amiya) — F3 C4 W3 · HP 14/14 · *Vassalize Auragne* 0/8 · buys the counts. *Run `faction_turn.py` at the world-tick cadence.*
 
 ## World ledger — clocks & threats  (see `world-model.md`)
 - **The Three-Way Succession War** 0/12 — advances by faction turns & decisive moves — touches all of Auragne.
 - **The Stalled Reconquest of Old Vael** 0/10 — advances when a claimant consolidates the crown — touches the western waste / Vörniss' Crown (R-06).
-- **Vörniss Wakes** 1/8 — *(Worm-Cult moved in scene 1: 0→1)* advances by the Worm-Cult's project & any disturbance at R-06 — if filled, the dragon stirs (telegraph, then fire).
+- **Vörniss Wakes** 2/8 — *(Worm-Cult moved scenes 1 & 5)* advances by the Worm-Cult's project & any disturbance at R-06 — if filled, the dragon stirs (telegraph, then fire).
 - **Mishar's Vassalization** 0/8 — advances by Mishar's Hand — touches the bought counts (Deidre, Gruith, Qasim).
-- **Something on the western road** (scene 4) — an unknown threat west toward Mauressac, bad enough that a Blighted band fled it and warned travelers back; blocks the caravan's road. *(Possibly the "ruins-what-it-kills" Destruction-beast from Shake's first months.)*
+- **The Unmaking-thing** (scene 5) — a Destruction-driven horror that *unmakes* what it touches; tore through the caravan camp (killed Hild + several) and continued on its line, **out of the area** — the western road is now clear, but the beast still roams the western country toward Mauressac.
 
 ## Domains / holdings
 - **<Holding>** — income vs upkeep net per interval; unrest …
@@ -77,8 +77,7 @@ _Σ weighted slots = 22_
 13. Aldith (Wystan's sister — wronged)
 14. Wystan (the king's-man, taken)
 15. Reza (Shake's apprentice)
-16. Hild (caravan captain, Fidach axe)
-17. Brann (Marcher rag-picker, owed a debt)
-_Σ weighted slots = 22_
+16. Brann (Marcher rag-picker, owed a debt)
+_Σ weighted slots = 21_
 
 <!-- LISTS:END -->
