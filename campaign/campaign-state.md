@@ -57,7 +57,8 @@
 8. The Worm-Cult Rises in the West
 9. The Search for Akhil (his brother)  _(weight 2)_
 10. The Secret Wystan Left — the seal & the true boy-king  _(weight 2)_
-_Σ weighted slots = 21_
+11. The Unaccounted New Yorkers (Jason, Jessica & the lost)
+_Σ weighted slots = 22_
 
 ## Characters List — generated snapshot of characters.json (do not hand-edit)
 1. Boy-King Phillipe  _(weight 3)_
@@ -74,6 +75,9 @@ _Σ weighted slots = 21_
 12. Sgt. Doyle (Landing marshal captain)
 13. Aldith (Wystan's sister — wronged)
 14. Wystan (the king's-man, taken)
-_Σ weighted slots = 19_
+15. Reza (Shake's apprentice)
+16. Hild (caravan captain, Fidach axe)
+17. Brann (Marcher rag-picker, owed a debt)
+_Σ weighted slots = 22_
 
 <!-- LISTS:END -->

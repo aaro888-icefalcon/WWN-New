@@ -56,6 +56,18 @@
   {
    "name": "Wystan (the king's-man, taken)",
    "weight": 1
+  },
+  {
+   "name": "Reza (Shake's apprentice)",
+   "weight": 1
+  },
+  {
+   "name": "Hild (caravan captain, Fidach axe)",
+   "weight": 1
+  },
+  {
+   "name": "Brann (Marcher rag-picker, owed a debt)",
+   "weight": 1
   }
  ]
 }

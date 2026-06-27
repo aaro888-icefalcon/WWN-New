@@ -102,6 +102,15 @@ The Dragon Throne (Phillipe) · The Lord Protector's Party (Almeric) · The Maur
 - **Vörniss, the Crowned Worm** — dragon-ancestor of the line, dreaming in Old Vael — Domination; indifferent until woken.
 - **Despot Amiya of Mishar** *(off-stage)* — foreign queen buying counts — to vassalize Auragne while it bleeds.
 
+## Shake — The First Four Months (established in play, scene 3 reflection)
+Refugee-level truth (what Shake knows; not the GM board):
+- **The crossing:** torn from a 3 a.m. NYU call-room into the freezing mud below Aurholt; ~9,000 New Yorkers fell with him. His **Art woke in the 2nd week** over a teamster's crushed arm — medicine here works "the way the stories say," and it costs; he rations it. Publicly "the leech who mends the dead."
+- **The Landing's two wars:** the one with the kingdom, and a quieter internal one — **Doyle's marshals** (trade anything to the castle for another winter) vs. **the Homeward**, a growing, zealous faction fixated on the rift-slab as a *door home*. A month ago the Homeward **snatched a transit engineer** off the soup line, convinced she was the "key" to opening the rift; her fate is unknown. (Enriches the *Split Diaspora* thread.)
+- **Debts & ties:** owes **Brann**, a soft, grasping old Marcher rag-picker who scrounged him steel and poppy-resin in the starving weeks. Took on **Reza** (apprentice) partly out of skill, partly because he couldn't leave one more person. First patient lost here: a child, croup, dead for want of a machine that doesn't exist.
+- **The teeth:** three weeks back a foraging party came back maimed with a story of **something in the wild that doesn't eat what it kills — only ruins it**; he amputated an arm and filed the beast as "real, lethal, not tonight's problem."
+- **The splinter:** no one can tell him *why* the Marcher north speaks plain English; he's stopped asking aloud.
+- **First-months NPCs:** Brann (rag-picker, owed) · Reza (apprentice, now traveling) · the Homeward's demagogue (un-named, camp power) · the snatched engineer (missing).
+
 ## Open questions (signs, not yet revealed — Player ≠ PC knowledge)
 - How King Urcrin truly died (natural? Almeric? Mishar's coin? the Worm-Cult?).
 - Why the rift opened *here*, on a Working of Old Vael — and whether it can be closed or reopened.
