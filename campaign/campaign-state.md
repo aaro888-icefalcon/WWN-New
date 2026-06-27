@@ -9,7 +9,7 @@
 - **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **Last scene recap:** **Scenes 2–3 — the road west.** Shake left the Landing with **Hild's** westbound salt-caravan (apprentice **Reza** in tow), bound for **Mauressac** on a thin 4-month-old lead that his brother **Akhil** fell west; his first four months are now canon, and road-rumor says Mauressac's countess is *gathering rift-folk* (his hope, unconfirmed). A failed read of the war-road left the caravan unready — and on **day 7**, at a high cold saddle, **5 Blighted** have blocked the road, their skull-helmed leader rasping something almost like speech. **Unresolved — Shake (6 HP) has Reza behind him.** *(Prior — Scene 1: saved then surrendered the king's-man Wystan to Doyle's marshals; made an enemy of his sister Aldith; heard "the seal isn't in the reliquary; the boy is true-blooded.")*
+- **Last scene recap:** **Scenes 2–3 — the road west.** Shake left the Landing with **Hild's** westbound salt-caravan (apprentice **Reza** in tow), bound for **Mauressac** on a thin 4-month-old lead that his brother **Akhil** fell west; his first four months are now canon, and road-rumor says Mauressac's countess is *gathering rift-folk* (his hope, unconfirmed). A failed read of the war-road left the caravan unready — and on **day 7** Shake talked captain **Hild** off a first-strike against **5 Blighted** (contagion argument — success); the caravan withdrew without a drop of blood, and the Blighted — who were *fleeing*, not hunting — let them go, warning them back from something on the road **west**. Shake earned Hild's wary respect; the way to Mauressac is now blocked by an unknown threat that turned cursed war-things into refugees. *(Prior — Scene 1: saved then surrendered the king's-man Wystan to Doyle's marshals; made an enemy of his sister Aldith; heard "the seal isn't in the reliquary; the boy is true-blooded.")*
 - **Open canon answers (made true in play):** The **Landing** — the Arrival's shanty in Monze, by the rift below Aurholt — is policed by **Sgt. Doyle's marshals**, who keep the camp fed by serving the **Lord Protector's** deal (handing back what wanders in). **Wystan** (a Dragon-Throne man) claims *the boy-king is true-blooded and the royal seal is not in the reliquary* — and is now in Almeric's hands. **Aldith** (his sister) blames Shake. *(Open signs: how King Urcrin died; why the rift speaks English / opened on a Working of Old Vael; where the seal truly is.)*
 
 ## Party & PCs
@@ -21,7 +21,7 @@
 
 ## Faction board  (summary; full board: `factions.md`)
 - **The Dragon Throne** (Boy-King Phillipe) — F5 C2 W2 · HP 13/13 · *Free and Crown Phillipe* 0/8 · partly backed by the Arrival.
-- **The Lord Protector's Party** (Almeric) — F3 C5 W2 · HP 15/15 · *Make the Regency Permanent* 0/8 · holds Aurholt & the boy.
+- **The Lord Protector's Party** (Almeric) — F3 C5 W2 · HP 15/15 · *Make the Regency Permanent* **1/8** *(moved scene 4: tightening his grip)* · holds Aurholt & the boy.
 - **The Mauressac Claim** (Marie) — F2 C3 W5 · HP 15/15 · *Press the Claim* **1/8** *(moved scene 3: consolidating/gathering in the west)* · Shinbu-Anak backed.
 - **The Worm-Cult of Vael** — F4 C1 W1 · HP 8/8 · *Wake the Crowned Worm* 0/8 · serves the dragon Vörniss.
 - **The Arrival** (the New Yorkers) — F3 C2 W4 · HP 12/12 · *Find a Foothold (or the Way Home)* 0/8 · split; the PC is one of them.
@@ -32,6 +32,7 @@
 - **The Stalled Reconquest of Old Vael** 0/10 — advances when a claimant consolidates the crown — touches the western waste / Vörniss' Crown (R-06).
 - **Vörniss Wakes** 1/8 — *(Worm-Cult moved in scene 1: 0→1)* advances by the Worm-Cult's project & any disturbance at R-06 — if filled, the dragon stirs (telegraph, then fire).
 - **Mishar's Vassalization** 0/8 — advances by Mishar's Hand — touches the bought counts (Deidre, Gruith, Qasim).
+- **Something on the western road** (scene 4) — an unknown threat west toward Mauressac, bad enough that a Blighted band fled it and warned travelers back; blocks the caravan's road. *(Possibly the "ruins-what-it-kills" Destruction-beast from Shake's first months.)*
 
 ## Domains / holdings
 - **<Holding>** — income vs upkeep net per interval; unrest …
