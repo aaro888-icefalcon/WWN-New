@@ -55,7 +55,7 @@
 - HP: 15 / 15
 - Treasure: 0
 - Goal: Press the Claim (Difficulty 1)
-- Project: Press the Mauressac Claim — clock 2/8
+- Project: Press the Mauressac Claim — clock 3/8
 - Stance: builder
 - Actor: Merchants and Oligarchs
 ### Assets
