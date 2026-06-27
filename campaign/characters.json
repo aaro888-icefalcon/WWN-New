@@ -46,14 +46,6 @@
    "weight": 1
   },
   {
-   "name": "Sgt. Doyle (Landing marshal captain)",
-   "weight": 1
-  },
-  {
-   "name": "Aldith (Wystan's sister — wronged)",
-   "weight": 1
-  },
-  {
    "name": "Reza (Shake's apprentice)",
    "weight": 1
   },
@@ -75,6 +67,14 @@
   },
   {
    "name": "Alys (the Factors' coerced ledger-girl; Garin's ward)",
+   "weight": 1
+  },
+  {
+   "name": "Under-Factor Reynaud (holds Alys & the second book)",
+   "weight": 2
+  },
+  {
+   "name": "Warden Osric (Low Quarter — risen, buries his past)",
    "weight": 1
   }
  ]
