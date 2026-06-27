@@ -80,7 +80,7 @@
 - HP: 12 / 12
 - Treasure: 0
 - Goal: Carve a Place to Stand (Difficulty 1)
-- Project: Find a Foothold (or the Way Home) — clock 0/8
+- Project: Find a Foothold (or the Way Home) — clock 1/8
 - Stance: builder
 - Actor: Demagogues and Religious Zealots
 ### Assets

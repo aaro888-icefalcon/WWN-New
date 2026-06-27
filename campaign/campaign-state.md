@@ -5,18 +5,19 @@
 ## Engine block (mythic-gm)
 *Lists are stored canonically as `threads.json` / `characters.json` (engine `state.py thread|char` / `lists.py`); the lines below mirror them for reading. `state.py init <campaign>` scaffolds the JSON; pass `--campaign <dir>` to the engine's List / Fate / Turning-Point scripts.*
 
-- **Chaos Factor:** 7  *(floor 6; +1 scene 5 — the unmaking catastrophe on the road)*
+- **Chaos Factor:** 6  *(floor 6; back to floor scene 6 — Shake passed the gate & made a base on his own terms)*
 - **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **★ SAVE POINT (resume here):** **Scene 6 — the gates of Mauressac.** Shake & Reza in the refugee line at the city gate (band released; the coat-man inbound to the city). HP 6/6 · Effort 3/3 · Strain 0 · Chaos 7. **Next beat:** *how they walk into Mauressac.*
+- **★ SAVE POINT (resume here):** **Scene 6 — inside Mauressac, gone to ground.** Shake (cover: *a southern Amundi healer*) & Reza are lodged at **Maela's** back-quarter lodging-house (work-for-roof). HP 6/6 · Effort 3/3 · Strain 0 · Chaos 6. **Next beat:** *quietly hunt the gathered rift-folk / Akhil's trail — without being identified as rift-folk himself.*
 - **Last scene recap:** **Scenes 2–5 — the road west, and the catastrophe on it.** Shake left the Landing with **Hild's** westbound salt-caravan (apprentice **Reza** in tow), bound for **Mauressac** on a thin 4-month-old lead that his brother **Akhil** fell west; his first four months are now canon, and road-rumor says Mauressac's countess is *gathering rift-folk* (his hope, unconfirmed). Shake talked captain **Hild** off a first-strike against **5 Blighted** (who were *fleeing* something west and let the caravan pass). The caravan camped to wait the threat out — and **drew it**: a thing that *unmakes* what it touches turned onto the camp when a mule panicked. Fleeing on a horse with **Reza**, Shake's Evasion failed and the edge caught them (3d6=6 → **0 HP, saved only by Vital Furnace**). The horror tore a furrow and passed on; the road west is now grimly **clear**. **Dead: captain Hild and a few others**; the caravan broken and **leaderless**; Reza alive and hurt; Shake woke at 1 HP. In the aftermath he **healed himself and the wounded** (Healing Touch), **salvaged enough to limp on**, burned the dead (Hild among them), and — the survivors cohering to the one man still standing — now **leads ~11 caravaners west toward Mauressac**, the road clear, a brother's rumor ahead. The watchful **man in the good coat** lived, and is *calculating*. At the city's edge Shake **healed, named, and released the band**, read the coat-man as an opaque agent who priced him on the road, and walked the last miles into Mauressac's country with only **Reza**. *(Prior — Scene 1: saved then surrendered the king's-man Wystan to Doyle's marshals; made an enemy of his sister Aldith; heard "the seal isn't in the reliquary; the boy is true-blooded.")*
 - **Open canon answers (made true in play):** The **Landing** — the Arrival's shanty in Monze, by the rift below Aurholt — is policed by **Sgt. Doyle's marshals**, who keep the camp fed by serving the **Lord Protector's** deal (handing back what wanders in). **Wystan** (a Dragon-Throne man) claims *the boy-king is true-blooded and the royal seal is not in the reliquary* — and is now in Almeric's hands. **Aldith** (his sister) blames Shake. *(Open signs: how King Urcrin died; why the rift speaks English / opened on a Working of Old Vael; where the seal truly is.)*
 
 ## Party & PCs
 - **Abhishek "Shake" Rao** — Adventurer (Partial Warrior / Partial Healer) L1 · Physician · Int **18** (+2) · **HP 6/6 · AC 14 · Strain 0/11 · Effort 3/3** · Heal-1, Stab-1, Craft-0 · Foci: One Point Strike Style (attacks use Int +2), Artisan · Arts: Healing Touch, Vital Furnace · longsword **d20+4 / 1d8+3 / Shock 2-AC13** · *survived a drop to 0 in scene 5; healed up.* **Full sheet: `character-sheet.md`.**
 - **Gear:** long sword · buff coat + buckler · physician's kit · backpack · throwing blades ×5 · NY relics (penlight, dead phone, badge) · ~25 sp (all recovered from the wreck).
-- **Travels light:** the band tended, **named** (Ultragotha, Mina, the child Helene & 8 more) and **released** to scatter/settle; the **man in the good coat** peeled off toward the city by his own road (will resurface inside). **Shake + Reza alone**, in the refugee traffic ~1 hour from **Mauressac's gate**. **Location:** the approach to **Mauressac** (Shire of Mauressac, RG-04).
+- **In Mauressac, gone to ground:** lodged at **Maela's** back-quarter lodging-house (dyers/porters' district), trading healing for a room under the eaves; cover = *a healer from the lower Amundi kingdoms* (his Qasiri-passing looks sell it; his fluent Marcher is the tell). The **man in the good coat** is loose in the city. *(Maela reads as hiding something — a sign.)*
+- **Companion — Reza:** 14, Bangladeshi-American, from the **Lower East Side** (Baruch Houses); 9th-grade science kid, now Shake's half-trained field-medic apprentice. Mother died at the Landing (first month); **father's fate unknown** (back on Earth? another shard? — she won't speak of it). Fiercely loyal; dragged Shake out of the unmaking. **Location:** Mauressac (RG-04).
 
 ## Effort & Strain  (per caster / PC)
 - **Shake:** Effort 3/3 (none committed) · System Strain 0/11. *(Scene-Effort returns at scene end; day-Effort at dawn.)*
@@ -26,7 +27,7 @@
 - **The Lord Protector's Party** (Almeric) — F3 C5 W2 · HP 15/15 · *Make the Regency Permanent* **1/8** *(moved scene 4: tightening his grip)* · holds Aurholt & the boy.
 - **The Mauressac Claim** (Marie) — F2 C3 W5 · HP 15/15 · *Press the Claim* **1/8** *(moved scene 3: consolidating/gathering in the west)* · Shinbu-Anak backed.
 - **The Worm-Cult of Vael** — F4 C1 W1 · HP 8/8 · *Wake the Crowned Worm* **2/8** *(moved scenes 1 & 5)* · serves the dragon Vörniss.
-- **The Arrival** (the New Yorkers) — F3 C2 W4 · HP 12/12 · *Find a Foothold (or the Way Home)* 0/8 · split; the PC is one of them.
+- **The Arrival** (the New Yorkers) — F3 C2 W4 · HP 12/12 · *Find a Foothold (or the Way Home)* **1/8** *(moved scene 6)* · split; the PC is one of them.
 - **Mishar's Hand** (Despot Amiya) — F3 C4 W3 · HP 14/14 · *Vassalize Auragne* 0/8 · buys the counts. *Run `faction_turn.py` at the world-tick cadence.*
 
 ## World ledger — clocks & threats  (see `world-model.md`)
@@ -35,6 +36,7 @@
 - **Vörniss Wakes** 2/8 — *(Worm-Cult moved scenes 1 & 5)* advances by the Worm-Cult's project & any disturbance at R-06 — if filled, the dragon stirs (telegraph, then fire).
 - **Mishar's Vassalization** 0/8 — advances by Mishar's Hand — touches the bought counts (Deidre, Gruith, Qasim).
 - **The Unmaking-thing** (scene 5) — a Destruction-driven horror that *unmakes* what it touches; tore through the caravan camp (killed Hild + several) and continued on its line, **out of the area** — the western road is now clear, but the beast still roams the western country toward Mauressac.
+- **Maela's secret** (scene 6, GM sign) — Shake's Mauressac landlady is no mere landlady: a hidden identity and **veiled backers**, presently tangled with one of her patrons' "clients" who has **gone rogue**. Shake only reads her as "off." *(Surfaces when earned.)*
 
 ## Domains / holdings
 - **<Holding>** — income vs upkeep net per interval; unrest …
@@ -81,6 +83,7 @@ _Σ weighted slots = 22_
 15. Reza (Shake's apprentice)
 16. Brann (Marcher rag-picker, owed a debt)
 17. The man in the good coat (caravan survivor, watchful)
-_Σ weighted slots = 22_
+18. Maela (Mauressac landlady — secret backers)
+_Σ weighted slots = 23_
 
 <!-- LISTS:END -->
