@@ -9,7 +9,7 @@
 - **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **Last scene recap (2–3 sentences):** **Scene 1 — "Triage" (the Landing, Monze).** A boy-king's man, **Wystan**, was carried dying into Shake's aid-tent, hunted by the Landing's own **marshals** (the Arrival faction sworn to the Lord Protector). Shake saved him with Healing Touch (pulled him to a bare 4 HP), then judged the camp's winter above a stranger and let **Sgt. Doyle** take him back toward Aurholt — buying the camp's grain and Doyle's debt, and the lasting enmity of Wystan's sister **Aldith**. Wystan's parting words linger: *the seal isn't in the reliquary; the boy is true-blooded.*
+- **Last scene recap:** **Scenes 2–3 — the road west.** Shake left the Landing with **Hild's** westbound salt-caravan (apprentice **Reza** in tow), bound for **Mauressac** on a thin 4-month-old lead that his brother **Akhil** fell west; his first four months are now canon, and road-rumor says Mauressac's countess is *gathering rift-folk* (his hope, unconfirmed). A failed read of the war-road left the caravan unready — and on **day 7**, at a high cold saddle, **5 Blighted** have blocked the road, their skull-helmed leader rasping something almost like speech. **Unresolved — Shake (6 HP) has Reza behind him.** *(Prior — Scene 1: saved then surrendered the king's-man Wystan to Doyle's marshals; made an enemy of his sister Aldith; heard "the seal isn't in the reliquary; the boy is true-blooded.")*
 - **Open canon answers (made true in play):** The **Landing** — the Arrival's shanty in Monze, by the rift below Aurholt — is policed by **Sgt. Doyle's marshals**, who keep the camp fed by serving the **Lord Protector's** deal (handing back what wanders in). **Wystan** (a Dragon-Throne man) claims *the boy-king is true-blooded and the royal seal is not in the reliquary* — and is now in Almeric's hands. **Aldith** (his sister) blames Shake. *(Open signs: how King Urcrin died; why the rift speaks English / opened on a Working of Old Vael; where the seal truly is.)*
 
 ## Party & PCs
@@ -22,7 +22,7 @@
 ## Faction board  (summary; full board: `factions.md`)
 - **The Dragon Throne** (Boy-King Phillipe) — F5 C2 W2 · HP 13/13 · *Free and Crown Phillipe* 0/8 · partly backed by the Arrival.
 - **The Lord Protector's Party** (Almeric) — F3 C5 W2 · HP 15/15 · *Make the Regency Permanent* 0/8 · holds Aurholt & the boy.
-- **The Mauressac Claim** (Marie) — F2 C3 W5 · HP 15/15 · *Press the Claim* 0/8 · Shinbu-Anak backed.
+- **The Mauressac Claim** (Marie) — F2 C3 W5 · HP 15/15 · *Press the Claim* **1/8** *(moved scene 3: consolidating/gathering in the west)* · Shinbu-Anak backed.
 - **The Worm-Cult of Vael** — F4 C1 W1 · HP 8/8 · *Wake the Crowned Worm* 0/8 · serves the dragon Vörniss.
 - **The Arrival** (the New Yorkers) — F3 C2 W4 · HP 12/12 · *Find a Foothold (or the Way Home)* 0/8 · split; the PC is one of them.
 - **Mishar's Hand** (Despot Amiya) — F3 C4 W3 · HP 14/14 · *Vassalize Auragne* 0/8 · buys the counts. *Run `faction_turn.py` at the world-tick cadence.*
