@@ -36,14 +36,14 @@
 - Aurholt | Base of Influence | HP 15/15 | base
 - Aurholt | Mercenary Captains | HP 4/4
 
-## Faction: The Dragon Throne
+## Faction: The Dragon Throne (Leaderless Remnant — Phillipe dead, scene 18)
 - Tags: Rooted
-- Force: 5   Cunning: 2   Wealth: 2
-- HP: 13 / 13
+- Force: 4   Cunning: 2   Wealth: 2
+- HP: 9 / 9
 - Treasure: 1
-- Goal: Crown the True King (Difficulty 1)
-- Project: Free and Crown Phillipe — clock 0/8
-- Stance: aggressive
+- Goal: Salvage a Dragon-claim after Phillipe's fall (Difficulty 3)
+- Project: Regroup the leaderless dragon-blood remnant — clock 0/8
+- Stance: defensive
 - Actor: Warlords and Warband Chiefs
 ### Assets
 - Aurholt | Base of Influence | HP 13/13 | base

@@ -9,7 +9,7 @@
 - **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **★ SAVE POINT (resume here):** **Scene 17 — the warden's colors.** Shake **scrapped the river road** (let the barge & Alys go) and chose the patient road to Akhil: get *inside the records.* He asked **Warden Wynne** for a place and she **took him on** (Fate Yes, on the debt): **ward-leech of the river-ward.** She **sees through his cover** (knows he's rift-folk) but won't pry; the deal — keep her watch & river-poor alive, mouth shut on ward business, and he may **read the open rolls** (three years of **river-traffic & barge-manifests**) on his own hours — *the slow, sure road to where the taken (and Akhil) were shipped.* She names the risk (*"Gault has your face; you're my target now, I keep what's mine"*); probationary, watched, loyal-to-the-ward. Shake then took a clean **two-room let above a cooper's** in the river-ward (ward-wages + a warden's name), a real base for him & Reza off Maela's eaves, and **mended his own shoulder (HP 6/6).** **NEW STATUS QUO:** *ward-leech of Wynne's river-ward · base above the cooper's · access to the open rolls · hunting Akhil through paperwork · marked by Gault · the kingdom cracking around him.* Effort 3/3 · purse ~56 sp · Chaos 6. **Pending:** *move Reza from Maela's (& what's owed Maela, who hides something) · report to the ward-house at the evening bell · the Osric arrest lands (Wynne's race) · begin combing the manifests for a green eye and a brother's name.*
+- **★ SAVE POINT (resume here):** **Scene 18 — the night the boy-king died.** Shake moved **Reza** to the cooper's (safe) with a brief, opaque parting from **Maela** (who clocked his ward-colors and recalculated — *"you've made yourself visible"* — a sign kept). Then a **Turning Point** broke the kingdom: **Boy-King Phillipe is DEAD** — fallen as the realm's armies finally crashed (mass battle); **the Dragon Throne collapses**, the succession now a brawl over an **empty chair.** Mauressac, already cracked, **erupts into open violence** (riot/factional convulsion in the river-ward). In the chaos **Osric SLIPPED Wynne's net** (Fate Yes) — ruined, name in the gutter, but **loose & fugitive with Gault** (who has Shake's face). And **the man in the good coat** — the opaque watcher from the road — **dragged himself, gut-opened and unconscious (can't speak — Fate No), to the one healer he'd tracked: Shake.** **CLIFFHANGER:** the mystery-man lies open and silent under the new ward-leech's hands, the city screaming, Reza safe behind a bolt. HP 6/6 · Effort 3/3 · purse ~56 sp · Chaos 6 *(scene-18 Chaos/tick pending at scene end)*. **Decision on the table:** *save the coat-man (and maybe learn who he is if he wakes — or from what's on him) · search him · let him die · or other — amid the eruption.*
 - **Last scene recap:** **Scenes 2–5 — the road west, and the catastrophe on it.** Shake left the Landing with **Hild's** westbound salt-caravan (apprentice **Reza** in tow), bound for **Mauressac** on a thin 4-month-old lead that his brother **Akhil** fell west; his first four months are now canon, and road-rumor says Mauressac's countess is *gathering rift-folk* (his hope, unconfirmed). Shake talked captain **Hild** off a first-strike against **5 Blighted** (who were *fleeing* something west and let the caravan pass). The caravan camped to wait the threat out — and **drew it**: a thing that *unmakes* what it touches turned onto the camp when a mule panicked. Fleeing on a horse with **Reza**, Shake's Evasion failed and the edge caught them (3d6=6 → **0 HP, saved only by Vital Furnace**). The horror tore a furrow and passed on; the road west is now grimly **clear**. **Dead: captain Hild and a few others**; the caravan broken and **leaderless**; Reza alive and hurt; Shake woke at 1 HP. In the aftermath he **healed himself and the wounded** (Healing Touch), **salvaged enough to limp on**, burned the dead (Hild among them), and — the survivors cohering to the one man still standing — now **leads ~11 caravaners west toward Mauressac**, the road clear, a brother's rumor ahead. The watchful **man in the good coat** lived, and is *calculating*. At the city's edge Shake **healed, named, and released the band**, read the coat-man as an opaque agent who priced him on the road, and walked the last miles into Mauressac's country with only **Reza**. *(Prior — Scene 1: saved then surrendered the king's-man Wystan to Doyle's marshals; made an enemy of his sister Aldith; heard "the seal isn't in the reliquary; the boy is true-blooded.")*
 - **Open canon answers (made true in play):** The **Landing** — the Arrival's shanty in Monze, by the rift below Aurholt — is policed by **Sgt. Doyle's marshals**, who keep the camp fed by serving the **Lord Protector's** deal (handing back what wanders in). **Wystan** (a Dragon-Throne man) claims *the boy-king is true-blooded and the royal seal is not in the reliquary* — and is now in Almeric's hands. **Aldith** (his sister) blames Shake. *(Open signs: how King Urcrin died; why the rift speaks English / opened on a Working of Old Vael; where the seal truly is.)*
 
@@ -23,7 +23,7 @@
 - **Shake:** Effort 3/3 (none committed) · System Strain 0/11. *(Scene-Effort returns at scene end; day-Effort at dawn.)*
 
 ## Faction board  (summary; full board: `factions.md`)
-- **The Dragon Throne** (Boy-King Phillipe) — F5 C2 W2 · HP 13/13 · *Free and Crown Phillipe* 0/8 · partly backed by the Arrival.
+- **The Dragon Throne — FALLEN** (Phillipe **dead**, scene 18) — F4 C2 W2 · HP 9/9 · a **leaderless dragon-blood remnant** (*Regroup* 0/8, defensive); may rally to a new dragon-claim or scatter. *The three-way succession is now a brawl over an empty chair.*
 - **The Lord Protector's Party** (Almeric) — F3 C5 W2 · HP 15/15 · *Make the Regency Permanent* **4/8** *(moved scene 16: Move Asset; bg — Almeric secures a marriage-alliance: hunted but not finished, shoring up the regency)* · holds Aurholt & the boy.
 - **The Mauressac Claim** (Marie) — F2 C3 W5 · HP 15/15 · *Press the Claim* **3/8** *(moved scene 11: Move Asset — consolidating; bg actor: criminals biting guild wealth)* · Shinbu-Anak backed.
 - **The Worm-Cult of Vael** — F4 C1 W1 · HP 8/8 · *Wake the Crowned Worm* **5/8** *(moved scenes 1, 5, 7 & 15: bg — locals beg the cult's aid as the west burns; **PAST HALF**)* · serves the dragon Vörniss.
@@ -31,7 +31,7 @@
 - **Mishar's Hand** (Despot Amiya) — F3 C4 W3 · HP 14/14 · *Vassalize Auragne* **1/8** *(moved scene 17: Move Asset; bg — fighting a rival local power base)* · buys the counts. *Run `faction_turn.py` at the world-tick cadence.*
 
 ## World ledger — clocks & threats  (see `world-model.md`)
-- **The Three-Way Succession War** 0/12 — advances by faction turns & decisive moves — touches all of Auragne.
+- **The Succession War — now OPEN** (erupted scene 18) **~7/12** — the cold three-way tension broke into **open battle**; **Boy-King Phillipe is dead** and the Dragon Throne fallen. Two claimants left (Almeric's regency · Marie's Claim) plus the vulture (Mishar), all over an **empty chair.** Touches all of Auragne.
 - **The Reconquest of Old Vael — LIT** (scene 14 Turning Point) 0/10 — *no longer stalled:* with **Almeric hunted** and the regency cracking, the western marches are aflame and a claimant may move on the old empire's corpse — touches the western waste / Vörniss' Crown (R-06). *(Couples to Vörniss Wakes 3/8 — disturbance in the west.)*
 - **Almeric hunted; the realm cracked** (scene 14 Turning Point) — the Lord Protector's grip was cut from under him in the night (the lost lieutenant → an open hunt); the capital's in uproar and every power lunges (Marie's Claim pounces in the west). Distant from Shake, but it's why Mauressac convulsed this dawn. *(Open: who hunts Almeric, and whether the boy-king/seal secret now surfaces.)*
 - **Vörniss Wakes** **5/8** — *(PAST HALF; synced to the Worm-Cult project. The omen has now FIRED — scene 15's raving **sole survivor** of the Worm eating a whole company in the west; the cult exploits the realm-crisis, locals begging its sorcerers' aid)* advances by the Worm-Cult & disturbances at R-06 — **at 8/8 the dragon acts** (telegraph well underway → then fire).
@@ -73,23 +73,22 @@
 _Σ weighted slots = 23_
 
 ## Characters List — generated snapshot of characters.json (do not hand-edit)
-1. Boy-King Phillipe  _(weight 3)_
-2. Lord Protector Almeric  _(weight 3)_
-3. Countess Marie  _(weight 2)_
-4. Countess Deidre of Verzeille
-5. Count Qasim of Shakal
-6. Vörniss the Crowned Worm
-7. Despot Amiya of Mishar
-8. Reza (Shake's apprentice)
-9. The man in the good coat (caravan survivor, watchful)
-10. Maela (Mauressac landlady — secret backers)
-11. Tanya (Bronx FDNY medic — leader of the Factors' rift-folk stock)
-12. Alys (the Factors' coerced ledger-girl; Garin's ward)
-13. Under-Factor Reynaud (holds Alys & the second book)  _(weight 2)_
-14. Warden Osric (Low Quarter — risen, buries his past)  _(weight 2)_
-15. Aldhelm (Keeper of the veterans' brotherhood; Shake's ally)
-16. Warden Wynne (honest river-warden; the lawful hand)  _(weight 2)_
-17. Edme (Mauressac harbor-physician; keeps the river-poor's tallies; river-road ally)
-_Σ weighted slots = 25_
+1. Lord Protector Almeric  _(weight 3)_
+2. Countess Marie  _(weight 2)_
+3. Countess Deidre of Verzeille
+4. Count Qasim of Shakal
+5. Vörniss the Crowned Worm
+6. Despot Amiya of Mishar
+7. Reza (Shake's apprentice)
+8. The man in the good coat (caravan survivor, watchful)
+9. Maela (Mauressac landlady — secret backers)
+10. Tanya (Bronx FDNY medic — leader of the Factors' rift-folk stock)
+11. Alys (the Factors' coerced ledger-girl; Garin's ward)
+12. Under-Factor Reynaud (holds Alys & the second book)  _(weight 2)_
+13. Warden Osric (Low Quarter — risen, buries his past)  _(weight 2)_
+14. Aldhelm (Keeper of the veterans' brotherhood; Shake's ally)
+15. Warden Wynne (honest river-warden; the lawful hand)  _(weight 2)_
+16. Edme (Mauressac harbor-physician; keeps the river-poor's tallies; river-road ally)
+_Σ weighted slots = 22_
 
 <!-- LISTS:END -->
