@@ -64,6 +64,10 @@
   {
    "name": "Warden Wynne (honest river-warden; the lawful hand)",
    "weight": 1
+  },
+  {
+   "name": "Edme (Mauressac harbor-physician; keeps the river-poor's tallies; river-road ally)",
+   "weight": 1
   }
  ]
 }

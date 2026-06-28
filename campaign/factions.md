@@ -29,7 +29,7 @@
 - HP: 15 / 15
 - Treasure: 0
 - Goal: Cement the Regency (Difficulty 2)
-- Project: Make the Regency Permanent — clock 3/8
+- Project: Make the Regency Permanent — clock 4/8
 - Stance: schemer
 - Actor: Nobles and Gentry
 ### Assets
