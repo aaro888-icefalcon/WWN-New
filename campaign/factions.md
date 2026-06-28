@@ -68,7 +68,7 @@
 - HP: 8 / 8
 - Treasure: 1
 - Goal: Wake the Crowned Worm (Difficulty 2)
-- Project: Wake the Crowned Worm — clock 4/8
+- Project: Wake the Crowned Worm — clock 5/8
 - Stance: aggressive
 - Actor: Sorcerers and Magic-Users
 ### Assets
