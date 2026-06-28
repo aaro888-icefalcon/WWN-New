@@ -5,18 +5,18 @@
 ## Engine block (mythic-gm)
 *Lists are stored canonically as `threads.json` / `characters.json` (engine `state.py thread|char` / `lists.py`); the lines below mirror them for reading. `state.py init <campaign>` scaffolds the JSON; pass `--campaign <dir>` to the engine's List / Fate / Turning-Point scripts.*
 
-- **Chaos Factor:** 6  *(floor 6; −1 scene 16 — Shake handed Osric's ruin to the honest machine (Wynne moves) & gained the river lead; a PC win, the world eases a notch)*
+- **Chaos Factor:** 6  *(floor 6; scene 17 — Shake landed a ward post, a base & a revived plan: a stabilizing win, but the floor holds in a cracking realm)*
 - **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **★ SAVE POINT (resume here):** **Scene 16 — the river-stair: Osric handed off, the river road opens.** Shake took the case to **Warden Wynne** at a river-stair (mid-crisis, wrangling river-men). Told of Hroth's murder *and* Gault's attack on her own doorstep, she went cold and **moved hard & now** (Fate Yes): warrant + watch dispatched — *"find Osric before he finds a fast horse; if Gault resists, Gault hangs first."* **The Osric ruin is now Wynne's machine, not Shake's** — whether it catches him before he runs is her race. Then a **Turning Point**: a Mauressac **harbor-physician, Edme** (methodical; keeps the river-poor's tallies) brought the river-road's answer — the green-eye barges run **downriver to SALTMERE, the marsh-mouth where river meets sea; the buyers there come *up from the water,* pay in unnamed coin, and "folk go down as cargo and don't come back up."** She pressed Shake a **sealed manifest-scrap (barge-name + tide) that came under her door from an unknown hand** — someone is quietly arming the asking healer. *Something is getting away:* the barge (Alys & the taken) is hours downriver and gaining the current. HP **4/6 (shoulder untended)** · Effort 3/3 · purse ~56 sp · Chaos 6. **Next beat:** *Shake **SCRAPPED the river road** (scene 16, player call) — handed Edme's manifest back, let the barge & Alys go; **the Akhil trail goes cold by his own triage**. Now, at the river-stair, 4 HP & untended: tend the shoulder · regroup with **Reza** (still at Maela's) · see the **Osric** matter land · lie low (marked by Gault) · or pick a new heading in a collapsing city.*
+- **★ SAVE POINT (resume here):** **Scene 17 — the warden's colors.** Shake **scrapped the river road** (let the barge & Alys go) and chose the patient road to Akhil: get *inside the records.* He asked **Warden Wynne** for a place and she **took him on** (Fate Yes, on the debt): **ward-leech of the river-ward.** She **sees through his cover** (knows he's rift-folk) but won't pry; the deal — keep her watch & river-poor alive, mouth shut on ward business, and he may **read the open rolls** (three years of **river-traffic & barge-manifests**) on his own hours — *the slow, sure road to where the taken (and Akhil) were shipped.* She names the risk (*"Gault has your face; you're my target now, I keep what's mine"*); probationary, watched, loyal-to-the-ward. Shake then took a clean **two-room let above a cooper's** in the river-ward (ward-wages + a warden's name), a real base for him & Reza off Maela's eaves, and **mended his own shoulder (HP 6/6).** **NEW STATUS QUO:** *ward-leech of Wynne's river-ward · base above the cooper's · access to the open rolls · hunting Akhil through paperwork · marked by Gault · the kingdom cracking around him.* Effort 3/3 · purse ~56 sp · Chaos 6. **Pending:** *move Reza from Maela's (& what's owed Maela, who hides something) · report to the ward-house at the evening bell · the Osric arrest lands (Wynne's race) · begin combing the manifests for a green eye and a brother's name.*
 - **Last scene recap:** **Scenes 2–5 — the road west, and the catastrophe on it.** Shake left the Landing with **Hild's** westbound salt-caravan (apprentice **Reza** in tow), bound for **Mauressac** on a thin 4-month-old lead that his brother **Akhil** fell west; his first four months are now canon, and road-rumor says Mauressac's countess is *gathering rift-folk* (his hope, unconfirmed). Shake talked captain **Hild** off a first-strike against **5 Blighted** (who were *fleeing* something west and let the caravan pass). The caravan camped to wait the threat out — and **drew it**: a thing that *unmakes* what it touches turned onto the camp when a mule panicked. Fleeing on a horse with **Reza**, Shake's Evasion failed and the edge caught them (3d6=6 → **0 HP, saved only by Vital Furnace**). The horror tore a furrow and passed on; the road west is now grimly **clear**. **Dead: captain Hild and a few others**; the caravan broken and **leaderless**; Reza alive and hurt; Shake woke at 1 HP. In the aftermath he **healed himself and the wounded** (Healing Touch), **salvaged enough to limp on**, burned the dead (Hild among them), and — the survivors cohering to the one man still standing — now **leads ~11 caravaners west toward Mauressac**, the road clear, a brother's rumor ahead. The watchful **man in the good coat** lived, and is *calculating*. At the city's edge Shake **healed, named, and released the band**, read the coat-man as an opaque agent who priced him on the road, and walked the last miles into Mauressac's country with only **Reza**. *(Prior — Scene 1: saved then surrendered the king's-man Wystan to Doyle's marshals; made an enemy of his sister Aldith; heard "the seal isn't in the reliquary; the boy is true-blooded.")*
 - **Open canon answers (made true in play):** The **Landing** — the Arrival's shanty in Monze, by the rift below Aurholt — is policed by **Sgt. Doyle's marshals**, who keep the camp fed by serving the **Lord Protector's** deal (handing back what wanders in). **Wystan** (a Dragon-Throne man) claims *the boy-king is true-blooded and the royal seal is not in the reliquary* — and is now in Almeric's hands. **Aldith** (his sister) blames Shake. *(Open signs: how King Urcrin died; why the rift speaks English / opened on a Working of Old Vael; where the seal truly is.)*
 
 ## Party & PCs
-- **Abhishek "Shake" Rao** — Adventurer (Partial Warrior / Partial Healer) L1 · Physician · Int **18** (+2) · **HP 4/6 · AC 14 · Strain 0/11 · Effort 3/3** · Heal-1, Stab-1, Craft-0 · Foci: One Point Strike Style (attacks use Int +2), Artisan · Arts: Healing Touch, Vital Furnace · longsword **d20+4 / 1d8+3 / Shock 2-AC13** · *survived a drop to 0 in scene 5; took an open shoulder clip scene 15 (4/6, untended).* **Full sheet: `character-sheet.md`.**
+- **Abhishek "Shake" Rao** — Adventurer (Partial Warrior / Partial Healer) L1 · Physician · Int **18** (+2) · **HP 6/6 · AC 14 · Strain 0/11 · Effort 3/3** · Heal-1, Stab-1, Craft-0 · Foci: One Point Strike Style (attacks use Int +2), Artisan · Arts: Healing Touch, Vital Furnace · longsword **d20+4 / 1d8+3 / Shock 2-AC13** · *survived a drop to 0 (scene 5); shoulder clip (scene 15) mended (scene 17).* **Full sheet: `character-sheet.md`.**
 - **Gear:** long sword · buff coat + buckler · physician's kit · backpack · throwing blades ×5 · NY relics (penlight, dead phone, badge) · **~56 sp** (25 recovered + Garin's up-front & half-on-report; a final quarter due at the dusk-drop).
-- **In Mauressac, gone to ground:** lodged at **Maela's** back-quarter lodging-house (dyers/porters' district), trading healing for a room under the eaves; cover = *a healer from the lower Amundi kingdoms* (his Qasiri-passing looks sell it; his fluent Marcher is the tell). The **man in the good coat** is loose in the city. *(Maela reads as hiding something — a sign.)*
+- **In Mauressac, with colors now:** **ward-leech of Warden Wynne's river-ward** — a wage, standing, a warden at his back vs Gault, and the run of the ward-house's **open rolls**. New base: a **two-room let above a cooper's** in the river-ward (moving Reza here off Maela's eaves). Cover upgraded from "lower-Amundi healer" to a sworn ward-man — though **Wynne privately knows he's rift-folk.** The **man in the good coat** is still loose; **Maela** (old landlady, hides something) is owed a goodbye-or-reckoning. *(Gault & Osric's faction have Shake's face.)*
 - **Companion — Reza:** 14, Bangladeshi-American, from the **Lower East Side** (Baruch Houses); 9th-grade science kid, now Shake's half-trained field-medic apprentice. Mother died at the Landing (first month); **father's fate unknown** (back on Earth? another shard? — she won't speak of it). Fiercely loyal; dragged Shake out of the unmaking. **Location:** Mauressac (RG-04).
 
 ## Effort & Strain  (per caster / PC)
@@ -28,7 +28,7 @@
 - **The Mauressac Claim** (Marie) — F2 C3 W5 · HP 15/15 · *Press the Claim* **3/8** *(moved scene 11: Move Asset — consolidating; bg actor: criminals biting guild wealth)* · Shinbu-Anak backed.
 - **The Worm-Cult of Vael** — F4 C1 W1 · HP 8/8 · *Wake the Crowned Worm* **5/8** *(moved scenes 1, 5, 7 & 15: bg — locals beg the cult's aid as the west burns; **PAST HALF**)* · serves the dragon Vörniss.
 - **The Arrival** (the New Yorkers) — F3 C2 W4 · HP 12/12 · *Find a Foothold (or the Way Home)* **2/8** *(moved scene 14: Move Asset — consolidating; bg: rift-folk being suppressed by local authorities — shipped/herded amid the crisis)* · split; the PC is one of them.
-- **Mishar's Hand** (Despot Amiya) — F3 C4 W3 · HP 14/14 · *Vassalize Auragne* 0/8 · buys the counts. *Run `faction_turn.py` at the world-tick cadence.*
+- **Mishar's Hand** (Despot Amiya) — F3 C4 W3 · HP 14/14 · *Vassalize Auragne* **1/8** *(moved scene 17: Move Asset; bg — fighting a rival local power base)* · buys the counts. *Run `faction_turn.py` at the world-tick cadence.*
 
 ## World ledger — clocks & threats  (see `world-model.md`)
 - **The Three-Way Succession War** 0/12 — advances by faction turns & decisive moves — touches all of Auragne.
@@ -66,11 +66,11 @@
 4. Despot Amiya Buys the Counts  _(weight 2)_
 5. The Split Diaspora at the Rift  _(weight 3)_
 6. The Worm-Cult Rises in the West
-7. The Search for Akhil (his brother)  _(weight 2)_
+7. The Search for Akhil (his brother)  _(weight 3)_
 8. The Secret Wystan Left — the seal & the true boy-king  _(weight 2)_
 9. Bring down Warden Osric — Hroth's murderer (with Wynne, vs Gault)  _(weight 2)_
 10. The Reconquest of Old Vael — the marches lit (no longer stalled)  _(weight 2)_
-_Σ weighted slots = 22_
+_Σ weighted slots = 23_
 
 ## Characters List — generated snapshot of characters.json (do not hand-edit)
 1. Boy-King Phillipe  _(weight 3)_
@@ -88,8 +88,8 @@ _Σ weighted slots = 22_
 13. Under-Factor Reynaud (holds Alys & the second book)  _(weight 2)_
 14. Warden Osric (Low Quarter — risen, buries his past)  _(weight 2)_
 15. Aldhelm (Keeper of the veterans' brotherhood; Shake's ally)
-16. Warden Wynne (honest river-warden; the lawful hand)
+16. Warden Wynne (honest river-warden; the lawful hand)  _(weight 2)_
 17. Edme (Mauressac harbor-physician; keeps the river-poor's tallies; river-road ally)
-_Σ weighted slots = 24_
+_Σ weighted slots = 25_
 
 <!-- LISTS:END -->

@@ -93,7 +93,7 @@
 - HP: 14 / 14
 - Treasure: 3
 - Goal: Vassalize Auragne (Difficulty 2)
-- Project: Vassalize Auragne — clock 0/8
+- Project: Vassalize Auragne — clock 1/8
 - Stance: schemer
 - Actor: Nobles and Gentry
 ### Assets
