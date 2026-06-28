@@ -6,10 +6,6 @@
    "weight": 3
   },
   {
-   "name": "The Stalled Reconquest of Old Vael",
-   "weight": 2
-  },
-  {
    "name": "The Arrival — the City That Fell Through",
    "weight": 3
   },
@@ -38,16 +34,16 @@
    "weight": 2
   },
   {
-   "name": "The Unaccounted New Yorkers (Jason, Jessica & the lost)",
-   "weight": 1
-  },
-  {
-   "name": "Find Garin's ward Alys (taken by Master Corvin, Factors' Guild)",
-   "weight": 3
-  },
-  {
    "name": "Bring down Warden Osric — Hroth's murderer (with Wynne, vs Gault)",
    "weight": 1
+  },
+  {
+   "name": "The Reconquest of Old Vael — the marches lit (no longer stalled)",
+   "weight": 2
+  },
+  {
+   "name": "The river road — where the taken go (downriver by barge; Alys & Akhil's people aboard)",
+   "weight": 2
   }
  ]
 }
