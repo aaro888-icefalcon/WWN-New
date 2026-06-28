@@ -5,11 +5,11 @@
 ## Engine block (mythic-gm)
 *Lists are stored canonically as `threads.json` / `characters.json` (engine `state.py thread|char` / `lists.py`); the lines below mirror them for reading. `state.py init <campaign>` scaffolds the JSON; pass `--campaign <dir>` to the engine's List / Fate / Turning-Point scripts.*
 
-- **Chaos Factor:** 7  *(floor 6; +1 scene 12 — the dusk drop went against the PC: Alys caught & taken (Fate Exc-No), his line to Akhil cut, events outrunning him)*
+- **Chaos Factor:** 6  *(floor 6; −1 scene 13 — Shake seized a chaotic graveyard fight, slew the relict, freed the thralls, unearthed the truth & took command of the plan; back to floor)*
 - **Adventure mode:** Adventure Crafter  *(Theme priority: Action ▸ Social ▸ Tension ▸ Personal ▸ Mystery)*
 - **Threads & Characters Lists:** canonical in `threads.json` / `characters.json` — view with `state.py thread show` / `char show`. **Do not copy them here.**
 - **Adventure Features:** …  *(if a prepared/ingested adventure)*
-- **★ SAVE POINT (resume here):** **Scene 12 — the drop that wasn't.** Before dusk Shake **signed on with the veterans' brotherhood** (the memorial-ground diggers job) under old serjeant **Aldhelm** — but the purse came from **Warden Osric**, the Low Quarter's risen, evasive official (a man who buries those who know his past; *Ambition: erase all who know his origins*). Then to the **dusk drop** at the cistern court behind the counting-house. **Alys never came.** Fate **Exceptional No** (98): she was **caught thieving the second book that afternoon** — the guild in theft-paranoid lockdown all week (the Claim consolidating, criminals biting its wealth) — and **taken inside**. Shake read it from the signs (overturned draw-bucket, dragged heels, her **cracked wax tally-slate**) and a frightened scullery boy: *"They took the counting-girl in… thieving out the book… they're funny about the book this week."* *(GM-side, UNEARNED by the PC: Alys is **alive, held, being squeezed** — the Factors will want who put her up to it → points at Garin & the outside healer.)* **Akhil's trail is cut at the front door; the girl and the book are both behind under-factor Reynaud's bolted, lamplit door.** Shake's still **unmarked** (scene 11 Fate No) — but moving on the Factors now risks that. HP 6/6 · Effort 3/3 · purse ~56 sp · Chaos 7. **Open beats:** *learn if Alys lives / where she's held · go back to Garin (whose ward was just taken — and who lied to his face) · move on the Factors (risks marking himself) · or cut losses to the diggers job & bare survival.*
+- **★ SAVE POINT (resume here):** **Scene 13 — the memorial-ground, and the truth under it.** Shake **walked away** from the Alys/Akhil road (too thin, too costly) and took the brotherhood's grave-work. At the veterans' **memorial-ground** by night (with **Aldhelm** + 3 bled-white veterans), the 'ghost-hound' the old men revered was an **Outsider-relict** (Domination drive, disguised harmless) that had **enthralled the two diggers**. Shake's warning to the band **failed** (snake-eyes); it dominated **Aldhelm** mid-fight — but Shake **killed it on his blade** (16 vs AC15, 8 dmg), which **freed Aldhelm & both diggers**. The diggers — **Coll & Edrick**, local Low-Quarter men — were sent by **Warden Aldous** (Osric's rival grain-warden) to dig up proof that **Warden Osric** built his rise on a crime: Osric **murdered Captain Hroth** (a beloved war-hero) and looted his grave-hoard. Shake **read Hroth's skull** (Heal success): killed from behind, *not* in battle — **conclusive.** **Aldhelm — Hroth's own old soldier — turned utterly against Osric** (Fate Exc-Yes). **The plan (Shake's): not a clean death — ruin.** Carry the case (skull + hoard + living witnesses + Shake's forensic word + Osric's incitement to murder the diggers) to **Warden Wynne** — the one honest, unbuyable warden (Fate Exc-Yes; up from the *same* gutter as Osric, but clean). By-the-book → Osric tried, stripped, everything turned to ash; the brotherhood stays lawful. **The split (dawn near):** Shake + Aldhelm + Coll → **Wynne** (carrying the skull); Beorn + Hraf → **Aldous** (word, not proof — gauge the wolf); Ceol (healed) + Edrick → a safe hole (insurance witness). **Gap-danger:** Osric expects a first-light report; when none comes he'll send **Under-Warden Gault** (his loyal enforcer) with knives. HP 6/6 · Effort 3/3 · purse ~56 sp · Chaos 6. **Next beat:** *Shake's party reaches Warden Wynne's river-ward at dawn — survive the gap, swear the case, set Osric's ruin in motion.*
 - **Last scene recap:** **Scenes 2–5 — the road west, and the catastrophe on it.** Shake left the Landing with **Hild's** westbound salt-caravan (apprentice **Reza** in tow), bound for **Mauressac** on a thin 4-month-old lead that his brother **Akhil** fell west; his first four months are now canon, and road-rumor says Mauressac's countess is *gathering rift-folk* (his hope, unconfirmed). Shake talked captain **Hild** off a first-strike against **5 Blighted** (who were *fleeing* something west and let the caravan pass). The caravan camped to wait the threat out — and **drew it**: a thing that *unmakes* what it touches turned onto the camp when a mule panicked. Fleeing on a horse with **Reza**, Shake's Evasion failed and the edge caught them (3d6=6 → **0 HP, saved only by Vital Furnace**). The horror tore a furrow and passed on; the road west is now grimly **clear**. **Dead: captain Hild and a few others**; the caravan broken and **leaderless**; Reza alive and hurt; Shake woke at 1 HP. In the aftermath he **healed himself and the wounded** (Healing Touch), **salvaged enough to limp on**, burned the dead (Hild among them), and — the survivors cohering to the one man still standing — now **leads ~11 caravaners west toward Mauressac**, the road clear, a brother's rumor ahead. The watchful **man in the good coat** lived, and is *calculating*. At the city's edge Shake **healed, named, and released the band**, read the coat-man as an opaque agent who priced him on the road, and walked the last miles into Mauressac's country with only **Reza**. *(Prior — Scene 1: saved then surrendered the king's-man Wystan to Doyle's marshals; made an enemy of his sister Aldith; heard "the seal isn't in the reliquary; the boy is true-blooded.")*
 - **Open canon answers (made true in play):** The **Landing** — the Arrival's shanty in Monze, by the rift below Aurholt — is policed by **Sgt. Doyle's marshals**, who keep the camp fed by serving the **Lord Protector's** deal (handing back what wanders in). **Wystan** (a Dragon-Throne man) claims *the boy-king is true-blooded and the royal seal is not in the reliquary* — and is now in Almeric's hands. **Aldith** (his sister) blames Shake. *(Open signs: how King Urcrin died; why the rift speaks English / opened on a Working of Old Vael; where the seal truly is.)*
 
@@ -24,7 +24,7 @@
 
 ## Faction board  (summary; full board: `factions.md`)
 - **The Dragon Throne** (Boy-King Phillipe) — F5 C2 W2 · HP 13/13 · *Free and Crown Phillipe* 0/8 · partly backed by the Arrival.
-- **The Lord Protector's Party** (Almeric) — F3 C5 W2 · HP 15/15 · *Make the Regency Permanent* **2/8** *(moved scene 12: Move Asset — consolidating in Aurholt; bg: a superior repaid him a favor)* · holds Aurholt & the boy.
+- **The Lord Protector's Party** (Almeric) — F3 C5 W2 · HP 15/15 · *Make the Regency Permanent* **3/8** *(moved scene 13: Move Asset — still consolidating Aurholt; bg sign: a trusted lieutenant of Almeric's has died or betrayed him — his grip wobbles)* · holds Aurholt & the boy.
 - **The Mauressac Claim** (Marie) — F2 C3 W5 · HP 15/15 · *Press the Claim* **3/8** *(moved scene 11: Move Asset — consolidating; bg actor: criminals biting guild wealth)* · Shinbu-Anak backed.
 - **The Worm-Cult of Vael** — F4 C1 W1 · HP 8/8 · *Wake the Crowned Worm* **3/8** *(moved scenes 1, 5 & 7)* · serves the dragon Vörniss.
 - **The Arrival** (the New Yorkers) — F3 C2 W4 · HP 12/12 · *Find a Foothold (or the Way Home)* **1/8** *(moved scene 6)* · split; the PC is one of them.
@@ -39,7 +39,8 @@
 - **Maela's secret** (scene 6, GM sign) — Shake's Mauressac landlady is no mere landlady: a hidden identity and **veiled backers**, presently tangled with one of her patrons' "clients" who has **gone rogue**. Shake only reads her as "off." *(Surfaces when earned.)*
 - **The Factors' "second book"** (scene 9 · spiked scene 12) — the secret ledger Alys was forced to keep: where the gathered rift-folk are **sent/sold** (Marie · "men who pay more and ask less" · and the **unbought who "don't come back"**). Holds **Akhil's destination**. Garin **barred the door** on his own part (Fate **Exc-No**, scene 10). **Scene 12: Alys was caught reading it for Shake and TAKEN; the book is now locked behind under-factor Reynaud's door, the trail cut.** *(GM-side: she's alive & being squeezed → the Factors will trace her backers toward Garin & Shake. Open: who buys the unbought, and where they're "taken.")*
 - **Mauressac tightens** (scene 11, faction sign) — the Claim is **consolidating / moving assets** while **criminals assault the guilds' wealth**; the quarter bristles with hired knives and night-moved stock (this lockdown is what got Alys caught).
-- **The diggers job** (signed scene 12) — Shake has **taken the brotherhood's grave-work**: clear the night-diggers from the veterans' **memorial-ground past the west gate**. Front face (serjeant **Aldhelm**): honor the war-dead, stop the grave-robbers. True engine (patron **Warden Osric**, GM sign): Osric uses the bled-white veterans as **brute muscle** and means to **bury whoever can name his past** — the "diggers" may be after exactly that. Night-work, queued. *(Not yet a List thread; promote when he starts it.)*
+- **The Osric takedown** (scene 13 · now a Thread) — the grave-work blew open: the memorial-ground's revered 'ghost-hound' was an **Outsider-relict** (slain by Shake; it had enthralled the two diggers). The diggers (**Coll & Edrick**) were **Warden Aldous's** catspaws, sent to prove **Warden Osric murdered Captain Hroth & looted his grave** to fund his rise — which Shake **confirmed off the skull** (killed from behind). **Aldhelm & the brotherhood have turned on Osric.** Plan: ruin him *lawfully* via honest **Warden Wynne** (witnesses + skull + hoard + Osric's incitement to murder the diggers). **Live threats:** **Under-Warden Gault** (Osric's enforcer) in the dawn gap; **Warden Aldous** (the wolf) may try to make the kill *his own* and taint the clean case. *(GM signs: Aldous uses everyone & hungers to look deserving; Wynne misses nothing & will clock Shake as rift-folk; Osric's patrons may fight the trial.)*
+- **The west-gate memorial-ground** (scene 13, new canon) — Mauressac's martial dead, buried rich with war-plunder; **Captain Hroth's** desecrated tomb (now opened) and a thirty-year murder at its heart. The 'ghost-hound' legend was a lie over a buried Outsider-thing — *the locals believed something very false of it.*
 - **Big Wat & the Serjeant** (declined scene 11, open hook) — a dock-thug's hidden garrison-captain friend, hiding from a guild protection-squeeze, who'd pay with an old **"humming, blue-lit" thing** (fixed-weapon components, true worth unknown). Shake passed on it; Wat may come back.
 - **The Factors' Guild = the rift-folk apparatus** (scene 7) — **Master Corvin's** Factors' Guild sorts and sells the gathered rift-folk (some to Countess Marie, some to whoever pays). Garin's ward **Alys** counts them into ledgers from the inside — so finding Alys IS Shake's road to Akhil. *(GM signs: who Alys was really taken for, and why; Corvin's tie to the Mauressac Claim / Marie's "gathering.")*
 
@@ -63,34 +64,33 @@
 4. Vörniss Stirs Beneath Old Vael  _(weight 2)_
 5. Despot Amiya Buys the Counts  _(weight 2)_
 6. The Split Diaspora at the Rift  _(weight 3)_
-7. Marie and Gruith's Bloc Against the Crown
-8. The Worm-Cult Rises in the West
-9. The Search for Akhil (his brother)  _(weight 2)_
-10. The Secret Wystan Left — the seal & the true boy-king  _(weight 2)_
-11. The Unaccounted New Yorkers (Jason, Jessica & the lost)
-12. Find Garin's ward Alys (taken by Master Corvin, Factors' Guild)  _(weight 3)_
+7. The Worm-Cult Rises in the West
+8. The Search for Akhil (his brother)  _(weight 2)_
+9. The Secret Wystan Left — the seal & the true boy-king  _(weight 2)_
+10. The Unaccounted New Yorkers (Jason, Jessica & the lost)
+11. Find Garin's ward Alys (taken by Master Corvin, Factors' Guild)  _(weight 3)_
+12. Bring down Warden Osric — Hroth's murderer (with Wynne, vs Gault)
 _Σ weighted slots = 25_
 
 ## Characters List — generated snapshot of characters.json (do not hand-edit)
 1. Boy-King Phillipe  _(weight 3)_
 2. Lord Protector Almeric  _(weight 3)_
 3. Countess Marie  _(weight 2)_
-4. Count Heinrich of Altdobern
-5. Countess Deidre of Verzeille
-6. Count Carloman of Hermsdorf
-7. Count Gruith of Briach
-8. Count Qasim of Shakal
-9. Count Chilperic of Monze
-10. Vörniss the Crowned Worm
-11. Despot Amiya of Mishar
-12. Reza (Shake's apprentice)
-13. The man in the good coat (caravan survivor, watchful)
-14. Maela (Mauressac landlady — secret backers)
-15. Father Garin (Bleeding God priest, employer)
-16. Tanya (Bronx FDNY medic — leader of the Factors' rift-folk stock)
-17. Alys (the Factors' coerced ledger-girl; Garin's ward)
-18. Under-Factor Reynaud (holds Alys & the second book)  _(weight 2)_
-19. Warden Osric (Low Quarter — risen, buries his past)
+4. Countess Deidre of Verzeille
+5. Count Gruith of Briach
+6. Count Qasim of Shakal
+7. Vörniss the Crowned Worm
+8. Despot Amiya of Mishar
+9. Reza (Shake's apprentice)
+10. The man in the good coat (caravan survivor, watchful)
+11. Maela (Mauressac landlady — secret backers)
+12. Father Garin (Bleeding God priest, employer)
+13. Tanya (Bronx FDNY medic — leader of the Factors' rift-folk stock)
+14. Alys (the Factors' coerced ledger-girl; Garin's ward)
+15. Under-Factor Reynaud (holds Alys & the second book)  _(weight 2)_
+16. Warden Osric (Low Quarter — risen, buries his past)  _(weight 2)_
+17. Aldhelm (Keeper of the veterans' brotherhood; Shake's ally)
+18. Warden Wynne (honest river-warden; the lawful hand)
 _Σ weighted slots = 25_
 
 <!-- LISTS:END -->

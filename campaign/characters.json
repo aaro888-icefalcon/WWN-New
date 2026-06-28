@@ -14,15 +14,7 @@
    "weight": 2
   },
   {
-   "name": "Count Heinrich of Altdobern",
-   "weight": 1
-  },
-  {
    "name": "Countess Deidre of Verzeille",
-   "weight": 1
-  },
-  {
-   "name": "Count Carloman of Hermsdorf",
    "weight": 1
   },
   {
@@ -31,10 +23,6 @@
   },
   {
    "name": "Count Qasim of Shakal",
-   "weight": 1
-  },
-  {
-   "name": "Count Chilperic of Monze",
    "weight": 1
   },
   {
@@ -75,6 +63,14 @@
   },
   {
    "name": "Warden Osric (Low Quarter — risen, buries his past)",
+   "weight": 2
+  },
+  {
+   "name": "Aldhelm (Keeper of the veterans' brotherhood; Shake's ally)",
+   "weight": 1
+  },
+  {
+   "name": "Warden Wynne (honest river-warden; the lawful hand)",
    "weight": 1
   }
  ]

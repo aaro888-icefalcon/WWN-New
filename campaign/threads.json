@@ -26,10 +26,6 @@
    "weight": 3
   },
   {
-   "name": "Marie and Gruith's Bloc Against the Crown",
-   "weight": 1
-  },
-  {
    "name": "The Worm-Cult Rises in the West",
    "weight": 1
   },
@@ -48,6 +44,10 @@
   {
    "name": "Find Garin's ward Alys (taken by Master Corvin, Factors' Guild)",
    "weight": 3
+  },
+  {
+   "name": "Bring down Warden Osric — Hroth's murderer (with Wynne, vs Gault)",
+   "weight": 1
   }
  ]
 }
