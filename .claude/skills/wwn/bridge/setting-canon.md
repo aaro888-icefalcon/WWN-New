@@ -51,12 +51,21 @@ None by default — confirm with the player at session zero and record here.
 
 ---
 
-# ACTIVE CAMPAIGN — The Kingdom of Auragne (the Lost March of Amund)
+# CAMPAIGN WORLD — the Carven Peaks Arrival · with the Kingdom of Auragne (a built Amundi neighbor)
+
+> **New start:** the **Carven Peaks cavern** (premise + brief below). **Kept & built:** the **Kingdom of Auragne**, one of the Amundi Kingdoms the valleys reach — its full build follows and stays canon as a neighbor. (Its Session-Zero **Chaos floor 6** applied to the Auragne civil war; the new game sets its own floor at Session Zero.)
 
 > **Guided Latter Earth.** Auragne is the canonically-blank **Lost March** of the Amundi Kingdoms (Atlas: *"a creative storyteller could make up almost any kingdom for the March"*). Built here as a powerful, revanchist **Norse/Saxon Marchen kingdom** of the god-burnt north of Agathon — Carven Peaks to the west, pine forests, the **Marchen** people (canon: remnants of a much older kingdom that fell in the First Age). Machine graph in `campaign/places.json`; faction board in `campaign/factions.md`; Lists in `threads.json`/`characters.json`. **Chaos Factor floor 6** (active civil war / lawless frontier).
 
-## The premise — the Arrival
-Everyone from the modern city of **New York** was torn out of their world and scattered across the continent of **Agathon**. The largest shard fell through a **shattered First-Age Working** (the *Working Wreckage* of Old Vael) beside Auragne's capital and rained a slice of the city — and the **player-character** — into the **Shire of Monze**, months ago. The Latter Earth did not ask and does not care: tens of thousands of bewildered modern people now scrabble to survive a lethal sword-and-sorcery world mid–civil war, and every power covets them. **The PC is one of the fallen New Yorkers.**
+## The premise — the Arrival (multi-shard)
+Everyone from the modern city of **New York** was torn out of their world and scattered across the continent of **Agathon** in several shards. **The largest shard — a significant slice of the city itself, Manhattan and the outer boroughs, carrying roughly a quarter (~25%) of all the transported New Yorkers — fell into an immense underground cavern and lake beneath the CARVEN PEAKS**, the god-burnt western mountains. From that buried lake, three valleys climb out to very different neighbors: **the Verdancy**, the **Undead Kingdoms**, and the **Amundi Kingdoms** (of which **Auragne** — detailed below — is one). A **smaller** shard fell through a shattered First-Age Working (the *Working Wreckage* of Old Vael) beside Auragne's capital — the **Landing** at the rift below Aurholt. The Latter Earth did not ask and does not care: tens of thousands of bewildered modern people now scrabble to survive a lethal sword-and-sorcery world mid–civil war, and every power covets them. **The PC is one of the fallen New Yorkers** — by default one of the Carven-Peaks multitude; **Session Zero fixes the exact shard, start, and character.**
+
+## The Carven Peaks — the Underworld Landing (primary start; detail at Session Zero)
+A **drowned-cathedral cavern** deep in the Carven Peaks: a black lake fed by cold rivers and, spilled across its shores and half-sunk in its shallows, **a broken slice of New York** — girders and glass, a few blocks of Manhattan and the boroughs, dead streetlights, and **~25% of the transported** trying to raise a city inside a mountain. No sky. Cold. Strange life in the deep water; older things in the dark. Three valleys lead to daylight and the wider world:
+- **the Verdancy** — a green land (fertile / overgrown / fey — *generate on demand*).
+- **the Undead Kingdoms** — realms of the risen dead (*generate on demand*).
+- **the Amundi Kingdoms** — the mortal south, **Auragne** & its neighbors (fully built below).
+*Detail the cavern-settlement, its diaspora factions, its dangers, and the first valley at Session Zero (`worldgen.py`), seeded by this brief. The Marcher≈English grace (below) is Amundi — the Carven Peaks' own neighbors are separate peoples with their own tongues.*
 
 **A strange grace — the tongue.** The Marchen of Auragne speak **Marcher**, a tongue all-but-perfectly intelligible with the New Yorkers' **English** — so the Arrival can be understood *here*, and largely only here (Qasiri, Nabar, and the other Amundi peoples speak their own foreign tongues). No one knows why a kingdom of the far-future Latter Earth speaks the language of a city that shouldn't exist — an unsettling clue to why the rift opened *here*, on a Working of Old Vael. *(Open sign; not yet earned.)*
 
@@ -83,7 +92,7 @@ Stance = which claimant the count **opposes** (leans toward the other two). Enem
 4. **Mauressac** (RG-04) — *terrain:* Rampant Experiment · *seat:* Mauressac (Guild Oligarchy) · *court:* Cultural Insignia. **Countess Marie** *(throne-claimant)* · backer **Shinbu Anak** · enemies Deidre & Carloman · ally Gruith. Delves: **Vael-fane** (R-01) and, to her west, **Vörniss' Crown** (R-06).
 5. **Briach** (RG-05) — *terrain:* Blighted Tribe · *seat:* Briach (Population Boom) · *court:* Outside Debts. **Count Gruith** · backer **Mishar** · opposes **Almeric** · enemies Qasim & Carloman · ally **Marie** *(mutual bloc)*.
 6. **Shakal** (RG-06) — *terrain:* Overgrown Tomb · *seat:* Shakal (Upstart Faith) · *court:* Recent Brutality. **Count Qasim** *(foreign-blooded southern march)* · backer **Mishar** · opposes **Marie** · enemies Carloman & Deidre · ally Gruith. Delve: **The Hive-hold** (R-04).
-7. **Monze** (RG-07) — *terrain:* **Working Wreckage = THE RIFT** · *seat:* **Aurholt** (royal capital; Seat of Rule) · *court:* Capricious Orders. **Count Chilperic** · backer **Nabardura** · opposes **Phillipe** · enemies Gruith & Qasim · ally Deidre. **The capital**, held by Almeric with the boy-king; the Arrival clusters at the rift here. **PC's starting ground.** · **The Landing** (places.json S-08) — the Arrival's shanty around the rift below Aurholt; policed by **Sgt. Doyle's marshals**, fed by the Lord Protector's deal; Shake's clinic is here. *(Established in play, scene 1.)*
+7. **Monze** (RG-07) — *terrain:* **Working Wreckage = THE RIFT** · *seat:* **Aurholt** (royal capital; Seat of Rule) · *court:* Capricious Orders. **Count Chilperic** · backer **Nabardura** · opposes **Phillipe** · enemies Gruith & Qasim · ally Deidre. **The capital**, held by Almeric with the boy-king; the **smaller** Amundi shard of the Arrival clusters at the rift here. · **The Landing** (places.json S-08) — that shard's shanty around the rift below Aurholt; policed by **Sgt. Doyle's marshals**, fed by the Lord Protector's deal. *(The **primary** Arrival is the Carven Peaks cavern — see the premise.)*
 
 ## Foreign backers (the meddler axis)
 - **Mishar** (Despot **Amiya**, the warlike canon queen) is **buying up the realm** — backs **Deidre, Gruith, Qasim** (3 counts). Faction: **Mishar's Hand**, goal *Vassalize Auragne*.
@@ -102,14 +111,8 @@ The Dragon Throne (Phillipe) · The Lord Protector's Party (Almeric) · The Maur
 - **Vörniss, the Crowned Worm** — dragon-ancestor of the line, dreaming in Old Vael — Domination; indifferent until woken.
 - **Despot Amiya of Mishar** *(off-stage)* — foreign queen buying counts — to vassalize Auragne while it bleeds.
 
-## Shake — The First Four Months (established in play, scene 3 reflection)
-Refugee-level truth (what Shake knows; not the GM board):
-- **The crossing:** torn from a 3 a.m. NYU call-room into the freezing mud below Aurholt; ~9,000 New Yorkers fell with him. His **Art woke in the 2nd week** over a teamster's crushed arm — medicine here works "the way the stories say," and it costs; he rations it. Publicly "the leech who mends the dead."
-- **The Landing's two wars:** the one with the kingdom, and a quieter internal one — **Doyle's marshals** (trade anything to the castle for another winter) vs. **the Homeward**, a growing, zealous faction fixated on the rift-slab as a *door home*. A month ago the Homeward **snatched a transit engineer** off the soup line, convinced she was the "key" to opening the rift; her fate is unknown. (Enriches the *Split Diaspora* thread.)
-- **Debts & ties:** owes **Brann**, a soft, grasping old Marcher rag-picker who scrounged him steel and poppy-resin in the starving weeks. Took on **Reza** (apprentice) partly out of skill, partly because he couldn't leave one more person. First patient lost here: a child, croup, dead for want of a machine that doesn't exist.
-- **The teeth:** three weeks back a foraging party came back maimed with a story of **something in the wild that doesn't eat what it kills — only ruins it**; he amputated an arm and filed the beast as "real, lethal, not tonight's problem."
-- **The splinter:** no one can tell him *why* the Marcher north speaks plain English; he's stopped asking aloud.
-- **First-months NPCs:** Brann (rag-picker, owed) · Reza (apprentice, now traveling) · the Homeward's demagogue (un-named, camp power) · the snatched engineer (missing).
+## The diaspora's two wars (world canon — every shard)
+Wherever the New Yorkers land, they split two ways: those who mean to **build a life here** and those of **the Homeward** — zealots fixated on finding the *door home* (and willing to do terrible things for a supposed "key"). At the smaller **Landing** shard this pits **Sgt. Doyle's marshals** (who trade anything to Aurholt's castle for another winter, per the Lord Protector's deal) against a growing Homeward cell that once **snatched a transit engineer** off the soup line as the rift's supposed key (her fate unknown). *(The same fault line runs through the far larger Carven-Peaks multitude.)* And from the wilds, a persistent rumor: **something out there that doesn't eat what it kills — only unmakes it.** *(Feeds the Split-Diaspora thread.)*
 
 ## Open questions (signs, not yet revealed — Player ≠ PC knowledge)
 - How King Urcrin truly died (natural? Almeric? Mishar's coin? the Worm-Cult?).
@@ -123,5 +126,7 @@ Full hardcore confirmed (honest dice, real death/maiming/ruin). No specific cont
 
 ## Generate-on-demand frontier
 **Only the starting region is detailed.** The rest of the Latter Earth is **built on demand** when play reaches it — when the PC travels somewhere new or names a place, run `scripts/worldgen.py` (`references/gm/worldgen.md`), seeded by Latter Earth canon, and **append the result here**. Do not pre-build the map.
+- **Already built (kept as a neighbor region):** the Amundi **Kingdom of Auragne** — 7 shires, 6 ruins, Old Vael & Vörniss — in `campaign/places.json` and the sections above. Its faction board resets to Session-Zero values when play reaches Amund (regenerate into `factions.md`).
+- **Generate at / after the new Session Zero:** the **Carven Peaks cavern** (the primary start — the drowned New-York-in-a-mountain), then its first **valley**, then the **Verdancy** and the **Undead Kingdoms** as play travels. Seed all from the premise + Carven Peaks briefs above.
 - **Fate-Question answers about canon get recorded back here.** When an oracle/Fate Question establishes a new setting fact (a town's name, who rules a hold, what's in a ruin, a faction's secret), write it into the matching section above — it is now ground truth and overrides recollection from then on.
 - Keep this file the single live source of truth; the faction board and seed deck draw from it.

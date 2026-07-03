@@ -1,45 +1,4 @@
 {
  "kind": "thread",
- "entries": [
-  {
-   "name": "The Three-Way Succession for the Dragon Throne",
-   "weight": 3
-  },
-  {
-   "name": "The Arrival — the City That Fell Through",
-   "weight": 3
-  },
-  {
-   "name": "Vörniss Stirs Beneath Old Vael",
-   "weight": 2
-  },
-  {
-   "name": "Despot Amiya Buys the Counts",
-   "weight": 2
-  },
-  {
-   "name": "The Split Diaspora at the Rift",
-   "weight": 3
-  },
-  {
-   "name": "The Worm-Cult Rises in the West",
-   "weight": 1
-  },
-  {
-   "name": "The Search for Akhil (his brother)",
-   "weight": 3
-  },
-  {
-   "name": "The Secret Wystan Left — the seal & the true boy-king",
-   "weight": 2
-  },
-  {
-   "name": "Bring down Warden Osric — Hroth's murderer (with Wynne, vs Gault)",
-   "weight": 2
-  },
-  {
-   "name": "The Reconquest of Old Vael — the marches lit (no longer stalled)",
-   "weight": 2
-  }
- ]
+ "entries": []
 }

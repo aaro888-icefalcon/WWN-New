@@ -1,11 +1,5 @@
 {
- "theme_order": [
-  "Action",
-  "Social",
-  "Tension",
-  "Personal",
-  "Mystery"
- ],
- "tens": 3,
+ "theme_order": [],
+ "tens": 0,
  "style": "wwn"
 }
