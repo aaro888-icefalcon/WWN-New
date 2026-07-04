@@ -1,0 +1,578 @@
+{
+  "nodes": [
+    {
+      "id": "K-01",
+      "name": "Auragne",
+      "kind": "kingdom",
+      "parent": null,
+      "adjacency": [
+        "RG-01",
+        "RG-02",
+        "RG-03",
+        "RG-04",
+        "RG-05",
+        "RG-06",
+        "RG-07"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Revanchist Marcher Kingdom (the Lost March of Amund)",
+        "summary": "A powerful Norse/Saxon Marchen kingdom of the god-burnt north, heir to the First-Age hegemony of Old Vael and the blood of the dragon V\u00f6rniss. Poised to reconquer Old Vael when great King Urcrin died; now cracking into a three-way succession war (boy-king Phillipe vs. regent-uncle Almeric vs. Countess Marie) as Despot Amiya of Mishar buys its counts and a rift near the capital pours in the people of a vanished modern city.",
+        "subtables": {}
+      },
+      "threads": [
+        "The Three-Way Succession",
+        "The Stalled Reconquest of Old Vael",
+        "The Arrival (the city that fell through)"
+      ],
+      "characters": [
+        "Boy-King Phillipe",
+        "Lord Protector Almeric",
+        "Countess Marie"
+      ],
+      "canon_anchor": "setting-canon.md#auragne"
+    },
+    {
+      "id": "RG-01",
+      "name": "Shire of Altdobern",
+      "kind": "region",
+      "parent": "K-01",
+      "adjacency": [
+        "RG-07",
+        "RG-03",
+        "RG-05",
+        "S-01"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Blighted Tribe",
+        "summary": "A tribe of Blighted live in the hex. They may be violent war-creatures naturally hostile to normal humanity or beings cursed with some trait or nature that makes it impossible for them to live in civilization. Relations are unlikely to be warm in either case, but the latter might be persuaded to parley if the party can work around their limitations and win their trust.",
+        "subtables": {
+          "Enemies": "Human hunter bent on slaughtering inoffensive Blighted",
+          "Friends": "Human trader who deals with them",
+          "Complications": "Their blight was once very useful to the ancient polity that existed here",
+          "Things": "Relics of those who twisted them",
+          "Places": "Site of a gruesome massacre"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Count Heinrich"
+      ],
+      "canon_anchor": "setting-canon.md#altdobern"
+    },
+    {
+      "id": "S-01",
+      "name": "Altdobern",
+      "kind": "settlement",
+      "parent": "RG-01",
+      "adjacency": [
+        "RG-01"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Ancient Infrastructure",
+        "summary": "The community still has access to some sort of functioning ancient infrastructure, whether it's an array of wall-mounted arcane energy projectors, running water, moving roadways, community-wide climate control, or some other inherited luxury. This infrastructure may be the result of a still-functional Working, or it could be the product of some venerable occult engine that's still operational, or it may be the fruit of the labors of some specially-designed organism or Blighted populace.",
+        "subtables": {
+          "Enemies": "Foreign agent seeking to cause havoc",
+          "Friends": "Fascinated foreign scholar",
+          "Complications": "The infrastructure's cruelly-costly maintenance is coming up",
+          "Things": "Secret artifact that can control the infrastructure",
+          "Places": "Sanctified and holy control center"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Count Heinrich"
+      ],
+      "canon_anchor": "setting-canon.md#altdobern"
+    },
+    {
+      "id": "RG-02",
+      "name": "Shire of Verzeille",
+      "kind": "region",
+      "parent": "K-01",
+      "adjacency": [
+        "RG-07",
+        "RG-03",
+        "S-02"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Military Outpost",
+        "summary": "There's a military post located in this wilderness, one planted by an interested government, community, religion, or mercantile group. It may be guarding a trail through the wilds, monitoring dangerous natives, acting as a tripwire against invasion, or be a punishment post for troublesome officers. The outpost is likely to be reliant on regular shipments of goods. Sufficiently large outposts often form the nucleus of a pioneer settlement.",
+        "subtables": {
+          "Enemies": "Wrathful native leader",
+          "Friends": "Pioneer searching for help",
+          "Complications": "The outpost has sparked a dispute with a bordering polity",
+          "Things": "Load of vital supplies",
+          "Places": "Tall wooden tower looking over the countryside"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Countess Deidre"
+      ],
+      "canon_anchor": "setting-canon.md#verzeille"
+    },
+    {
+      "id": "S-02",
+      "name": "Verzeille",
+      "kind": "settlement",
+      "parent": "RG-02",
+      "adjacency": [
+        "RG-02"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "New Industry",
+        "summary": "The natives have established a new industry here, and it's making them a great deal of profit. Old patterns of authority and wealth are being disrupted, and the old gentry are unlikely to be pleased about it. They may be trying to take over the industry, or they may have been the ones to enable it in the first place and are using it to crush the life out of any rival power bases. Outsiders might be playing a major role as well, and it could be they plot to siphon off the profits.",
+        "subtables": {
+          "Enemies": "Arrogant and ruthless new oligarch",
+          "Friends": "Hopeful new entrepreneur",
+          "Complications": "The gentry are split on the industry",
+          "Things": "Tools of sabotage",
+          "Places": "Retrofitted old workshop"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Countess Deidre"
+      ],
+      "canon_anchor": "setting-canon.md#verzeille"
+    },
+    {
+      "id": "RG-03",
+      "name": "Shire of Hermsdorf",
+      "kind": "region",
+      "parent": "K-01",
+      "adjacency": [
+        "RG-01",
+        "RG-02",
+        "S-03"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Perilous Path",
+        "summary": "A danger-laden bridge, trail, skyway, spatial distortion, tunnel, ancient roadbed, or some other path in this area leads through an otherwise impenetrable obstacle or serves as the sole means of reaching some point of interest. This path should be fairly obvious to explorers, but its destination may not be clear. If the destination is inhabited, it might be guarded by the denizens, or there may be the remains of ancient wayposts that once served the traffic along the path.",
+        "subtables": {
+          "Enemies": "Raubritter warrior demanding a toll",
+          "Friends": "Explorer seeking the path",
+          "Complications": "The path is one-way only",
+          "Things": "Map of the path",
+          "Places": "Ancient skyway stretching between mountaintops"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Count Carloman"
+      ],
+      "canon_anchor": "setting-canon.md#hermsdorf"
+    },
+    {
+      "id": "S-03",
+      "name": "Hermsdorf",
+      "kind": "settlement",
+      "parent": "RG-03",
+      "adjacency": [
+        "RG-03"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Cursed Circumstances",
+        "summary": "The community has been cursed with some blight that makes life difficult, albeit not impossible. An offended sorcerer's vengeful Working, an outraged god's wrath, a local distortion of the Legacy, or a simple history of bad feng shui in the area may have brought the curse about. If you include this tag, you'll want to devise not only the curse, but the reason why the locals haven't left for better lands.",
+        "subtables": {
+          "Enemies": "Charlatan offering false hope",
+          "Friends": "Stubborn curse survivor",
+          "Complications": "It can be aimed by willing conspirators",
+          "Things": "Hidden wealth of a curse victim",
+          "Places": "Enterprise blighted by the curse"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Count Carloman"
+      ],
+      "canon_anchor": "setting-canon.md#hermsdorf"
+    },
+    {
+      "id": "RG-04",
+      "name": "Shire of Mauressac",
+      "kind": "region",
+      "parent": "K-01",
+      "adjacency": [
+        "RG-07",
+        "RG-05",
+        "S-04"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Rampant Experiment",
+        "summary": "Not every Working or spell research is a success, and some effort here went drastically wrong. Some sort of rampantly overgrown flora or monstrously altered fauna roam the place, the result of magic gone awry. They probably have some quality or trait that was useful to the creator, but it was combined with so many drawbacks or dangers that the result is a menace.",
+        "subtables": {
+          "Enemies": "Mad sorcerer who caused it",
+          "Friends": "Non-hostile experimental victim",
+          "Complications": "An outside power is promoting the disaster because it's somehow to their advantage",
+          "Things": "Magical tool used in the experiment",
+          "Places": "Sinister occult laboratory"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Countess Marie"
+      ],
+      "canon_anchor": "setting-canon.md#mauressac"
+    },
+    {
+      "id": "S-04",
+      "name": "Mauressac",
+      "kind": "settlement",
+      "parent": "RG-04",
+      "adjacency": [
+        "RG-04"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Guild Oligarchy",
+        "summary": "While the community might ostensibly be ruled by some other power, real control lies with the senior members of the local craft and labor guilds. Their decisions have the practical weight of law, and much of their time and effort is spent squeezing out competitors and parceling out economic opportunities in the community. Some guilds might have little or nothing to do with their original trade, and now exist purely as shells for political influence.",
+        "subtables": {
+          "Enemies": "Profoundly corrupt guild boss",
+          "Friends": "Reformer seeking to oust the corrupt guild heads",
+          "Complications": "They guilds hate each other only slightly less than the competition",
+          "Things": "Money earned by shady business practices",
+          "Places": "Purely decorative ruler's court"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Countess Marie"
+      ],
+      "canon_anchor": "setting-canon.md#mauressac"
+    },
+    {
+      "id": "RG-05",
+      "name": "Shire of Briach",
+      "kind": "region",
+      "parent": "K-01",
+      "adjacency": [
+        "RG-01",
+        "RG-04",
+        "S-05"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Blighted Tribe",
+        "summary": "A tribe of Blighted live in the hex. They may be violent war-creatures naturally hostile to normal humanity or beings cursed with some trait or nature that makes it impossible for them to live in civilization. Relations are unlikely to be warm in either case, but the latter might be persuaded to parley if the party can work around their limitations and win their trust.",
+        "subtables": {
+          "Enemies": "Brutal Blighted war-chief",
+          "Friends": "Local human who knows their ways",
+          "Complications": "They're only Blighted because they lack something to temper it that this site once provided",
+          "Things": "Relics of those who twisted them",
+          "Places": "Shrine or monument honoring their creators"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Count Gruith"
+      ],
+      "canon_anchor": "setting-canon.md#briach"
+    },
+    {
+      "id": "S-05",
+      "name": "Briach",
+      "kind": "settlement",
+      "parent": "RG-05",
+      "adjacency": [
+        "RG-05"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Population Boom",
+        "summary": "A vast influx of newcomers has recently rushed into the community. They may have been drawn by economic opportunities, or fled some pursuing peril, or been forcibly moved there by a ruler who wanted to dilute the existing native cohesion. The natives may not have the resources or opportunities to integrate these newcomers, and it may be that the new population has no desire to stay longer than is necessary.",
+        "subtables": {
+          "Enemies": "Viciously xenophobic grandee",
+          "Friends": "Local official trying to keep the peace",
+          "Complications": "The natives are now highly dependent on newcomer industry",
+          "Things": "Loot confiscated or extracted from the newcomers",
+          "Places": "Tavern welcoming to only one group"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Count Gruith"
+      ],
+      "canon_anchor": "setting-canon.md#briach"
+    },
+    {
+      "id": "RG-06",
+      "name": "Shire of Shakal",
+      "kind": "region",
+      "parent": "K-01",
+      "adjacency": [
+        "RG-07",
+        "S-06"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Overgrown Tomb",
+        "summary": "A once-honored tomb lies here, forgotten or lost to the depredations of enemies. The structure is likely elaborate enough to be a building in its own right, or an excavation beneath some surface monument. The tomb may house a single glorious hero or be the resting place of an associated group, such as a particular noble lineage, the slain of a great battle, a lost city's municipal ossuary, or some like grave.",
+        "subtables": {
+          "Enemies": "Necromancer jealous of his prizes",
+          "Friends": "Ancestral guardian of the tomb",
+          "Complications": "It was originally a different structure turned into a mass grave due to emergency need",
+          "Things": "Regalia buried with a dead ruler",
+          "Places": "Crumbling monument to the dead"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Count Qasim"
+      ],
+      "canon_anchor": "setting-canon.md#shakal"
+    },
+    {
+      "id": "S-06",
+      "name": "Shakal",
+      "kind": "settlement",
+      "parent": "RG-06",
+      "adjacency": [
+        "RG-06"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Upstart Faith",
+        "summary": "There's a relatively new religion in the community which is rapidly gaining power. It might be a sectarian offshoot of a major faith, the unique product of a new prophet, or an outside faith backed by wealthy and powerful foreign supporters. Depending on the demands made on believers, the new faith may be a matter of concern only to the existing clergy, or it might be a major flashpoint for conflict in the community.",
+        "subtables": {
+          "Enemies": "False prophet gathering thralls",
+          "Friends": "Local trying to keep out of the crossfire",
+          "Complications": "The secular leadership backs the new faith to weaken the existing temples",
+          "Things": "Tithe offered up by wealthy new convert",
+          "Places": "Hastily-made new temple"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Count Qasim"
+      ],
+      "canon_anchor": "setting-canon.md#shakal"
+    },
+    {
+      "id": "RG-07",
+      "name": "Shire of Monze",
+      "kind": "region",
+      "parent": "K-01",
+      "adjacency": [
+        "RG-01",
+        "RG-02",
+        "RG-04",
+        "RG-06",
+        "S-07"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Working Wreckage",
+        "summary": "A Working once was in the area, but has long since collapsed, decayed, or been destroyed by others. It's at least building-sized, with some Workings being full- scale megastructures raised by ancient empires. While the Working's original effect has long dissipated, pockets or fragments of it may still persist in the area, along with the automatons or servitor-people once charged with maintaining the site.",
+        "subtables": {
+          "Enemies": "Animated manifestation of the Working's power",
+          "Friends": "Scholar dreaming of activating it once more",
+          "Complications": "It was ruined when it was re- tuned to create a different effect",
+          "Things": "Spare part that's now priceless",
+          "Places": "Nest or lair built into the ruin"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Count Chilperic"
+      ],
+      "canon_anchor": "setting-canon.md#monze"
+    },
+    {
+      "id": "S-07",
+      "name": "Aurholt",
+      "kind": "settlement",
+      "parent": "RG-07",
+      "adjacency": [
+        "RG-07"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Seat of Rule",
+        "summary": "Some important ruler or leading figure resides in the community. This may be the seat of a regional lord, or it could be the traditional residence of a high priest, great magus, merchant house, or other wielder of influence. The community itself may or may not be under their direct control, but the wishes of the august figure must be acknowledged by the locals.",
+        "subtables": {
+          "Enemies": "Vicious rebel against the ruler",
+          "Friends": "Worried advisor to the ruler",
+          "Complications": "The ruler is a figurehead controlled by someone else",
+          "Things": "Riches brought to petition the ruler",
+          "Places": "Public building related to the ruler's role"
+        }
+      },
+      "threads": [],
+      "characters": [
+        "Count Chilperic"
+      ],
+      "canon_anchor": "setting-canon.md#aurholt"
+    },
+    {
+      "id": "R-01",
+      "name": "Vael-fane",
+      "kind": "ruin",
+      "parent": "RG-04",
+      "adjacency": [
+        "RG-04"
+      ],
+      "travel_days": null,
+      "status": "sketch",
+      "tag": {
+        "name": "Fallen Sanctuary + Civil War",
+        "summary": "A fallen Old-Vael sanctuary to the west, two bands of inhabitants warring inside it over the dark tool that cast it down.",
+        "subtables": {}
+      },
+      "threads": [],
+      "characters": [],
+      "canon_anchor": "setting-canon.md#vael-fane"
+    },
+    {
+      "id": "R-02",
+      "name": "The Blighted Warren",
+      "kind": "ruin",
+      "parent": "RG-01",
+      "adjacency": [
+        "RG-01"
+      ],
+      "travel_days": null,
+      "status": "sketch",
+      "tag": {
+        "name": "Raider Lair + Monster Forge",
+        "summary": "An abandoned Outsider outpost that breeds Blighted and sends out raiding parties; plunder hidden within.",
+        "subtables": {}
+      },
+      "threads": [],
+      "characters": [],
+      "canon_anchor": "setting-canon.md#the-blighted-warren"
+    },
+    {
+      "id": "R-03",
+      "name": "The Drowned Vault",
+      "kind": "ruin",
+      "parent": "RG-02",
+      "adjacency": [
+        "RG-02"
+      ],
+      "travel_days": null,
+      "status": "sketch",
+      "tag": {
+        "name": "Lethal Treasure + False Front",
+        "summary": "A long-abandoned Deep posing as something it is not; a large cache of unrefined wealth, lethal to take.",
+        "subtables": {}
+      },
+      "threads": [],
+      "characters": [],
+      "canon_anchor": "setting-canon.md#the-drowned-vault"
+    },
+    {
+      "id": "R-04",
+      "name": "The Hive-hold",
+      "kind": "ruin",
+      "parent": "RG-06",
+      "adjacency": [
+        "RG-06"
+      ],
+      "travel_days": null,
+      "status": "sketch",
+      "tag": {
+        "name": "Surfacer Hideout + Hiveminded Natives",
+        "summary": "A purpose-lost megastructure used as a base by a surface power, infested by a single-minded gestalt; foreign treasure within.",
+        "subtables": {}
+      },
+      "threads": [],
+      "characters": [],
+      "canon_anchor": "setting-canon.md#the-hive-hold"
+    },
+    {
+      "id": "R-05",
+      "name": "The Murkfen Working",
+      "kind": "ruin",
+      "parent": "RG-03",
+      "adjacency": [
+        "RG-03"
+      ],
+      "travel_days": null,
+      "status": "sketch",
+      "tag": {
+        "name": "Hostile Environment + Friendly Foes",
+        "summary": "A doubled ruin built atop an older one; an environmental hazard whose shut-off controls are the prize.",
+        "subtables": {}
+      },
+      "threads": [],
+      "characters": [],
+      "canon_anchor": "setting-canon.md#the-murkfen-working"
+    },
+    {
+      "id": "R-06",
+      "name": "V\u00f6rniss' Crown",
+      "kind": "ruin",
+      "parent": "RG-04",
+      "adjacency": [
+        "RG-04"
+      ],
+      "travel_days": null,
+      "status": "sketch",
+      "tag": {
+        "name": "Decrepit Structure + Outsider Domain",
+        "summary": "The deep, crumbling heart of Old Vael in the western waste \u2014 alien-built, half-collapsed, and the dreaming lair of the dragon V\u00f6rniss. The reconquest's true object.",
+        "subtables": {}
+      },
+      "threads": [],
+      "characters": [],
+      "canon_anchor": "setting-canon.md#v-rniss-crown"
+    },
+    {
+      "id": "S-08",
+      "name": "The Landing",
+      "kind": "settlement",
+      "parent": "RG-07",
+      "adjacency": [
+        "RG-07",
+        "S-07"
+      ],
+      "travel_days": null,
+      "status": "detailed",
+      "tag": {
+        "name": "Refugee Shanty \u2014 the Arrival's camp",
+        "summary": "The shantytown of ~9,000 transported New Yorkers grown up around the rift (a shattered Working of Old Vael) below the walls of Aurholt. Policed by Sgt. Doyle's marshals, who keep it fed by serving the Lord Protector's deal. The diaspora is split; Shake's aid-tent is its clinic.",
+        "subtables": {
+          "Enemies": "Marshals who hand back 'what wanders in'",
+          "Friends": "The desperate who need the leech",
+          "Complications": "The camp's grain depends on the Lord Protector",
+          "Things": "New York relics; the humming rift",
+          "Places": "Shake's aid-tent; the rift-slab"
+        }
+      },
+      "threads": [
+        "The Arrival \u2014 the City That Fell Through",
+        "The Split Diaspora at the Rift",
+        "The Secret Wystan Left \u2014 the seal & the true boy-king"
+      ],
+      "characters": [
+        "Sgt. Doyle (Landing marshal captain)",
+        "Aldith (Wystan's sister \u2014 wronged)"
+      ],
+      "canon_anchor": "setting-canon.md#the-landing"
+    }
+  ]
+}
